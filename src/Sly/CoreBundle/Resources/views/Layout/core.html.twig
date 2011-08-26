@@ -18,19 +18,19 @@
             <ul>
                 <li><a href="{{ path('homepage') }}">{{ 'core.menu.homepage' | trans }}</a></li>
                 <li><a href="{{ path('blog') }}">{{ 'core.menu.blog' | trans }}</a></li>
-                <li><a href="{{ path('tutorials') }}">{{ 'core.menu.tutorials' | trans }}</a></li>
+                <li><a href="{{ path('tutorial') }}">{{ 'core.menu.tutorials' | trans }}</a></li>
                 <li><a href="{{ path('watch') }}">{{ 'core.menu.watch' | trans }}</a></li>
-                <li><a href="{{ path('snippets') }}">{{ 'core.menu.snippets' | trans }}</a></li>
-                <li><a href="{{ path('resources') }}">{{ 'core.menu.resources' | trans }}</a></li>
+                <li><a href="{{ path('snippet') }}">{{ 'core.menu.snippets' | trans }}</a></li>
+                <li><a href="{{ path('resource') }}">{{ 'core.menu.resources' | trans }}</a></li>
             </ul>
         </div>
         
         <div class="container" id="main">
-            MAIN
+            {% block content %}{% endblock content %}
         </div>
         
         <div class="container" id="footer">
-            FOOTER
+            &copy; 2011 <a href="{{ path('homepage') }}">{{ project.name }}</a>
         </div>
 
         {% javascripts output='js/x.js'

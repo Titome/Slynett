@@ -1,13 +1,13 @@
-_resources:
-    resource: "@SlyContentBundle/Resources/config/routing_resources.yml"
+_resource:
+    resource: "@SlyContentBundle/Resources/config/routing_resource.yml"
     prefix:   /ressources
 
-_snippets:
-    resource: "@SlyContentBundle/Resources/config/routing_snippets.yml"
+_snippet:
+    resource: "@SlyContentBundle/Resources/config/routing_snippet.yml"
     prefix:   /snippets
 
-_tutorials:
-    resource: "@SlyContentBundle/Resources/config/routing_tutorials.yml"
+_tutorial:
+    resource: "@SlyContentBundle/Resources/config/routing_tutorial.yml"
     prefix:   /tutoriels-video
 
 _watch:
