@@ -1,0 +1,7 @@
+parameters:
+#    sly_content.example.class: Sly\ContentBundle\Example
+
+services:
+#    sly_content.example:
+#        class: %sly_content.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

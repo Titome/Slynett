@@ -20,6 +20,10 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    globals:
+      project:
+        name: Slynett
+        url: http://www.slynett.com
 
 # Assetic Configuration
 assetic:

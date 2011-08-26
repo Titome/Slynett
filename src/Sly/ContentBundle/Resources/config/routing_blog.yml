@@ -1,0 +1,3 @@
+blog:
+    pattern:  /
+    defaults: { _controller: SlyContentBundle:Blog:index }

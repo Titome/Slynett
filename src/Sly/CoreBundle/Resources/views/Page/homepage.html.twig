@@ -1,3 +1,7 @@
-<h2>{{ 'core.home.title' | trans }}</h2>
+{% extends "SlyCoreBundle:Layout:core.html.twig" %}
 
-<p>{{ 'core.home.introduction' | trans }}</p>
+{% block content %}
+    <h2>{{ 'core.homepage.title' | trans }}</h2>
+    
+    <p>{{ 'core.homepage.introduction' | trans }}</p>
+{% endblock content %}

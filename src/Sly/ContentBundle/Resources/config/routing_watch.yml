@@ -1,0 +1,3 @@
+watch:
+    pattern:  /
+    defaults: { _controller: SlyContentBundle:Watch:index }

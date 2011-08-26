@@ -1,4 +1,5 @@
 app/config/parameters.ini
+app/config/config.yml
 web/bundles/*
 app/bootstrap.php.cache
 app/cache/*

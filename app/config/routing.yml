@@ -1,3 +1,23 @@
+_resources:
+    resource: "@SlyContentBundle/Resources/config/routing_resources.yml"
+    prefix:   /ressources
+
+_snippets:
+    resource: "@SlyContentBundle/Resources/config/routing_snippets.yml"
+    prefix:   /snippets
+
+_tutorials:
+    resource: "@SlyContentBundle/Resources/config/routing_tutorials.yml"
+    prefix:   /tutoriels-video
+
+_watch:
+    resource: "@SlyContentBundle/Resources/config/routing_watch.yml"
+    prefix:   /veille
+
+_blog:
+    resource: "@SlyContentBundle/Resources/config/routing_blog.yml"
+    prefix:   /blog
+
 _core:
     resource: "@SlyCoreBundle/Resources/config/routing.yml"
     prefix:   /

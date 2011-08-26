@@ -1,4 +1,16 @@
 core:
-  home:
+  menu:
+    homepage: Accueil
+    blog: Blog Développement Web
+    tutorials: Tutoriels Vidéos/Textuels
+    watch: Veille Technique
+    snippets: Snippets (bouts de code)
+    resources: Ressources
+  
+  homepage:
+    seo:
+      title: Accueil
+      description: Blog, tutoriels vidéos, ressources, snippets, veille et autres.
+      
     title: Accueil
     introduction: En cours de développement.
