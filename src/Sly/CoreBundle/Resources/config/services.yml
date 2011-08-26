@@ -1,0 +1,7 @@
+parameters:
+  sly.core.class: Sly\CoreBundle\Core
+
+services:
+  sly.core:
+    class: %sly.core.class%
+    arguments: [@service_container]

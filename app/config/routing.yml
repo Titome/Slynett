@@ -1,0 +1,3 @@
+_core:
+    resource: "@SlyCoreBundle/Resources/config/routing.yml"
+    prefix:   /
