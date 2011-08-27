@@ -1,0 +1,20 @@
+{% extends "SlyCoreBundle:Layout:layout.html.twig" %}
+
+{% block title %}{{ category }} | {{ 'seo.title' | trans({}, 'watch') }}{% endblock title %}
+{% block description %}{{ 'category.seo.description' | trans({'%category%': category}, 'watch') }}{% endblock description %}
+
+{% block content %}
+    <h2>{{ 'title' | trans({}, 'watch') }}</h2>
+
+    <ul class="watch_list">
+        {% for item in contentPaginator %}
+            {% include 'SlyContentBundle:Watch:item.html.twig' with {'item': item } %}
+        {% else %}
+            <li class="empty">{{ 'list.nocontent' | trans({}, 'watch') }}</li>
+        {% endfor %}
+    </ul>
+    
+    {% if contentPaginator | length %}
+        {{ pagerfanta(contentPaginator, 'default') }}
+    {% endif %}
+{% endblock content %}

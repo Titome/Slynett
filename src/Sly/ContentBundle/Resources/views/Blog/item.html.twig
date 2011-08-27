@@ -14,7 +14,7 @@
             {% endif %}
     
             {% for k, cat in item.categories %}
-                <a href="{{ path('blog_category', {'slug': cat.slug}) }}">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
+                <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
             {% endfor %}
     
             -
@@ -22,6 +22,16 @@
             {{ 'list.publishedat' | trans({}, 'blog') }}
             <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
         </p>
+        
+        {% if item.tags | length %}
+            <p>
+                {% for tag in item.tags %}
+                    <a href="#" class="tag">
+                        {{ tag }}
+                    </a>
+                {% endfor %}
+            </p>
+        {% endif %}
     
         <p>
             {% if item.excerpt %}
@@ -34,6 +44,12 @@
         <p>
             <a href="{{ path('blog_show', {'slug': item.slug }) }}" class="btn primary">
                 {{ 'list.read' | trans({}, 'blog') }}
+            </a>
+            
+            &nbsp;
+            
+            <a href="{{ path('blog_show', {'slug': item.slug }) }}#disqus_thread" data-disqus-identifier="blog-{{ item.id }}-{{ item.slug }}" class="btn">
+                &nbsp;
             </a>
         </p>
     </div>

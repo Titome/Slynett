@@ -1,18 +1,10 @@
 {% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
 
-{% block title %}{{ item }} | {{ 'seo.title' | trans({}, 'blog') }}{% endblock title %}
-{% block description %}
-    {% spaceless %}
-        {% if item.excerpt %}
-            {{ item.excerpt | striptags }}
-        {% else %}
-            {{ item.content | striptags | truncate(150) }}
-        {% endif %}
-    {% endspaceless %}
-{% endblock description %}
+{% block title %}{{ item }} | {{ 'seo.title' | trans({}, 'tutorial') }}{% endblock title %}
+{% block description %}{{ item.excerpt | striptags }}{% endblock description %}
 
 {% block rsidebar %}
-    {% include 'SlyContentBundle:Blog:rightSidebar.html.twig' %}
+    {% include 'SlyContentBundle:Tutorial:rightSidebar.html.twig' %}
 {% endblock rsidebar %}
 
 {% block content %}
@@ -20,18 +12,18 @@
     
     <p>
         {% if item.categories | length %}
-            {{ 'list.categories' | transchoice(item.categories | length, {}, 'blog') }}
+            {{ 'list.categories' | transchoice(item.categories | length, {}, 'tutorial') }}
         {% else %}
-            {{ 'list.nocategory' | trans({}, 'blog') }}
+            {{ 'list.nocategory' | trans({}, 'tutorial') }}
         {% endif %}
 
         {% for k, cat in item.categories %}
-            <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
+            <a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
         {% endfor %}
 
         -
 
-        {{ 'list.publishedat' | trans({}, 'blog') }}
+        {{ 'list.publishedat' | trans({}, 'tutorial') }}
         <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
     </p>
 
@@ -45,9 +37,21 @@
         </p>
     {% endif %}
     
-    <div class="content_content">
-        {{ item.content | raw }}
-    </div>
+    {% if item.link %}
+        <p>
+            <img src="{{ item.dailyMotionPictureUrl }}" class="picture" alt="{{ item }}" />
+        </p>
+        
+        <p>
+            <iframe frameborder="0" width="{{ dmplayer.width }}" height="{{ dmplayer.height }}" src="{{ item.dailyMotionEmbedUrl }}?width={{ dmplayer.width }}"></iframe>
+        </p>
+    {% endif %}
+    
+    {% if (item.content | length > 10) %}
+        <div class="content_content">
+            {{ item.content | raw }}
+        </div>
+    {% endif %}
     
     <div id="disqus_thread"></div>
 {% endblock content %}
@@ -57,8 +61,8 @@
     
     <script type="text/javascript">
         var disqus_shortname = 'slynett';
-        var disqus_identifier = 'blog-{{ item.id }}-{{ item.slug }}';
-        var disqus_url = '{{ url('blog_show', {'slug': item.slug}) }}';
+        var disqus_identifier = 'tutorial-{{ item.id }}-{{ item.slug }}';
+        var disqus_url = '{{ url('tutorial_show', {'slug': item.slug}) }}';
         var disqus_title = '{{ item }}';
     
         (function() {

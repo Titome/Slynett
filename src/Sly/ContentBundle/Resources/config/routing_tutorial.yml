@@ -1,3 +1,11 @@
+tutorial_show:
+    pattern:  /{slug}.html
+    defaults: { _controller: SlyContentBundle:Tutorial:show }
+
+tutorial_category:
+    pattern:  /{slug}
+    defaults: { _controller: SlyContentBundle:Tutorial:listCategory }
+
 tutorial:
     pattern:  /
-    defaults: { _controller: SlyContentBundle:Tutorial:index }
+    defaults: { _controller: SlyContentBundle:Tutorial:list }

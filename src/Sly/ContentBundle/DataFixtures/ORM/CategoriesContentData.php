@@ -56,9 +56,32 @@ class LoadPostData implements FixtureInterface
             $content->setCategories(array($cat[rand(0, 2)], $cat[rand(3, 5)]));
             $content->setTitle(sprintf('This is watch link (number %d)', $i));
             $content->setLink(sprintf('http://www.slynett.com?test%d', $i));
+            $content->setTags(array('test1', 'test2', 'test3'));
 
             $manager->persist($content);
         }
+
+        /**
+         * Load Video Tutorial content...
+         */
+        
+        $content = new Content();
+        $content->setType('tutorial');
+        $content->setCategories(array($cat[1]));
+        $content->setTitle('slyBlog – Tutoriel Vidéo Symfony 1.4 – Partie 2');
+        $content->setExcerpt('2ème partie du tutoriel slyBlog, dédié à l\'apprentissage du framework PHP Symfony.');
+        $content->setLink('http://www.dailymotion.com/video/xhdw6r_slyblog-tutoriel-video-symfony-1-4-partie-2_tech');
+        
+        $manager->persist($content);
+        
+        $content = new Content();
+        $content->setType('tutorial');
+        $content->setCategories(array($cat[1]));
+        $content->setTitle('slyBlog – Tutoriel Vidéo Symfony 1.4 – Partie 1');            
+        $content->setExcerpt('1ère partie du tutoriel slyBlog, dédié à l\'apprentissage du framework PHP Symfony.');
+        $content->setLink('http://www.dailymotion.com/video/xhawet_slyblog-tutoriel-video-symfony-1-4-partie-1_tech');
+        
+        $manager->persist($content);
         
         /**
          * Just do it, with magic!

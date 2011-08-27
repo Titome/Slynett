@@ -54,11 +54,6 @@ class Content
      */
     protected $link;
     /**
-     * @Assert\Url()
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    protected $videoUrl;
-    /**
      * @Assert\File(maxSize="6000000")
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -78,6 +73,11 @@ class Content
      * @ORM\JoinTable(name="content_categories_attrib")
      */
     protected $categories;
+    /**
+     * @Assert\Collection()
+     * @ORM\Column(type="array")
+     */
+    protected $tags;
 
     public function getId()
     {
@@ -164,16 +164,6 @@ class Content
         return $this->link;
     }
     
-    public function setVideoUrl($videoUrl)
-    {
-        $this->videoUrl = $videoUrl;
-    }
-    
-    public function getVideoUrl()
-    {
-        return $this->videoUrl;
-    }
-    
     public function setPicture($picture)
     {
         $this->picture = $picture;
@@ -202,6 +192,16 @@ class Content
     public function setCategories($categories)
     {
         $this->categories = $categories;
+    }
+    
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
     }
     
     public function __toString()
@@ -280,5 +280,15 @@ class Content
     {
         unlink($this->getFullPicturePath());
         rmdir($this->getUploadRootDir());
+    }
+    
+    public function getDailyMotionPictureUrl()
+    {
+        return str_replace('/video/', '/thumbnail/video/', $this->link);
+    }
+    
+    public function getDailyMotionEmbedUrl()
+    {
+        return str_replace('/video/', '/embed/video/', $this->link);
     }
 }

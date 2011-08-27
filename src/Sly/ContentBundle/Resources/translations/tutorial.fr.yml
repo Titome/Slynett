@@ -1,3 +1,16 @@
 seo:
   title: Tutoriels
   description: Tutoriels vidéo et textuels concernant PHP, Symfony, jQuery et autres.
+  
+title: Tutoriels vidéo et textuels
+
+list:
+  nocontent: Aucun tutoriel.
+  categories: '{1} Catégorie :|]1,Inf] Catégories :'
+  nocategory: Aucune catégorie
+  publishedat: Publié le
+  read: Voir le tutoriel
+
+category:
+  seo:
+    description: Tous les tutoriels vidéo et textuels sur %category%.

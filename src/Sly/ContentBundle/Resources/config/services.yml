@@ -1,12 +1,13 @@
 parameters:
   sly.content.blog.maxperpage: 10
-#    sly_content.example.class: Sly\ContentBundle\Example
+  sly.content.watch.maxperpage: 30
+  sly.content.tutorial.maxperpage: 10
+  sly.content.tutorial.dmplayer:
+    width: 620
+    height: 340
 
 services:
   twig.extension.text:
       class: Twig_Extensions_Extension_Text
       tags:
           - { name: twig.extension }
-#    sly_content.example:
-#        class: %sly_content.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]

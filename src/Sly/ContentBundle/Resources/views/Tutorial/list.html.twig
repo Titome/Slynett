@@ -1,0 +1,39 @@
+{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
+
+{% block title %}{{ 'seo.title' | trans({}, 'tutorial') }}{% endblock title %}
+{% block description %}{{ 'seo.description' | trans({}, 'tutorial') }}{% endblock description %}
+
+{% block rsidebar %}
+    {% include 'SlyContentBundle:Tutorial:rightSidebar.html.twig' %}
+{% endblock rsidebar %}
+
+{% block content %}
+    <h2>{{ 'title' | trans({}, 'tutorial') }}</h2>
+
+    <div class="tutorial_list">
+        {% for item in contentPaginator %}
+            {% include 'SlyContentBundle:Tutorial:item.html.twig' with {'item': item } %}
+        {% else %}
+            <p class="empty">{{ 'list.nocontent' | trans({}, 'tutorial') }}</p>
+        {% endfor %}
+    </div>
+    
+    {% if contentPaginator | length %}
+        {{ pagerfanta(contentPaginator, 'default') }}
+    {% endif %}
+{% endblock content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    
+    <script type="text/javascript">
+        var disqus_shortname = 'slynett';
+
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+{% endblock javascripts %}

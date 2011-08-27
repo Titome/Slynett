@@ -1,0 +1,17 @@
+{% spaceless %}
+    <div class="item">
+        <h3>
+            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}">
+                {{ item }}
+            </a>
+        </h3>
+        
+        {% if item.link %}
+            <p>
+                <a href="{{ path('tutorial_show', {'slug': item.slug }) }}">
+                    <img src="{{ item.dailyMotionPictureUrl }}" class="picture" alt="{{ item }}" />
+                </a>
+            </p>
+        {% endif %}
+    </div>
+{% endspaceless %}

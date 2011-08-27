@@ -2,6 +2,8 @@ seo:
   title: Blog
   description: Actualité et découvertes autour du développement Web au quotidien.
   
+title: Blog
+  
 list:
   nocontent: Aucun article.
   categories: '{1} Catégorie :|]1,Inf] Catégories :'
