@@ -44,6 +44,21 @@ class LoadPostData implements FixtureInterface
 
             $manager->persist($content);
         }
+
+        /**
+         * Load Watch content...
+         */
+        
+        for ($i = 1; $i <= 40; $i++)
+        {
+            $content = new Content();
+            $content->setType('watch');
+            $content->setCategories(array($cat[rand(0, 2)], $cat[rand(3, 5)]));
+            $content->setTitle(sprintf('This is watch link (number %d)', $i));
+            $content->setLink(sprintf('http://www.slynett.com?test%d', $i));
+
+            $manager->persist($content);
+        }
         
         /**
          * Just do it, with magic!

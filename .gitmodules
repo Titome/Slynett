@@ -1,30 +1,48 @@
 [submodule "vendor/symfony"]
 	path = vendor/symfony
-	url = git://github.com/symfony/symfony.git
-[submodule "vendor/doctrine"]
-	path = vendor/doctrine
-	url = git://github.com/doctrine/doctrine2.git
-[submodule "vendor/doctrine-common"]
-	path = vendor/doctrine-common
-	url = git://github.com/doctrine/common.git
-[submodule "vendor/doctrine-dbal"]
-	path = vendor/doctrine-dbal
-	url = git://github.com/doctrine/dbal.git
-[submodule "vendor/doctrine-data-fixtures"]
-	path = vendor/doctrine-data-fixtures
-	url = git://github.com/doctrine/data-fixtures.git
-[submodule "vendor/doctrine-migrations"]
-	path = vendor/doctrine-migrations
-	url = git://github.com/doctrine/migrations.git
+	url = http://github.com/symfony/symfony.git
 [submodule "vendor/twig"]
 	path = vendor/twig
-	url = git://github.com/fabpot/Twig.git
+	url = http://github.com/fabpot/Twig.git
 [submodule "vendor/twig-extensions"]
 	path = vendor/twig-extensions
-	url = git://github.com/fabpot/Twig-extensions.git
-[submodule "src/Sly/CoreBundle/Resources/public/vendor/twitter-bootstrap"]
-	path = src/Sly/CoreBundle/Resources/public/vendor/twitter-bootstrap
-	url = https://github.com/twitter/bootstrap
+	url = http://github.com/fabpot/Twig-extensions.git
+[submodule "vendor/monolog"]
+	path = vendor/monolog
+	url = http://github.com/Seldaek/monolog.git
+[submodule "vendor/doctrine-common"]
+	path = vendor/doctrine-common
+	url = http://github.com/doctrine/common.git
+[submodule "vendor/doctrine-dbal"]
+	path = vendor/doctrine-dbal
+	url = http://github.com/doctrine/dbal.git
+[submodule "vendor/doctrine"]
+	path = vendor/doctrine
+	url = http://github.com/doctrine/doctrine2.git
+[submodule "vendor/swiftmailer"]
+	path = vendor/swiftmailer
+	url = http://github.com/swiftmailer/swiftmailer.git
+[submodule "vendor/assetic"]
+	path = vendor/assetic
+	url = http://github.com/kriswallsmith/assetic.git
+[submodule "vendor/metadata"]
+	path = vendor/metadata
+	url = http://github.com/schmittjoh/metadata.git
+[submodule "vendor/bundles/Sensio/Bundle/FrameworkExtraBundle"]
+	path = vendor/bundles/Sensio/Bundle/FrameworkExtraBundle
+	url = http://github.com/sensio/SensioFrameworkExtraBundle.git
+[submodule "vendor/bundles/Sensio/Bundle/DistributionBundle"]
+	path = vendor/bundles/Sensio/Bundle/DistributionBundle
+	url = http://github.com/sensio/SensioDistributionBundle.git
+[submodule "vendor/bundles/JMS/SecurityExtraBundle"]
+	path = vendor/bundles/JMS/SecurityExtraBundle
+	url = http://github.com/schmittjoh/JMSSecurityExtraBundle.git
+[submodule "vendor/bundles/Sensio/Bundle/GeneratorBundle"]
+	path = vendor/bundles/Sensio/Bundle/GeneratorBundle
+	url = http://github.com/sensio/SensioGeneratorBundle.git
+[submodule "vendor/bundles/Symfony/Bundle/AsseticBundle"]
+	path = vendor/bundles/Symfony/Bundle/AsseticBundle
+	url = http://github.com/symfony/AsseticBundle.git
 [submodule "vendor/doctrine-fixtures"]
 	path = vendor/doctrine-fixtures
 	url = http://github.com/doctrine/data-fixtures.git
@@ -37,3 +55,12 @@
 [submodule "vendor/bundles/Stof/DoctrineExtensionsBundle"]
 	path = vendor/bundles/Stof/DoctrineExtensionsBundle
 	url = http://github.com/stof/StofDoctrineExtensionsBundle.git
+[submodule "src/Sly/CoreBundle/Resources/public/vendor/twitter-bootstrap"]
+	path = src/Sly/CoreBundle/Resources/public/vendor/twitter-bootstrap
+	url = http://github.com/twitter/bootstrap.git
+[submodule "vendor/pagerfanta"]
+	path = vendor/pagerfanta
+	url = http://github.com/whiteoctober/Pagerfanta.git
+[submodule "vendor/bundles/WhiteOctober/PagerfantaBundle"]
+	path = vendor/bundles/WhiteOctober/PagerfantaBundle
+	url = http://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git

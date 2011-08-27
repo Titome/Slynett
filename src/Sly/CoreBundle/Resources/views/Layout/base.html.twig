@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}{{ 'core.homepage.seo.title' | trans }}{% endblock title %} | {{ project.name }}</title>
+        <meta name="Description" content="{% block description %}{{ 'core.homepage.seo.description' | trans }}{% endblock description %}" />
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        {% stylesheets output='css/x.css' filter='cssrewrite'
+            '../app/Resources/public/css/*'
+            '@SlyCoreBundle/Resources/public/css/*'
+            '@SlyCoreBundle/Resources/public/vendor/twitter-bootstrap/bootstrap-1.1.0.min.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+        {% endstylesheets %}
+        {% block stylesheets %}{% endblock stylesheets %}
+    </head>
+    <body>
+        {% block body %}{% endblock body %}
+        
+        {% javascripts output='js/x.js'
+            'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'
+            '../app/Resources/public/js/*'
+            '@SlyCoreBundle/Resources/public/js/*' %}
+    
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}            
+        {% block javascripts %}{% endblock javascripts %}
+    </body>
+</html>

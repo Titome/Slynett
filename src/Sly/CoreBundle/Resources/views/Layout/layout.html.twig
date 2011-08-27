@@ -1,0 +1,11 @@
+{% extends "SlyCoreBundle:Layout:base.html.twig" %}
+
+{% block body %}
+    {% include 'SlyCoreBundle:Layout:header.html.twig' %}
+    
+    <div class="container" id="main">
+        {% block content %}{% endblock content %}
+    </div>
+    
+    {% include 'SlyCoreBundle:Layout:footer.html.twig' %}
+{% endblock %}

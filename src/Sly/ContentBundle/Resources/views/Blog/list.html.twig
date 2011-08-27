@@ -1,0 +1,24 @@
+{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
+
+{% block title %}{{ 'seo.title' | trans({}, 'blog') }}{% endblock title %}
+{% block description %}{{ 'seo.description' | trans({}, 'blog') }}{% endblock description %}
+
+{% block rsidebar %}
+    {% include 'SlyContentBundle:Blog:rightSidebar.html.twig' %}
+{% endblock rsidebar %}
+
+{% block content %}
+    <div class="blog_list">
+        {% for item in contentPaginator %}
+            {% include 'SlyContentBundle:Blog:item.html.twig' with {'item': item } %}
+        {% else %}
+            <p class="empty">{{ 'list.nocontent' | trans({}, 'blog') }}</p>
+        {% endfor %}
+
+        {% if contentPaginator | length %}
+            <div class="pager">
+                {{ pagerfanta(contentPaginator, 'default') }}
+            </div>
+        {% endif %}
+    </div>
+{% endblock content %}

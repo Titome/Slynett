@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
             
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             
             new Sly\CoreBundle\SlyCoreBundle(),
             new Sly\ContentBundle\SlyContentBundle(),

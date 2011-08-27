@@ -1,7 +1,12 @@
 parameters:
+  sly.content.blog.maxperpage: 10
 #    sly_content.example.class: Sly\ContentBundle\Example
 
 services:
+  twig.extension.text:
+      class: Twig_Extensions_Extension_Text
+      tags:
+          - { name: twig.extension }
 #    sly_content.example:
 #        class: %sly_content.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,3 +1,16 @@
 seo:
   title: Blog
   description: Actualité et découvertes autour du développement Web au quotidien.
+  
+list:
+  nocontent: Aucun article.
+  categories: '{1} Catégorie :|]1,Inf] Catégories :'
+  nocategory: Aucune catégorie
+  publishedat: Publié le
+  read: Lire l'article
+
+category:
+  seo:
+    description: Toute l'actualité et les découvertes %category% au quotidien.
+  
+  title: Articles de la catégorie "%category%"
