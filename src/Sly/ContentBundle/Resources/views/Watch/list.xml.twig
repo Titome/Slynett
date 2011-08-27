@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+        <title>{{ 'seo.title' | trans({}, 'watch') }} | {{ project.name }}</title>
+        <description>{{ 'seo.description' | trans({}, 'watch') }}</description>
+        <link>{{ url('watch') }}</link>
+        <lastBuildDate>{{ now | date('D, d M Y H:i:s') }}</lastBuildDate>
+        <pubDate>{{ now | date('D, d M Y H:i:s') }}</pubDate>
+        
+        {% for item in contentPaginator %}
+            <item>
+                <title>{% spaceless %}
+                    {{ feedTitleSkel | replace({
+                        '__TITLE__': item,
+                        '__HASHTAGS__': item.hashtags,
+                        '__MINILINK__': item.minilink
+                    }) }}
+                {% endspaceless %}</title>
+                <description>
+                    {% if item.excerpt %}
+                        {{ item.excerpt | striptags }}
+                    {% else %}
+                        {{ item.content | striptags | truncate(150) }}
+                    {% endif %}
+                </description>
+                <link>{{ item.link }}</link>
+                <guid>{{ item.id }}-{{ item.slug }}</guid>
+                <pubDate>{{ item.publishedAt | date('D, d M Y H:i:s') }}</pubDate>
+            </item>
+        {% endfor %}
+</channel>
+</rss>

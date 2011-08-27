@@ -1,3 +1,9 @@
+blog_feed:
+    pattern: /feed.{_format}
+    defaults: { _controller: SlyContentBundle:Blog:list }
+    requirements:
+      _format: xml
+
 blog_show:
   pattern: /{slug}.html
   defaults: { _controller: SlyContentBundle:Blog:show }

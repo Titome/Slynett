@@ -1,3 +1,9 @@
+watch_feed:
+    pattern: /feed.{_format}
+    defaults: { _controller: SlyContentBundle:Watch:list }
+    requirements:
+      _format: xml
+
 watch_category:
   pattern: /{slug}
   defaults: { _controller: SlyContentBundle:Watch:categoryList }

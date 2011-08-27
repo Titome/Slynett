@@ -4,7 +4,11 @@
 
 <h4>Lorem Ipsum</h4>
 
-<p>---</p>
+<p>
+    <a href="{{ path('blog_feed', {'_format': 'xml'}) }}" onclick="var w=window.open(this.href); w.focus(); return false;">
+        {{ 'sidebars.feed' | trans }}
+    </a>
+</p>
 
 <h4>Lorem Ipsum</h4>
 

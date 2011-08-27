@@ -54,6 +54,11 @@ class Content
      */
     protected $link;
     /**
+     * @Assert\Url()
+     * @ORM\Column(type="string", length=40, nullable=true)
+     */
+    protected $minilink;
+    /**
      * @Assert\File(maxSize="6000000")
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -164,6 +169,16 @@ class Content
         return $this->link;
     }
     
+    public function setMinilink($minilink)
+    {
+        $this->minilink = $minilink;
+    }
+    
+    public function getMinilink()
+    {
+        return $this->minilink;
+    }
+    
     public function setPicture($picture)
     {
         $this->picture = $picture;
@@ -202,6 +217,11 @@ class Content
     public function setTags($tags)
     {
         $this->tags = $tags;
+    }
+    
+    public function getHashtags()
+    {
+        return '#'.implode(' #', $this->tags);
     }
     
     public function __toString()

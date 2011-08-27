@@ -1,2 +1,5 @@
 categories:
   all: Toutes
+  
+sidebars:
+  feed: Flux RSS

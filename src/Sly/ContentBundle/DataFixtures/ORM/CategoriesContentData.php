@@ -55,7 +55,8 @@ class LoadPostData implements FixtureInterface
             $content->setType('watch');
             $content->setCategories(array($cat[rand(0, 2)], $cat[rand(3, 5)]));
             $content->setTitle(sprintf('This is watch link (number %d)', $i));
-            $content->setLink(sprintf('http://www.slynett.com?test%d', $i));
+            $content->setLink(sprintf('http://www.test.com?test%d', $i));
+            $content->setMinilink(sprintf('http://t.mx/a1b2c%d', $i));
             $content->setTags(array('test1', 'test2', 'test3'));
 
             $manager->persist($content);

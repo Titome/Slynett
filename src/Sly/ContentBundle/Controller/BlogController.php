@@ -15,7 +15,7 @@ use Sly\ContentBundle\Entity\Content;
 
 class BlogController extends Controller
 {
-    public function listAction()
+    public function listAction($_format = 'html')
     {
         $em = $this->getDoctrine()->getEntityManager();
 
@@ -25,8 +25,9 @@ class BlogController extends Controller
         $contentPaginator->setMaxPerPage($this->container->getParameter('sly.content.blog.maxperpage'));
         $contentPaginator->setCurrentPage($this->get('request')->query->get('page', 1));
         
-        return $this->render('SlyContentBundle:Blog:list.html.twig', array(
+        return $this->render(sprintf('SlyContentBundle:Blog:list.%s.twig', $_format), array(
             'contentPaginator' => $contentPaginator,
+            'now' => time(),
         ));
     }
     
