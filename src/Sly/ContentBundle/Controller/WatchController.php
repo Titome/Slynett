@@ -15,7 +15,7 @@ use Sly\ContentBundle\Entity\Content;
 
 class WatchController extends Controller
 {
-    public function listAction($_format = 'html')
+    public function listAction($_format = 'html', $twitter = null)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
@@ -29,6 +29,7 @@ class WatchController extends Controller
             'contentPaginator' => $contentPaginator,
             'now' => time(),
             'feedTitleSkel' => $this->container->getParameter('sly.content.watch.feedtitleskel'),
+            'twitter' => $twitter,
         ));
     }
     

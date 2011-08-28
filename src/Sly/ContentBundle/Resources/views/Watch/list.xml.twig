@@ -9,13 +9,17 @@
         
         {% for item in contentPaginator %}
             <item>
-                <title>{% spaceless %}
-                    {{ feedTitleSkel | replace({
-                        '__TITLE__': item,
-                        '__HASHTAGS__': item.hashtags,
-                        '__MINILINK__': item.minilink
-                    }) }}
-                {% endspaceless %}</title>
+                {% if twitter %}
+                    <title>{% spaceless %}
+                        {{ feedTitleSkel | replace({
+                            '__TITLE__': item,
+                            '__HASHTAGS__': item.hashtags,
+                            '__MINILINK__': item.minilink
+                        }) }}
+                    {% endspaceless %}</title>
+                {% else %}
+                    <title>{{ item }}</title>
+                {% endif %}
                 <description>
                     {% if item.excerpt %}
                         {{ item.excerpt | striptags }}

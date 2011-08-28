@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sly\ContentBundle\Entity\Content;
 use Sly\ContentBundle\Form\BlogPostType;
 use Sly\ContentBundle\Form\WatchLinkType;
+use Sly\ContentBundle\Form\TutorialType;
 
 class AdminController extends Controller
 {
@@ -72,6 +73,37 @@ class AdminController extends Controller
         }
         
         return $this->render('SlyContentBundle:Admin:watch.html.twig', array(
+            'contentForm' => $contentForm->createView(),
+        ));
+    }
+
+    public function tutorialAction()
+    {        
+        $em = $this->getDoctrine()->getEntityManager();
+        
+        $content = new Content();
+        
+        $contentForm = $this->createForm(new TutorialType());
+        
+        $request = $this->get('request');
+        
+        if ($request->getMethod() == 'POST')
+        {
+            $contentForm->bindRequest($request);
+            
+            if ($contentForm->isValid())
+            {
+                $content = $contentForm->getData();
+                $content->setType('tutorial');
+                                
+                $em->persist($content);
+                $em->flush();
+                
+                return $this->redirect($this->generateUrl('tutorial'));
+            }
+        }
+        
+        return $this->render('SlyContentBundle:Admin:tutorial.html.twig', array(
             'contentForm' => $contentForm->createView(),
         ));
     }

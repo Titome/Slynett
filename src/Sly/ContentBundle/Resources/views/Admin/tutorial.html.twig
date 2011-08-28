@@ -1,0 +1,48 @@
+{% extends "SlyCoreBundle:Layout:layout.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    
+    <link href="{{ asset('bundles/slycontent/css/admin.css') }}" type="text/css" rel="stylesheet" />
+{% endblock stylesheets %}
+
+{% form_theme contentForm 'SlyCoreBundle:Form:twitterBootstrapTemplate.html.twig' %}
+
+{% block content %}
+    <h2>{{ 'tutorial.new.title' | trans({}, 'admin') }}</h2>
+    
+    <form action="{{ path('tutorial_admin') }}" method="post" {{ form_enctype(contentForm) }}>
+        {{ form_errors(contentForm) }}
+        
+        <div class="row">
+            <div class="span8 columns">
+                {{ form_row(contentForm.title, {'label': 'fields.title' | trans({}, 'admin')}) }}
+                {{ form_row(contentForm.excerpt, {'label': 'fields.excerpt' | trans({}, 'admin')}) }}
+                {{ form_row(contentForm.link, {'label': 'fields.link' | trans({}, 'admin')}) }}
+                {{ form_row(contentForm.picture, {'label': 'fields.picture' | trans({}, 'admin')}) }}
+                {{ form_row(contentForm.publishedAt, {'label': 'fields.publishedat' | trans({}, 'admin')}) }}
+            </div>
+            <div class="span8 columns">
+                {{ form_row(contentForm.status, {'label': 'fields.status' | trans({}, 'admin')}) }}
+                {{ form_row(contentForm.categories, {'label': 'fields.categories' | trans({}, 'admin')}) }}
+            </div>
+        </div>
+        
+        <div class="content_editor">
+            {{ form_widget(contentForm.content, {'attr': {'class': 'editor'}}) }}
+            {{ form_errors(contentForm.content) }}
+        </div>
+        
+        <p>
+            <button type="submit" class="btn primary">{{ 'tutorial.new.fields.submit' | trans({}, 'admin') }}</button>
+        </p>
+        
+        {{ form_rest(contentForm) }}
+    </form>
+{% endblock content %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {% include 'SlyContentBundle::inc.tinymce.js.html.twig' %}
+{% endblock %}

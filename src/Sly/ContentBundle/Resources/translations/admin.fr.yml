@@ -9,6 +9,12 @@ watch:
     title: Veille - Nouveau lien
     fields:
       submit: Ajouter le lien
+      
+tutorial:
+  new:
+    title: Tutoriels - Nouveau tutoriel
+    fields:
+      submit: Ajouter le tutoriel
 
 fields:
   required: Obligatoire

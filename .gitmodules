@@ -64,3 +64,6 @@
 [submodule "vendor/bundles/WhiteOctober/PagerfantaBundle"]
 	path = vendor/bundles/WhiteOctober/PagerfantaBundle
 	url = http://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git
+[submodule "src/Sly/ContentBundle/Resources/public/vendor/syntax-highlighter"]
+	path = src/Sly/ContentBundle/Resources/public/vendor/syntax-highlighter
+	url = http://github.com/alexgorbatchev/SyntaxHighlighter.git

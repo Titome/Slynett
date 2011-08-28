@@ -11,6 +11,12 @@
     {% endspaceless %}
 {% endblock description %}
 
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% include 'SlyContentBundle::inc.syntaxhighlighter.css.html.twig' %}
+{% endblock stylesheets %}
+
 {% block rsidebar %}
     {% include 'SlyContentBundle:Blog:rightSidebar.html.twig' %}
 {% endblock rsidebar %}
@@ -55,5 +61,6 @@
 {% block javascripts %}
     {{ parent() }}
     
+    {% include 'SlyContentBundle::inc.syntaxhighlighter.js.html.twig' %}
     {% render 'SlyContentBundle:Component:disqusJS' with {'item': item, 'type': 'blog'} %}
 {% endblock javascripts %}
