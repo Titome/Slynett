@@ -50,6 +50,7 @@ class AdminController extends Controller
         $contentForm = $this->createForm(new WatchLinkType());
         
         $request = $this->get('request');
+        $bitly = $this->get('sly.bitly');
         
         if ($request->getMethod() == 'POST')
         {
@@ -59,6 +60,9 @@ class AdminController extends Controller
             {
                 $content = $contentForm->getData();
                 $content->setType('watch');
+                
+                $minilink = $bitly->generateMinilink($content->getLink());
+                $content->setMinilink($minilink->data->url);
                                 
                 $em->persist($content);
                 $em->flush();

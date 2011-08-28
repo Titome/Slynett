@@ -1,0 +1,14 @@
+parameters:
+  sly.bitly.class: Sly\ContentBundle\Service\Bitly
+  sly.bitly.example: http://sly.mx/abcdef
+  
+  # Bit.ly parameters are to define in /app/config/parameters.ini
+  sly.bitly.username: %bitly_username%
+  sly.bitly.apikey: %bitly_apikey%
+  
+services:
+    sly.bitly:
+        class: %sly.bitly.class%
+        public: true
+        arguments:
+          - '@service_container'

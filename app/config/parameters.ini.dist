@@ -17,3 +17,7 @@
     locale            = en
 
     secret            = ThisTokenIsNotSoSecretChangeIt
+
+    bitly_username    = XXXXXXXXXXXXXXXXXXXXXXX
+    bitly_apikey      = XXXXXXXXXXXXXXXXXXXXXXX
+

@@ -10,8 +10,14 @@
         
         <br />
     
-        <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;">
+        <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="link">
             {{ item }}
+        </a>
+        
+        <br />
+        
+        <a href="{{ item.minilink }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="minilink">
+            {{ item.minilink }}
         </a>
         
         {% if item.tags | length %}
