@@ -1,3 +1,9 @@
+tutorial_feed:
+    pattern: /feed.{_format}
+    defaults: { _controller: SlyContentBundle:Tutorial:list }
+    requirements:
+      _format: xml
+
 tutorial_show:
     pattern: /{slug}.html
     defaults: { _controller: SlyContentBundle:Tutorial:show }

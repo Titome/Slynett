@@ -15,7 +15,7 @@ use Sly\ContentBundle\Entity\Content;
 
 class TutorialController extends Controller
 {
-    public function listAction()
+    public function listAction($_format = 'html')
     {
         $em = $this->getDoctrine()->getEntityManager();
 
@@ -25,8 +25,9 @@ class TutorialController extends Controller
         $contentPaginator->setMaxPerPage($this->container->getParameter('sly.content.tutorial.maxperpage'));
         $contentPaginator->setCurrentPage($this->get('request')->query->get('page', 1));
         
-        return $this->render('SlyContentBundle:Tutorial:list.html.twig', array(
+        return $this->render(sprintf('SlyContentBundle:Tutorial:list.%s.twig', $_format), array(
             'contentPaginator' => $contentPaginator,
+            'now' => time(),
         ));
     }
     
