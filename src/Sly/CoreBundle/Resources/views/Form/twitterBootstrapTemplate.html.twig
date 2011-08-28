@@ -1,0 +1,64 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block field_row %}
+    <div class="clearfix {% if errors|length > 0 %}error{% endif %}">
+        {{ form_label(form, label) }}
+        <div class="input">
+            {% set class = '' %}
+            {% if errors|length > 0 %}
+                {% set class = 'error' %}
+            {% endif %}
+            {{ form_widget(form, { 'attr': { 'class': class } }) }}
+            {{ form_errors(form) }}
+        </div>
+    </div>
+{% endblock field_row %}
+
+{% block datetime_row %}
+    <div class="clearfix {% if errors|length > 0 %}error{% endif %}">
+        {{ form_label(form, label) }}
+        <div class="input-list">
+            {% set class = '' %}
+            {% if errors|length > 0 %}
+                {% set class = 'error' %}
+            {% endif %}
+            {{ form_widget(form, { 'attr': { 'class': class } }) }}
+            {{ form_errors(form) }}
+        </div>
+    </div>
+{% endblock datetime_row %}
+
+{% block checkbox_row %}
+    <div class="clearfix {% if errors|length > 0 %}error{% endif %}">
+        <label>&nbsp;</label>
+        <div class="input">
+            {% set class = '' %}
+            {% if errors|length > 0 %}
+                {% set class = 'error' %}
+            {% endif %}
+            {{ form_widget(form, { 'attr': { 'class': class } }) }}
+            {{ label }}
+            {{ form_errors(form) }}
+        </div>
+    </div>
+{% endblock checkbox_row %}
+
+{% block field_label %}
+    {{ parent() }}
+
+    {% if required %}
+        <span class="required" title="{{ 'fields.required' | trans({}, 'admin') }}">*</span>
+    {% endif %}
+{% endblock %}
+ 
+{% block field_errors %}
+{% spaceless %}
+    <span class="help-inline">
+        {% if errors|length > 0 %}
+            {% for error in errors %}
+                <br />{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}
+            {% endfor %}
+        {% endif %}
+    </span>
+{% endspaceless %}
+{% endblock field_errors %}

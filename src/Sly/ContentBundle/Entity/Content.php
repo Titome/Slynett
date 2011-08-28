@@ -40,7 +40,6 @@ class Content
      */
     protected $slug;
     /**
-     * @Assert\NotBlank()
      * @ORM\Column(type="text", nullable=true)
      */
     protected $content;
@@ -79,8 +78,7 @@ class Content
      */
     protected $categories;
     /**
-     * @Assert\Collection()
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $tags;
 
@@ -219,9 +217,20 @@ class Content
         $this->tags = $tags;
     }
     
+    public function getTagsCollection()
+    {
+        return explode(' ', $this->tags);
+    }
+    
     public function getHashtags()
     {
-        return '#'.implode(' #', $this->tags);
+        $tags = explode(' ', $this->tags);
+        $hashtags = '';
+        
+        foreach ($tags as $t)
+            $hashtags .= sprintf('#%s ', $t);
+        
+        return trim($hashtags);
     }
     
     public function __toString()

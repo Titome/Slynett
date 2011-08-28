@@ -1,0 +1,23 @@
+blog:
+  new:
+    title: Blog - Nouvel article
+    fields:
+      submit: Ajouter l'article
+      
+watch:
+  new:
+    title: Veille - Nouveau lien
+    fields:
+      submit: Ajouter le lien
+
+fields:
+  required: Obligatoire
+  title: 'Titre :'
+  excerpt: 'Extrait / Description :'
+  picture: 'Image :'
+  link: 'Lien :'
+  publishedat: 'Date de publication :'
+  status: Publié
+  categories: 'Catégorie(s) :'
+  content: 'Contenu :'
+  tags: 'Mots clés :'

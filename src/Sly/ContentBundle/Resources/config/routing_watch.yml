@@ -1,3 +1,7 @@
+watch_admin:
+  pattern: /_admin
+  defaults: { _controller: SlyContentBundle:Admin:watch }
+
 watch_feed:
     pattern: /feed.{_format}
     defaults: { _controller: SlyContentBundle:Watch:list }
@@ -9,5 +13,5 @@ watch_category:
   defaults: { _controller: SlyContentBundle:Watch:categoryList }
 
 watch:
-    pattern:  /
+    pattern: /
     defaults: { _controller: SlyContentBundle:Watch:list }

@@ -17,10 +17,8 @@
         {% if item.tags | length %}
             <br />
             
-            {% for tag in item.tags %}
-                <a href="#" class="tag">
-                    {{ tag }}
-                </a>
+            {% for tag in item.tagsCollection %}
+                <a href="#" class="tag">{{ tag }}</a>
             {% endfor %}
         {% endif %}
     </li>

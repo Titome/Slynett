@@ -37,7 +37,7 @@
 
     {% if item.tags | length %}
         <p>
-            {% for tag in item.tags %}
+            {% for tag in item.tagsCollection %}
                 <a href="#" class="tag">
                     {{ tag }}
                 </a>

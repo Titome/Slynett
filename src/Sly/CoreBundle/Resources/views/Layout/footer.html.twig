@@ -1,3 +1,8 @@
 <div class="container" id="footer">
-    &copy; 2011 <a href="{{ path('homepage') }}">{{ project.name }}</a>
+    <ul class="menu">
+        <li><a href="{{ path('blog_admin') }}">{{ 'core.menu.blog' | trans }}</a></li>
+        <li><a href="{{ path('watch_admin') }}">{{ 'core.menu.watch' | trans }}</a></li>
+    </ul>
+
+    <p>&copy; 2011 <a href="{{ path('homepage') }}">{{ project.name }}</a></p>
 </div>
