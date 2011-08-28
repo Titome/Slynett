@@ -18,4 +18,13 @@ class ComponentController extends Controller
             'catRoute' => sprintf('%s_category', $type),
         ));
     }
+    
+    public function disqusJSAction($item, $type = 'general')
+    {
+        return $this->render('SlyContentBundle:Component:disqus.js.html.twig', array(
+            'item' => $item,
+            'type' => $type,
+            'disqus' => $this->container->getParameter('sly.content.disqus'),
+        ));
+    }
 }

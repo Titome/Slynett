@@ -57,16 +57,5 @@
 {% block javascripts %}
     {{ parent() }}
     
-    <script type="text/javascript">
-        var disqus_shortname = 'slynett';
-        var disqus_identifier = 'tutorial-{{ item.id }}-{{ item.slug }}';
-        var disqus_url = '{{ url('tutorial_show', {'slug': item.slug}) }}';
-        var disqus_title = '{{ item }}';
-    
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
+    {% render 'SlyContentBundle:Component:disqusJS' with {'item': item, 'type': 'watch'} %}
 {% endblock javascripts %}
