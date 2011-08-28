@@ -27,4 +27,11 @@ class ComponentController extends Controller
             'disqus' => $this->container->getParameter('sly.content.disqus'),
         ));
     }
+    
+    public function disqusCountJSAction()
+    {
+        return $this->render('SlyContentBundle:Component:disqusCount.js.html.twig', array(
+            'disqus' => $this->container->getParameter('sly.content.disqus'),
+        ));
+    }
 }
