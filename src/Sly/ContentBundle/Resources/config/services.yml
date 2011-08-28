@@ -9,6 +9,7 @@ parameters:
   sly.content.tutorial.dmplayer:
     width: 620
     height: 340
+  sly.content.snippet.maxperpage: 30
 
 services:
   twig.extension.text:

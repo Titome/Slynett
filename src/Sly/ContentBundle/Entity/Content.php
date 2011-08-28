@@ -58,6 +58,11 @@ class Content
      */
     protected $minilink;
     /**
+     * @Assert\Type(type="integer")
+     * @ORM\Column(type="integer", length=10, nullable=true)
+     */
+    protected $gistId;
+    /**
      * @Assert\File(maxSize="6000000")
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -175,6 +180,16 @@ class Content
     public function getMinilink()
     {
         return $this->minilink;
+    }
+    
+    public function setGistId($gistId)
+    {
+        $this->gistId = $gistId;
+    }
+    
+    public function getGistId()
+    {
+        return $this->gistId;
     }
     
     public function setPicture($picture)

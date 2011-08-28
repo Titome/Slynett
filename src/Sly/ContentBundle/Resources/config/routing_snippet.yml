@@ -1,3 +1,11 @@
+snippet_show:
+  pattern: /{slug}.html
+  defaults: { _controller: SlyContentBundle:Snippet:show }
+
+snippet_category:
+  pattern: /{slug}
+  defaults: { _controller: SlyContentBundle:Snippet:categoryList }
+
 snippet:
     pattern: /
-    defaults: { _controller: SlyContentBundle:Snippet:index }
+    defaults: { _controller: SlyContentBundle:Snippet:list }

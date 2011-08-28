@@ -1,0 +1,13 @@
+{% spaceless %}
+    <li class="item">
+        {% for k, cat in item.categories %}
+            <a href="{{ path('watch_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
+        {% endfor %}
+        
+        <br />
+    
+        <a href="{{ path('snippet_show', {'slug': item.slug}) }}">
+            {{ item }}
+        </a>
+    </li>
+{% endspaceless %}

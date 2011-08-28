@@ -85,6 +85,22 @@ class LoadPostData implements FixtureInterface
         $manager->persist($content);
         
         /**
+         * Load Snippet content...
+         */
+        
+        for ($i = 1; $i <= 40; $i++)
+        {
+            $content = new Content();
+            $content->setType('snippet');
+            $content->setCategories(array($cat[rand(0, 2)], $cat[rand(3, 5)]));
+            $content->setTitle(sprintf('This is a snippet (number %d)', $i));
+            $content->setExcerpt('Snippet description.');
+            $content->setGistId('1176979');
+
+            $manager->persist($content);
+        }
+        
+        /**
          * Just do it, with magic!
          */
         

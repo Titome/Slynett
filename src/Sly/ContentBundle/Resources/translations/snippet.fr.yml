@@ -1,3 +1,18 @@
 seo:
   title: Snippets
   description: Bouts de codes PHP, jQuery, Symfony et autres.
+  
+title: Snippets - Bouts de code en tous genres
+
+list:
+  nocontent: Aucun snippet.
+  categories: '{1} Catégorie :|]1,Inf] Catégories :'
+  nocategory: Aucune catégorie
+  publishedat: Publié le
+  read: Voir le snippet sur Gist
+
+category:
+  seo:
+    description: Retrouvez tous les snippets concernant %category%.
+    
+  title: Snippets de la catégorie "%category%"

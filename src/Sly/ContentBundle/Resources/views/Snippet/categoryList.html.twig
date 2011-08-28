@@ -1,0 +1,30 @@
+{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
+
+{% block title %}{{ category }} | {{ 'seo.title' | trans({}, 'snippet') }}{% endblock title %}
+{% block description %}{{ 'category.seo.description' | trans({'%category%': category}, 'snippet') }}{% endblock description %}
+
+{% block rsidebar %}
+    {% include 'SlyContentBundle:Snippet:rightSidebar.html.twig' %}
+{% endblock rsidebar %}
+
+{% block content %}
+    <h2>{{ 'category.title' | trans({'%category%': category}, 'snippet') }}</h2>
+
+    <ul class="snippet_list">
+        {% for item in contentPaginator %}
+            {% include 'SlyContentBundle:Snippet:item.html.twig' with {'item': item } %}
+        {% else %}
+            <li class="empty">{{ 'list.nocontent' | trans({}, 'snippet') }}</li>
+        {% endfor %}
+    </ul>
+    
+    {% if contentPaginator | length %}
+        {{ pagerfanta(contentPaginator, 'default') }}
+    {% endif %}
+{% endblock content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    
+    {% render 'SlyContentBundle:Component:disqusCountJS' %}
+{% endblock javascripts %}

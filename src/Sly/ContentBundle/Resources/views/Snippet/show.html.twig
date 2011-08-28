@@ -1,0 +1,61 @@
+{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
+
+{% block title %}{{ item }} | {{ 'seo.title' | trans({}, 'snippet') }}{% endblock title %}
+{% block description %}
+    {% spaceless %}
+        {% if item.excerpt %}
+            {{ item.excerpt | striptags }}
+        {% else %}
+            {{ item.content | striptags | truncate(150) }}
+        {% endif %}
+    {% endspaceless %}
+{% endblock description %}
+
+{% block rsidebar %}
+    {% include 'SlyContentBundle:Snippet:rightSidebar.html.twig' %}
+{% endblock rsidebar %}
+
+{% block content %}
+    <h2>{{ item }}</h2>
+    
+    <p>
+        {% if item.categories | length %}
+            {{ 'list.categories' | transchoice(item.categories | length, {}, 'snippet') }}
+        {% else %}
+            {{ 'list.nocategory' | trans({}, 'snippet') }}
+        {% endif %}
+
+        {% for k, cat in item.categories %}
+            <a href="{{ path('snippet_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
+        {% endfor %}
+
+        -
+
+        {{ 'list.publishedat' | trans({}, 'snippet') }}
+        <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
+        
+        -
+        
+        <a href="https://gist.github.com/{{ item.gistId }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="btn">
+            {{ 'list.read' | trans({}, 'snippet') }}
+        </a>
+    </p>
+    
+    {% if item.excerpt %}
+        <p>
+            {{ item.excerpt }}
+        </p>
+    {% endif %}
+    
+    {% if item.gistId %}
+        <script src="https://gist.github.com/{{ item.gistId }}.js"></script>
+    {% endif %}
+    
+    <div id="disqus_thread"></div>
+{% endblock content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    
+    {% render 'SlyContentBundle:Component:disqusJS' with {'item': item, 'type': 'snippet'} %}
+{% endblock javascripts %}

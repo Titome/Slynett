@@ -1,0 +1,24 @@
+{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
+
+{% block title %}{{ 'seo.title' | trans({}, 'snippet') }}{% endblock title %}
+{% block description %}{{ 'seo.description' | trans({}, 'snippet') }}{% endblock description %}
+
+{% block rsidebar %}
+    {% include 'SlyContentBundle:Snippet:rightSidebar.html.twig' %}
+{% endblock rsidebar %}
+
+{% block content %}
+    <h2>{{ 'title' | trans({}, 'snippet') }}</h2>
+
+    <ul class="snippet_list">
+        {% for item in contentPaginator %}
+            {% include 'SlyContentBundle:Snippet:item.html.twig' with {'item': item } %}
+        {% else %}
+            <li class="empty">{{ 'list.nocontent' | trans({}, 'snippet') }}</li>
+        {% endfor %}
+    </ul>
+    
+    {% if contentPaginator | length %}
+        {{ pagerfanta(contentPaginator, 'default') }}
+    {% endif %}
+{% endblock content %}
