@@ -3,6 +3,12 @@
 {% block title %}{{ 'seo.title' | trans({}, 'tutorial') }}{% endblock title %}
 {% block description %}{{ 'seo.description' | trans({}, 'tutorial') }}{% endblock description %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    
+    <link href="{{ asset('bundles/slycontent/css/tutorial.css') }}" rel="stylesheet" type="text/css" />
+{% endblock stylesheets %}
+
 {% block rsidebar %}
     {% include 'SlyContentBundle:Tutorial:rightSidebar.html.twig' %}
 {% endblock rsidebar %}

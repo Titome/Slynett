@@ -1,0 +1,36 @@
+div.show p.informations {
+	padding-bottom: 20px;
+	border-bottom: 20px solid #eee;
+}
+
+div.show div.content_content {
+    padding-top: 40px;
+}
+
+div.sharebuttons.default {
+	float: right;
+	margin: 0 0 40px 40px;
+	list-style: none;
+	padding: 0 0 0 40px;
+	border-left: 1px solid #eee;
+}
+
+div.sharebuttons.default ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+div.sharebuttons.default ul li {
+	margin: 0;
+	margin-bottom: 10px;
+	padding: 0;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eee;	
+}
+
+div.sharebuttons.default ul li.last {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	border: none;
+}

@@ -1,5 +1,17 @@
 categories:
   all: Toutes
   
-sidebars:
-  feed: Flux RSS
+sidebar:
+  feed:
+    title: Suivre le fil
+    feed: Flux RSS
+  post:
+    share:
+      title: Partagez cet article
+  categories:
+    title: Catégories
+  
+social:
+  title: On partage ?
+  tweet: Tweeter
+  share: Partager

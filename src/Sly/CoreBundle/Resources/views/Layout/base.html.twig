@@ -6,20 +6,22 @@
         <meta name="Description" content="{% block description %}{{ 'core.homepage.seo.description' | trans }}{% endblock description %}" />
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
         {% stylesheets output='css/x.css' filter='cssrewrite'
-            '../app/Resources/public/css/*'
-            '@SlyCoreBundle/Resources/public/css/*'
-            '@SlyCoreBundle/Resources/public/vendor/twitter-bootstrap/bootstrap-1.1.0.min.css' %}
+            'bundles/slycore/vendor/twitter-bootstrap/bootstrap-1.1.0.min.css'
+            'bundles/slycore/css/*'
+            'bundles/slycontent/css/content.css' %}
+            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" type="text/css" media="screen" />
             <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
         {% endstylesheets %}
         {% block stylesheets %}{% endblock stylesheets %}
     </head>
     <body>
+        {% block header %}{% endblock header %}
+        
         {% block body %}{% endblock body %}
         
         {% javascripts output='js/x.js'
             'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'
-            '../app/Resources/public/js/*'
-            '@SlyCoreBundle/Resources/public/js/*' %}
+            'bundles/slycore/js/*' %}
     
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}            

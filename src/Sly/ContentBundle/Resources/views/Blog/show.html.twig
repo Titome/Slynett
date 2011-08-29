@@ -1,5 +1,7 @@
 {% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
 
+{% from "SlyContentBundle::macro.socialshare.html.twig" import shareButtons %}
+
 {% block title %}{{ item }} | {{ 'seo.title' | trans({}, 'blog') }}{% endblock title %}
 {% block description %}
     {% spaceless %}
@@ -18,44 +20,48 @@
 {% endblock stylesheets %}
 
 {% block rsidebar %}
-    {% include 'SlyContentBundle:Blog:rightSidebar.html.twig' %}
+    {% include 'SlyContentBundle:Blog:rightSidebar.html.twig' with {'item': item} %}
 {% endblock rsidebar %}
 
 {% block content %}
-    <h2>{{ item }}</h2>
+    <div class="blog show">
+        <h2>{{ item }}</h2>
+        
+        <p class="informations">
+            {% if item.categories | length %}
+                {{ 'list.categories' | transchoice(item.categories | length, {}, 'blog') }}
+            {% else %}
+                {{ 'list.nocategory' | trans({}, 'blog') }}
+            {% endif %}
     
-    <p>
-        {% if item.categories | length %}
-            {{ 'list.categories' | transchoice(item.categories | length, {}, 'blog') }}
-        {% else %}
-            {{ 'list.nocategory' | trans({}, 'blog') }}
-        {% endif %}
-
-        {% for k, cat in item.categories %}
-            <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
-        {% endfor %}
-
-        -
-
-        {{ 'list.publishedat' | trans({}, 'blog') }}
-        <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
-    </p>
-
-    {% if item.tags | length %}
-        <p>
-            {% for tag in item.tagsCollection %}
-                <a href="#" class="tag">
-                    {{ tag }}
-                </a>
+            {% for k, cat in item.categories %}
+                <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
             {% endfor %}
+    
+            -
+    
+            {{ 'list.publishedat' | trans({}, 'blog') }}
+            <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
         </p>
-    {% endif %}
     
-    <div class="content_content">
-        {{ item.content | raw }}
+        {% if item.tags | length %}
+            <p>
+                {% for tag in item.tagsCollection %}
+                    <a href="#" class="tag">
+                        {{ tag }}
+                    </a>
+                {% endfor %}
+            </p>
+        {% endif %}
+        
+        {{ shareButtons(url('blog_show', {'slug': item.slug}), item, 'default') }}
+        
+        <div class="content_content">
+            {{ item.content | raw }}
+        </div>
+        
+        <div id="disqus_thread"></div>
     </div>
-    
-    <div id="disqus_thread"></div>
 {% endblock content %}
 
 {% block javascripts %}

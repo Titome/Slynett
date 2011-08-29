@@ -1,18 +1,14 @@
-<h4>Catégories</h4>
+<h4>{{ 'sidebar.categories.title' | trans }}</h4>
     
 {% render 'SlyContentBundle:Component:categories' with {'type': 'blog'} %}
 
-<h4>Lorem Ipsum</h4>
+<h4>{{ 'sidebar.feed.title' | trans }}</h4>
 
 <p>
     <a href="{{ path('blog_feed', {'_format': 'xml'}) }}" onclick="var w=window.open(this.href); w.focus(); return false;">
-        {{ 'sidebars.feed' | trans }}
+        {{ 'sidebar.feed.feed' | trans }}
     </a>
 </p>
-
-<h4>Lorem Ipsum</h4>
-
-<p>---</p>
 
 <h4>Lorem Ipsum</h4>
 
