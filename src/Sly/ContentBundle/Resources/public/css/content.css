@@ -3,8 +3,8 @@ div.show p.informations {
 	border-bottom: 20px solid #eee;
 }
 
-div.show div.content_content {
-    padding-top: 40px;
+div.show div.content_content img.medium {
+    margin: 20px 0 40px 0;
 }
 
 div.sharebuttons.default {

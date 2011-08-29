@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+            new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
             
             new Sly\CoreBundle\SlyCoreBundle(),
             new Sly\ContentBundle\SlyContentBundle(),

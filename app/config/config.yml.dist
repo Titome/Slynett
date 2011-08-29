@@ -68,3 +68,14 @@ stof_doctrine_extensions:
     orm:
         default:
             sluggable: true
+
+# Avalanche twig filters Configuration            
+avalanche_imagine:
+    filters:
+        thumbnail:
+            type: thumbnail
+            options: { size: [80, 80], mode: outbound }
+        medium:
+            type: thumbnail
+            options: { size: [405, 150], mode: outbound }
+

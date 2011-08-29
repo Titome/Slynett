@@ -265,7 +265,7 @@ class Content
 
     protected function getTmpUploadRootDir()
     {
-        return __DIR__ . '/../../../../web/uploads/posts/';
+        return __DIR__ . '/../../../../web/uploads/contents/';
     }
     
     /**

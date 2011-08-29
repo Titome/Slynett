@@ -62,9 +62,19 @@ jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
 
-#Stof Doctrine extensions Configuration
+# Stof Doctrine extensions Configuration
 stof_doctrine_extensions:
     default_locale: fr_FR
     orm:
         default:
             sluggable: true
+
+# Avalanche twig filters Configuration            
+avalanche_imagine:
+    filters:
+        thumbnail:
+            type: thumbnail
+            options: { size: [80, 80], mode: outbound }
+        medium:
+            type: thumbnail
+            options: { size: [405, 150], mode: outbound }

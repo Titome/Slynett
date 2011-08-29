@@ -1,7 +1,11 @@
+_imagine:
+    resource: .
+    type: imagine
+
 _content:
     resource: "@SlyContentBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix: /
 
 _core:
     resource: "@SlyCoreBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix: /

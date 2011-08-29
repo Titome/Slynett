@@ -57,6 +57,10 @@
         {{ shareButtons(url('blog_show', {'slug': item.slug}), item, 'default') }}
         
         <div class="content_content">
+            {%if item.picture %}
+                <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium') }}" alt="{{ item }}" class="medium" />
+            {% endif %}
+            
             {{ item.content | raw }}
         </div>
         
