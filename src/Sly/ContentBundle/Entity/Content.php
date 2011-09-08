@@ -64,7 +64,7 @@ class Content
     protected $gistId;
     /**
      * @Assert\File(maxSize="6000000")
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(name="gist_id", type="string", length=255, nullable=true)
      */
     private $picture;
     /**

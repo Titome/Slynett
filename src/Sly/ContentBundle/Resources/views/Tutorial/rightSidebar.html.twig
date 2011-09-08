@@ -1,15 +1,23 @@
-<h4>Catégories</h4>
-    
-{% render 'SlyContentBundle:Component:categories' with {'type': 'tutorial'} %}
+{% from "SlyContentBundle::macro.socialShare.html.twig" import shareButtons %}
 
-<h4>Lorem Ipsum</h4>
+<h3>{{ 'sidebar.item.share.title' | trans({}, 'tutorial') }}</h3>
 
-<p>---</p>
+{{ shareButtons(url('tutorial_show', {'slug': item.slug}), item, 'default') }}
 
-<h4>Lorem Ipsum</h4>
+<h3>{{ 'sidebar.item.others.title' | trans({}, 'tutorial') }}</h3>
 
-<p>---</p>
+{% render 'SlyContentBundle:Component:lastItems' with {'type': 'tutorial', 'categories': item.categories} %}
 
-<h4>Lorem Ipsum</h4>
+<p class="amc c1206001">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-8858711354167822";
 
-<p>---</p>
+    google_ad_slot = "8522590177";
+    google_ad_width = 160;
+    google_ad_height = 600;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+</p>

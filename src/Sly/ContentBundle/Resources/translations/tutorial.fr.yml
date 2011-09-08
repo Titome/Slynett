@@ -14,3 +14,12 @@ list:
 category:
   seo:
     description: Tous les tutoriels vidéo et textuels sur %category%.
+
+  title: Tutoriels de la catégorie "%category%"
+  
+sidebar:
+  item:
+    share:
+      title: Partager ce tutoriel
+    others:
+      title: Mais aussi...

@@ -1,0 +1,42 @@
+{% extends "SlyCoreBundle:Layout:layout.html.twig" %}
+
+{% block title %}{{ category }} | {{ 'seo.title' | trans({}, 'tutorial') }}{% endblock title %}
+{% block description %}{{ 'category.seo.description' | trans({'%category%': category}, 'tutorial') }}{% endblock description %}
+
+{% set topMain = true %}
+
+{% block topMainTitle %}
+    <a href="{{ path('tutorial') }}" title="{{ 'core.menu.tutorial' | trans }}">
+        {{ 'title' | trans({}, 'tutorial') }}
+    </a>
+{% endblock topMainTitle %}
+
+{% block topMainMenu %}
+    {% render 'SlyContentBundle:Component:categories' with {'type': 'tutorial', 'activeCategory': category} %}
+{% endblock topMainMenu %}
+
+{% block content %}
+    <h3>{{ 'category.title' | trans({'%category%': category}, 'tutorial') }}</h3>
+
+    <section class="tutorial list">
+        {% for key, item in contentPaginator %}
+            {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'item': item, 'itemKey': key } %}
+        {% else %}
+            <p class="empty">{{ 'list.nocontent' | trans({}, 'tutorial') }}</p>
+        {% endfor %}
+    </section>
+    
+    <div class="clearfix"></div>
+    
+    {% if contentPaginator | length %}
+        <div class="pager">
+            {{ pagerfanta(contentPaginator, 'default') }}
+        </div>
+    {% endif %}
+{% endblock content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    
+    {% render 'SlyContentBundle:Component:disqusCountJS' %}
+{% endblock javascripts %}

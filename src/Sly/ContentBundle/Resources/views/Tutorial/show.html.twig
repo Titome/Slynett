@@ -3,59 +3,30 @@
 {% block title %}{{ item }} | {{ 'seo.title' | trans({}, 'tutorial') }}{% endblock title %}
 {% block description %}{{ item.excerpt | striptags }}{% endblock description %}
 
+{% set topMain = true %}
+
+{% block topMainTitle %}
+    <a href="{{ path('blog') }}" title="{{ 'core.menu.tutorial' | trans }}">
+        {{ 'title' | trans({}, 'blog') }}
+    </a>
+{% endblock topMainTitle %}
+
+{% block topMainMenu %}
+    {% render 'SlyContentBundle:Component:categories' with {'type': 'tutorial', 'noActive': true} %}
+{% endblock topMainMenu %}
+
 {% block stylesheets %}
     {{ parent() }}
 
     {% include 'SlyContentBundle::inc.syntaxhighlighter.css.html.twig' %}
 {% endblock stylesheets %}
 
-{% block rsidebar %}
+{% block rightSidebar %}
     {% include 'SlyContentBundle:Tutorial:rightSidebar.html.twig' %}
-{% endblock rsidebar %}
+{% endblock rightSidebar %}
 
 {% block content %}
-    <h2>{{ item }}</h2>
-    
-    <p>
-        {% if item.categories | length %}
-            {{ 'list.categories' | transchoice(item.categories | length, {}, 'tutorial') }}
-        {% else %}
-            {{ 'list.nocategory' | trans({}, 'tutorial') }}
-        {% endif %}
-
-        {% for k, cat in item.categories %}
-            <a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
-        {% endfor %}
-
-        -
-
-        {{ 'list.publishedat' | trans({}, 'tutorial') }}
-        <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
-    </p>
-
-    {% if item.tags | length %}
-        <p>
-            {% for tag in item.tagsCollection %}
-                <a href="#" class="tag">{{ tag }}</a>
-            {% endfor %}
-        </p>
-    {% endif %}
-    
-    {% if item.link %}
-        <p>
-            <img src="{{ item.dailyMotionPictureUrl }}" class="picture" alt="{{ item }}" />
-        </p>
-        
-        <p>
-            <iframe frameborder="0" width="{{ dmplayer.width }}" height="{{ dmplayer.height }}" src="{{ item.dailyMotionEmbedUrl }}?width={{ dmplayer.width }}"></iframe>
-        </p>
-    {% endif %}
-    
-    {% if (item.content | length > 10) %}
-        <div class="content_content">
-            {{ item.content | raw }}
-        </div>
-    {% endif %}
+    {% include 'SlyContentBundle:Tutorial:item.html.twig' with {'item': item } %}
     
     <div id="disqus_thread"></div>
 {% endblock content %}

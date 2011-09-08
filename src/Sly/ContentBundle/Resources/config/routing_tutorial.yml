@@ -14,7 +14,7 @@ tutorial_show:
 
 tutorial_category:
     pattern: /{slug}
-    defaults: { _controller: SlyContentBundle:Tutorial:listCategory }
+    defaults: { _controller: SlyContentBundle:Tutorial:categoryList }
 
 tutorial:
     pattern: /

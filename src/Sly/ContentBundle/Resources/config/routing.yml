@@ -8,7 +8,7 @@ _snippet:
 
 _tutorial:
     resource: "@SlyContentBundle/Resources/config/routing_tutorial.yml"
-    prefix:   /tutoriels-video
+    prefix:   /tutoriels
 
 _watch:
     resource: "@SlyContentBundle/Resources/config/routing_watch.yml"

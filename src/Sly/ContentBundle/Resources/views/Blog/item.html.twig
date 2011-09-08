@@ -1,12 +1,10 @@
 <article class="tpl3">
     {%if item.picture %}
         <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium') }}" alt="{{ item }}" class="medium" />
-    {% else %}
-        &nbsp;
     {% endif %}
     
     <div class="header">
-        <h2>{{ item.title }}</h2>
+        <h3>{{ item.title }}</h3>
         
         <p class="informations">       
             {{ 'list.publishedat' | trans({}, 'blog') }}

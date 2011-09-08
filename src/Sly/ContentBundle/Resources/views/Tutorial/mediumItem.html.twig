@@ -1,0 +1,25 @@
+{% spaceless %}
+    <article class="tpl4">
+        {% for cat in item.categories %}
+            <img src="{{ asset('bundles/slycontent/images/categories/%slug%.png' | replace({'%slug%': cat.slug})) }}" alt="{{ cat }}" class="category_icon" />
+        {% endfor %}
+        
+        {% if item.link %}
+            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}">
+                <img src="{{ item.dailyMotionPictureUrl }}" class="tutorial" alt="{{ item }}" />
+            </a>
+        {% else %}
+            {%if item.picture %}
+                <a href="{{ path('tutorial_show', {'slug': item.slug }) }}">
+                    <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('tutorial') }}" alt="{{ item }}" class="tutorial" />
+                </a>
+            {% endif %}
+        {% endif %}
+        
+        <h3>
+            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}">
+                {{ item }}
+            </a>
+        </h3>
+    </article>
+{% endspaceless %}

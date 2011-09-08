@@ -90,3 +90,6 @@ avalanche_imagine:
         medium:
             type: thumbnail
             options: { size: [300, 300], mode: outbound }
+        tutorial:
+            type: thumbnail
+            options: { size: [320, 240], mode: outbound }

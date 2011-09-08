@@ -6,7 +6,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Sly\ContentBundle\Entity\Category;
 use Sly\ContentBundle\Entity\Content;
 
-class LoadPostData implements FixtureInterface
+class LoadContentData implements FixtureInterface
 {
     public function load($manager)
     {
@@ -41,6 +41,8 @@ class LoadPostData implements FixtureInterface
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             ');
+            $content->setTags('test1 test2 test3');
+            $content->setPublishedAt(date('Y-m-d H:i:s', rand((1315496965 - 100000), 1315496965)));
 
             $manager->persist($content);
         }
@@ -58,6 +60,7 @@ class LoadPostData implements FixtureInterface
             $content->setLink(sprintf('http://www.test.com?test%d', $i));
             $content->setMinilink(sprintf('http://t.mx/a1b2c%d', $i));
             $content->setTags('test1 test2 test3');
+            $content->setPublishedAt(date('Y-m-d H:i:s', rand((1315496965 - 100000), 1315496965)));
 
             $manager->persist($content);
         }
@@ -66,23 +69,18 @@ class LoadPostData implements FixtureInterface
          * Load Video Tutorial content...
          */
         
-        $content = new Content();
-        $content->setType('tutorial');
-        $content->setCategories(array($cat[1]));
-        $content->setTitle('slyBlog – Tutoriel Vidéo Symfony 1.4 – Partie 2');
-        $content->setExcerpt('2ème partie du tutoriel slyBlog, dédié à l\'apprentissage du framework PHP Symfony.');
-        $content->setLink('http://www.dailymotion.com/video/xhdw6r_slyblog-tutoriel-video-symfony-1-4-partie-2_tech');
-        
-        $manager->persist($content);
-        
-        $content = new Content();
-        $content->setType('tutorial');
-        $content->setCategories(array($cat[1]));
-        $content->setTitle('slyBlog – Tutoriel Vidéo Symfony 1.4 – Partie 1');            
-        $content->setExcerpt('1ère partie du tutoriel slyBlog, dédié à l\'apprentissage du framework PHP Symfony.');
-        $content->setLink('http://www.dailymotion.com/video/xhawet_slyblog-tutoriel-video-symfony-1-4-partie-1_tech');
-        
-        $manager->persist($content);
+        for ($i = 1; $i <= 40; $i++)
+        {
+            $content = new Content();
+            $content->setType('tutorial');
+            $content->setCategories(array($cat[rand(0, 5)]));
+            $content->setTitle('Lorem ipsum dolor sit amet, consectetur adipisicing elit');
+            $content->setExcerpt('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.');
+            $content->setLink('http://www.dailymotion.com/video/xgsf9_the-police-roxane_music');
+            $content->setPublishedAt(date('Y-m-d H:i:s', rand((1315496965 - 100000), 1315496965)));
+
+            $manager->persist($content);
+        }
         
         /**
          * Load Snippet content...
@@ -96,6 +94,7 @@ class LoadPostData implements FixtureInterface
             $content->setTitle(sprintf('This is a snippet (number %d)', $i));
             $content->setExcerpt('Snippet description.');
             $content->setGistId('1176979');
+            $content->setPublishedAt(date('Y-m-d H:i:s', rand((1315496965 - 100000), 1315496965)));
 
             $manager->persist($content);
         }

@@ -13,7 +13,7 @@
             {{ 'seo.description' | trans({}, 'blog') }}
         </span>
     </li>
-    <li class="tutorials {{ app.request.attributes.get('_route') | checkActive(['tutorials', 'tutorials_category', 'tutorials_show']) }}">
+    <li class="tutorials {{ app.request.attributes.get('_route') | checkActive(['tutorial', 'tutorial_category', 'tutorial_show']) }}">
         <a href="{{ path('tutorial') }}" title="{{ 'core.menu.tutorials' | trans }}">
             {{ 'core.menu.tutorials' | trans }}
         </a>
@@ -31,7 +31,7 @@
             {{ 'seo.description' | trans({}, 'watch') }}
         </span>
     </li>
-    <li class="snippets {{ app.request.attributes.get('_route') | checkActive(['snippets', 'snippets_category', 'snippets_show']) }}">
+    <li class="snippets {{ app.request.attributes.get('_route') | checkActive(['snippet', 'snippet_category', 'snippet_show']) }}">
         <a href="{{ path('snippet') }}" title="{{ 'core.menu.snippets' | trans }}">
             {{ 'core.menu.snippets' | trans }}
         </a>
@@ -40,7 +40,7 @@
             {{ 'seo.description' | trans({}, 'snippet') }}
         </span>
     </li>
-    <li class="resources {{ app.request.attributes.get('_route') | checkActive(['resources']) }}">
+    <li class="resources {{ app.request.attributes.get('_route') | checkActive(['resource']) }}">
         <a href="{{ path('resource') }}" title="{{ 'core.menu.resources' | trans }}">
             {{ 'core.menu.resources' | trans }}
         </a>

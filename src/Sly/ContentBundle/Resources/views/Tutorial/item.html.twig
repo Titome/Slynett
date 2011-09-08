@@ -1,17 +1,40 @@
-{% spaceless %}
-    <div class="item">
-        <h3>
-            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}">
-                {{ item }}
-            </a>
-        </h3>
+<article class="tpl3">
+    {%if item.picture %}
+        <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium') }}" alt="{{ item }}" class="medium" />
+    {% endif %}
+    
+    <div class="header">
+        <h3>{{ item.title }}</h3>
         
-        {% if item.link %}
-            <p>
-                <a href="{{ path('tutorial_show', {'slug': item.slug }) }}">
-                    <img src="{{ item.dailyMotionPictureUrl }}" class="picture" alt="{{ item }}" />
-                </a>
+        <p class="informations">       
+            {{ 'list.publishedat' | trans({}, 'blog') }}
+            <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
+        </p>
+        
+        <p class="categories">
+            {% if item.categories | length %}
+                {% for k, cat in item.categories %}
+                    <a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
+                {% endfor %}
+            {% else %}
+                {{ 'list.nocategory' | trans({}, 'blog') }}
+            {% endif %}
+        </p>
+        
+        {% if item.tags | length %}
+            <p class="tags">
+                {% for tag in item.tagsCollection %}
+                    <a href="#">{{ tag }}</a>
+                {% endfor %}
             </p>
         {% endif %}
     </div>
-{% endspaceless %}
+
+    <div class="item_content">
+        <div class="iframe">
+            <iframe frameborder="0" width="{{ dmplayer.width }}" height="{{ dmplayer.height }}" src="{{ item.dailyMotionEmbedUrl }}?width={{ dmplayer.width }}"></iframe>
+        </div>
+        
+        {{ item.content | raw }}
+    </div>
+</article>

@@ -1,31 +1,31 @@
-{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
+{% extends "SlyCoreBundle:Layout:layout.html.twig" %}
 
 {% block title %}{{ 'seo.title' | trans({}, 'tutorial') }}{% endblock title %}
 {% block description %}{{ 'seo.description' | trans({}, 'tutorial') }}{% endblock description %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    
-    <link href="{{ asset('bundles/slycontent/css/tutorial.css') }}" rel="stylesheet" type="text/css" />
-{% endblock stylesheets %}
+{% set topMain = true %}
 
-{% block rsidebar %}
-    {% include 'SlyContentBundle:Tutorial:rightSidebar.html.twig' %}
-{% endblock rsidebar %}
+{% block topMainTitle %}
+    <a href="{{ path('tutorial') }}" title="{{ 'core.menu.tutorial' | trans }}">
+        {{ 'title' | trans({}, 'tutorial') }}
+    </a>
+{% endblock topMainTitle %}
+
+{% block topMainMenu %}
+    {% render 'SlyContentBundle:Component:categories' with {'type': 'tutorial'} %}
+{% endblock topMainMenu %}
 
 {% block content %}
-    <h2>{{ 'title' | trans({}, 'tutorial') }}</h2>
-
-    <div class="tutorial_list">
-        {% for item in contentPaginator %}
-            {% include 'SlyContentBundle:Tutorial:item.html.twig' with {'item': item } %}
-        {% else %}
-            <p class="empty">{{ 'list.nocontent' | trans({}, 'tutorial') }}</p>
-        {% endfor %}
-    </div>
+    {% for item in contentPaginator %}
+        {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'item': item } %}
+    {% else %}
+        <p class="empty">{{ 'list.nocontent' | trans({}, 'tutorial') }}</p>
+    {% endfor %}
     
     {% if contentPaginator | length %}
-        {{ pagerfanta(contentPaginator, 'default') }}
+        <div class="pager">
+            {{ pagerfanta(contentPaginator, 'default') }}
+        </div>
     {% endif %}
 {% endblock content %}
 
