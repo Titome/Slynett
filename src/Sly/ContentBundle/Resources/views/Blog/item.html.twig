@@ -1,41 +1,37 @@
 <article class="tpl3">
+    {%if item.picture %}
+        <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium') }}" alt="{{ item }}" class="medium" />
+    {% else %}
+        &nbsp;
+    {% endif %}
+    
     <div class="header">
-        <div class="grid_6 alpha left">
-            <h2>{{ item.title }}</h2>
-            
-            <p class="informations">       
-                {{ 'list.publishedat' | trans({}, 'blog') }}
-                <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
-            </p>
-            
-            <p class="categories">
-                {% if item.categories | length %}
-                    {% for k, cat in item.categories %}
-                        <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
-                    {% endfor %}
-                {% else %}
-                    {{ 'list.nocategory' | trans({}, 'blog') }}
-                {% endif %}
-            </p>
-            
-            {% if item.tags | length %}
-                <p class="tags">
-                    {% for tag in item.tagsCollection %}
-                        <a href="#">{{ tag }}</a>
-                    {% endfor %}
-                </p>
-            {% endif %}
-        </div>
-    
-        <div class="grid_6 omega right">
-            {%if item.picture %}
-                <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium') }}" alt="{{ item }}" class="medium" />
+        <h2>{{ item.title }}</h2>
+        
+        <p class="informations">       
+            {{ 'list.publishedat' | trans({}, 'blog') }}
+            <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
+        </p>
+        
+        <p class="categories">
+            {% if item.categories | length %}
+                {% for k, cat in item.categories %}
+                    <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
+                {% endfor %}
             {% else %}
-                &nbsp;
+                {{ 'list.nocategory' | trans({}, 'blog') }}
             {% endif %}
-        </div>
+        </p>
+        
+        {% if item.tags | length %}
+            <p class="tags">
+                {% for tag in item.tagsCollection %}
+                    <a href="#">{{ tag }}</a>
+                {% endfor %}
+            </p>
+        {% endif %}
     </div>
-    
+
     <div class="item_content">
         {{ item.content | raw }}
     </div>

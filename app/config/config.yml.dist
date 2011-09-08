@@ -87,9 +87,6 @@ avalanche_imagine:
         thumbnail:
             type: thumbnail
             options: { size: [80, 80], mode: outbound }
-        item:
-            type: thumbnail
-            options: { size: [220, 150], mode: outbound }
         medium:
             type: thumbnail
-            options: { size: [400, 200], mode: outbound }
+            options: { size: [300, 300], mode: outbound }

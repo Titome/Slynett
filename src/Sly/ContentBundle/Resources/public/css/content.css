@@ -171,31 +171,31 @@ article.tpl2 h4 {
     text-transform: uppercase;
 }
 
-article.tpl3 .header {
-	overflow: hidden;
-	padding-bottom: 20px;
-	margin-bottom: 20px;
-	border-bottom: 1px solid #eee;
-}
-
 article.tpl3 h2 {
 	margin-bottom: 20px;
 }
 
-article.tpl3 .left p {
+article.tpl3 p {
 	margin-bottom: 10px;
 }
 
-article.tpl3 .left .tags a,
-article.tpl3 .left .tags a:visited {
+article.tpl3 .tags a,
+article.tpl3 .tags a:visited {
 	margin: 0 5px 5px 0;
 	background-color: #f5f5f5;
 	border-color: #eee;
 }
 
-article.tpl3 .right img {
-	width: 100%;
-	height: auto;
+article.tpl3 img {
+	float: right;
+	margin: 0 0 10px 20px;
+}
+
+article.tpl3 .header {
+	display: inline-block;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #eee;
 }
 
 article.tpl3 .item_content {
@@ -242,6 +242,10 @@ section.sidebar ul.items li img {
 section.sidebar ul.items li span {
 	display: block;
 	margin-left: 50px;
+}
+
+.disqus_comments {
+	clear: both;
 }
 
 .disqus_comments h3 {
