@@ -1,54 +1,30 @@
 {% spaceless %}
-    <div class="item">
-        <h3>
+    <article class="tpl2 grid_6 {% if itemKey is defined %}{{ cycle(['omega', 'alpha'], itemKey) }}{% endif %}">
+        {%if item.picture %}
+            <a href="{{ path('blog_show', {'slug': item.slug }) }}">
+                <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('thumbnail') }}" alt="{{ item }}" class="thumbnail" />
+            </a>
+        {% endif %}
+        
+        <h4>
             <a href="{{ path('blog_show', {'slug': item.slug }) }}">
                 {{ item }}
             </a>
-        </h3>
-    
-        <p>
+        </h4>
+        
+        <p class="details">
+            {{ 'list.publishedat' | trans({}, 'blog') }}
+            <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
+            
+            <br />
+            
             {% if item.categories | length %}
-                {{ 'list.categories' | transchoice(item.categories | length, {}, 'blog') }}
+                {% for k, cat in item.categories %}
+                    <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
+                {% endfor %}
             {% else %}
                 {{ 'list.nocategory' | trans({}, 'blog') }}
             {% endif %}
-    
-            {% for k, cat in item.categories %}
-                <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
-            {% endfor %}
-    
-            -
-    
-            {{ 'list.publishedat' | trans({}, 'blog') }}
-            <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
         </p>
-        
-        {% if item.tags | length %}
-            <p>
-                {% for tag in item.tagsCollection %}
-                    <a href="#" class="tag">{{ tag }}</a>
-                {% endfor %}
-            </p>
-        {% endif %}
-    
-        <p>
-            {% if item.excerpt %}
-                {{ item.excerpt | striptags }}
-            {% else %}
-                {{ item.content | striptags | truncate(150) }}
-            {% endif %}
-        </p>
-        
-        <p>
-            <a href="{{ path('blog_show', {'slug': item.slug }) }}" class="btn primary">
-                {{ 'list.read' | trans({}, 'blog') }}
-            </a>
-            
-            &nbsp;
-            
-            <a href="{{ path('blog_show', {'slug': item.slug }) }}#disqus_thread" data-disqus-identifier="blog-{{ item.id }}-{{ item.slug }}" class="btn">
-                &nbsp;
-            </a>
-        </p>
-    </div>
+    </article>
 {% endspaceless %}

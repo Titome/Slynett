@@ -55,9 +55,6 @@
 [submodule "vendor/bundles/Stof/DoctrineExtensionsBundle"]
 	path = vendor/bundles/Stof/DoctrineExtensionsBundle
 	url = http://github.com/stof/StofDoctrineExtensionsBundle.git
-[submodule "src/Sly/CoreBundle/Resources/public/vendor/twitter-bootstrap"]
-	path = src/Sly/CoreBundle/Resources/public/vendor/twitter-bootstrap
-	url = http://github.com/twitter/bootstrap.git
 [submodule "vendor/pagerfanta"]
 	path = vendor/pagerfanta
 	url = http://github.com/whiteoctober/Pagerfanta.git
@@ -73,3 +70,6 @@
 [submodule "vendor/bundles/Avalanche/Bundle/ImagineBundle"]
 	path = vendor/bundles/Avalanche/Bundle/ImagineBundle
 	url = http://github.com/avalanche123/AvalancheImagineBundle.git
+[submodule "src/Sly/CoreBundle/Resources/public/vendor/960gs"]
+	path = src/Sly/CoreBundle/Resources/public/vendor/960gs
+	url = http://github.com/nathansmith/960-Grid-System.git

@@ -1,11 +1,18 @@
 core:
+  header:
+    follow:
+      msg1: Suivez %name% et son auteur sur
+      msg2: ou encore
+      
   menu:
     homepage: Accueil
-    blog: Blog Développement Web
-    tutorials: Tutoriels Vidéos/Textuels
-    watch: Veille Technique
+    blog: Blog
+    tutorials: Tutoriels
+    watch: Veille WebDev
     snippets: Snippets
     resources: Ressources
+    credits: Crédits
+    terms: Mentions légales
   
   homepage:
     seo:
@@ -14,3 +21,9 @@ core:
       
     title: Accueil
     introduction: En cours de développement.
+   
+  networks:
+    rss: Flux RSS
+   
+  footer:
+    rights: Tous droits réservés

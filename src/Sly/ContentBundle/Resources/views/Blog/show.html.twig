@@ -1,7 +1,5 @@
 {% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
 
-{% from "SlyContentBundle::macro.socialshare.html.twig" import shareButtons %}
-
 {% block title %}{{ item }} | {{ 'seo.title' | trans({}, 'blog') }}{% endblock title %}
 {% block description %}
     {% spaceless %}
@@ -13,15 +11,29 @@
     {% endspaceless %}
 {% endblock description %}
 
+{% set topMain = true %}
+
+{% block topMainTitle %}
+    <a href="{{ path('blog') }}" title="{{ 'core.menu.blog' | trans }}">
+        {{ 'title' | trans({}, 'blog') }}
+    </a>
+{% endblock topMainTitle %}
+
+{% block topMainMenu %}
+    {% render 'SlyContentBundle:Component:categories' with {'type': 'blog', 'noActive': true} %}
+{% endblock topMainMenu %}
+
 {% block stylesheets %}
     {{ parent() }}
 
     {% include 'SlyContentBundle::inc.syntaxhighlighter.css.html.twig' %}
 {% endblock stylesheets %}
 
-{% block rsidebar %}
-    {% include 'SlyContentBundle:Blog:rightSidebar.html.twig' with {'item': item} %}
-{% endblock rsidebar %}
+{% block rightSidebar %}
+    <div class="p_sidebar">
+        {% include 'SlyContentBundle:Blog:rightSidebarItem.html.twig' with {'item': item} %}
+    </div>
+{% endblock rightSidebar %}
 
 {% block content %}
     <div class="blog show">
@@ -53,8 +65,6 @@
                 {% endfor %}
             </p>
         {% endif %}
-        
-        {{ shareButtons(url('blog_show', {'slug': item.slug}), item, 'default') }}
         
         <div class="content_content">
             {%if item.picture %}

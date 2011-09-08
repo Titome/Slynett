@@ -1,9 +1,69 @@
-<div class="container" id="footer">
-    <ul class="menu">
-        <li><a href="{{ path('blog_admin') }}">{{ 'core.menu.blog' | trans }}</a></li>
-        <li><a href="{{ path('watch_admin') }}">{{ 'core.menu.watch' | trans }}</a></li>
-        <li><a href="{{ path('tutorial_admin') }}">{{ 'core.menu.tutorials' | trans }}</a></li>
-    </ul>
-
-    <p>&copy; 2011 <a href="{{ path('homepage') }}">{{ project.name }}</a></p>
-</div>
+<footer class="container_16">
+    <div class="top">
+        <div class="grid_4 colborder">
+            <h4>Lorem ipsum dolor sit amet</h4>
+            
+            {% include 'SlyCoreBundle:Block:mainMenu.html.twig' %}
+        </div>
+        
+        <div class="grid_4 colborder">
+            <h4>Lorem ipsum dolor sit amet</h4>
+            
+            <ul>
+                <li><a href="#" title="">Lorem</a></li>
+                <li><a href="#" title="">Ipsum</a></li>
+                <li><a href="#" title="">Dolor</a></li>
+                <li><a href="#" title="">Sit</a></li>
+                <li><a href="#" title="">Amet</a></li>
+                <li><a href="#" title="">Lorem</a></li>
+                <li><a href="#" title="">Ipsum</a></li>
+                <li><a href="#" title="">Dolor</a></li>
+            </ul>
+        </div>
+        
+        <div class="grid_4 colborder">
+            <h4>Lorem ipsum dolor sit amet</h4>
+            
+            <ul>
+                <li><a href="#" title="">Lorem</a></li>
+                <li><a href="#" title="">Ipsum</a></li>
+                <li><a href="#" title="">Dolor</a></li>
+                <li><a href="#" title="">Sit</a></li>
+                <li><a href="#" title="">Amet</a></li>
+                <li><a href="#" title="">Lorem</a></li>
+                <li><a href="#" title="">Ipsum</a></li>
+                <li><a href="#" title="">Dolor</a></li>
+            </ul>
+        </div>
+        
+        <div class="grid_4 right">
+            <ul class="social">
+                <li class="feed"><a href="#" title=""></a></li>
+                <li class="twitter"><a href="#" title=""></a></li>
+                <li class="facebook"><a href="#" title=""></a></li>
+                <li class="linkedin"><a href="#" title=""></a></li>
+                <li class="googleplus"><a href="#" title=""></a></li>
+                <li class="flickr"><a href="#" title=""></a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container_16 bottom">
+        <div class="grid_8 left">
+            <div class="grid_1 alpha">
+                MINILOGO
+            </div>
+            
+            <div class="grid_7 omega">
+                <a href="#">{{ project.name }}</a><br />
+                {{ project.simpleurl }} - {{ project.email }}
+            </div>
+        </div>
+        
+        <div class="grid_8 right">
+            &copy; 2011 {{ project.name }} - {{ 'core.footer.rights' | trans }}<br />
+            <a href="#">{{ 'core.menu.credits' | trans }}</a> -
+            <a href="#">{{ 'core.menu.terms' | trans }}</a>
+        </div>
+    </div>
+</footer>

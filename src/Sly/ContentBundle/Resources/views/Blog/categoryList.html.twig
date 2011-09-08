@@ -3,23 +3,43 @@
 {% block title %}{{ category }} | {{ 'seo.title' | trans({}, 'blog') }}{% endblock title %}
 {% block description %}{{ 'category.seo.description' | trans({'%category%': category}, 'blog') }}{% endblock description %}
 
-{% block rsidebar %}
+{% set topMain = true %}
+
+{% block topMainTitle %}
+    <a href="{{ path('blog') }}" title="{{ 'core.menu.blog' | trans }}">
+        {{ 'title' | trans({}, 'blog') }}
+    </a>
+{% endblock topMainTitle %}
+
+{% block topMainMenu %}
+    {% render 'SlyContentBundle:Component:categories' with {'type': 'blog', 'activeCategory': category} %}
+{% endblock topMainMenu %}
+
+{% block rightSidebar %}
     {% include 'SlyContentBundle:Blog:rightSidebar.html.twig' %}
-{% endblock rsidebar %}
+{% endblock rightSidebar %}
 
 {% block content %}
-    <h2>{{ 'category.title' | trans({'%category%': category}, 'blog') }}</h2>
+    <h3>{{ 'category.title' | trans({'%category%': category}, 'blog') }}</h3>
 
-    <div class="blog_list">
-        {% for item in contentPaginator %}
-            {% include 'SlyContentBundle:Blog:item.html.twig' with {'item': item } %}
+    <section class="blog list">
+        {% for key, item in contentPaginator %}
+            {% if key <= 0 %}
+                {% include 'SlyContentBundle:Blog:bigItem.html.twig' with {'item': item, 'itemKey': key } %}
+            {% else %}
+                {% include 'SlyContentBundle:Blog:item.html.twig' with {'item': item, 'itemKey': key } %}
+            {% endif %}
         {% else %}
             <p class="empty">{{ 'list.nocontent' | trans({}, 'blog') }}</p>
         {% endfor %}
-    </div>
+    </section>
+    
+    <div class="clearfix"></div>
     
     {% if contentPaginator | length %}
-        {{ pagerfanta(contentPaginator, 'default') }}
+        <div class="pager">
+            {{ pagerfanta(contentPaginator, 'default') }}
+        </div>
     {% endif %}
 {% endblock content %}
 

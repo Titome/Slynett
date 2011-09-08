@@ -1,36 +1,208 @@
-div.show p.informations {
-	padding-bottom: 20px;
-	border-bottom: 20px solid #eee;
+section.list {
+	overflow: hidden;
 }
 
-div.show div.content_content img.medium {
-    margin: 20px 0 40px 0;
+article.tpl1 {
+	overflow: hidden;
+	margin-bottom: 40px;
+	padding: 20px 0;
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #f5f5f5 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f5f5f5));
+	background: -webkit-linear-gradient(top, #ffffff 0%, #f5f5f5 100%);
+	background: -o-linear-gradient(top, #ffffff 0%, #f5f5f5 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%, #f5f5f5 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0 );
+	background: linear-gradient(top, #ffffff 0%, #f5f5f5 100%);
 }
 
-div.sharebuttons.default {
-	float: right;
-	margin: 0 0 40px 40px;
-	list-style: none;
-	padding: 0 0 0 40px;
-	border-left: 1px solid #eee;
+article.tpl1 h4 a {
+    font-size: 16px;
+    font-weight: bold;
+	color: #bf3604;
+	text-transform: uppercase;
 }
 
-div.sharebuttons.default ul {
-	margin: 0;
+article.tpl1 .left {
+	text-align: right;
+}
+
+article.tpl1 .left .content {
+    padding: 0 0 0 20px;
+}
+
+article.tpl1 .left .categories {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+article.tpl1 .left .categories a,
+article.tpl1 .left .categories a:visited {
+	color: #aaa;
+	text-transform: uppercase;
+}
+
+article.tpl1 .left .categories a:hover {
+	color: #888;
+}
+
+article.tpl1 .left h4 {
+	margin-bottom: 10px;
+}
+
+article.tpl1 .left img {
+	margin-bottom: 10px;
+}
+
+article.tpl1 .left .tags a,
+article.tpl1 .left .tags a:visited {
+	display: inline-block;
+	font-size: 9px;
+	text-transform: uppercase;
+	margin: 0 0 5px 5px;
+	padding: 2px 4px;
+	background-color: #fff;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	color: #aaa;
+}
+
+article.tpl1 .right .content {
+    padding: 0 20px 0 0;
+}
+
+article.tpl1 .right .informations {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+article.tpl1 .right .description {
+	color: #aaa;
+	font-family: Georgia, "Times New Roman", serif;
+	font-style: italic;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+article.tpl1 .right p.read {
+	text-align: right;
+	font-size: 12px;
+}
+
+article.tpl1 .right p.read a.comments,
+article.tpl1 .right p.read a.comments:visited {
+	margin-right: 20px;
+	color: #333;
+}
+
+article.tpl1 .right p.read a.read,
+article.tpl1 .right p.read a.read:visited {
+	display: inline-block;
+	padding: 10px 20px;
+	color: #fff;
+	background-color: #bf3604;
+	text-decoration: none;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	-ms-transition: 0.5s;
+	transition: 0.5s;
+}
+
+article.tpl1 .right p.read a.read:hover {
+    padding: 10px 40px;
+	background-color: #324452;
+}
+
+article.tpl2 {
+	overflow: hidden;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+article.tpl2 img {
+    float: left;
+    margin-right: 10px;
+    width: 40px;
+    height: auto;
+}
+
+article.tpl2 .details,
+article.tpl2 h4 {
+    margin-left: 50px;
+}
+
+article.tpl2 .details {
+	font-size: 11px;
+	line-height: 15px;
+}
+
+article.tpl2 .details,
+article.tpl2 .details a,
+article.tpl2 .details a:visited {
+    color: #aaa;
+}
+
+article.tpl2 .details a,
+article.tpl2 .details a:visited {
+    text-decoration: underline;
+}
+
+article.tpl2 .details a:hover {
+    text-decoration: none;
+}
+
+article.tpl2 h4 {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+ul.sharebuttons.default {
+	margin: 0 0 20px 0;
 	padding: 0;
-	list-style: none;
 }
 
-div.sharebuttons.default ul li {
+ul.sharebuttons.default li {
+	list-style: none;
 	margin: 0;
 	margin-bottom: 10px;
 	padding: 0;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #eee;	
 }
 
-div.sharebuttons.default ul li.last {
+ul.sharebuttons.default li.last {
 	padding-bottom: 0;
 	margin-bottom: 0;
 	border: none;
 }
+
+section.sidebar ul.items {
+	margin: 0 0 20px 0;
+}
+
+section.sidebar ul.items li {
+	list-style: none;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+section.sidebar ul.items li img {
+	float: left;
+	width: 40px;
+	height: 40px;
+}
+
+section.sidebar ul.items li span {
+	display: block;
+	margin-left: 50px;
+}
+

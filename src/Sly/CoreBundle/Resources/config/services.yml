@@ -1,7 +1,12 @@
 parameters:
   sly.core.class: Sly\CoreBundle\Core
+  sly.core.slyextension.class: Sly\CoreBundle\Extension\SlyExtension
 
 services:
   sly.core:
     class: %sly.core.class%
     arguments: [@service_container]
+  twig.extension.sly:
+      class: %sly.core.slyextension.class%
+      tags:
+          - { name: twig.extension }

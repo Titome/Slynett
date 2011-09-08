@@ -1,19 +1,21 @@
 {% extends "SlyCoreBundle:Layout:base.html.twig" %}
 
 {% block body %}
-    {% include 'SlyCoreBundle:Layout:header.html.twig' %}
-    
-    <div class="container" id="main">
-        <div class="row">
-            <div class="lsidebar span5">
-                {% block lsidebar %}{% endblock lsidebar %}
-            </div>        
+    <div id="wrap">
+        {% include 'SlyCoreBundle:Layout:header.html.twig' %}
         
-            <div class="content span11">
-                {% block content %}{% endblock content %}
+        <div class="container" id="main">
+            <div class="row">
+                <div class="lsidebar span5">
+                    {% block lsidebar %}{% endblock lsidebar %}
+                </div>        
+            
+                <div class="content span11">
+                    {% block content %}{% endblock content %}
+                </div>
             </div>
         </div>
+        
+        {% include 'SlyCoreBundle:Layout:footer.html.twig' %}
     </div>
-    
-    {% include 'SlyCoreBundle:Layout:footer.html.twig' %}
 {% endblock %}

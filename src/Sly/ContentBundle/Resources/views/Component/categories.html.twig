@@ -1,6 +1,6 @@
 {% spaceless %}
     <ul class="categories {{ mainRoute }}">
-        <li class="item all">
+        <li class="item all {% if activeCategory is empty and noActive is null %}active{% endif %}">
             <a href="{{ path(mainRoute) }}">
                 {{ 'categories.all' | trans }}
             </a>
@@ -8,11 +8,14 @@
         
         {% for cat in categories %}
             {% if (cat.content | length) %}
-                <li class="item">
-                    <a href="{{ path(catRoute, {'slug': cat.slug}) }}">
+                {% if activeCategory %}
+                    <li class="item {% if activeCategory.id == cat.id %}active{% endif %}">
+                {% else %}
+                    <li class="item">
+                {% endif %}
+                    <a href="{{ path(catRoute, {'slug': cat.slug}) }}" title="{{ cat }}">
                         {{ cat }}
                     </a>
-                    ({{ cat.content | length }})
                 </li>
             {% endif %}
         {% endfor %}

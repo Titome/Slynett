@@ -3,17 +3,34 @@
 {% block body %}
     {% include 'SlyCoreBundle:Layout:header.html.twig' %}
     
-    <div class="container" id="main">
-        <div class="row">
-            <div class="content span11">
+    <section class="container_16 main">
+        {% if topMain is defined %}
+            <div class="top">
+                <div class="grid_4">
+                    <h2>{% block topMainTitle %}{% endblock topMainTitle %}</h2>
+                    
+                    &nbsp;
+                </div>
+                
+                <div class="grid_12">
+                    <nav class="secondary">
+                        {% block topMainMenu %}{% endblock topMainMenu %}
+                    </nav>
+                </div>
+            </div>
+        {% endif %}
+        
+        <div class="grid_12">
+            <section class="content">
                 {% block content %}{% endblock content %}
-            </div>
-            
-            <div class="rsidebar span5">
-                {% block rsidebar %}{% endblock rsidebar %}
-            </div>
+            </section>
         </div>
-    </div>
-    
+        <div class="grid_4">
+            <section class="sidebar right">
+                {% block rightSidebar %}{% endblock rightSidebar %}
+            </section>
+        </div>
+    </section>
+                
     {% include 'SlyCoreBundle:Layout:footer.html.twig' %}
 {% endblock %}

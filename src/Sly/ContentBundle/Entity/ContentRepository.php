@@ -49,4 +49,34 @@ class ContentRepository extends EntityRepository
         
         return $q->getQuery();
     }
+    
+    public function getLastItems($contentType, $categories, $number = 5)
+    {
+        $q = $this->createQueryBuilder('c')
+            ->select('c, cat')
+            ->leftJoin('c.categories', 'cat')
+            ->where('c.status = true');
+            
+        if ($categories)
+        {
+            $categoriesArray = array();
+            
+            foreach ($categories as $c)
+                $categoriesArray[] = $c->getId();
+
+            $q->andWhere('cat.id IN (:contentCategories)')
+                ->setParameter('contentCategories', implode(',', $categoriesArray));
+        }
+            
+        if ($contentType)
+        {
+            $q->andWhere('c.type = :contentType')
+                ->setParameter('contentType', $contentType);
+        }
+            
+        $q->orderBy('c.publishedAt', 'DESC')
+            ->setMaxResults($number);
+        
+        return $q->getQuery()->getResult();
+    }
 }

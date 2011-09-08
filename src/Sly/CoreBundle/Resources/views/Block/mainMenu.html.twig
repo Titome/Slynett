@@ -1,0 +1,52 @@
+<ul>
+    <li class="homepage {{ app.request.attributes.get('_route') | checkActive(['homepage']) }}">
+        <a href="{{ path('homepage') }}" title="{{ 'core.menu.homepage' | trans }}">
+            {{ 'core.menu.homepage' | trans }}
+        </a>
+    </li>
+    <li class="blog {{ app.request.attributes.get('_route') | checkActive(['blog', 'blog_category', 'blog_show']) }}">
+        <a href="{{ path('blog') }}" title="{{ 'core.menu.blog' | trans }}">
+            {{ 'core.menu.blog' | trans }}
+        </a>
+        
+        <span>
+            {{ 'seo.description' | trans({}, 'blog') }}
+        </span>
+    </li>
+    <li class="tutorials {{ app.request.attributes.get('_route') | checkActive(['tutorials', 'tutorials_category', 'tutorials_show']) }}">
+        <a href="{{ path('tutorial') }}" title="{{ 'core.menu.tutorials' | trans }}">
+            {{ 'core.menu.tutorials' | trans }}
+        </a>
+        
+        <span>
+            {{ 'seo.description' | trans({}, 'tutorial') }}
+        </span>
+    </li>
+    <li class="watch {{ app.request.attributes.get('_route') | checkActive(['watch']) }}">
+        <a href="{{ path('watch') }}" title="{{ 'core.menu.watch' | trans }}">
+            {{ 'core.menu.watch' | trans }}
+        </a>
+        
+        <span>
+            {{ 'seo.description' | trans({}, 'watch') }}
+        </span>
+    </li>
+    <li class="snippets {{ app.request.attributes.get('_route') | checkActive(['snippets', 'snippets_category', 'snippets_show']) }}">
+        <a href="{{ path('snippet') }}" title="{{ 'core.menu.snippets' | trans }}">
+            {{ 'core.menu.snippets' | trans }}
+        </a>
+        
+        <span>
+            {{ 'seo.description' | trans({}, 'snippet') }}
+        </span>
+    </li>
+    <li class="resources {{ app.request.attributes.get('_route') | checkActive(['resources']) }}">
+        <a href="{{ path('resource') }}" title="{{ 'core.menu.resources' | trans }}">
+            {{ 'core.menu.resources' | trans }}
+        </a>
+        
+        <span>
+            {{ 'seo.description' | trans({}, 'resource') }}
+        </span>
+    </li>
+</ul>

@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ComponentController extends Controller
 {
-    public function categoriesAction($type)
-    {        
+    public function categoriesAction($type, $activeCategory = null, $noActive = null)
+    {
         $em = $this->getDoctrine()->getEntityManager();
 
         $categories = $em->getRepository('SlyContentBundle:Category')->getCategories($type);
@@ -16,6 +16,21 @@ class ComponentController extends Controller
             'categories' => $categories,
             'mainRoute' => $type,
             'catRoute' => sprintf('%s_category', $type),
+            'activeCategory' => $activeCategory,
+            'noActive' => $noActive,
+        ));
+    }
+    
+    public function lastItemsAction($type = null, $categories = null)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $items = $em->getRepository('SlyContentBundle:Content')->getLastItems($type, $categories, $this->container->getParameter('sly.content.blog.otheritems.number', 5));
+        
+        return $this->render('SlyContentBundle:Component:lastItems.html.twig', array(
+            'items' => $items,
+            'mainRoute' => $type,
+            'itemRoute' => sprintf('%s_show', $type),
         ));
     }
     

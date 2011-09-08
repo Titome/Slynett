@@ -1,17 +1,7 @@
 categories:
   all: Toutes
-  
-sidebar:
-  feed:
-    title: Suivre le fil
-    feed: Flux RSS
-  post:
-    share:
-      title: Partagez cet article
-  categories:
-    title: Catégories
+  noitem: Aucun contenu pour cette catégorie.
   
 social:
-  title: On partage ?
   tweet: Tweeter
   share: Partager

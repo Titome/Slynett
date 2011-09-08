@@ -6,13 +6,15 @@
         <meta name="Description" content="{% block description %}{{ 'core.homepage.seo.description' | trans }}{% endblock description %}" />
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
         {% stylesheets output='css/x.css' filter='cssrewrite'
-            'bundles/slycore/vendor/twitter-bootstrap/bootstrap-1.1.0.min.css'
+            'bundles/slycore/vendor/960gs/code/css/min/reset.css'
+            'bundles/slycore/vendor/960gs/code/css/min/960_16_col.css'
             'bundles/slycore/css/*'
             'bundles/slycontent/css/content.css' %}
-            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" type="text/css" media="screen" />
             <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
         {% endstylesheets %}
-        {% block stylesheets %}{% endblock stylesheets %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" type="text/css" media="screen" />
+        {% endblock stylesheets %}
     </head>
     <body>
         {% block header %}{% endblock header %}
@@ -21,7 +23,9 @@
         
         {% javascripts output='js/x.js'
             'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'
-            'bundles/slycore/js/*' %}
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'
+            'bundles/slycore/js/*'
+            'bundles/slycontent/js/content.js' %}
     
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}            

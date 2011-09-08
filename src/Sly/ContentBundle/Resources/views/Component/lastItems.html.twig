@@ -1,0 +1,23 @@
+{% spaceless %}
+    <ul class="items last">
+        {% for item in items %}
+            <li class="item">
+                {%if item.picture %}
+                    <a href="{{ path(itemRoute, {'slug': item.slug }) }}" title="{{ item }}">
+                        <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('thumbnail') }}" alt="{{ item }}" class="thumbnail" />
+                    </a>
+                {% endif %}
+                
+                <span>
+                    <a href="{{ path(itemRoute, {'slug': item.slug}) }}" title="{{ item }}">
+                        {{ item }}
+                    </a>
+                </span>
+            </li>
+        {% else %}
+            <li class="empty">
+                {{ 'categories.noitem' | trans }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endspaceless %}

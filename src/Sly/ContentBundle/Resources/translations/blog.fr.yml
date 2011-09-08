@@ -2,7 +2,7 @@ seo:
   title: Blog
   description: Actualité et découvertes autour du développement Web au quotidien.
   
-title: Blog
+title: Blog WebDev
   
 list:
   nocontent: Aucun article.
@@ -16,3 +16,16 @@ category:
     description: Toute l'actualité et les découvertes %category% au quotidien.
   
   title: Articles de la catégorie "%category%"
+
+sidebar:
+  follow:
+    msg1: Suivez l'actualité du Blog depuis vos réseaux sociaux préférés.
+  about:
+    title: A propos
+    msg1: Découvertes, actualités, astuces et conseils en matière de développement Web et e-communication.
+    msg2: Professionnel et acteur du Web depuis quelques années déjà, je vous propose mes trouvailles et articles au quotidien.
+  item:
+    share:
+      title: Partager cet article
+    others:
+      title: Mais aussi...

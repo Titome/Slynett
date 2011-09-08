@@ -1,12 +1,24 @@
-<div class="container" id="header">
-    <h1>{{ project.name }}</h1>
-
-    <ul class="menu">
-        <li><a href="{{ path('homepage') }}">{{ 'core.menu.homepage' | trans }}</a></li>
-        <li><a href="{{ path('blog') }}">{{ 'core.menu.blog' | trans }}</a></li>
-        <li><a href="{{ path('tutorial') }}">{{ 'core.menu.tutorials' | trans }}</a></li>
-        <li><a href="{{ path('watch') }}">{{ 'core.menu.watch' | trans }}</a></li>
-        <li><a href="{{ path('snippet') }}">{{ 'core.menu.snippets' | trans }}</a></li>
-        <li><a href="{{ path('resource') }}">{{ 'core.menu.resources' | trans }}</a></li>
-    </ul>
-</div>
+<header class="container_16">
+    <div class="grid_16 top">
+        <div class="grid_2 alpha left">
+            LOGO
+        </div>
+        
+        <div class="grid_14 omega right">
+            <span>
+                {{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }}
+                <a href="{{ networks.twitter.url }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Twitter" onclick="var w = window.open(this.href); w.focus(); return false;">Twitter</a>,
+                <a href="{{ networks.facebook.url }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Facebook" onclick="var w = window.open(this.href); w.focus(); return false;">Facebook</a>,
+                <a href="{{ networks.linkedin }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} LinkedIn" onclick="var w = window.open(this.href); w.focus(); return false;">LinkedIn</a>,
+                {{ 'core.header.follow.msg2' | trans }}
+                <a href="{{ networks.googleplus }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Google+" onclick="var w = window.open(this.href); w.focus(); return false;">Google+</a>
+            </span>
+            
+            <nav class="primary">
+                {% include 'SlyCoreBundle:Block:mainMenu.html.twig' %}
+            </nav>
+        </div>
+    </div>
+    
+    <div class="bottom"></div>
+</header>

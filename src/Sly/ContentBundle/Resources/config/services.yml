@@ -2,7 +2,8 @@ parameters:
   sly.content.disqus:
     username: %disqus_username%
   
-  sly.content.blog.maxperpage: 10
+  sly.content.blog.maxperpage: 20
+  sly.content.blog.otheritems.number: 5
   sly.content.watch.maxperpage: 30
   sly.content.watch.feedtitleskel: '__TITLE__ __MINILINK__ #veille __HASHTAGS__'
   sly.content.tutorial.maxperpage: 10
