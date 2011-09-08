@@ -27,7 +27,7 @@
             {% if key <= 0 %}
                 {% include 'SlyContentBundle:Blog:bigItem.html.twig' with {'item': item, 'itemKey': key } %}
             {% else %}
-                {% include 'SlyContentBundle:Blog:item.html.twig' with {'item': item, 'itemKey': key } %}
+                {% include 'SlyContentBundle:Blog:smallItem.html.twig' with {'item': item, 'itemKey': key } %}
             {% endif %}
         {% else %}
             <p class="empty">{{ 'list.nocontent' | trans({}, 'blog') }}</p>

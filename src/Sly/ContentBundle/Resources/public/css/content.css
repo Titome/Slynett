@@ -1,3 +1,16 @@
+.tags a,
+.tags a:visited {
+	display: inline-block;
+	font-size: 9px;
+	text-transform: uppercase;
+	margin: 0 0 5px 5px;
+	padding: 2px 4px;
+	background-color: #fff;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	color: #aaa;
+}
+
 section.list {
 	overflow: hidden;
 }
@@ -57,15 +70,7 @@ article.tpl1 .left img {
 
 article.tpl1 .left .tags a,
 article.tpl1 .left .tags a:visited {
-	display: inline-block;
-	font-size: 9px;
-	text-transform: uppercase;
 	margin: 0 0 5px 5px;
-	padding: 2px 4px;
-	background-color: #fff;
-	border-right: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
-	color: #aaa;
 }
 
 article.tpl1 .right .content {
@@ -166,6 +171,39 @@ article.tpl2 h4 {
     text-transform: uppercase;
 }
 
+article.tpl3 .header {
+	overflow: hidden;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #eee;
+}
+
+article.tpl3 h2 {
+	margin-bottom: 20px;
+}
+
+article.tpl3 .left p {
+	margin-bottom: 10px;
+}
+
+article.tpl3 .left .tags a,
+article.tpl3 .left .tags a:visited {
+	margin: 0 5px 5px 0;
+	background-color: #f5f5f5;
+	border-color: #eee;
+}
+
+article.tpl3 .right img {
+	width: 100%;
+	height: auto;
+}
+
+article.tpl3 .item_content {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #eee;
+}
+
 ul.sharebuttons.default {
 	margin: 0 0 20px 0;
 	padding: 0;
@@ -206,3 +244,6 @@ section.sidebar ul.items li span {
 	margin-left: 50px;
 }
 
+.disqus_comments h3 {
+	margin-bottom: 20px;
+}
