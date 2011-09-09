@@ -11,10 +11,10 @@
             <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
         </p>
         
-        <p class="categories">
+        <p class="categories colored">
             {% if item.categories | length %}
                 {% for k, cat in item.categories %}
-                    <a href="{{ path('snippet_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
+                    <a href="{{ path('snippet_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>
                 {% endfor %}
             {% else %}
                 {{ 'list.nocategory' | trans({}, 'snippet') }}

@@ -2,10 +2,10 @@
     <article class="tpl1">
         <div class="grid_4 alpha left">
             <div class="content">
-                <p class="categories">
+                <p class="categories colored">
                     {% if item.categories | length %}
                         {% for k, cat in item.categories %}
-                            <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
+                            <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>
                         {% endfor %}
                     {% else %}
                         {{ 'list.nocategory' | trans({}, 'blog') }}

@@ -120,20 +120,9 @@ article.tpl1 .left .content {
     padding: 0 0 0 20px;
 }
 
-article.tpl1 .left .categories {
-	padding-bottom: 10px;
-	margin-bottom: 10px;
-	border-bottom: 1px solid #eee;
-}
-
-article.tpl1 .left .categories a,
-article.tpl1 .left .categories a:visited {
-	color: #aaa;
-	text-transform: uppercase;
-}
-
-article.tpl1 .left .categories a:hover {
-	color: #888;
+article.tpl1 .left .categories a {
+	padding: 5px 10px;
+	font-size: 12px;
 }
 
 article.tpl1 .left h4 {
@@ -263,6 +252,12 @@ article.tpl3 .tags a:visited {
 	border-color: #eee;
 }
 
+article.tpl3 .categories.colored a {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin: 0 5px 0 0;
+}
+
 article.tpl3 img {
 	float: right;
 	margin: 40px 0 20px 20px;
@@ -367,6 +362,8 @@ aside.tpl1 {
     display: inline-block;
     width: 268px;
     margin: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
 }
 
 aside.tpl1 h3 {
