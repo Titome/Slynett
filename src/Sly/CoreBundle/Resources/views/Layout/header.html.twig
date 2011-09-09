@@ -1,20 +1,20 @@
 <header class="container_16">
     <div class="grid_16 top">
-        <div class="grid_2 alpha left">
+        <div class="grid_4 alpha left">
             <a href="{{ path('homepage') }}" title="{{ project.name }}">
                 <img src="{{ asset('bundles/slycore/images/slynett-logo.png') }}" alt="{{ project.name }}" />
             </a>
         </div>
         
-        <div class="grid_14 omega right">
-            <span>
+        <div class="grid_12 omega right">
+            <aside>
                 {{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }}
                 <a href="{{ networks.twitter.url }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Twitter" onclick="var w = window.open(this.href); w.focus(); return false;">Twitter</a>,
                 <a href="{{ networks.facebook.url }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Facebook" onclick="var w = window.open(this.href); w.focus(); return false;">Facebook</a>,
                 <a href="{{ networks.linkedin }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} LinkedIn" onclick="var w = window.open(this.href); w.focus(); return false;">LinkedIn</a>,
                 {{ 'core.header.follow.msg2' | trans }}
                 <a href="{{ networks.googleplus }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Google+" onclick="var w = window.open(this.href); w.focus(); return false;">Google+</a>
-            </span>
+            </aside>
             
             <nav class="primary">
                 {% include 'SlyCoreBundle:Block:mainMenu.html.twig' %}

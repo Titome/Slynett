@@ -1,30 +1,34 @@
-{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
+{% extends "SlyCoreBundle:Layout:layout.html.twig" %}
 
 {% block title %}{{ category }} | {{ 'seo.title' | trans({}, 'snippet') }}{% endblock title %}
 {% block description %}{{ 'category.seo.description' | trans({'%category%': category}, 'snippet') }}{% endblock description %}
 
-{% block rsidebar %}
-    {% include 'SlyContentBundle:Snippet:rightSidebar.html.twig' %}
-{% endblock rsidebar %}
+{% set topMain = true %}
+
+{% block topMainTitle %}
+    <a href="{{ path('snippet') }}" title="{{ 'core.menu.snippet' | trans }}">
+        {{ 'title' | trans({}, 'snippet') }}
+    </a>
+{% endblock topMainTitle %}
+
+{% block topMainMenu %}
+    {% render 'SlyContentBundle:Component:categories' with {'type': 'snippet', 'activeCategory': category} %}
+{% endblock topMainMenu %}
 
 {% block content %}
-    <h2>{{ 'category.title' | trans({'%category%': category}, 'snippet') }}</h2>
+    <h3>{{ 'category.title' | trans({'%category%': category}, 'snippet') }}</h3>
 
-    <ul class="snippet_list">
+    <section class="snippet list">
         {% for item in contentPaginator %}
-            {% include 'SlyContentBundle:Snippet:item.html.twig' with {'item': item } %}
+            {% include 'SlyContentBundle:Snippet:mediumItem.html.twig' with {'item': item } %}
         {% else %}
-            <li class="empty">{{ 'list.nocontent' | trans({}, 'snippet') }}</li>
+            <p class="empty">{{ 'list.nocontent' | trans({}, 'snippet') }}</p>
         {% endfor %}
-    </ul>
+    </section>
     
     {% if contentPaginator | length %}
-        {{ pagerfanta(contentPaginator, 'default') }}
+        <div class="pager">
+            {{ pagerfanta(contentPaginator, 'default') }}
+        </div>
     {% endif %}
 {% endblock content %}
-
-{% block javascripts %}
-    {{ parent() }}
-    
-    {% render 'SlyContentBundle:Component:disqusCountJS' %}
-{% endblock javascripts %}

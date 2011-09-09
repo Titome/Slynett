@@ -1,0 +1,29 @@
+{% spaceless %}
+    <aside class="tpl1">
+        {% if item.categories | length %}
+            <ul class="categories colored">
+                {% for k, cat in item.categories %}
+                    <li>
+                        <a href="{{ path('watch_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}" title="{{ cat }}">{{ cat }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        
+        <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
+        
+        <h3>
+            <a href="{{ path('snippet_show', {'slug': item.slug }) }}" title="{{ item }}">
+                {{ item }}
+            </a>
+        </h3>
+        
+        {% if item.tags | length %}
+            <p class="tags">
+                {% for tag in item.tagsCollection %}
+                    <a href="#" class="tag">{{ tag }}</a>
+                {% endfor %}
+            </p>
+        {% endif %}
+    </aside>
+{% endspaceless %}

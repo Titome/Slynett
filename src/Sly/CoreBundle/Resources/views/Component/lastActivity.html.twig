@@ -1,0 +1,29 @@
+{% spaceless %}
+<ul class="activity">
+    {% for item in items %}
+        <li class="item {{ item.type }}">
+            {% if item.type == 'blog' %}
+                <span class="icon blog"></span>
+                <a href="{{ path('blog_show', {'slug': item.slug}) }}" title="{{ item }}">{{ item }}</a>
+                <a href="{{ path('blog') }}" class="type">{{ 'core.activity.type.blog' | trans }}</a>
+            {% elseif item.type == 'watch' %}
+                <span class="icon watch"></span>
+                <a href="{{ item.minilink }}" title="{{ item }}" onclick="var w=window.open(this.href); w.focus(); return false;">{{ item }}</a>
+                <a href="{{ path('watch') }}" class="type">{{ 'core.activity.type.watch' | trans }}</a>
+            {% elseif item.type == 'tutorial' %}
+                <span class="icon tutorial"></span>
+                <a href="{{ path('tutorial_show', {'slug': item.slug}) }}" title="{{ item }}">{{ item }}</a>
+                <a href="{{ path('tutorial') }}" class="type">{{ 'core.activity.type.tutorial' | trans }}</a>
+            {% elseif item.type == 'snippet' %}
+                <span class="icon snippet"></span>
+                <a href="{{ path('snippet_show', {'slug': item.slug}) }}" title="{{ item }}">{{ item }}</a>
+                <a href="{{ path('snippet') }}" class="type">{{ 'core.activity.type.snippet' | trans }}</a>
+            {% elseif item.type == 'twitter' %}
+                <span class="icon twitter"></span>
+                <a href="{{ networks.twitter.url }}/status/{{ item.socialNetworkId }}" title="{{ item }}" onclick="var w=window.open(this.href); w.focus(); return false;">{{ item }}</a>
+                <a href="{{ networks.twitter.url }}" class="type">{{ 'core.activity.type.twitter' | trans }}</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+{% endspaceless %}

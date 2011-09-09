@@ -11,47 +11,28 @@
     {% endspaceless %}
 {% endblock description %}
 
-{% block rsidebar %}
-    {% include 'SlyContentBundle:Snippet:rightSidebar.html.twig' %}
-{% endblock rsidebar %}
+{% set topMain = true %}
+
+{% block topMainTitle %}
+    <a href="{{ path('snippet') }}" title="{{ 'core.menu.snippet' | trans }}">
+        {{ 'title' | trans({}, 'snippet') }}
+    </a>
+{% endblock topMainTitle %}
+
+{% block topMainMenu %}
+    {% render 'SlyContentBundle:Component:categories' with {'type': 'snippet', 'noActive': true} %}
+{% endblock topMainMenu %}
+
+{% block rightSidebar %}
+    <div class="p_sidebar">
+        {% include 'SlyContentBundle:Snippet:rightSidebarItem.html.twig' with {'item': item} %}
+    </div>
+{% endblock rightSidebar %}
 
 {% block content %}
-    <h2>{{ item }}</h2>
+    {% include 'SlyContentBundle:Snippet:item.html.twig' with {'item': item } %}
     
-    <p>
-        {% if item.categories | length %}
-            {{ 'list.categories' | transchoice(item.categories | length, {}, 'snippet') }}
-        {% else %}
-            {{ 'list.nocategory' | trans({}, 'snippet') }}
-        {% endif %}
-
-        {% for k, cat in item.categories %}
-            <a href="{{ path('snippet_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
-        {% endfor %}
-
-        -
-
-        {{ 'list.publishedat' | trans({}, 'snippet') }}
-        <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
-        
-        -
-        
-        <a href="https://gist.github.com/{{ item.gistId }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="btn small">
-            {{ 'list.read' | trans({}, 'snippet') }}
-        </a>
-    </p>
-    
-    {% if item.excerpt %}
-        <p>
-            {{ item.excerpt }}
-        </p>
-    {% endif %}
-    
-    {% if item.gistId %}
-        <script src="https://gist.github.com/{{ item.gistId }}.js"></script>
-    {% endif %}
-    
-    <div id="disqus_thread"></div>
+    <div id="disqus_thread" class="disqus"></div>
 {% endblock content %}
 
 {% block javascripts %}

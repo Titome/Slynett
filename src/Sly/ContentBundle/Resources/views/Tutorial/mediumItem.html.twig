@@ -1,25 +1,31 @@
 {% spaceless %}
-    <article class="tpl4">
-        {% for cat in item.categories %}
-            <img src="{{ asset('bundles/slycontent/images/categories/%slug%.png' | replace({'%slug%': cat.slug})) }}" alt="{{ cat }}" class="category_icon" />
-        {% endfor %}
+    <figure class="tpl4">
+        {% if item.categories | length %}
+            <ul class="categories colored">
+                {% for k, cat in item.categories %}
+                    <li>
+                        <a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}" title="{{ cat }}">{{ cat }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
         
         {% if item.link %}
-            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}">
+            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
                 <img src="{{ item.dailyMotionPictureUrl }}" class="tutorial" alt="{{ item }}" />
             </a>
         {% else %}
             {%if item.picture %}
-                <a href="{{ path('tutorial_show', {'slug': item.slug }) }}">
+                <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
                     <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('tutorial') }}" alt="{{ item }}" class="tutorial" />
                 </a>
             {% endif %}
         {% endif %}
         
         <h3>
-            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}">
+            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
                 {{ item }}
             </a>
         </h3>
-    </article>
+    </figure>
 {% endspaceless %}

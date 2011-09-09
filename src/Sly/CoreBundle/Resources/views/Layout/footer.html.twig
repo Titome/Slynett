@@ -1,12 +1,12 @@
 <footer class="container_16">
     <div class="top">
-        <div class="grid_4 colborder">
+        <aside class="grid_4 colborder">
             <h4>Lorem ipsum dolor sit amet</h4>
             
             {% include 'SlyCoreBundle:Block:mainMenu.html.twig' %}
-        </div>
+        </aside>
         
-        <div class="grid_4 colborder">
+        <aside class="grid_4 colborder">
             <h4>Lorem ipsum dolor sit amet</h4>
             
             <ul>
@@ -19,9 +19,9 @@
                 <li><a href="#" title="">Ipsum</a></li>
                 <li><a href="#" title="">Dolor</a></li>
             </ul>
-        </div>
+        </aside>
         
-        <div class="grid_4 colborder">
+        <aside class="grid_4 colborder">
             <h4>Lorem ipsum dolor sit amet</h4>
             
             <ul>
@@ -34,9 +34,9 @@
                 <li><a href="#" title="">Ipsum</a></li>
                 <li><a href="#" title="">Dolor</a></li>
             </ul>
-        </div>
+        </aside>
         
-        <div class="grid_4 right">
+        <aside class="grid_4 right">
             <ul class="social">
                 <li class="feed"><a href="#" title=""></a></li>
                 <li class="twitter"><a href="#" title=""></a></li>
@@ -45,11 +45,11 @@
                 <li class="googleplus"><a href="#" title=""></a></li>
                 <li class="flickr"><a href="#" title=""></a></li>
             </ul>
-        </div>
+        </aside>
     </div>
     
     <div class="container_16 bottom">
-        <div class="grid_8 left">
+        <aside class="grid_8 left">
             <div class="grid_1 alpha">
                 <a href="{{ path('homepage') }}" title="{{ project.name }}">
                     <img src="{{ asset('bundles/slycore/images/slynett-logo-mini.png') }}" alt="{{ project.name }}" />
@@ -60,12 +60,12 @@
                 <a href="#">{{ project.name }}</a><br />
                 {{ project.simpleurl }} - {{ project.email }}
             </div>
-        </div>
+        </aside>
         
-        <div class="grid_8 right">
+        <aside class="grid_8 right">
             &copy; 2011 {{ project.name }} - {{ 'core.footer.rights' | trans }}<br />
             <a href="#">{{ 'core.menu.credits' | trans }}</a> -
             <a href="#">{{ 'core.menu.terms' | trans }}</a>
-        </div>
+        </aside>
     </div>
 </footer>

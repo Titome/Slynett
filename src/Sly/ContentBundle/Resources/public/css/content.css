@@ -1,3 +1,34 @@
+div.gist {
+	margin: 20px 0;
+}
+
+div.gist .gist-file {
+	border: none;
+}
+
+div.gist .gist-file pre,
+div.gist .gist-file pre * {
+	border: none;
+	font-weight: normal !important;
+	font-family: Helvetica, Arial, sans-serif !important;
+}
+
+div.gist .gist-meta {
+	display: none;
+}
+
+div.gist .gist-file .gist-data {
+	border: none;
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #f5f5f5 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f5f5f5));
+	background: -webkit-linear-gradient(top, #ffffff 0%, #f5f5f5 100%);
+	background: -o-linear-gradient(top, #ffffff 0%, #f5f5f5 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%, #f5f5f5 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0 );
+	background: linear-gradient(top, #ffffff 0%, #f5f5f5 100%);
+}
+
 .tags a,
 .tags a:visited {
 	display: inline-block;
@@ -9,6 +40,51 @@
 	border-right: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
 	color: #aaa;
+}
+
+.categories.colored a,
+.categories.colored a:visited {
+	display: inline-block;
+	font-size: 9px;
+	text-transform: uppercase;
+	margin: 0 0 5px 5px;
+	padding: 1px 2px;
+}
+
+.categories.colored a.php5,
+.categories.colored a.php5:visited {
+	background-color: #6785b7;
+	color: #fff;
+}
+
+.categories.colored a.jquery,
+.categories.colored a.jquery:visited {
+	background-color: #4082ae;
+	color: #fff;
+}
+
+.categories.colored a.seo,
+.categories.colored a.seo:visited {
+	background-color: #888;
+	color: #fff;
+}
+
+.categories.colored a.symfony2,
+.categories.colored a.symfony2:visited {
+	background-color: #333;
+	color: #fff;
+}
+
+.categories.colored a.symfony-1-4,
+.categories.colored a.symfony-1-4:visited {
+	background-color: #683b00;
+	color: #fff;
+}
+
+.categories.colored a.css,
+.categories.colored a.css:visited {
+	background-color: #fbba00;
+	color: #fff;
 }
 
 section.list {
@@ -220,7 +296,7 @@ article.tpl3 .iframe iframe {
     box-shadow: 0 0 10px #aaa;
 }
 
-article.tpl4 {
+figure.tpl4 {
     position: relative;
     display: inline-block;
     width: 268px;
@@ -228,7 +304,7 @@ article.tpl4 {
     border: 1px solid #eee;
 }
 
-article.tpl4:hover {
+figure.tpl4:hover {
     -moz-box-shadow: 0 0 10px #aaa;
     -webkit-box-shadow: 0 0 10px #aaa;
     box-shadow: 0 0 10px #aaa;
@@ -239,26 +315,20 @@ article.tpl4:hover {
     transition: 0.3s;
 }
 
-article.tpl4 img.tutorial {
+figure.tpl4 img.tutorial {
     padding: 10px;
     width: 250px;
     height: auto;
 }
 
-article.tpl4 img.category_icon {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    -moz-box-shadow: 0 0 5px #fff;
-    -webkit-box-shadow: 0 0 5px #fff;
-    box-shadow: 0 0 5px #fff;
+figure.tpl4 a.category {
     opacity: 0.5;
     -moz-opacity: 0.5;
     -ms-filter: "alpha(opacity=50)";
     filter: alpha(opacity=50);
 }
 
-article.tpl4:hover img.category_icon {
+figure.tpl4:hover a.category {
     opacity: 1;
     -moz-opacity: 1;
     -ms-filter: "alpha(opacity=100)";
@@ -270,12 +340,75 @@ article.tpl4:hover img.category_icon {
     transition: 0.3s;
 }
 
-article.tpl4 h3 {
+figure.tpl4 h3 {
     margin: 0;
     padding: 10px;
     font-size: 18px;
     line-height: 18px;
     border: none;
+}
+
+figure.tpl4 ul.categories {
+	position :absolute;
+	margin: 0;
+	padding: 0;
+	top: 20px;
+	right: 20px;
+	text-align: right;
+}
+
+figure.tpl4 ul.categories li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+aside.tpl1 {
+    display: inline-block;
+    width: 268px;
+    margin: 20px;
+}
+
+aside.tpl1 h3 {
+	font-size: 16px;
+	padding-bottom: 0;
+	margin-bottom: 5px;
+	border-bottom: none;
+}
+
+aside.tpl1 h3,
+aside.tpl1 h3 a,
+aside.tpl1 h3 a:visited {
+	color: #333;
+}
+
+aside.tpl1 abbr {
+	font-size: 11px;
+	color: #aaa;
+}
+
+aside.tpl1 .tags a {
+	margin-left: 0;
+	margin-right: 5px;
+}
+
+aside.tpl1 .minilink a,
+aside.tpl1 .minilink a:visited {
+	font-size: 11px;
+	color: #aaa;
+}
+
+aside.tpl1 ul.categories {
+	float: right;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+}
+
+aside.tpl1 ul.categories li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 ul.sharebuttons.default {

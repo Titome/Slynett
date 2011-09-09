@@ -7,3 +7,5 @@ title: Veille Développement Web
 category:
   seo:
     description: Retrouvez toute ma veille concernant %category%.
+    
+  title: Veille sur la catégorie "%category%"

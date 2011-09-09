@@ -1,6 +1,8 @@
 parameters:
   sly.core.class: Sly\CoreBundle\Core
   sly.core.slyextension.class: Sly\CoreBundle\Extension\SlyExtension
+  
+  sly.core.lastcontent.number: 30
 
 services:
   sly.core:

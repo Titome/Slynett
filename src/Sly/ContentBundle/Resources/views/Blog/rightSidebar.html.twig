@@ -1,40 +1,48 @@
-<p>
-    {{ 'sidebar.follow.msg1' | trans({}, 'blog') }}
-</p>
+<aside>
+    <p>
+        {{ 'sidebar.follow.msg1' | trans({}, 'blog') }}
+    </p>
 
-{% include 'SlyCoreBundle:Block:socialNetworks.html.twig' %}
+    {% include 'SlyCoreBundle:Block:socialNetworks.html.twig' %}
+</aside>
 
-<h3>{{ 'sidebar.about.title' | trans({}, 'blog') }}</h3>
+<aside>
+    <h3>{{ 'sidebar.about.title' | trans({}, 'blog') }}</h3>
+    
+    <p>
+        {{ 'sidebar.about.msg1' | trans({}, 'blog') }}
+    </p>
+    
+    <blockquote>
+        {{ 'sidebar.about.msg2' | trans({}, 'blog') }}
+    </blockquote>
+</aside>
 
-<p>
-    {{ 'sidebar.about.msg1' | trans({}, 'blog') }}
-</p>
+<aside>
+    <p class="amc c1206001">
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-8858711354167822";
+    
+        google_ad_slot = "8522590177";
+        google_ad_width = 160;
+        google_ad_height = 600;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </p>
+</aside>
 
-<blockquote>
-    {{ 'sidebar.about.msg2' | trans({}, 'blog') }}
-</blockquote>
-
-<p class="amc c1206001">
-    <script type="text/javascript"><!--
-    google_ad_client = "ca-pub-8858711354167822";
-
-    google_ad_slot = "8522590177";
-    google_ad_width = 160;
-    google_ad_height = 600;
-    //-->
-    </script>
-    <script type="text/javascript"
-    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-    </script>
-</p>
-
-<h3>A bookmarker d'urgence !</h3>
-
-<ul class="list">
-    <li><a href="#" title="Symfony">Symfony</a></li>
-    <li><a href="#" title="Symfony2Bundles">Symfony2Bundles</a></li>
-    <li><a href="#" title="">Lien</a></li>
-    <li><a href="#" title="">Lien</a></li>
-    <li><a href="#" title="">Lien</a></li>
-    <li><a href="#" title="">Lien</a></li>
-</ul>
+<aside>
+    <h3>A bookmarker d'urgence !</h3>
+    
+    <ul class="list">
+        <li><a href="#" title="Symfony">Symfony</a></li>
+        <li><a href="#" title="Symfony2Bundles">Symfony2Bundles</a></li>
+        <li><a href="#" title="">Lien</a></li>
+        <li><a href="#" title="">Lien</a></li>
+        <li><a href="#" title="">Lien</a></li>
+        <li><a href="#" title="">Lien</a></li>
+    </ul>
+</aside>

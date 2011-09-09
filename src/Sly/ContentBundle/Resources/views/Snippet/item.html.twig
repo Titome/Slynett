@@ -1,13 +1,42 @@
-{% spaceless %}
-    <li class="item">
-        {% for k, cat in item.categories %}
-            <a href="{{ path('watch_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
-        {% endfor %}
-        
-        <br />
+<article class="tpl3">
+    {%if item.picture %}
+        <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium') }}" alt="{{ item }}" class="medium" />
+    {% endif %}
     
-        <a href="{{ path('snippet_show', {'slug': item.slug}) }}">
-            {{ item }}
-        </a>
-    </li>
-{% endspaceless %}
+    <div class="header">
+        <h3>{{ item.title }}</h3>
+        
+        <p class="informations">       
+            {{ 'list.publishedat' | trans({}, 'snippet') }}
+            <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
+        </p>
+        
+        <p class="categories">
+            {% if item.categories | length %}
+                {% for k, cat in item.categories %}
+                    <a href="{{ path('snippet_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
+                {% endfor %}
+            {% else %}
+                {{ 'list.nocategory' | trans({}, 'snippet') }}
+            {% endif %}
+        </p>
+        
+        {% if item.tags | length %}
+            <p class="tags">
+                {% for tag in item.tagsCollection %}
+                    <a href="#">{{ tag }}</a>
+                {% endfor %}
+            </p>
+        {% endif %}
+    </div>
+
+    <div class="item_content">    
+        {% if item.excerpt %}
+            {{ item.excerpt }}
+        {% endif %}
+        
+        {% if item.gistId %}
+            <script src="https://gist.github.com/{{ item.gistId }}.js"></script>
+        {% endif %}
+    </div>
+</article>

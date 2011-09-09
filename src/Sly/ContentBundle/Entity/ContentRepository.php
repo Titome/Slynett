@@ -79,4 +79,18 @@ class ContentRepository extends EntityRepository
         
         return $q->getQuery()->getResult();
     }
+
+    public function getLastActivity($number, $start = 0)
+    {        
+        $q = $this->createQueryBuilder('c')
+            ->select('c, cat')
+            ->leftJoin('c.categories', 'cat')
+            ->where('c.status = true')
+            ->setFirstResult($start)
+            ->setMaxResults($number);
+            
+        $q->orderBy('c.publishedAt', 'DESC');
+        
+        return $q->getQuery()->getResult();
+    }
 }

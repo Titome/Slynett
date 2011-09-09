@@ -1,7 +1,17 @@
 {% extends "SlyCoreBundle:Layout:layout.html.twig" %}
 
 {% block content %}
-    <h2>{{ 'core.homepage.title' | trans }}</h2>
-    
     <p>{{ 'core.homepage.introduction' | trans }}</p>
+    
+    <div class="grid_8 alpha">
+        &nbsp;
+    </div>
+    
+    <div class="grid_8 omega">
+        <aside>
+            <h3>{{ 'core.activity.title' | trans }}</h3>
+        
+            {% render 'SlyCoreBundle:Component:lastActivity' %}
+        </aside>
+    </div>
 {% endblock content %}

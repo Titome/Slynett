@@ -22,7 +22,7 @@
             {{ 'seo.description' | trans({}, 'tutorial') }}
         </span>
     </li>
-    <li class="watch {{ app.request.attributes.get('_route') | checkActive(['watch']) }}">
+    <li class="watch {{ app.request.attributes.get('_route') | checkActive(['watch', 'watch_category']) }}">
         <a href="{{ path('watch') }}" title="{{ 'core.menu.watch' | trans }}">
             {{ 'core.menu.watch' | trans }}
         </a>

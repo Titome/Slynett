@@ -3,18 +3,30 @@
 {% block title %}{{ 'seo.title' | trans({}, 'watch') }}{% endblock title %}
 {% block description %}{{ 'seo.description' | trans({}, 'watch') }}{% endblock description %}
 
-{% block content %}
-    <h2>{{ 'title' | trans({}, 'watch') }}</h2>
+{% set topMain = true %}
 
-    <ul class="watch_list">
+{% block topMainTitle %}
+    <a href="{{ path('watch') }}" title="{{ 'core.menu.watch' | trans }}">
+        {{ 'title' | trans({}, 'watch') }}
+    </a>
+{% endblock topMainTitle %}
+
+{% block topMainMenu %}
+    {% render 'SlyContentBundle:Component:categories' with {'type': 'watch'} %}
+{% endblock topMainMenu %}
+
+{% block content %}
+    <section class="watch list">
         {% for item in contentPaginator %}
-            {% include 'SlyContentBundle:Watch:item.html.twig' with {'item': item } %}
+            {% include 'SlyContentBundle:Watch:mediumItem.html.twig' with {'item': item } %}
         {% else %}
-            <li class="empty">{{ 'list.nocontent' | trans({}, 'watch') }}</li>
+            <p class="empty">{{ 'list.nocontent' | trans({}, 'watch') }}</p>
         {% endfor %}
-    </ul>
+    </section>
     
     {% if contentPaginator | length %}
-        {{ pagerfanta(contentPaginator, 'default') }}
+        <div class="pager">
+            {{ pagerfanta(contentPaginator, 'default') }}
+        </div>
     {% endif %}
 {% endblock content %}

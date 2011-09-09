@@ -9,7 +9,7 @@ use Sly\ContentBundle\Entity\Content;
 class LoadContentData implements FixtureInterface
 {
     public function load($manager)
-    {
+    {        
         /**
          * Load main categories.
          */
@@ -42,7 +42,6 @@ class LoadContentData implements FixtureInterface
 <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             ');
             $content->setTags('test1 test2 test3');
-            $content->setPublishedAt(date('Y-m-d H:i:s', rand((1315496965 - 100000), 1315496965)));
 
             $manager->persist($content);
         }
@@ -60,7 +59,6 @@ class LoadContentData implements FixtureInterface
             $content->setLink(sprintf('http://www.test.com?test%d', $i));
             $content->setMinilink(sprintf('http://t.mx/a1b2c%d', $i));
             $content->setTags('test1 test2 test3');
-            $content->setPublishedAt(date('Y-m-d H:i:s', rand((1315496965 - 100000), 1315496965)));
 
             $manager->persist($content);
         }
@@ -77,7 +75,6 @@ class LoadContentData implements FixtureInterface
             $content->setTitle('Lorem ipsum dolor sit amet, consectetur adipisicing elit');
             $content->setExcerpt('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.');
             $content->setLink('http://www.dailymotion.com/video/xgsf9_the-police-roxane_music');
-            $content->setPublishedAt(date('Y-m-d H:i:s', rand((1315496965 - 100000), 1315496965)));
 
             $manager->persist($content);
         }
@@ -94,7 +91,20 @@ class LoadContentData implements FixtureInterface
             $content->setTitle(sprintf('This is a snippet (number %d)', $i));
             $content->setExcerpt('Snippet description.');
             $content->setGistId('1176979');
-            $content->setPublishedAt(date('Y-m-d H:i:s', rand((1315496965 - 100000), 1315496965)));
+
+            $manager->persist($content);
+        }
+        
+        /**
+         * Load some fake tweets
+         */
+        
+        for ($i = 1; $i <= 70; $i++)
+        {
+            $content = new Content();
+            $content->setType('twitter');
+            $content->setTitle(sprintf('Fake tweet number %d', $i));
+            $content->setSocialNetworkId('1234567890123456');
 
             $manager->persist($content);
         }
@@ -102,6 +112,21 @@ class LoadContentData implements FixtureInterface
         /**
          * Just do it, with magic!
          */
+        
+        $manager->flush();
+        
+        /**
+         * Change content publishedAt datetimes
+         */
+        
+        $content = $manager->getRepository('SlyContentBundle:Content')->findAll();
+        
+        foreach ($content as $c)
+        {
+            $c->setPublishedAt(new \DateTime(date('Y-m-d H:i:s', rand((1315496965 - 100000), 1315496965))));
+            
+            $manager->persist($c);
+        }
         
         $manager->flush();
     }

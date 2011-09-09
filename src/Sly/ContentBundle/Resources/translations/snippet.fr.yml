@@ -16,3 +16,10 @@ category:
     description: Retrouvez tous les snippets concernant %category%.
     
   title: Snippets de la catégorie "%category%"
+  
+sidebar:
+  item:
+    share:
+      title: Partager ce snippet
+    others:
+      title: Mais aussi...

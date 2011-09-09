@@ -1,0 +1,37 @@
+{% from "SlyContentBundle::macro.socialShare.html.twig" import shareButtons %}
+
+<aside>
+    <p>
+        <a href="https://gist.github.com/{{ item.gistId }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="btn small">
+            {{ 'list.read' | trans({}, 'snippet') }}
+        </a>
+    </p>
+</aside>
+
+<aside>
+    <h3>{{ 'sidebar.item.share.title' | trans({}, 'snippet') }}</h3>
+    
+    {{ shareButtons(url('snippet_show', {'slug': item.slug}), item, 'default') }}
+</aside>
+
+<aside>
+    <h3>{{ 'sidebar.item.others.title' | trans({}, 'snippet') }}</h3>
+
+    {% render 'SlyContentBundle:Component:lastItems' with {'type': 'snippet', 'categories': item.categories} %}
+</aside>
+
+<aside>
+    <p class="amc c1206001">
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-8858711354167822";
+    
+        google_ad_slot = "8522590177";
+        google_ad_width = 160;
+        google_ad_height = 600;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </p>
+</aside>

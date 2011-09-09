@@ -91,7 +91,7 @@ header .top .right {
 	text-align: right;
 }
 
-header .top .right span {
+header .top .right aside {
 	display: inline-block;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #eee;
@@ -263,7 +263,7 @@ footer .top {
     color: #666;
 }
 
-footer .top div.grid_4.colborder {
+footer .top .grid_4.colborder {
     width: 219px;
     border-right: 1px solid #555;
 }
@@ -443,3 +443,90 @@ section.sidebar ul.networks li.facebook span {
 section.sidebar ul.networks li.googleplus span {
     background-position: -58px -812px;
 }
+
+ul.activity li {
+	list-style: none;
+	overflow: hidden;
+	padding-bottom: 8px;
+	margin-bottom: 8px;
+	border-bottom: 1px dashed #eee;
+}
+
+ul.activity a {
+	margin-left: 6px;
+}
+
+ul.activity span.icon {
+	float: left;
+	display: block;
+	background: url('../images/sprite-activity.png') no-repeat top left;
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+    -ms-filter: "alpha(opacity=50)";
+    filter: alpha(opacity=50); 
+}
+
+ul.activity li:hover span.icon {
+    opacity: 1;
+    -moz-opacity: 1;
+    -ms-filter: "alpha(opacity=100)";
+    filter: alpha(opacity=100); 
+}
+
+ul.activity span.icon.twitter {
+	background-position: 0 -160px;
+	width: 14px;
+	height: 16px;
+	margin-right: 2px;
+}
+
+ul.activity span.icon.blog {
+	background-position: 0 -18px;
+	width: 16px;
+	height: 16px;
+}
+
+ul.activity span.icon.tutorial {
+	background-position: 0 -144px;
+	width: 16px;
+	height: 14px;
+}
+
+ul.activity span.icon.watch {
+	background-position: 0 -178px;
+	width: 16px;
+	height: 16px;
+}
+
+ul.activity span.icon.snippet {
+	background-position: 0 -126px;
+	width: 16px;
+	height: 16px;
+}
+
+ul.activity a.type {
+	display: inline-block;
+	padding: 1px 3px;
+	background-color: #f5f5f5;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	color: #aaa;
+	font-size: 11px;
+}
+
+ul.activity a.type:hover {
+	text-decoration: none;
+	background-color: #ddd;
+}
+
+/*.sprite-activityaction{ background-position: 0 0; width: 16px; height: 16px; } 
+.sprite-activityblog{ background-position: 0 -18px; width: 16px; height: 16px; } 
+.sprite-activityfacebook{ background-position: 0 -36px; width: 12px; height: 16px; } 
+.sprite-activityfoursquare{ background-position: 0 -54px; width: 10px; height: 16px; } 
+.sprite-activitygithub{ background-position: 0 -72px; width: 16px; height: 16px; } 
+.sprite-activityother{ background-position: 0 -90px; width: 16px; height: 16px; } 
+.sprite-activityresource{ background-position: 0 -108px; width: 16px; height: 16px; } 
+.sprite-activitysnippet{ background-position: 0 -126px; width: 16px; height: 16px; } 
+.sprite-activitytutorial{ background-position: 0 -144px; width: 16px; height: 14px; } 
+.sprite-activitytwitter{ background-position: 0 -160px; width: 14px; height: 16px; } 
+.sprite-activitywatch{ background-position: 0 -178px; width: 16px; height: 16px; }*/

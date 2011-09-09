@@ -63,8 +63,13 @@ class Content
      */
     protected $gistId;
     /**
+     * @Assert\Type(type="int")
+     * @ORM\Column(name="social_network_id", type="bigint", length=20, nullable=true)
+     */
+    protected $socialNetworkId;
+    /**
      * @Assert\File(maxSize="6000000")
-     * @ORM\Column(name="gist_id", type="string", length=255, nullable=true)
+     * @ORM\Column(name="picture", type="string", length=255, nullable=true)
      */
     private $picture;
     /**
@@ -192,6 +197,16 @@ class Content
         return $this->gistId;
     }
     
+    public function setSocialNetworkId($socialNetworkId)
+    {
+        $this->socialNetworkId = $socialNetworkId;
+    }
+    
+    public function getSocialNetworkId()
+    {
+        return $this->socialNetworkId;
+    }
+    
     public function setPicture($picture)
     {
         $this->picture = $picture;
@@ -273,9 +288,14 @@ class Content
      */
     public function prePersist()
     {
-        $this->publishedAt = new \DateTime();
-        $this->updatedAt = new \DateTime();
-        $this->status = true;
+        if (!$this->publishedAt)
+            $this->publishedAt = new \DateTime();
+        
+        if (!$this->updatedAt)
+            $this->updatedAt = new \DateTime();
+        
+        if (!$this->status)
+            $this->status = true;
     }
     
     /**

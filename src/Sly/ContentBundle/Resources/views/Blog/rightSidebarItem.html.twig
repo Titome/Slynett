@@ -1,23 +1,29 @@
 {% from "SlyContentBundle::macro.socialShare.html.twig" import shareButtons %}
 
-<h3>{{ 'sidebar.item.share.title' | trans({}, 'blog') }}</h3>
+<aside>
+    <h3>{{ 'sidebar.item.share.title' | trans({}, 'blog') }}</h3>
+    
+    {{ shareButtons(url('blog_show', {'slug': item.slug}), item, 'default') }}
+</aside>
 
-{{ shareButtons(url('blog_show', {'slug': item.slug}), item, 'default') }}
+<aside>
+    <h3>{{ 'sidebar.item.others.title' | trans({}, 'blog') }}</h3>
 
-<h3>{{ 'sidebar.item.others.title' | trans({}, 'blog') }}</h3>
+    {% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog', 'categories': item.categories} %}
+</aside>
 
-{% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog', 'categories': item.categories} %}
-
-<p class="amc c1206001">
-    <script type="text/javascript"><!--
-    google_ad_client = "ca-pub-8858711354167822";
-
-    google_ad_slot = "8522590177";
-    google_ad_width = 160;
-    google_ad_height = 600;
-    //-->
-    </script>
-    <script type="text/javascript"
-    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-    </script>
-</p>
+<aside>
+    <p class="amc c1206001">
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-8858711354167822";
+    
+        google_ad_slot = "8522590177";
+        google_ad_width = 160;
+        google_ad_height = 600;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </p>
+</aside>

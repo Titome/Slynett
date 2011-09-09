@@ -16,11 +16,13 @@
 {% endblock topMainMenu %}
 
 {% block content %}
-    {% for item in contentPaginator %}
-        {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'item': item } %}
-    {% else %}
-        <p class="empty">{{ 'list.nocontent' | trans({}, 'tutorial') }}</p>
-    {% endfor %}
+    <section class="tutorial list">
+        {% for item in contentPaginator %}
+            {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'item': item } %}
+        {% else %}
+            <p class="empty">{{ 'list.nocontent' | trans({}, 'tutorial') }}</p>
+        {% endfor %}
+    </section>
     
     {% if contentPaginator | length %}
         <div class="pager">

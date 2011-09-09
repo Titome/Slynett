@@ -96,6 +96,7 @@ class Category
      */
     public function prePersist()
     {
-        $this->status = true;
+        if (!$this->status)
+            $this->status = true;
     }
 }
