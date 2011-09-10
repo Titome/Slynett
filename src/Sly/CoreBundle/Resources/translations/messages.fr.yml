@@ -1,8 +1,10 @@
 core:
   header:
     follow:
-      msg1: Suivez %name% et son auteur sur
-      msg2: ou encore
+      msg1.1: Suivez %name% et
+      msg1.2: son auteur
+      msg1.3: sur
+      msg1.4: ou encore
       
   menu:
     homepage: Accueil
@@ -14,14 +16,6 @@ core:
     contact: Contact
     credits: Crédits
     terms: Mentions légales
-  
-  homepage:
-    seo:
-      title: Accueil
-      description: Blog, tutoriels vidéos, ressources, snippets, veille et autres.
-      
-    title: Accueil
-    introduction: En cours de développement.
    
   networks:
     rss: Flux RSS

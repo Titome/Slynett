@@ -1,0 +1,11 @@
+author_hire:
+  pattern: /embauche.html
+  defaults: { _controller: SlyCoreBundle:Author:hire }
+
+author_skills:
+  pattern: /competences.html
+  defaults: { _controller: SlyCoreBundle:Author:skills }
+
+author:
+  pattern: /
+  defaults: { _controller: SlyCoreBundle:Author:index }

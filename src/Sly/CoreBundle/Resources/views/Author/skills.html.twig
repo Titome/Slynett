@@ -1,0 +1,95 @@
+{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
+
+{% block title %}{{ 'skills.seo.title' | trans({}, 'author') }} | {{ 'seo.title' | trans({}, 'author') }}{% endblock title %}
+{% block description %}{{ 'skills.seo.description' | trans({}, 'author') }}{% endblock description %}
+
+{% set topMain = true %}
+
+{% block topMainTitle %}
+    <a href="{{ path('author') }}" title="{{ 'title' | trans({}, 'author') }}">
+        {{ 'title' | trans({}, 'author') }}
+    </a>
+{% endblock topMainTitle %}
+
+{% block topMainMenu %}
+    {% include 'SlyCoreBundle:Author:mainMenu.html.twig' %}
+{% endblock topMainMenu %}
+
+{% block rightSidebar %}
+    {% include 'SlyCoreBundle:Author:rightSidebar.html.twig' %}
+{% endblock rightSidebar %}
+
+{% block content %}
+    <article class="tpl3">        
+        <h3>{{ 'skills.title' | trans({}, 'author') }}</h3>
+        
+        <div class="clearfix"></div>
+        
+        <div class="grid_8 alpha">
+            <h4>{{ 'skills.webdev.title' | trans({}, 'author') }}</h4>
+            
+            <ul class="list">
+                <li>PHP5 {{ 'skills.webdev.list.php' | trans({}, 'author') }}</li>
+                <li>
+                    {{ 'skills.webdev.list.frameworks' | trans({}, 'author') }}
+                    symfony 1.4 / Symfony2 /
+                    Zend {{ 'skills.webdev.list.notions' | trans({}, 'author') }} /
+                    CakePHP {{ 'skills.webdev.list.notions' | trans({}, 'author') }}
+                </li>
+                <li>SQL / MySQL / {{ 'skills.webdev.list.doctrine' | trans({}, 'author') }}</li>
+                <li>xHTML / HTML5</li>
+                <li>
+                    CSS / CSS3 /
+                    {{ 'skills.webdev.list.frameworks' | trans({}, 'author') }}
+                    960gs, BluePrint, Bootstrap
+                </li>
+                <li>JavaScript / Ajax / jQuery</li>
+                <li>XML / JSON</li>
+                <li>{{ 'skills.webdev.list.cms' | trans({}, 'author') }} WordPress 3 / Joomla 1.6</li>
+                <li>SEO / SEM / SEA / SMO</li>
+                <li>
+                    {{ 'skills.webdev.list.environments' | trans({}, 'author') }}
+                    Ubuntu / LAMP / NginX - Mac OSX - Windows / WAMP
+                </li>
+                <li>{{ 'skills.webdev.list.versioning' | trans({}, 'author') }} LAMP / NginX / Ubuntu</li>
+                <li>Git + {{ 'skills.webdev.list.github' | trans({}, 'author') }} / SVN</li>
+            </ul>
+        </div>
+    
+        <div class="grid_4 omega">
+            <h4>{{ 'skills.symfony.title' | trans({}, 'author') }}</h4>
+            
+            <p>
+                {{ 'skills.symfony.msg1' | trans({}, 'author') }}
+                {{ 'skills.symfony.msg2' | trans({}, 'author') }}
+                {{ 'skills.symfony.msg3' | trans({}, 'author') }}
+                {{ 'skills.symfony.msg4' | trans({}, 'author') }}
+                
+                -
+                
+                <a href="{{ project.github.sources }}" title="{{ project.name }} GitHub" onclick="var w=window.open(this.href); w.focus(); return false;">
+                    {{ 'skills.symfony.github' | trans({}, 'author') }}
+                </a>
+            </p>
+        </div>
+        
+        <div class="clearfix"></div>
+            
+        <h4>{{ 'skills.api.title' | trans({}, 'author') }}</h4>
+        
+        <ul class="list">
+            <li>Paypal / Paypal IPN</li>
+            <li>Facebook / Facebook API Graph</li>
+            <li>Twitter / REST, OAuth</li>
+            <li>{{ 'skills.api.list.oauth' | trans({}, 'author') }}</li>
+        </ul>
+        
+        <h4>{{ 'skills.more.title' | trans({}, 'author') }}</h4>
+        
+        <p>
+            {{ 'skills.more.linkedin.msg1' | trans({}, 'author') }}                
+            <a href="{{ networks.linkedin }}" title="{{ 'title' | trans({}, 'author') }} LinkedIn" onclick="var w=window.open(this.href); w.focus(); return false;">LinkedIn</a>
+            {{ 'skills.more.linkedin.msg2' | trans({}, 'author') }}
+        </p>
+    </article>
+{% endblock content %}

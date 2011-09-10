@@ -17,10 +17,22 @@
             Facebook
         </a>
     </li>
+    <li class="linkedin">
+        <a href="{{ networks.linkedin }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} LinkedIn" onclick="var w = window.open(this.href); w.focus(); return false;">
+            <span></span>
+            LinkedIn
+        </a>
+    </li>
     <li class="googleplus">
         <a href="{{ networks.googleplus }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Google+" onclick="var w = window.open(this.href); w.focus(); return false;">
             <span></span>
             Google+
+        </a>
+    </li>
+    <li class="flickr">
+        <a href="{{ networks.flickr }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} FlickR" onclick="var w = window.open(this.href); w.focus(); return false;">
+            <span></span>
+            FlickR
         </a>
     </li>
 </ul>

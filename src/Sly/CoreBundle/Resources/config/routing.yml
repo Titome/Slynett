@@ -1,21 +1,25 @@
+_author:
+    resource: "@SlyCoreBundle/Resources/config/routing_author.yml"
+    prefix:   /me
+
 sitemap:
     pattern: /sitemap.{_format}
     defaults: { _controller: SlyCoreBundle:Tool:sitemap }
     requirements:
       _format: xml
-
+      
 contact:
-    pattern:  /contact
+    pattern: /contact
     defaults: { _controller: SlyCoreBundle:Page:contact }
 
 credits:
-    pattern:  /credits.html
+    pattern: /credits.html
     defaults: { _controller: SlyCoreBundle:Page:credits }
 
 terms:
-    pattern:  /mentions-legales.html
+    pattern: /mentions-legales.html
     defaults: { _controller: SlyCoreBundle:Page:terms }
 
 homepage:
-    pattern:  /
+    pattern: /
     defaults: { _controller: SlyCoreBundle:Page:homepage }

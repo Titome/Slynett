@@ -26,6 +26,8 @@ twig:
         url: http://www.yourwebsite.com
         simpleurl: www.yourwebsite.com
         email: hello@yourwebsite.com
+        github:
+          sources: http://github.com/Ph3nol/Slynett
       networks:
         rss: http://feeds.feedburner.com/yourfeed
         twitter:
@@ -34,8 +36,9 @@ twig:
         facebook:
           url: http://facebook.com/yourusername
           username: yourusername
-        linkedin: http://www.linkedin.com/yourusername
+        linkedin: http://fr.linkedin.com/in/yourusername
         googleplus: http://goog.la/yourusername
+        flickr: http://www.flickr.com/people/yourusername
 
 # Assetic Configuration
 assetic:

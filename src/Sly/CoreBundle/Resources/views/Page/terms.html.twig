@@ -1,0 +1,35 @@
+{% extends "SlyCoreBundle:Layout:layout.html.twig" %}
+
+{% block title %}{{ 'terms.seo.title' | trans({}, 'page') }}{% endblock title %}
+{% block description %}{{ 'terms.seo.description' | trans({}, 'page') }}{% endblock description %}
+
+{% block content %}
+    <h3>{{ 'terms.title' | trans({}, 'page') }}</h3>
+    
+    <div class="grid_8 alpha">
+        <h4>{{ project.name }}</h4>
+        
+        <ul class="list">
+            <li>
+                {{ 'terms.terms.description' | trans({}, 'page') }}
+                {{ 'homepage.seo.description' | trans({}, 'page') }}
+            </li>
+            <li>
+                {{ 'terms.terms.publisher' | trans({}, 'page') }}
+                <a href="{{ path('author') }}">
+                    Cédric Dugat
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="grid_8 omega">
+        <h4>{{ 'terms.hosting.title' | trans({}, 'page') }}</h4>
+        
+        <p>
+            Online SAS<br />
+            BP 438 - 75366 PARIS CEDEX 08 - France<br />
+            0899 193 775
+        </p>
+    </div>
+{% endblock content %}

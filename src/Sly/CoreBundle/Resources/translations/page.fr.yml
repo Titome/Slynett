@@ -1,0 +1,29 @@
+homepage:
+  seo:
+    title: Accueil
+    description: Blog, tutoriels vidéos, ressources, snippets, veille et autres.
+  title: Accueil
+  introduction: En cours de développement.
+
+terms:
+  seo:
+    title: Mentions légales
+    description: Mentions légales du site.
+  title: Mentions légales
+  terms:
+    description: 'Description :'
+    publisher: 'Responsable de la publication :'
+  hosting:
+    title: Hébergement
+    
+credits:
+  seo:
+    title: Crédits
+    description: Crédits du site.
+  title: Crédits
+
+contact:
+  seo:
+    title: Me contacter
+    description: Rentrer en contact avec le site et son auteur.
+  title: Me contacter

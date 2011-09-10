@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}{{ 'core.homepage.seo.title' | trans }}{% endblock title %} | {{ project.name }}</title>
-        <meta name="description" content="{% block description %}{{ 'core.homepage.seo.description' | trans }}{% endblock description %}" />
+        <title>{% block title %}{{ 'homepage.seo.title' | trans({}, 'page') }}{% endblock title %} | {{ project.name }}</title>
+        <meta name="description" content="{% block description %}{{ 'homepage.seo.description' | trans({}, 'page') }}{% endblock description %}" />
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
         {% if app.request.attributes.get('_route') == 'blog' %}
             <link rel="alternate" type="application/rss+xml" title="{{ project.name }} RSS Feed" href="{{ networks.rss }}" />
