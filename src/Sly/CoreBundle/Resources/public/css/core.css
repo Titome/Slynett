@@ -163,10 +163,6 @@ header .top .right nav ul li a:hover {
 	transition: 0.3s;
 }
 
-header .top .right nav ul li span {
-	display: none;
-}
-
 header .bottom {
 	position: absolute;
 	display: block;

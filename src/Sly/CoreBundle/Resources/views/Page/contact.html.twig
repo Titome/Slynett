@@ -1,10 +1,28 @@
-{% extends "SlyCoreBundle:Layout:layout.html.twig" %}
+{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
 
 {% block title %}{{ 'contact.seo.title' | trans({}, 'page') }}{% endblock title %}
 {% block description %}{{ 'contact.seo.description' | trans({}, 'page') }}{% endblock description %}
 
+{% block rightSidebar %}
+    {% include 'SlyCoreBundle:Block:socialNetworks.html.twig' %}
+{% endblock rightSidebar %}
+
 {% block content %}
     <h3>{{ 'contact.title' | trans({}, 'page') }}</h3>
     
-    <p class="empty">{{ 'core.soon' | trans }}</p>
+    <form action="{{ path('contact') }}" method="post" {{ form_enctype(contactForm) }}>
+        {{ form_errors(contactForm) }}
+        
+        <ul>
+            <li>{{ form_row(contactForm.name, {'label': 'Nom :'}) }}</li>
+            <li>{{ form_row(contactForm.subject, {'label': 'Sujet :'}) }}</li>
+            <li>{{ form_row(contactForm.message, {'label': 'Message :'}) }}</li>
+        </ul>
+        
+        <p>
+            <button type="submit" class="btn primary">Envoyer</button>
+        </p>
+        
+        {{ form_rest(contactForm) }}
+    </form>
 {% endblock content %}
