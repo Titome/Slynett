@@ -1,3 +1,9 @@
+sitemap:
+    pattern: /sitemap.{_format}
+    defaults: { _controller: SlyCoreBundle:Tool:sitemap }
+    requirements:
+      _format: xml
+
 contact:
     pattern:  /contact
     defaults: { _controller: SlyCoreBundle:Page:contact }

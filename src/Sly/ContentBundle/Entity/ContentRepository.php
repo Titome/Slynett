@@ -93,4 +93,21 @@ class ContentRepository extends EntityRepository
         
         return $q->getQuery()->getResult();
     }
+    
+    public function getSitemapItems()
+    {
+        $q = $this->createQueryBuilder('c')
+            ->select('c, cat')
+            ->leftJoin('c.categories', 'cat')
+            ->where('c.status = true')
+            ->andWhere('c.publishedAt <= :now')
+            ->andWhere('c.type NOT IN (:notInTypes)')
+            ->setParameters(array(
+                'now' => date('Y-m-d H:i:s'),
+                'notInTypes' => array('watch', 'twitter'),
+            ))
+            ->orderBy('c.publishedAt', 'DESC');
+        
+        return $q->getQuery()->getResult();
+    }
 }

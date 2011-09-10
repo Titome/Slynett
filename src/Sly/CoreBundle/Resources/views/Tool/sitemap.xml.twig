@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generated-on="{{ nowTimestamp | date }}" -->
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for r in staticRoutes %}
+        <url>
+            <loc>{{ url(r) }}</loc>
+            <lastmod>{{ nowTimestamp | date('c') }}</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>1.0</priority>
+        </url>
+    {% endfor %}
+    {% for item in items %}
+        <url>
+            <loc>{{ url('%type%_show' | replace({'%type%': item.type}), {'slug': item.slug}) }}</loc>
+            <lastmod>{{ item.publishedAt | date('c') }}</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.2</priority>
+        </url>
+    {% endfor %}
+</urlset>
