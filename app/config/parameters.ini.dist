@@ -18,7 +18,9 @@
 
     secret            = ThisTokenIsNotSoSecretChangeIt
 
-    bitly_username    = XXXXXXXXXXXXXXXXXXXXXXX
-    bitly_apikey      = XXXXXXXXXXXXXXXXXXXXXXX
+    bitly_username          = XXXXXXXXXXXXXXXXXXXXXXX
+    bitly_apikey            = XXXXXXXXXXXXXXXXXXXXXXX
 
-    disqus_username   = XXXXXXXXXXXXXXXXXXXXXXX
+    disqus_username         = XXXXXXXXXXXXXXXXXXXXXXX
+    
+    twitter_watch_username  = XXXXXXXXXXX

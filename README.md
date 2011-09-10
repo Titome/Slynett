@@ -35,7 +35,7 @@ Should you need to overwrite the values used in the provided configuration,
 you can configure the project by creating a `app/config/parameters.ini`
 and `app/config/config.yml`.
 
-To do that, just copy the corresponding `.dist` files.
+To do that, just copy and edit the corresponding `.dist` files.
 
 Doctrine ORM
 ------------

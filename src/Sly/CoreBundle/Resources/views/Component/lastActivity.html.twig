@@ -20,7 +20,7 @@
                 <a href="{{ path('snippet') }}" class="type">{{ 'core.activity.type.snippet' | trans }}</a>
             {% elseif item.type == 'twitter' %}
                 <span class="icon twitter"></span>
-                <a href="{{ networks.twitter.url }}/status/{{ item.socialNetworkId }}" title="{{ item }}" onclick="var w=window.open(this.href); w.focus(); return false;">{{ item }}</a>
+                <a href="{{ networks.twitter.url }}/status/{{ item.socialNetworkId }}" title="{{ item }}" onclick="var w=window.open(this.href); w.focus(); return false;">{{ item | raw }}</a>
                 <a href="{{ networks.twitter.url }}" class="type">{{ 'core.activity.type.twitter' | trans }}</a>
             {% endif %}
         </li>

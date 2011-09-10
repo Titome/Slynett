@@ -1,6 +1,6 @@
 parameters:
   sly.bitly.class: Sly\ContentBundle\Service\Bitly
-  sly.bitly.example: http://sly.mx/abcdef
+  sly.bitly.example: http://sly.mx/abcdef # change it for your personal minilink result
   
   # Bit.ly parameters are to define in /app/config/parameters.ini
   sly.bitly.username: %bitly_username%

@@ -1,0 +1,10 @@
+parameters:
+  sly.twitter.class: Sly\ContentBundle\Service\Twitter
+  sly.twitter.username: %twitter_watch_username%
+  
+services:
+    sly.twitter:
+        class: %sly.twitter.class%
+        public: true
+        arguments:
+          - '@service_container'
