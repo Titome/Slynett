@@ -62,6 +62,15 @@ Test it
 
 The main page of the application is configured at `/`. Access it via `web/app_dev.php/`.
 
+Command/CRON Tasks
+-------------
+
+To get Twitter watch (and have your database updated from it), you need to execute this command line:
+
+    php app/console watch:twitter
+
+To make an automatic update, I suggest you to use a CRON task.
+
 Enjoy
 ------------------
 
