@@ -1,3 +1,15 @@
+contact:
+    pattern:  /contact
+    defaults: { _controller: SlyCoreBundle:Page:contact }
+
+credits:
+    pattern:  /credits.html
+    defaults: { _controller: SlyCoreBundle:Page:credits }
+
+terms:
+    pattern:  /mentions-legales.html
+    defaults: { _controller: SlyCoreBundle:Page:terms }
+
 homepage:
     pattern:  /
     defaults: { _controller: SlyCoreBundle:Page:homepage }

@@ -3,8 +3,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}{{ 'core.homepage.seo.title' | trans }}{% endblock title %} | {{ project.name }}</title>
-        <meta name="Description" content="{% block description %}{{ 'core.homepage.seo.description' | trans }}{% endblock description %}" />
+        <meta name="description" content="{% block description %}{{ 'core.homepage.seo.description' | trans }}{% endblock description %}" />
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        {% if app.request.attributes.get('_route') == 'blog' %}
+            <link rel="alternate" type="application/rss+xml" title="{{ project.name }} RSS Feed" href="{{ networks.rss }}" />
+        {% endif %}
         {% stylesheets output='css/x.css' filter='cssrewrite'
             'bundles/slycore/vendor/960gs/code/css/min/reset.css'
             'bundles/slycore/vendor/960gs/code/css/min/960_16_col.css'

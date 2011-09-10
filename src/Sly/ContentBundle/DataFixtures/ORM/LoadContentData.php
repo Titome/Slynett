@@ -96,10 +96,10 @@ class LoadContentData implements FixtureInterface
         }
         
         /**
-         * Load some fake tweets
+         * Load some fake tweets - if needed
          */
         
-        for ($i = 1; $i <= 70; $i++)
+        /* for ($i = 1; $i <= 70; $i++)
         {
             $content = new Content();
             $content->setType('twitter');
@@ -107,7 +107,7 @@ class LoadContentData implements FixtureInterface
             $content->setSocialNetworkId('1234567890123456');
 
             $manager->persist($content);
-        }
+        } */
         
         /**
          * Just do it, with magic!

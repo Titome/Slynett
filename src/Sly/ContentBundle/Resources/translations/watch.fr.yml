@@ -9,3 +9,6 @@ category:
     description: Retrouvez toute ma veille concernant %category%.
     
   title: Veille sur la catégorie "%category%"
+  
+list:
+  nocontent: Aucun élément de veille n'est actuellement disponible.

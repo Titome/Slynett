@@ -64,8 +64,9 @@
         
         <aside class="grid_8 right">
             &copy; 2011 {{ project.name }} - {{ 'core.footer.rights' | trans }}<br />
-            <a href="#">{{ 'core.menu.credits' | trans }}</a> -
-            <a href="#">{{ 'core.menu.terms' | trans }}</a>
+            <a href="{{ path('contact') }}">{{ 'core.menu.contact' | trans }}</a> -
+            <a href="{{ path('credits') }}">{{ 'core.menu.credits' | trans }}</a> -
+            <a href="{{ path('terms') }}">{{ 'core.menu.terms' | trans }}</a>
         </aside>
     </div>
 </footer>

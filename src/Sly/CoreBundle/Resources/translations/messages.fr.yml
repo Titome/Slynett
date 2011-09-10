@@ -11,6 +11,7 @@ core:
     watch: Veille WebDev
     snippets: Snippets
     resources: Ressources
+    contact: Contact
     credits: Crédits
     terms: Mentions légales
   
@@ -30,6 +31,7 @@ core:
     
   activity:
     title: Dernière activité
+    nocontent: Aucune activité à afficher.
     
     type:
       blog: Article de Blog

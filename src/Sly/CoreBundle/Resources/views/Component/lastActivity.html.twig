@@ -24,6 +24,10 @@
                 <a href="{{ networks.twitter.url }}" class="type">{{ 'core.activity.type.twitter' | trans }}</a>
             {% endif %}
         </li>
+    {% else %}
+        <li class="empty">
+            {{ 'core.activity.nocontent' | trans }}
+        </li>
     {% endfor %}
 </ul>
 {% endspaceless %}
