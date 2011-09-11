@@ -27,3 +27,9 @@ contact:
     title: Me contacter
     description: Rentrer en contact avec le site et son auteur.
   title: Me contacter
+  form:
+    name: Nom complet :
+    email: Adresse e-mail :
+    subject: Sujet :
+    message: Message :
+    submit: Envoyer le message

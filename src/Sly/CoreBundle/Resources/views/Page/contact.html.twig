@@ -14,13 +14,14 @@
         {{ form_errors(contactForm) }}
         
         <ul>
-            <li>{{ form_row(contactForm.name, {'label': 'Nom :'}) }}</li>
-            <li>{{ form_row(contactForm.subject, {'label': 'Sujet :'}) }}</li>
-            <li>{{ form_row(contactForm.message, {'label': 'Message :'}) }}</li>
+            <li>{{ form_row(contactForm.name, {'label': 'contact.form.name' | trans({}, 'page')}) }}</li>
+            <li>{{ form_row(contactForm.email, {'label': 'contact.form.email' | trans({}, 'page')}) }}</li>
+            <li>{{ form_row(contactForm.subject, {'label': 'contact.form.subject' | trans({}, 'page')}) }}</li>
+            <li>{{ form_row(contactForm.message, {'label': 'contact.form.message' | trans({}, 'page')}) }}</li>
         </ul>
         
         <p>
-            <button type="submit" class="btn primary">Envoyer</button>
+            <button type="submit" class="btn primary">{{ 'contact.form.submit' | trans({}, 'page') }}</button>
         </p>
         
         {{ form_rest(contactForm) }}

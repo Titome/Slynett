@@ -17,6 +17,21 @@
     locale            = en
 
     secret            = ThisTokenIsNotSoSecretChangeIt
+    
+    project_name                = Slynett Labs
+    project_url                 = http://www.slynett.com
+    project_simpleurl           = www.slynett.com
+    project_email               = hello@slynett.com
+    project_github_sources      = http://github.com/Ph3nol/Slynett
+    
+    networks_rss                = http://feeds.feedburner.com/slynett
+    networks_twitter_url        = http://twitter.com/Ph3nol
+    networks_twitter_username   = Ph3nol
+    networks_facebook_url       = http://facebook.com/slynett
+    networks_facebook_username  = slynett
+    networks_linkedin           = http://fr.linkedin.com/in/cedricdugat
+    networks_googleplus         = http://goog.la/ph3
+    networks_flickr             = http://www.flickr.com/people/slyph3
 
     bitly_username          = XXXXXXXXXXXXXXXXXXXXXXX
     bitly_apikey            = XXXXXXXXXXXXXXXXXXXXXXX

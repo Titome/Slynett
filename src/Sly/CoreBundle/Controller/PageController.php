@@ -35,8 +35,20 @@ class PageController extends Controller
             
             if ($contactForm->isValid())
             {
+                $contact = $contactForm->getData();
                 
-                return $this->redirect($this->generateUrl('contact'));
+                $mailer = $this->get('mailer');
+            
+                $message = \Swift_Message::newInstance()
+                    ->setSubject($contact->getSubject())
+                    ->setFrom(array($contact->getEmail() => $contact->getName()))
+                    ->setTo($this->container->getParameter('project_email'))
+                    ->setBody($this->renderView('SlyCoreBundle:Email:contact.txt.twig', array('contact' => $contact)))
+                ;
+                
+                $mailer->send($message);
+                
+                return $this->redirect($this->generateUrl('homepage'));
             }
         }
         
