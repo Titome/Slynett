@@ -28,8 +28,11 @@ contact:
     description: Rentrer en contact avec le site et son auteur.
   title: Me contacter
   form:
-    name: Nom complet :
-    email: Adresse e-mail :
-    subject: Sujet :
-    message: Message :
+    name: Nom complet
+    email: Adresse e-mail
+    twitter: Pseudonyme Twitter
+    subject: Sujet
+    message: Message
     submit: Envoyer le message
+  sidebar:
+    follow: N'hésitez pas à suivre %name% et son auteur depuis vos réseaux préférés !

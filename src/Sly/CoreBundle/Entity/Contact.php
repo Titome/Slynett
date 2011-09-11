@@ -16,6 +16,8 @@ class Contact
      * @Assert\Email
      */
     protected $email;
+
+    protected $twitter;
     /**
      * @Assert\NotBlank()
      * @Assert\Type("string")
@@ -44,6 +46,16 @@ class Contact
     public function getEmail()
     {
         return $this->email;
+    }
+    
+    public function setTwitter($twitter)
+    {
+        $this->twitter = $twitter;
+    }
+    
+    public function getTwitter()
+    {
+        return $this->twitter;
     }
     
     public function setSubject($subject)

@@ -1,3 +1,8 @@
 Message :
 
-{{ contact.message }}
+{{ contact.message | raw }}
+
+{% if contact.twitter %}
+---
+Twitter : {{ contact.twitter }}
+{% endif %}

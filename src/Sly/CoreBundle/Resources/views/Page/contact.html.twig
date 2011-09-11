@@ -4,6 +4,8 @@
 {% block description %}{{ 'contact.seo.description' | trans({}, 'page') }}{% endblock description %}
 
 {% block rightSidebar %}
+    <blockquote>{{ 'contact.sidebar.follow' | trans({'%name%': project.name}, 'page') }}</blockquote>
+
     {% include 'SlyCoreBundle:Block:socialNetworks.html.twig' %}
 {% endblock rightSidebar %}
 
@@ -13,16 +15,17 @@
     <form action="{{ path('contact') }}" method="post" {{ form_enctype(contactForm) }}>
         {{ form_errors(contactForm) }}
         
-        <ul>
-            <li>{{ form_row(contactForm.name, {'label': 'contact.form.name' | trans({}, 'page')}) }}</li>
-            <li>{{ form_row(contactForm.email, {'label': 'contact.form.email' | trans({}, 'page')}) }}</li>
-            <li>{{ form_row(contactForm.subject, {'label': 'contact.form.subject' | trans({}, 'page')}) }}</li>
-            <li>{{ form_row(contactForm.message, {'label': 'contact.form.message' | trans({}, 'page')}) }}</li>
-        </ul>
-        
-        <p>
-            <button type="submit" class="btn primary">{{ 'contact.form.submit' | trans({}, 'page') }}</button>
-        </p>
+        <div class="form">
+            {{ form_row(contactForm.name, {'label': 'contact.form.name' | trans({}, 'page')}) }}
+            {{ form_row(contactForm.email, {'label': 'contact.form.email' | trans({}, 'page')}) }}
+            {{ form_row(contactForm.twitter, {'label': 'contact.form.twitter' | trans({}, 'page')}) }}
+            {{ form_row(contactForm.subject, {'label': 'contact.form.subject' | trans({}, 'page')}) }}
+            {{ form_row(contactForm.message, {'label': 'contact.form.message' | trans({}, 'page')}) }}
+            
+            <div class="submit">
+              <input type="submit" value="{{ 'contact.form.submit' | trans({}, 'page') }}" />  
+            </div>
+        </div>
         
         {{ form_rest(contactForm) }}
     </form>

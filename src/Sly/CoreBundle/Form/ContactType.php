@@ -20,6 +20,7 @@ class ContactType extends AbstractType
     {
         $builder->add('name', 'text')
                 ->add('email', 'email')
+                ->add('twitter', 'text', array('required' => false))
                 ->add('subject', 'choice', array(
                     'choices'   => array(
                         'Prise de contact - Questions diverses' => 'Prise de contact - Questions diverses',
