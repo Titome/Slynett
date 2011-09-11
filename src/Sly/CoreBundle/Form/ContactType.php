@@ -34,6 +34,7 @@ class ContactType extends AbstractType
                     'empty_value' => false,
                 ))
                 ->add('message', 'textarea')
+                ->add('mlkqsd', 'text', array('required' => false))
         ;
     }
 

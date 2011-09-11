@@ -73,3 +73,4 @@
 [submodule "src/Sly/CoreBundle/Resources/public/vendor/960gs"]
 	path = src/Sly/CoreBundle/Resources/public/vendor/960gs
 	url = http://github.com/nathansmith/960-Grid-System.git
+

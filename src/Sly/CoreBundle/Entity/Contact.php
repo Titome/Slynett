@@ -27,6 +27,10 @@ class Contact
      * @Assert\NotBlank()
      */
     protected $message;
+    /**
+     * @Assert\Blank()
+     */
+    protected $mlkqsd;
     
     public function setName($name)
     {
