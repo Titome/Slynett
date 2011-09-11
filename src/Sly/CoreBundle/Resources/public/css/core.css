@@ -608,6 +608,14 @@ section.sidebar ul.networks li.flickr:hover span {
     background-position: 0 -1064px;
 }
 
+section.sidebar ul.networks li.foursquare span {
+    background-position: -56px -168px;
+}
+
+section.sidebar ul.networks li.foursquare:hover span {
+    background-position: -56px -224px;
+}
+
 /*
 .sprite-issgcblog_color02_64x64{ background-position: 0 0; width: 54px; height: 54px; } 
 .sprite-issgcblog_color_64x64{ background-position: 0 -56px; width: 54px; height: 54px; } 
