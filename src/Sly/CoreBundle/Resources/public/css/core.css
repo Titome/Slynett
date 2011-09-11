@@ -68,6 +68,7 @@ blockquote {
 .form input[type=text],
 .form input[type=password],
 .form input[type=email],
+.form input[type=url],
 .form select,
 .form textarea {
     padding: 10px;
@@ -82,6 +83,7 @@ blockquote {
 .form input[type=text]:focus,
 .form input[type=password]:focus,
 .form input[type=email]:focus,
+.form input[type=url]:focus,
 .form select:focus,
 .form textarea:focus {
     -moz-box-shadow: 0 0 5px #ccc;

@@ -18,12 +18,12 @@ tutorial:
 
 fields:
   required: Obligatoire
-  title: 'Titre :'
-  excerpt: 'Extrait / Description :'
-  picture: 'Image :'
-  link: 'Lien :'
-  publishedat: 'Date de publication :'
+  title: Titre :
+  excerpt: Extrait / Description :
+  picture: Image :
+  link: Lien :
+  publishedat: Date de publication :
   status: Publié
-  categories: 'Catégorie(s) :'
-  content: 'Contenu :'
-  tags: 'Mots clés :'
+  categories: Catégorie(s) :
+  content: Contenu :
+  tags: Mots clés :
