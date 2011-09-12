@@ -7,24 +7,22 @@
 {% endblock stylesheets %}
 
 {% block content %}
-    <h2>{{ 'blog.new.title' | trans({}, 'admin') }}</h2>
+    <h2>{{ 'snippet.new.title' | trans({}, 'admin') }}</h2>
     
-    <form action="{{ path('blog_admin') }}" method="post" {{ form_enctype(contentForm) }}>
+    <form action="{{ path('snippet_admin') }}" method="post" {{ form_enctype(contentForm) }}>
         {{ form_errors(contentForm) }}
         
         <div class="form">
             {{ form_row(contentForm.title, {'label': 'fields.title' | trans({}, 'admin')}) }}
             {{ form_row(contentForm.excerpt, {'label': 'fields.excerpt' | trans({}, 'admin')}) }}
+            {{ form_row(contentForm.gistId, {'label': 'fields.gist' | trans({}, 'admin')}) }}
             {{ form_row(contentForm.tags, {'label': 'fields.tags' | trans({}, 'admin')}) }}
-            {{ form_row(contentForm.picture, {'label': 'fields.picture' | trans({}, 'admin')}) }}
             {{ form_row(contentForm.publishedAt, {'label': 'fields.publishedat' | trans({}, 'admin')}) }}
             {{ form_row(contentForm.status, {'label': 'fields.status' | trans({}, 'admin')}) }}
             {{ form_row(contentForm.categories, {'label': 'fields.categories' | trans({}, 'admin')}) }}
-            {{ form_widget(contentForm.content, {'attr': {'class': 'editor'}}) }}
-            {{ form_errors(contentForm.content) }}
-            
+                
             <div class="submit">
-              <input type="submit" value="{{ 'blog.new.fields.submit' | trans({}, 'admin') }}" />  
+              <input type="submit" value="{{ 'snippet.new.fields.submit' | trans({}, 'admin') }}" />  
             </div>
         </div>
         

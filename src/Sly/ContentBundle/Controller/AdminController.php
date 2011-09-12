@@ -8,6 +8,7 @@ use Sly\ContentBundle\Entity\Content;
 use Sly\ContentBundle\Form\BlogPostType;
 use Sly\ContentBundle\Form\WatchLinkType;
 use Sly\ContentBundle\Form\TutorialType;
+use Sly\ContentBundle\Form\SnippetType;
 
 class AdminController extends Controller
 {
@@ -104,6 +105,37 @@ class AdminController extends Controller
         }
         
         return $this->render('SlyContentBundle:Admin:tutorial.html.twig', array(
+            'contentForm' => $contentForm->createView(),
+        ));
+    }
+    
+    public function snippetAction()
+    {        
+        $em = $this->getDoctrine()->getEntityManager();
+        
+        $content = new Content();
+        
+        $contentForm = $this->createForm(new SnippetType());
+        
+        $request = $this->get('request');
+        
+        if ($request->getMethod() == 'POST')
+        {
+            $contentForm->bindRequest($request);
+            
+            if ($contentForm->isValid())
+            {
+                $content = $contentForm->getData();
+                $content->setType('snippet');
+                                
+                $em->persist($content);
+                $em->flush();
+                
+                return $this->redirect($this->generateUrl('snippet'));
+            }
+        }
+        
+        return $this->render('SlyContentBundle:Admin:snippet.html.twig', array(
             'contentForm' => $contentForm->createView(),
         ));
     }

@@ -49,42 +49,47 @@ div.gist .gist-file .gist-data {
 	text-transform: uppercase;
 	margin: 0 0 5px 5px;
 	padding: 1px 2px;
+	color: #fff;
 }
 
 .categories.colored a.php5,
 .categories.colored a.php5:visited {
 	background-color: #6785b7;
-	color: #fff;
 }
 
 .categories.colored a.jquery,
 .categories.colored a.jquery:visited {
 	background-color: #4082ae;
-	color: #fff;
 }
 
 .categories.colored a.seo,
 .categories.colored a.seo:visited {
 	background-color: #888;
-	color: #fff;
 }
 
 .categories.colored a.symfony2,
 .categories.colored a.symfony2:visited {
 	background-color: #333;
-	color: #fff;
 }
 
 .categories.colored a.symfony-1-4,
 .categories.colored a.symfony-1-4:visited {
 	background-color: #683b00;
-	color: #fff;
 }
 
 .categories.colored a.css,
 .categories.colored a.css:visited {
 	background-color: #fbba00;
-	color: #fff;
+}
+
+.categories.colored a.html5,
+.categories.colored a.html5:visited {
+	background-color: #ff8040;
+}
+
+.categories.colored a.api,
+.categories.colored a.api:visited {
+	background-color: #333;
 }
 
 section.list {
@@ -197,6 +202,10 @@ article.tpl2 {
 	border-bottom: 1px solid #eee;
 }
 
+article.tpl2 h4 {
+	margin-top: 0;
+}
+
 article.tpl2 img {
     float: left;
     margin-right: 10px;
@@ -236,10 +245,8 @@ article.tpl2 h4 {
     text-transform: uppercase;
 }
 
-article.tpl3 h3 {
+article.tpl3 h2 {
 	margin: 20px 0;
-	color: #bf3604;
-	display: inline-block;
 }
 
 article.tpl3 p {
@@ -259,7 +266,7 @@ article.tpl3 .categories.colored a {
     margin: 0 5px 0 0;
 }
 
-article.tpl3 img {
+article.tpl3 .header img {
 	float: right;
 	margin: 0 0 20px 20px;
 	/* margin: 40px 0 20px 20px;
@@ -272,7 +279,6 @@ article.tpl3 img {
 }
 
 article.tpl3 .header {
-	display: inline-block;
 	margin-bottom: 20px;
 }
 

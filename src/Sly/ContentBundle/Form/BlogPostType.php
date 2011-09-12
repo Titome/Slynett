@@ -21,6 +21,7 @@ class BlogPostType extends AbstractType
         $builder->add('categories', null)
                 ->add('title', 'text')
                 ->add('excerpt', 'textarea', array('required' => false))
+                ->add('tags', 'text', array('required' => false))
                 ->add('content', 'textarea')
                 ->add('picture')
                 ->add('status', 'checkbox', array('data' => true))

@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilder;
 
 use Sly\ContentBundle\Entity\Content;
 
-class TutorialType extends AbstractType
+class SnippetType extends AbstractType
 {
     public function getDefaultOptions(array $options)
     {
@@ -22,9 +22,7 @@ class TutorialType extends AbstractType
                 ->add('title', 'text')
                 ->add('excerpt', 'textarea', array('required' => false))
                 ->add('tags', 'text', array('required' => false))
-                ->add('content', 'textarea', array('required' => false))
-                ->add('picture')
-                ->add('link', 'url', array('required' => false))
+                ->add('gistId')
                 ->add('status', 'checkbox', array('data' => true))
                 ->add('publishedAt', 'datetime', array('required' => false, 'widget' => 'single_text'))
         ;
