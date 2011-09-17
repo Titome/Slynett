@@ -23,6 +23,9 @@
     project_simpleurl           = www.slynett.com
     project_email               = hello@slynett.com
     project_github_sources      = http://github.com/Ph3nol/Slynett
+
+    cdn_main                    = http://cdn.yourdomain.com/
+    cdn_main_https              = https://cdn.yourdomain.com/
     
     networks_rss                = http://feeds.feedburner.com/slynett
     networks_twitter_url        = http://twitter.com/Ph3nol

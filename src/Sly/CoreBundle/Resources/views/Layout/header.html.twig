@@ -8,13 +8,13 @@
         
         <div class="grid_12 omega right">
             <aside>
-                {{ 'core.header.follow.msg1.1' | trans({'%name%': project.name}) }}
-                <a href="{{ path('author') }}" title="{{ 'author.title' | trans({}, 'page') }}">{{ 'core.header.follow.msg1.2' | trans }}</a>
-                {{ 'core.header.follow.msg1.3' | trans }}
+                {{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }}
+                <a href="{{ path('author') }}" title="{{ project.name }} - {{ 'core.header.follow.msg2' | trans }}">{{ 'core.header.follow.msg2' | trans }}</a>
+                {{ 'core.header.follow.msg3' | trans }}
                 <a href="{{ networks.twitter.url }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Twitter" onclick="var w = window.open(this.href); w.focus(); return false;">Twitter</a>,
                 <a href="{{ networks.facebook.url }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Facebook" onclick="var w = window.open(this.href); w.focus(); return false;">Facebook</a>,
                 <a href="{{ networks.linkedin }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} LinkedIn" onclick="var w = window.open(this.href); w.focus(); return false;">LinkedIn</a>,
-                {{ 'core.header.follow.msg1.4' | trans }}
+                {{ 'core.header.follow.msg4' | trans }}
                 <a href="{{ networks.googleplus }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Google+" onclick="var w = window.open(this.href); w.focus(); return false;">Google+</a>
             </aside>
             

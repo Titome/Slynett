@@ -1,10 +1,10 @@
 core:
   header:
     follow:
-      msg1.1: Suivez %name% et
-      msg1.2: son auteur
-      msg1.3: sur
-      msg1.4: ou encore
+      msg1: Suivez %name% et
+      msg2: son auteur
+      msg3: sur
+      msg4: ou encore
       
   menu:
     homepage: Accueil

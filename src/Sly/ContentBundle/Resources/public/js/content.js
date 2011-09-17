@@ -1,11 +1,22 @@
 jQuery(document).ready(function($){
-
+    $('.slider').css({
+        'margin-bottom':'50px'
+    });
+    
+    $('.slider .box_skitter').skitter({
+        animation: 'cube',
+        interval: 4000,
+        animateNumberOut: {
+            backgroundColor:'#555', 
+            color:'#fff'
+        }, 
+        animateNumberOver: {
+            backgroundColor:'#333', 
+            color:'#fff'
+        }, 
+        animateNumberActive: {
+            backgroundColor:'#bf3604', 
+            color:'#fff'
+        }
+    });		
 });
-
-/*var menuYloc = -200;
-
-$(window).scroll(function () { 
-	offset = menuYloc+$(document).scrollTop();
-	if(offset<0){offset=0;}
-	$('.p_sidebar').animate({top:offset+"px"},{duration:500,queue:false});
-});*/

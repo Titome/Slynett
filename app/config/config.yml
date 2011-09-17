@@ -11,7 +11,12 @@ framework:
     form: true
     csrf_protection: true
     validation: { enable_annotations: true }
-    templating: { engines: ['twig'] } #assets_version: SomeVersionScheme
+    templating:
+      engines: ['twig']
+      assets_version: 1609201103
+      assets_base_urls:
+        http: [%cdn_main%]
+        ssl: [%cdn_main_https%]
     session:
         default_locale: %locale%
         auto_start: true
@@ -90,10 +95,13 @@ avalanche_imagine:
     filters:
         thumbnail:
             type: thumbnail
-            options: { size: [80, 80], mode: outbound }
+            options: { size: [80, 80], mode: inset }
         medium:
             type: thumbnail
-            options: { size: [300, 300], mode: outbound }
+            options: { size: [300, 300], mode: inset }
         tutorial:
             type: thumbnail
-            options: { size: [320, 240], mode: outbound }
+            options: { size: [320, 240], mode: inset }
+        homeslider:
+            type: thumbnail
+            options: { size: [500, 250], mode: outbound }

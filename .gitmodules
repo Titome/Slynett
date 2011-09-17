@@ -74,3 +74,6 @@
 	path = src/Sly/CoreBundle/Resources/public/vendor/960gs
 	url = http://github.com/nathansmith/960-Grid-System.git
 
+[submodule "src/Sly/ContentBundle/Resources/public/vendor/skitter-slideshow"]
+	path = src/Sly/ContentBundle/Resources/public/vendor/skitter-slideshow
+	url = http://github.com/thiagosf/SkitterSlideshow.git

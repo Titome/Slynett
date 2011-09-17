@@ -1,13 +1,17 @@
 {% extends "SlyCoreBundle:Layout:layout.html.twig" %}
 
 {% block content %}
-    <p>{{ 'homepage.introduction' | trans({}, 'page') }}</p>
-    
     <div class="grid_8 alpha">
-        &nbsp;
+        <aside class="slider">
+            {% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog', 'slider': true} %}
+        </aside>
     </div>
     
     <div class="grid_8 omega">
+        <aside class="slider">
+            {% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog', 'slider': true} %}
+        </aside>
+        
         <aside>
             <h3>{{ 'core.activity.title' | trans }}</h3>
         
