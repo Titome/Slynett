@@ -34,6 +34,9 @@ twig:
         shortemail: %project_shortemail%
         github:
           sources: %project_github_sources%
+        google:
+          analytics:
+            id: %project_google_analytics_id%
       networks:
         rss: %networks_rss%
         twitter:

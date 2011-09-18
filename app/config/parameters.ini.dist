@@ -24,6 +24,7 @@
     project_email               = hello@slynett.com
     project_shortemail          = c@sly.mx
     project_github_sources      = http://github.com/Ph3nol/Slynett
+    project_google_analytics_id = UA-12345678-9
 
     cdn_main                    = http://cdn.yourdomain.com/
     cdn_main_https              = https://cdn.yourdomain.com/

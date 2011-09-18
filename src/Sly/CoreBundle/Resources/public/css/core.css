@@ -282,6 +282,7 @@ header .top .right nav ul li a:visited {
 header .top .right nav ul li a:hover,
 header .top .right nav ul li.active a,
 header .top .right nav ul li.active a:visited {
+    text-shadow: 1px 1px 1px #333;
     text-decoration: none;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
@@ -291,6 +292,7 @@ header .top .right nav ul li.active a:visited {
 }
 
 header .top .right nav ul li a:hover {
+    text-shadow: 1px 1px 1px #fff;
     background-color: #eee;
 }
 
@@ -300,6 +302,10 @@ header .top .right nav ul li.active a,
 header .top .right nav ul li.active a:visited {
     color: #fff;
     background-color: #bf3604;
+}
+
+header .top .right nav ul li.active a:hover {
+    text-shadow: 1px 1px 1px #333;
 }
 
 header .bottom {
@@ -384,11 +390,11 @@ section.main .top ul li a:hover {
     color: #324452;
     text-decoration: none;
     background-color: #fff;
-	-webkit-transition: 0.5s;
-	-moz-transition: 0.5s;
-	-o-transition: 0.5s;
-	-ms-transition: 0.5s;
-	transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
 }
 
 section.content {
