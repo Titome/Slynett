@@ -31,6 +31,7 @@ twig:
         url: %project_url%
         simpleurl: %project_simpleurl%
         email: %project_email%
+        shortemail: %project_shortemail%
         github:
           sources: %project_github_sources%
       networks:

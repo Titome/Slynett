@@ -48,5 +48,16 @@
         <aside class="inetworks">
             {% include 'SlyCoreBundle:Block:socialNetworks.html.twig' %}
         </aside>
+        
+        <aside>
+            <h3>{{ 'homepage.backstage.title' | trans({}, 'page') }}</h3>
+
+            <p>
+                {{ 'homepage.backstage.msg1' | trans({}, 'page') }}
+                <a href="http://symfony.com">Symfony2</a>,
+                {{ 'homepage.backstage.msg2' | trans({}, 'page') }}
+                <a href="{{ project.github.sources }}" onclick="var w=window.open(this.href);w.focus();return false;">GitHub</a>.
+            </p>
+        </aside>
     </div>
 {% endblock content %}

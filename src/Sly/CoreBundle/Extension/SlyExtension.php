@@ -7,6 +7,7 @@ class SlyExtension extends \Twig_Extension {
     public function getFilters() {
         return array(
             'checkActive'  => new \Twig_Filter_Method($this, 'checkActive'),
+            'textEncode'  => new \Twig_Filter_Method($this, 'textEncode'),
         );
     }
 
@@ -21,6 +22,32 @@ class SlyExtension extends \Twig_Extension {
             if ($currentRoute == $toCheck)
                 return 'active';
         }
+    }
+    
+    public function textEncode($text)
+    {
+        $encodedText = '';
+
+        for ($i = 0; $i < strlen($text); $i++)
+        {
+            $char = $text{$i};
+            $r = rand(0, 100);
+
+            if ($r > 90 && $char != '@')
+            {
+                $encodedText .= $char;
+            }
+            else if ($r < 45)
+            {
+                $encodedText .= '&#x'.dechex(ord($char)).';';
+            }
+            else
+            {
+                $encodedText .= '&#'.ord($char).';';
+            }
+        }
+        
+        return $encodedText;
     }
 
     public function getName()

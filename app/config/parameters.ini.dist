@@ -22,6 +22,7 @@
     project_url                 = http://www.slynett.com
     project_simpleurl           = www.slynett.com
     project_email               = hello@slynett.com
+    project_shortemail          = c@sly.mx
     project_github_sources      = http://github.com/Ph3nol/Slynett
 
     cdn_main                    = http://cdn.yourdomain.com/

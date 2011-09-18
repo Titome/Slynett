@@ -50,7 +50,7 @@ class ContentRepository extends EntityRepository
         return $q->getQuery();
     }
     
-    public function getLastItems($contentType, $categories, $number = 5)
+    public function getLastItems($contentType, $categories, $number = 5, $withoutItem = null)
     {
         $q = $this->createQueryBuilder('c')
             ->select('c, cat')
@@ -72,6 +72,12 @@ class ContentRepository extends EntityRepository
         {
             $q->andWhere('c.type = :contentType')
                 ->setParameter('contentType', $contentType);
+        }
+        
+        if ($withoutItem)
+        {
+            $q->andWhere('c.id <> :withoutItemId')
+                ->setParameter('withoutItemId', $withoutItem->getId());
         }
             
         $q->orderBy('c.publishedAt', 'DESC')

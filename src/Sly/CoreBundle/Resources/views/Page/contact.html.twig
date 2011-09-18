@@ -12,6 +12,13 @@
 {% block content %}
     <h3>{{ 'contact.title' | trans({}, 'page') }}</h3>
     
+    <p>
+        {{ 'contact.email.msg1' | trans({}, 'page') }}
+        <a href="mailto:{{ project.email | textEncode | raw }}">{{ project.email | textEncode | raw }}</a> /
+        <a href="mailto:{{ project.shortemail | textEncode | raw }}">{{ project.shortemail | textEncode | raw }}</a>
+        {{ 'contact.email.msg2' | trans({}, 'page') }}
+    </p>
+    
     <form action="{{ path('contact') }}" method="post" {{ form_enctype(contactForm) }}>
         {{ form_errors(contactForm) }}
         

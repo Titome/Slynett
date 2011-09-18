@@ -15,6 +15,10 @@ homepage:
   lastitems:
     blog_title: Derniers articles
     tutorials_title: Derniers tutoriels
+  backstage:
+    title: Backstage
+    msg1: Les sources de ce site, entièrement réalisé sous
+    msg2: sont disponibles sur
 
 terms:
   seo:
@@ -38,6 +42,9 @@ contact:
     title: Me contacter
     description: Rentrer en contact avec le site et son auteur.
   title: Me contacter
+  email:
+    msg1: Contactez-moi par e-mail sur
+    msg2: ou remplissez le formulaire ci-dessous.
   form:
     name: Nom complet
     email: Adresse e-mail
