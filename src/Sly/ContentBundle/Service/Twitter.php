@@ -23,14 +23,14 @@ class Twitter
     protected function getApiUrl()
     {
         if ($this->lastTweetId)
-            return sprintf('https://api.twitter.com/1/statuses/user_timeline.json?include_entities=false&include_rts=false&exclude_replies=true&screen_name=%s&count=20&since_id=%s', $this->container->getParameter('sly.twitter.username'), $lastTweetId);
+            return sprintf('https://api.twitter.com/1/statuses/user_timeline.json?include_entities=false&include_rts=false&exclude_replies=true&screen_name=%s&count=20&since_id=%s', $this->container->getParameter('sly.twitter.username'), $this->lastTweetId);
         else
             return sprintf('https://api.twitter.com/1/statuses/user_timeline.json?include_entities=false&include_rts=false&exclude_replies=true&screen_name=%s&count=20', $this->container->getParameter('sly.twitter.username'));
     }
     
     public function getTweets()
-    {
-        $jsonImport = @file_get_contents($this->getApiUrl($lastTweetId)); 
+    {   
+        $jsonImport = @file_get_contents($this->getApiUrl()); 
         
         return json_decode($jsonImport);
     }

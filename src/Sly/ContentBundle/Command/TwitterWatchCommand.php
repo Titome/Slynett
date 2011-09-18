@@ -23,12 +23,17 @@ class TwitterWatchCommand extends ContainerAwareCommand
         
         $em = $this->getContainer()->get('doctrine')->getEntityManager();
         
-        $lastTweet = $em->getRepository('SlyContentBundle:Content')->findOneBy(
-            array('type' => 'twitter'),
-            array('social_network_id' => 'DESC')
-        );
+        $lastTweet = $em->getRepository('SlyContentBundle:Content')->getLastTweet();
         
-        $twitter->setLastTweetId($lastTweet?$lastTweet->getSocialNetworkId():null);
+        $lastTweetId = null;
+        
+        foreach ($lastTweet as $t)
+        {
+            $lastTweetId = $t->getSocialNetworkId();
+            break;
+        }
+        
+        $twitter->setLastTweetId($lastTweetId?$lastTweetId:null);
         
         foreach ($twitter->getTweets() as $t)
         {
@@ -36,6 +41,7 @@ class TwitterWatchCommand extends ContainerAwareCommand
             $content->setType('twitter');
             $content->setTitle($t->text);
             $content->setSocialNetworkId($t->id);
+            $content->setPublishedAt(new \DateTime(date('Y-m-d H:i:s', strtotime($t->created_at))));
 
             $em->persist($content);
             

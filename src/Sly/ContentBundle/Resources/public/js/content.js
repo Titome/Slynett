@@ -1,13 +1,10 @@
 jQuery(document).ready(function($){
-    $('.slider').css({
-        'margin-bottom':'50px'
-    });
-    
     $('.slider .box_skitter').skitter({
+        dots: true,
         animation: 'cube',
         interval: 4000,
         animateNumberOut: {
-            backgroundColor:'#555', 
+            backgroundColor:'#ddd', 
             color:'#fff'
         }, 
         animateNumberOver: {

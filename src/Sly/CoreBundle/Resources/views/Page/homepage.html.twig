@@ -1,21 +1,52 @@
 {% extends "SlyCoreBundle:Layout:layout.html.twig" %}
 
 {% block content %}
+    <div class="homepage_introduction">
+        <h3>{{ 'homepage.intro.title' | trans({}, 'page') }}</h3>
+        
+        <blockquote>
+            {{ 'homepage.intro.msg11' | trans({}, 'page') }}
+            <a href="{{ path('blog') }}">{{ 'homepage.intro.msg12' | trans({}, 'page') }}</a>,
+            <a href="{{ path('tutorial') }}">{{ 'homepage.intro.msg13' | trans({}, 'page') }}</a>,
+            <a href="{{ path('watch') }}">{{ 'homepage.intro.msg14' | trans({}, 'page') }}</a>
+            {{ 'homepage.intro.msg15' | trans({}, 'page') }}
+            <a href="{{ path('snippet') }}">{{ 'homepage.intro.msg16' | trans({}, 'page') }}</a>
+            {{ 'homepage.intro.msg17' | trans({}, 'page') }}
+        </blockquote>
+    </div>
+
     <div class="grid_8 alpha">
+        <h3>{{ 'homepage.lastitems.blog_title' | trans({}, 'page') }}</h3>
+        
         <aside class="slider">
             {% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog', 'slider': true} %}
         </aside>
     </div>
     
     <div class="grid_8 omega">
+        <h3>{{ 'homepage.lastitems.tutorials_title' | trans({}, 'page') }}</h3>
+        
         <aside class="slider">
             {% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog', 'slider': true} %}
         </aside>
-        
+    </div>
+
+    <div class="grid_10 alpha">
         <aside>
             <h3>{{ 'core.activity.title' | trans }}</h3>
-        
+
             {% render 'SlyCoreBundle:Component:lastActivity' %}
+        </aside>
+    </div>
+
+    <div class="grid_6 omega">
+        <h3>
+            {{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }}
+            {{ 'core.header.follow.msg2' | trans }}
+        </h3>
+        
+        <aside class="inetworks">
+            {% include 'SlyCoreBundle:Block:socialNetworks.html.twig' %}
         </aside>
     </div>
 {% endblock content %}

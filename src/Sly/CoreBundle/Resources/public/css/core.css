@@ -246,64 +246,76 @@ header .top {
 }
 
 header .top .right {
-	text-align: right;
+    text-align: right;
 }
 
 header .top .right aside {
-	display: inline-block;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #eee;
-	font-family: Georgia, "Times New Roman", serif;
-	font-style: italic;
-	font-size: 12px;
-	color: #aaa;
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 12px;
+    color: #aaa;
 }
 
 header .top .right nav {
-	padding-top: 10px;
+    padding-top: 10px;
+    margin-top: 5px;
 }
 
 header .top .right nav ul li {
-	display: inline-block;
-	margin-left: 20px;
-	list-style: none;
+    display: inline-block;
+    list-style: none;
 }
 
 header .top .right nav ul li a,
 header .top .right nav ul li a:visited {
-	font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
-	font-size: 20px;
-	text-transform: uppercase;
-	font-weight: bold;
-	color: #333;
+    font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
+    padding: 5px 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #333;
 }
 
+header .top .right nav ul li a:hover,
 header .top .right nav ul li.active a,
-header .top .right nav ul li.active a:visited,
+header .top .right nav ul li.active a:visited {
+    text-decoration: none;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    transition: 0.3s;
+}
+
 header .top .right nav ul li a:hover {
-    color: #bf3604;
-	text-decoration: underline;
-	-webkit-transition: 0.3s;
-	-moz-transition: 0.3s;
-	-o-transition: 0.3s;
-	-ms-transition: 0.3s;
-	transition: 0.3s;
+    background-color: #eee;
+}
+
+header .top .right nav ul li a:active,
+header .top .right nav ul li a:focus,
+header .top .right nav ul li.active a,
+header .top .right nav ul li.active a:visited {
+    color: #fff;
+    background-color: #bf3604;
 }
 
 header .bottom {
-	position: absolute;
-	display: block;
-	left: 0;
-	bottom: -20px;
-	width: 960px;
-	height: 20px;
-	background: url('../images/header-bottom-background.png') bottom left no-repeat;
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: -20px;
+    width: 960px;
+    height: 20px;
+    background: url('../images/header-bottom-background.png') bottom left no-repeat;
 }
 
 section.main {
     position: relative;
-	padding: 10px 0 40px 0;
-	background-color: #fff;
+    padding: 10px 0 40px 0;
+    background-color: #fff;
 }
 
 section.main .top {
@@ -550,22 +562,26 @@ section.sidebar blockquote {
     margin-bottom: 20px;
 }
 
-section.sidebar ul.networks {
+section.sidebar ul.networks,
+.inetworks ul.networks {
     margin: 0 0 20px 0;
 }
 
-section.sidebar ul.networks li {
+section.sidebar ul.networks li,
+.inetworks ul.networks li {
     list-style: none;
     vertical-align: middle;
     font-weight: bold;
 }
 
-section.sidebar ul.networks li a:hover {
+section.sidebar ul.networks li a:hover,
+.inetworks ul.networks li a:hover {
     color: #333;
     text-decoration: none;
 }
 
-section.sidebar ul.networks li span {
+section.sidebar ul.networks li span,
+.inetworks ul.networks li span {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
@@ -579,59 +595,73 @@ section.sidebar ul.networks li span {
     transition: 0.3s;
 }
 
-section.sidebar ul.networks li.rss span {
+section.sidebar ul.networks li.rss span,
+.inetworks ul.networks li.rss span {
     background-position: 0 -840px;
 }
 
-section.sidebar ul.networks li.rss:hover span {
+section.sidebar ul.networks li.rss:hover span,
+.inetworks ul.networks li.rss:hover span {
     background-position: 0 -896px;
 }
 
-section.sidebar ul.networks li.twitter span {
+section.sidebar ul.networks li.twitter span,
+.inetworks ul.networks li.twitter span {
     background-position: -56px -1344px;
 }
 
-section.sidebar ul.networks li.twitter:hover span {
+section.sidebar ul.networks li.twitter:hover span,
+.inetworks ul.networks li.twitter:hover span {
     background-position: -56px -1400px;
 }
 
-section.sidebar ul.networks li.facebook span {
+section.sidebar ul.networks li.facebook span,
+.inetworks ul.networks li.facebook span {
     background-position: 0 -672px;
 }
 
-section.sidebar ul.networks li.facebook:hover span {
+section.sidebar ul.networks li.facebook:hover span,
+.inetworks ul.networks li.facebook:hover span {
     background-position: 0 -728px;
 }
 
-section.sidebar ul.networks li.googleplus span {
+section.sidebar ul.networks li.googleplus span,
+.inetworks ul.networks li.googleplus span {
     background-position: 0 -1176px;
 }
 
-section.sidebar ul.networks li.googleplus:hover span {
+section.sidebar ul.networks li.googleplus:hover span,
+.inetworks ul.networks li.googleplus:hover span {
     background-position: 0 -1232px;
 }
 
-section.sidebar ul.networks li.linkedin span {
+section.sidebar ul.networks li.linkedin span,
+.inetworks ul.networks li.linkedin span {
     background-position: 0 -1344px;
 }
 
-section.sidebar ul.networks li.linkedin:hover span {
+section.sidebar ul.networks li.linkedin:hover span,
+.inetworks ul.networks li.linkedin:hover span {
     background-position: 0 -1400px;
 }
 
-section.sidebar ul.networks li.flickr span {
+section.sidebar ul.networks li.flickr span,
+.inetworks ul.networks li.flickr span {
     background-position: 0 -1008px;
 }
 
-section.sidebar ul.networks li.flickr:hover span {
+section.sidebar ul.networks li.flickr:hover span,
+.inetworks ul.networks li.flickr:hover span {
     background-position: 0 -1064px;
 }
 
-section.sidebar ul.networks li.foursquare span {
+section.sidebar ul.networks li.foursquare span,
+.inetworks ul.networks li.foursquare span {
     background-position: -56px -168px;
 }
 
-section.sidebar ul.networks li.foursquare:hover span {
+section.sidebar ul.networks li.foursquare:hover span,
+.inetworks ul.networks li.foursquare:hover span {
     background-position: -56px -224px;
 }
 
@@ -815,6 +845,20 @@ ul.activity a.type:hover {
 .sprite-activitytwitter{ background-position: 0 -160px; width: 14px; height: 16px; } 
 .sprite-activitywatch{ background-position: 0 -178px; width: 16px; height: 16px; }*/
 
+.homepage_introduction {
+    margin-bottom: 40px;
+}
+
+.homepage_introduction blockquote {
+    margin: 0 50px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.slider {
+    margin-bottom: 80px;
+}
+
 .grid_8 .slider .box_skitter {
     width: 460px;
     height: 240px;
@@ -822,7 +866,7 @@ ul.activity a.type:hover {
 
 .grid_8 .slider .label_skitter p {
     padding: 10px;
-    background-color: #333;
+    background-color: #bf3604;
     font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
     font-size: 16px;
 }

@@ -3,6 +3,18 @@ homepage:
     title: Accueil
     description: Blog, tutoriels vidéos, ressources, snippets, veille et autres.
   title: Accueil
+  intro:
+    title: En quelques mots...
+    msg11: Passionné des technologies Web open source telles que PHP5, symfony 1.4, Symfony2, jQuery, CSS3/HTML5, je prends plaisir à partager avec vous
+    msg12: mes découvertes et expertises
+    msg13: tutoriels
+    msg14: ma veille quotidienne
+    msg15: ou encore
+    msg16: mes snippets
+    msg17: les plus pratiques.
+  lastitems:
+    blog_title: Derniers articles
+    tutorials_title: Derniers tutoriels
 
 terms:
   seo:

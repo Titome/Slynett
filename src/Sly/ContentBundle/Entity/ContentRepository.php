@@ -110,4 +110,16 @@ class ContentRepository extends EntityRepository
         
         return $q->getQuery()->getResult();
     }
+    
+    public function getLastTweet()
+    {
+        $q = $this->createQueryBuilder('c')
+            ->where('c.status = true')
+            ->andWhere('c.type = :type')
+            ->setParameter('type', 'twitter')
+            ->orderBy('c.socialNetworkId', 'DESC')
+            ->setMaxResults(1);
+        
+        return $q->getQuery()->getResult();
+    }
 }

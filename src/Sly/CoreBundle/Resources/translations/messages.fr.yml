@@ -19,9 +19,6 @@ core:
    
   networks:
     rss: Flux RSS
-   
-  footer:
-    rights: Tous droits réservés
     
   activity:
     title: Dernière activité
@@ -34,5 +31,8 @@ core:
       snippet: Snippet
       resource: Ressource
       twitter: Tweet
+   
+  footer:
+    rights: Tous droits réservés
       
   soon: Prochainement disponible.
