@@ -1,4 +1,7 @@
 core:
+  date:
+    mini: d/m/Y
+  
   header:
     follow:
       msg1: Suivez %name% et

@@ -1,7 +1,3 @@
-tutorial_admin:
-  pattern: /_admin
-  defaults: { _controller: SlyContentBundle:Admin:tutorial }
-
 tutorial_feed:
     pattern: /feed.{_format}
     defaults: { _controller: SlyContentBundle:Tutorial:list }

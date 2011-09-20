@@ -1,35 +1,17 @@
 {% spaceless %}
-    <aside class="tpl1">
-        {% if item.categories | length %}
-            <ul class="categories colored">
-                {% for k, cat in item.categories %}
-                    <li>
-                        <a href="{{ path('watch_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+    <aside class="tpl2">
+        <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('core.date.mini' | trans) }}</abbr>
         
-        <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
-        
-        <h3>
-            <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="link">
-                {{ item }}
-            </a>
-        </h3>
+        <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;">
+            {{ item }}
+        </a>
         
         {% if item.tags | length %}
-            <p class="tags">
+            <span class="tags">
                 {% for tag in item.tagsCollection %}
                     <a href="#" class="tag">{{ tag }}</a>
                 {% endfor %}
-            </p>
+            </span>
         {% endif %}
-        
-        <p class="minilink">
-            <a href="{{ item.minilink }}" onclick="var w=window.open(this.href); w.focus(); return false;">
-                {{ item.minilink }}
-            </a>
-        </p>
     </aside>
 {% endspaceless %}

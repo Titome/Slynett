@@ -92,6 +92,32 @@ div.gist .gist-file .gist-data {
 	background-color: #333;
 }
 
+.icategories {
+    
+}
+
+.icat {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: url('../images/sprite-cicons.png') top left no-repeat;
+}
+
+.icat.php, .icat.php5 { background-position: 0 0; }
+.icat.html, .icat.html5 { background-position: 0 -50px; }
+.icat.api { background-position: 0 -100px; }
+.icat.symfony-1-4 { background-position: 0 -150px; }
+.icat.symfony2 { background-position: 0 -200px; }
+.icat.jquery { background-position: 0 -250px; }
+.icat.css { background-position: 0 -300px; }
+.icat.seo { background-position: 0 -350px; }
+.icat.e-communication { background-position: 0 -400px; }
+.icat.tutoriels { background-position: 0 -450px; }
+.icat.autres { background-position: 0 -500px; }
+.icat.slynett { background-position: 0 -550px; }
+.icat.actualites { background-position: 0 -600px; }
+.icat.apache-nginx { background-position: 0 -650px; }
+
 section.list {
 	overflow: hidden;
 }
@@ -113,8 +139,8 @@ article.tpl1 {
 article.tpl1 h4 a {
     font-size: 16px;
     font-weight: bold;
-	color: #bf3604;
-	text-transform: uppercase;
+    color: #bf3604;
+    text-transform: uppercase;
 }
 
 article.tpl1 .left {
@@ -125,17 +151,14 @@ article.tpl1 .left .content {
     padding: 0 0 0 20px;
 }
 
-article.tpl1 .left .categories a {
-	padding: 5px 10px;
-	font-size: 12px;
-}
-
 article.tpl1 .left h4 {
-	margin-bottom: 10px;
+ margin: 0 0 10px 0;
 }
 
 article.tpl1 .left img {
 	margin-bottom: 10px;
+ width: 200px;
+ height: auto;
 }
 
 article.tpl1 .left .tags a,
@@ -145,6 +168,14 @@ article.tpl1 .left .tags a:visited {
 
 article.tpl1 .right .content {
     padding: 0 20px 0 0;
+}
+
+article.tpl1 .right ul.categories {
+    margin: 0;
+}
+
+article.tpl1 .right ul.categories li {
+    display: inline-block;
 }
 
 article.tpl1 .right .informations {
@@ -209,13 +240,13 @@ article.tpl2 h4 {
 article.tpl2 img {
     float: left;
     margin-right: 10px;
-    width: 40px;
+    width: 60px;
     height: auto;
 }
 
 article.tpl2 .details,
 article.tpl2 h4 {
-    margin-left: 50px;
+    margin-left: 70px;
 }
 
 article.tpl2 .details {
@@ -232,6 +263,7 @@ article.tpl2 .details a:visited {
 article.tpl2 .details a,
 article.tpl2 .details a:visited {
     text-decoration: underline;
+    color: #333;
 }
 
 article.tpl2 .details a:hover {
@@ -368,6 +400,7 @@ figure.tpl4 ul.categories li {
 
 aside.tpl1 {
     display: inline-block;
+    vertical-align: top;
     width: 268px;
     margin: 20px;
     padding-bottom: 20px;
@@ -377,7 +410,7 @@ aside.tpl1 {
 aside.tpl1 h3 {
 	font-size: 16px;
 	padding-bottom: 0;
-	margin-bottom: 5px;
+ margin: 0 0 10px 0;
 	border-bottom: none;
 }
 
@@ -404,7 +437,7 @@ aside.tpl1 .minilink a:visited {
 }
 
 aside.tpl1 ul.categories {
-	float: right;
+	float: left;
 	margin: 0;
 	padding: 0;
 	text-align: right;
@@ -412,8 +445,20 @@ aside.tpl1 ul.categories {
 
 aside.tpl1 ul.categories li {
 	list-style: none;
-	margin: 0;
+	margin: 0 10px 10px 0;
 	padding: 0;
+}
+
+aside.tpl2 {
+    margin-bottom: 5px;
+}
+
+aside.tpl2 abbr {
+    font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    padding-right: 5px;
+    margin-right: 5px;
+    border-right: 1px solid #ddd;
 }
 
 ul.sharebuttons.default {

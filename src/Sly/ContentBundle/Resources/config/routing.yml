@@ -17,3 +17,7 @@ _watch:
 _blog:
     resource: "@SlyContentBundle/Resources/config/routing_blog.yml"
     prefix:   /blog
+    
+_content_admin:
+    resource: "@SlyContentBundle/Resources/config/routing_admin.yml"
+    prefix:   /_admin

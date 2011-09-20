@@ -1,17 +1,7 @@
 {% spaceless %}
     <article class="tpl1">
         <div class="grid_4 alpha left">
-            <div class="content">
-                <p class="categories colored">
-                    {% if item.categories | length %}
-                        {% for k, cat in item.categories %}
-                            <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>
-                        {% endfor %}
-                    {% else %}
-                        {{ 'list.nocategory' | trans({}, 'blog') }}
-                    {% endif %}
-                </p>
-                
+            <div class="content">                
                 <h4>
                     <a href="{{ path('blog_show', {'slug': item.slug }) }}">
                         {{ item }}
@@ -20,7 +10,7 @@
                 
                 {%if item.picture %}
                     <a href="{{ path('blog_show', {'slug': item.slug }) }}">
-                        <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('thumbnail') }}" alt="{{ item }}" class="thumbnail" />
+                        <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium') }}" alt="{{ item }}" class="thumbnail" />
                     </a>
                 {% endif %}
                 
@@ -35,7 +25,7 @@
         </div>
         
         <div class="grid_8 right omega">
-            <div class="content">
+            <div class="content">                
                 <p class="informations">       
                     {{ 'list.publishedat' | trans({}, 'blog') }}
                     <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
@@ -48,6 +38,18 @@
                         {{ item.content | striptags | truncate(250) }}
                     {% endif %}
                 </p>
+                
+                {% if item.categories | length %}
+                    <ul class="categories">
+                        {% for k, cat in item.categories %}
+                            <li>
+                                <a href="{{ path('blog_category', {'slug': cat.slug}) }}" title="{{ cat }}">
+                                    <span class="icat {{ cat.slug }}"></span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 
                 <p class="read">
                     <a href="{{ path('blog_show', {'slug': item.slug }) }}#disqus_thread" data-disqus-identifier="blog-{{ item.id }}-{{ item.slug }}" class="comments">

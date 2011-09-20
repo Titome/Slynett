@@ -69,7 +69,7 @@ class AdminController extends Controller
                 $em->persist($content);
                 $em->flush();
                 
-                return $this->redirect($this->generateUrl('watch'));
+                return $this->redirect($this->generateUrl('watch_admin'));
             }
         }
         
@@ -131,7 +131,7 @@ class AdminController extends Controller
                 $em->persist($content);
                 $em->flush();
                 
-                return $this->redirect($this->generateUrl('snippet'));
+                return $this->redirect($this->generateUrl('snippet_admin'));
             }
         }
         

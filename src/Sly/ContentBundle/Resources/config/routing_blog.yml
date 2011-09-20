@@ -1,7 +1,3 @@
-blog_admin:
-  pattern: /_admin
-  defaults: { _controller: SlyContentBundle:Admin:blog }
-  
 blog_feed:
     pattern: /feed.{_format}
     defaults: { _controller: SlyContentBundle:Blog:list }

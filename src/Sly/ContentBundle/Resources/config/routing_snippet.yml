@@ -1,7 +1,3 @@
-snippet_admin:
-  pattern: /_admin
-  defaults: { _controller: SlyContentBundle:Admin:snippet }
-
 snippet_show:
   pattern: /{slug}.html
   defaults: { _controller: SlyContentBundle:Snippet:show }
