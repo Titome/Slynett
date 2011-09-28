@@ -22,6 +22,7 @@ class WatchLinkType extends AbstractType
                 ->add('title', 'text')
                 ->add('link', 'url')
                 ->add('tags', 'text', array('required' => false))
+                ->add('publishedAt', 'datetime', array('required' => false, 'widget' => 'single_text'))
         ;
     }
 

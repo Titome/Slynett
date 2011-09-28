@@ -76,7 +76,7 @@ class ContentRepository extends EntityRepository
         
         if ($withoutItem)
         {
-            $q->andWhere('c.id <> :withoutItemId')
+            $q->andWhere('c.id != :withoutItemId')
                 ->setParameter('withoutItemId', $withoutItem->getId());
         }
             

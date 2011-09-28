@@ -10,7 +10,7 @@
             </ul>
         {% endif %}
         
-        <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
+        <abbr title="{{ item.publishedAt | date('core.date.time.big' | trans) }}" class="dtstart">{{ item.publishedAt | date('core.date.time.big' | trans) }}</abbr>
         
         <h3>
             <a href="{{ path('snippet_show', {'slug': item.slug }) }}" title="{{ item }}">

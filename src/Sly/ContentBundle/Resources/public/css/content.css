@@ -281,8 +281,9 @@ article.tpl3 h2 {
 	margin: 20px 0;
 }
 
-article.tpl3 p {
-	margin-bottom: 10px;
+article.tpl3 p,
+article.tpl3 pre {
+	margin-bottom: 20px;
 }
 
 article.tpl3 .tags a,
@@ -329,6 +330,7 @@ article.tpl3 .iframe iframe {
     -moz-box-shadow: 0 0 10px #aaa;
     -webkit-box-shadow: 0 0 10px #aaa;
     box-shadow: 0 0 10px #aaa;
+    margin-bottom: 20px;
 }
 
 figure.tpl4 {

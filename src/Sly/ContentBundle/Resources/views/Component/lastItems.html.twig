@@ -6,6 +6,10 @@
                     <a href="{{ path(itemRoute, {'slug': item.slug }) }}" title="{{ item }}">
                         <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('thumbnail') }}" alt="{{ item }}" class="thumbnail" />
                     </a>
+                {% elseif item.type == 'tutorial' and item.link %}
+                    <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
+                        <img src="{{ item.dailyMotionPictureUrl }}" class="tutorial" alt="{{ item }}" />
+                    </a>
                 {% endif %}
                 
                 <span>

@@ -14,7 +14,7 @@
         
         <p class="details">
             {{ 'list.publishedat' | trans({}, 'blog') }}
-            <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
+            <abbr title="{{ item.publishedAt | date('core.date.time.small' | trans) }}" class="dtstart">{{ item.publishedAt | date('core.date.time.small' | trans) }}</abbr>
             
             <br />
             

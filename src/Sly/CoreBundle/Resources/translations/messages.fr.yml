@@ -39,3 +39,13 @@ core:
     rights: Tous droits réservés
       
   soon: Prochainement disponible.
+  
+  date:
+    small: d/m/Y
+    normal: d M Y
+    big: d F Y
+    
+    time:
+      small: "d/m/Y à H:i"
+      normal: "d M Y à H:i"
+      big: "d F Y à H:i"

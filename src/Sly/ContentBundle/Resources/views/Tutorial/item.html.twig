@@ -8,7 +8,7 @@
         
         <p class="informations">       
             {{ 'list.publishedat' | trans({}, 'blog') }}
-            <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
+            <abbr title="{{ item.publishedAt | date('core.date.time.big' | trans) }}" class="dtstart">{{ item.publishedAt | date('core.date.time.big' | trans) }}</abbr>
         </p>
         
         <p class="categories colored">

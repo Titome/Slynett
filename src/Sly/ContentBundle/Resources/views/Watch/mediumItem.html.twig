@@ -1,6 +1,6 @@
 {% spaceless %}
     <aside class="tpl2">
-        <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('core.date.mini' | trans) }}</abbr>
+        <abbr title="{{ item.publishedAt | date('core.date.time.small' | trans) }}" class="dtstart">{{ item.publishedAt | date('core.date.small' | trans) }}</abbr>
         
         <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;">
             {{ item }}
