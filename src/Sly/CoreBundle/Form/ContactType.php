@@ -13,6 +13,8 @@ class ContactType extends AbstractType
     {
         return array(
             'data_class' => 'Sly\CoreBundle\Entity\Contact',
+            'ref' => $options['ref'],
+            'subjects' => $options['subjects'],
         );
     }
     
@@ -22,16 +24,10 @@ class ContactType extends AbstractType
                 ->add('email', 'email')
                 ->add('twitter', 'text', array('required' => false))
                 ->add('subject', 'choice', array(
-                    'choices'   => array(
-                        'Prise de contact - Questions diverses' => 'Prise de contact - Questions diverses',
-                        'Suggestions' => 'Suggestions',
-                        'Idéées de futurs tutoriels' => 'Idéées de futurs tutoriels',
-                        'Propositions de postes ou missions' => 'Propositions de postes ou missions',
-                        'Partenariats' => 'Partenariats',
-                        'Autres' => 'Autres',
-                    ),
+                    'choices'   => $options['subjects'],
                     'required'  => false,
                     'empty_value' => false,
+                    'preferred_choices' => $options['ref']?array(3):array(),
                 ))
                 ->add('message', 'textarea')
                 ->add('mlkqsd', 'text', array('required' => false))

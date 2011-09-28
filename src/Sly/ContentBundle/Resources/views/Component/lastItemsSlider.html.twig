@@ -4,9 +4,16 @@
         <ul style="display: none;">
             {% for item in items %}
                 <li>
-                    <a href="{{ path(itemRoute, {'slug': item.slug }) }}" title="{{ item }}">
-                        <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('homeslider') }}" alt-"{{ item }} />
-                    </a>
+                    {%if item.picture %}
+                        <a href="{{ path(itemRoute, {'slug': item.slug }) }}" title="{{ item }}">
+                            <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('homeslider') }}" alt="{{ item }}" />
+                        </a>
+                    {% elseif item.type == 'tutorial' and item.link %}
+                        <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
+                            <img src="{{ item.dailyMotionPictureUrl }}" alt="{{ item }}" />
+                        </a>
+                    {% endif %}
+                    
                     <div class="label_text">
                         <p>
                             <a href="{{ path(itemRoute, {'slug': item.slug }) }}" title="{{ item }}">

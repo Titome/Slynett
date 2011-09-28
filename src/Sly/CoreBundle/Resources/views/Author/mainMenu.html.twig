@@ -10,7 +10,7 @@
         </a>
     </li>
     <li class="{{ app.request.attributes.get('_route') | checkActive(['contact']) }}">
-        <a href="{{ path('contact') }}" title="{{ 'menu.contact' | trans({}, 'author') }}">
+        <a href="{{ path('contact', {'ref': 'me'}) }}" title="{{ 'menu.contact' | trans({}, 'author') }}">
             {{ 'menu.contact' | trans({}, 'author') }}
         </a>
     </li>

@@ -1,5 +1,8 @@
 {% extends "SlyCoreBundle:Layout:layout.html.twig" %}
 
+{% block title %}{{ 'homepage.seo.title' | trans({'%name%': project.name}, 'page') }}{% endblock title %}
+{% block description %}{{ 'homepage.seo.description' | trans({'%name%': project.name}, 'page') }}{% endblock description %}
+
 {% block content %}
     <div class="homepage_introduction">
         <h3>{{ 'homepage.intro.title' | trans({}, 'page') }}</h3>
@@ -27,7 +30,7 @@
         <h3>{{ 'homepage.lastitems.tutorials_title' | trans({}, 'page') }}</h3>
         
         <aside class="slider">
-            {% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog', 'slider': true} %}
+            {% render 'SlyContentBundle:Component:lastItems' with {'type': 'tutorial', 'slider': true} %}
         </aside>
     </div>
 

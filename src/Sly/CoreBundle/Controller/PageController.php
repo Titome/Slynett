@@ -25,9 +25,21 @@ class PageController extends Controller
     
     public function contactAction()
     {
-        $contactForm = $this->createForm(new ContactType());
+        $subjects = array(
+            'Prise de contact - Questions diverses',
+            'Suggestions',
+            'Idéées de futurs tutoriels',
+            'Propositions de postes ou missions',
+            'Partenariats',
+            'Autres',
+        );
         
         $request = $this->get('request');
+        
+        $contactForm = $this->createForm(new ContactType(), null, array(
+            'ref' => $request->query->get('ref'),
+            'subjects' => $subjects,
+        ));
         
         if ($request->getMethod() == 'POST')
         {
