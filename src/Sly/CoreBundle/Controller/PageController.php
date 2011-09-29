@@ -52,7 +52,7 @@ class PageController extends Controller
                 $mailer = $this->get('mailer');
             
                 $message = \Swift_Message::newInstance()
-                    ->setSubject($contact->getSubject())
+                    ->setSubject($subjects[$contact->getSubject()])
                     ->setFrom(array($contact->getEmail() => $contact->getName()))
                     ->setTo($this->container->getParameter('project_email'))
                     ->setBody($this->renderView('SlyCoreBundle:Email:contact.txt.twig', array('contact' => $contact)))
