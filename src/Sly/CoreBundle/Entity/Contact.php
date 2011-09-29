@@ -81,4 +81,14 @@ class Contact
     {
         return $this->message;
     }
+    
+    public function setMlkqsd($mlkqsd)
+    {
+        $this->mlkqsd = $mlkqsd;
+    }
+    
+    public function getMlkqsd()
+    {
+        return $this->mlkqsd;
+    }
 }

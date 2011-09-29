@@ -54,3 +54,5 @@ contact:
     submit: Envoyer le message
   sidebar:
     follow: N'hésitez pas à suivre %name% et son auteur depuis vos réseaux préférés !
+  flash:
+    success: Votre message a bien été envoyé.

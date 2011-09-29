@@ -234,6 +234,15 @@ ul.list li {
 	color: #ccc;
 }
 
+section.flash {
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+section.flash.success {
+    
+}
+
 header {
 	position: relative;
 	background-color: #fff;

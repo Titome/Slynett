@@ -18,6 +18,12 @@
         <a href="mailto:{{ project.shortemail | textEncode | raw }}">{{ project.shortemail | textEncode | raw }}</a>
         {{ 'contact.email.msg2' | trans({}, 'page') }}
     </p>
+
+    {% if app.session.hasFlash('success') %}
+        <section class="flash success">
+            <strong>{{ app.session.flash('success') }}</strong>
+        </section>
+    {% endif %}
     
     <form action="{{ path('contact') }}" method="post" {{ form_enctype(contactForm) }}>
         {{ form_errors(contactForm) }}

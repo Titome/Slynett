@@ -27,5 +27,13 @@
                 {{ item }}
             </a>
         </h3>
+
+        <p class="description">
+            {% if item.excerpt %}
+                {{ item.excerpt | striptags }}
+            {% else %}
+                {{ item.content | striptags | truncate(250) }}
+            {% endif %}
+        </p>
     </figure>
 {% endspaceless %}

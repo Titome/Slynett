@@ -60,7 +60,9 @@ class PageController extends Controller
                 
                 $mailer->send($message);
                 
-                return $this->redirect($this->generateUrl('homepage'));
+                $this->get('session')->setFlash('success', $this->get('translator')->trans('contact.flash.success', array(), 'page'));
+                
+                return $this->redirect($this->generateUrl('contact'));
             }
         }
         
