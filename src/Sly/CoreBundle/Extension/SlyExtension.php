@@ -8,6 +8,7 @@ class SlyExtension extends \Twig_Extension {
         return array(
             'checkActive'  => new \Twig_Filter_Method($this, 'checkActive'),
             'textEncode'  => new \Twig_Filter_Method($this, 'textEncode'),
+            'getContentFromUrl'  => new \Twig_Filter_Method($this, 'getContentFromUrl'),
         );
     }
 
@@ -48,6 +49,11 @@ class SlyExtension extends \Twig_Extension {
         }
         
         return $encodedText;
+    }
+    
+    public function getContentFromUrl($url)
+    {
+        return @file_get_contents($url);
     }
 
     public function getName()

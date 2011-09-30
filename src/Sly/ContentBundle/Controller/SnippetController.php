@@ -54,6 +54,7 @@ class SnippetController extends Controller
         
         return $this->render('SlyContentBundle:Snippet:show.html.twig', array(
             'item' => $content,
+            'githubRawUrl' => $this->container->getParameter('sly.content.snippet.githubrawurlprefix'),
         ));
     }
 }

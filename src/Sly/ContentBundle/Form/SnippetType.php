@@ -22,7 +22,7 @@ class SnippetType extends AbstractType
                 ->add('title', 'text')
                 ->add('excerpt', 'textarea', array('required' => false))
                 ->add('tags', 'text', array('required' => false))
-                ->add('gistId')
+                ->add('githubFile', 'text', array('required' => false))
                 ->add('status', 'checkbox', array('data' => true))
                 ->add('publishedAt', 'datetime', array('required' => false, 'widget' => 'single_text'))
         ;

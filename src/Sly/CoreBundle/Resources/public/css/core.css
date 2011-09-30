@@ -877,6 +877,7 @@ ul.activity a {
 ul.activity li.twitter a,
 ul.activity li.twitter a:visited {
     font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
     font-style: italic;
     color: #aaa;
 }

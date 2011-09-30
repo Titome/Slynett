@@ -28,8 +28,8 @@ core:
     nocontent: Aucune activité à afficher.
     
     type:
-      blog: Article de Blog
-      watch: Lien de veille
+      blog: Article
+      watch: Veille
       tutorial: Tutoriel
       snippet: Snippet
       resource: Ressource

@@ -33,4 +33,4 @@ fields:
   categories: Catégorie(s)
   content: Contenu
   tags: Mots clés
-  gist: ID Gist
+  githubFile: Suite fichier Raw GitHub

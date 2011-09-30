@@ -35,8 +35,8 @@
             {{ item.excerpt }}
         {% endif %}
         
-        {% if item.gistId %}
-            <script src="https://gist.github.com/{{ item.gistId }}.js"></script>
+        {% if item.githubFile %}
+            <pre class="brush: {{ item.getGithubFileType }};">{{ '%prefix%%file%' | replace({'%prefix%': githubRawUrl, '%file%': item.githubFile}) | getContentFromUrl }}</pre>
         {% endif %}
     </div>
 </article>

@@ -58,10 +58,10 @@ class Content
      */
     protected $minilink;
     /**
-     * @Assert\Type(type="integer")
-     * @ORM\Column(type="integer", length=10, nullable=true)
+     * @Assert\Type(type="string")
+     * @ORM\Column(name="github_file", type="string", length=255, nullable=true)
      */
-    protected $gistId;
+    protected $githubFile;
     /**
      * @Assert\Type(type="int")
      * @ORM\Column(name="social_network_id", type="bigint", length=20, nullable=true)
@@ -187,14 +187,28 @@ class Content
         return $this->minilink;
     }
     
-    public function setGistId($gistId)
+    public function setGithubFile($githubFile)
     {
-        $this->gistId = $gistId;
+        $this->githubFile = $githubFile;
     }
     
-    public function getGistId()
+    public function getGithubFile()
     {
-        return $this->gistId;
+        return $this->githubFile;
+    }
+    
+    public function getGithubFileType()
+    {
+        $x = explode('.', $this->getGithubFile());
+        $extension = end($x);
+        
+        switch($extension)
+        {
+            default:        return 'text'; break;
+            case 'php':     return 'php'; break;
+            case 'html':    return 'html'; break;
+            case 'twig':    return 'html'; break;
+        }
     }
     
     public function setSocialNetworkId($socialNetworkId)

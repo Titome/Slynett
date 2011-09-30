@@ -11,6 +11,7 @@ parameters:
     width: 620
     height: 340
   sly.content.snippet.maxperpage: 30
+  sly.content.snippet.githubrawurlprefix: 'https://raw.github.com/Ph3nol/mySnippets/master/'
 
 services:
   twig.extension.text:
