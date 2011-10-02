@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Facebook App — {{ project.name }}</title>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('bundles/slycore/vendor/960gs/code/css/min/reset.css') }}" type="text/css" media="screen" />
+            <link rel="stylesheet" href="{{ asset('bundles/slycore/vendor/960gs/code/css/min/960_16_col.css') }}" type="text/css" media="screen" />
+            <link rel="stylesheet" href="{{ asset('bundles/slycore/css/fb.app.css') }}" type="text/css" media="screen" />
+        {% endblock stylesheets %}
+    </head>
+    <body>
+        {% block content %}{% endblock content %}
+        
+        {% block javascripts %}
+            <script type="text/javascript" src="'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'"></script>
+        {% endblock javascripts %}
+    </body>
+</html>

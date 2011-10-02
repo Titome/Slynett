@@ -70,4 +70,9 @@ class PageController extends Controller
             'contactForm' => $contactForm->createView(),
         ));
     }
+    
+    public function facebookAppAction()
+    {
+        return $this->render('SlyCoreBundle:Page:facebookApp.html.twig', array());
+    }
 }

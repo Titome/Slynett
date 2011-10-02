@@ -8,6 +8,10 @@ sitemap:
     requirements:
       _format: xml
       
+facebook_app:
+    pattern: /facebook-app
+    defaults: { _controller: SlyCoreBundle:Page:facebookApp }
+      
 contact:
     pattern: /contact
     defaults: { _controller: SlyCoreBundle:Page:contact }
