@@ -1,10 +1,10 @@
 {% spaceless %}
     <figure class="tpl4">
         {% if item.categories | length %}
-            <ul class="categories colored">
+            <ul class="categories">
                 {% for k, cat in item.categories %}
                     <li>
-                        <a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}" title="{{ cat }}">{{ cat }}</a>
+                        <a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="icat {{ cat.slug }} active" title="{{ cat }}"></a>
                     </li>
                 {% endfor %}
             </ul>

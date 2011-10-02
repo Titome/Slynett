@@ -27,7 +27,7 @@
                         {{ item.content | striptags | truncate(150) }}
                     {% endif %}
                 </description>
-                <link>{{ item.link }}</link>
+                <link>{{ item.minilink }}</link>
                 <guid>{{ item.id }}-{{ item.slug }}</guid>
                 <pubDate>{{ item.publishedAt | date('D, d M Y H:i:s') }}</pubDate>
             </item>

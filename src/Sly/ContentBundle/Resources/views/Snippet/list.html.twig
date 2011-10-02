@@ -16,6 +16,14 @@
 {% endblock topMainMenu %}
 
 {% block content %}
+    {% if app.request.query.get('page') <= 1 %}
+        <section class="introduction">
+            <blockquote>
+                {{ 'seo.description' | trans({}, 'snippet') }}
+            </blockquote>
+        </section>
+    {% endif %}
+
     <section class="snippet list">
         {% for item in contentPaginator %}
             {% include 'SlyContentBundle:Snippet:mediumItem.html.twig' with {'item': item } %}

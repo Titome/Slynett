@@ -20,6 +20,14 @@
 {% endblock rightSidebar %}
 
 {% block content %}
+    {% if app.request.query.get('page') <= 1 %}
+        <section class="introduction">
+            <blockquote>
+                {{ 'seo.description' | trans({}, 'blog') }}
+            </blockquote>
+        </section>
+    {% endif %}
+
     <section class="blog list">
         {% for key, item in contentPaginator %}
             {% if key <= 0 %}

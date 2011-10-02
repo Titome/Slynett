@@ -4,6 +4,7 @@ seo:
 menu:
   presentation: Présentation
   skills: Compétences
+  portfolio: Portfolio
   hire: M'embaucher ?
   contact: Me contacter
   
@@ -51,3 +52,9 @@ skills:
     linkedin:
       msg1: Rendez-vous sur
       msg2: pour en savoir plus sur mon profil professionnel.
+      
+portfolio:
+  seo:
+    title: Portfolio
+    description: Mes projets Web.
+  title: Portfolio / Projets Web

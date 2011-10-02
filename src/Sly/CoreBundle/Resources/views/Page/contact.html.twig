@@ -9,8 +9,20 @@
     {% include 'SlyCoreBundle:Block:socialNetworks.html.twig' %}
 {% endblock rightSidebar %}
 
+{% set topMain = true %}
+
+{% block topMainTitle %}
+    <a href="{{ path('contact') }}" title="{{ 'contact.title' | trans({}, 'page') }}">
+        {{ 'contact.title' | trans({}, 'page') }}
+    </a>
+{% endblock topMainTitle %}
+
 {% block content %}
-    <h3>{{ 'contact.title' | trans({}, 'page') }}</h3>
+    <section class="introduction">
+        <blockquote>
+            {{ 'contact.seo.description' | trans({}, 'page') }}
+        </blockquote>
+    </section>
     
     <p>
         {{ 'contact.email.msg1' | trans({}, 'page') }}

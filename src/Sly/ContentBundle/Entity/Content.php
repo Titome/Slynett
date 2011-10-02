@@ -208,6 +208,7 @@ class Content
             case 'php':     return 'php'; break;
             case 'html':    return 'html'; break;
             case 'twig':    return 'html'; break;
+            case 'yml':     return 'yml'; break;
         }
     }
     

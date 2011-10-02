@@ -24,11 +24,11 @@
             {{ 'core.menu.snippets' | trans }}
         </a>
     </li>
-    <li class="resources {{ app.request.attributes.get('_route') | checkActive(['resource']) }}">
+    <!-- <li class="resources {{ app.request.attributes.get('_route') | checkActive(['resource']) }}">
         <a href="{{ path('resource') }}" title="{{ 'core.menu.resources' | trans }}">
             {{ 'core.menu.resources' | trans }}
         </a>
-    </li>
+    </li> -->
     <li class="resources {{ app.request.attributes.get('_route') | checkActive(['contact']) }}">
         <a href="{{ path('contact') }}" title="{{ 'core.menu.contact' | trans }}">
             {{ 'core.menu.contact' | trans }}

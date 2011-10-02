@@ -11,10 +11,10 @@
             <abbr title="{{ item.publishedAt | date('core.date.time.big' | trans) }}" class="dtstart">{{ item.publishedAt | date('core.date.time.big' | trans) }}</abbr>
         </p>
         
-        <p class="categories colored">
+        <p class="categories">
             {% if item.categories | length %}
                 {% for k, cat in item.categories %}
-                    <a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>
+                    <a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="icat {{ cat.slug }}" title="{{ cat }}"></a>
                 {% endfor %}
             {% else %}
                 {{ 'list.nocategory' | trans({}, 'blog') }}

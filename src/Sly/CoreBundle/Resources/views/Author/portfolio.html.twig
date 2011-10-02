@@ -1,0 +1,28 @@
+{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
+
+{% block title %}{{ 'portfolio.seo.title' | trans({}, 'author') }} | {{ 'seo.title' | trans({}, 'author') }}{% endblock title %}
+{% block description %}{{ 'portfolio.seo.description' | trans({}, 'author') }}{% endblock description %}
+
+{% set topMain = true %}
+
+{% block topMainTitle %}
+    <a href="{{ path('author') }}" title="{{ 'title' | trans({}, 'author') }}">
+        {{ 'title' | trans({}, 'author') }}
+    </a>
+{% endblock topMainTitle %}
+
+{% block topMainMenu %}
+    {% include 'SlyCoreBundle:Author:mainMenu.html.twig' %}
+{% endblock topMainMenu %}
+
+{% block rightSidebar %}
+    {% include 'SlyCoreBundle:Author:rightSidebar.html.twig' %}
+{% endblock rightSidebar %}
+
+{% block content %}
+    <article class="tpl3">        
+        <h3>{{ 'portfolio.title' | trans({}, 'author') }}</h3>
+        
+        <div class="clearfix"></div>
+    </article>
+{% endblock content %}

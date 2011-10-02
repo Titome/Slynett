@@ -16,6 +16,14 @@
 {% endblock topMainMenu %}
 
 {% block content %}
+    {% if app.request.query.get('page') <= 1 %}
+        <section class="introduction">
+            <blockquote>
+                {{ 'seo.description' | trans({}, 'watch') }}
+            </blockquote>
+        </section>
+    {% endif %}
+
     <section class="watch list">
         {% for item in contentPaginator %}
             {% include 'SlyContentBundle:Watch:mediumItem.html.twig' with {'item': item } %}

@@ -2,9 +2,7 @@
     <aside class="tpl2">
         <abbr title="{{ item.publishedAt | date('core.date.time.small' | trans) }}" class="dtstart">{{ item.publishedAt | date('core.date.small' | trans) }}</abbr>
         
-        <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;">
-            {{ item }}
-        </a>
+        <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;">{{ item }}</a>
         
         {% if item.tags | length %}
             <span class="tags">

@@ -16,4 +16,9 @@ class AuthorController extends Controller
     {
         return $this->render('SlyCoreBundle:Author:skills.html.twig', array());
     }
+    
+    public function portfolioAction()
+    {
+        return $this->render('SlyCoreBundle:Author:portfolio.html.twig', array());
+    }
 }

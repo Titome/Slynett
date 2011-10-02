@@ -16,6 +16,14 @@
 {% endblock topMainMenu %}
 
 {% block content %}
+    {% if app.request.query.get('page') <= 1 %}
+        <section class="introduction">
+            <blockquote>
+                {{ 'seo.description' | trans({}, 'tutorial') }}
+            </blockquote>
+        </section>
+    {% endif %}
+
     <section class="tutorial list">
         {% for item in contentPaginator %}
             {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'item': item } %}

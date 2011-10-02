@@ -17,7 +17,7 @@
 <aside>
     <h3>{{ 'sidebar.item.others.title' | trans({}, 'snippet') }}</h3>
 
-    {% render 'SlyContentBundle:Component:lastItems' with {'type': 'snippet', 'categories': item.categories} %}
+    {% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog', 'categories': item.categories, 'withoutItem': item} %}
 </aside>
 
 <aside>

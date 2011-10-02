@@ -21,7 +21,7 @@ class ComponentController extends Controller
         ));
     }
     
-    public function lastItemsAction($type = null, $categories = null, $slider = false, $withoutItem = null)
+    public function lastItemsAction($type = null, $categories = null, $slider = false, $withoutItem = null, $withPicture = null)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
@@ -31,6 +31,7 @@ class ComponentController extends Controller
             'items' => $items,
             'mainRoute' => $type,
             'itemRoute' => sprintf('%s_show', $type),
+            'withPicture' => $withPicture,
         ));
     }
     

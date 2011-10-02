@@ -1,12 +1,12 @@
 {% spaceless %}
-    <ul class="items last">
+    <ul class="items {% if withPicture %}picture{% endif %} last">
         {% for item in items %}
             <li class="item">
-                {%if item.picture %}
+                {%if item.picture and withPicture %}
                     <a href="{{ path(itemRoute, {'slug': item.slug }) }}" title="{{ item }}">
                         <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('thumbnail') }}" alt="{{ item }}" class="thumbnail" />
                     </a>
-                {% elseif item.type == 'tutorial' and item.link %}
+                {% elseif item.type == 'tutorial' and item.link and withPicture %}
                     <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
                         <img src="{{ item.dailyMotionPictureUrl }}" class="tutorial" alt="{{ item }}" />
                     </a>

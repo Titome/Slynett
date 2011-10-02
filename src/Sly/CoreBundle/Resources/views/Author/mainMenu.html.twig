@@ -9,6 +9,11 @@
             {{ 'menu.skills' | trans({}, 'author') }}
         </a>
     </li>
+    <li class="{{ app.request.attributes.get('_route') | checkActive(['author_portfolio']) }}">
+        <a href="{{ path('author_portfolio') }}" title="{{ 'menu.portfolio' | trans({}, 'author') }}">
+            {{ 'menu.portfolio' | trans({}, 'author') }}
+        </a>
+    </li>
     <li class="{{ app.request.attributes.get('_route') | checkActive(['contact']) }}">
         <a href="{{ path('contact', {'ref': 'me'}) }}" title="{{ 'menu.contact' | trans({}, 'author') }}">
             {{ 'menu.contact' | trans({}, 'author') }}

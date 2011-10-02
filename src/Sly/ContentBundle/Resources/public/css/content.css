@@ -42,65 +42,16 @@ div.gist .gist-file .gist-data {
 	color: #aaa;
 }
 
-.categories.colored a,
-.categories.colored a:visited {
-	display: inline-block;
-	font-size: 9px;
-	text-transform: uppercase;
-	margin: 0 0 5px 5px;
-	padding: 1px 2px;
-	color: #fff;
-}
-
-.categories.colored a.php5,
-.categories.colored a.php5:visited {
-	background-color: #6785b7;
-}
-
-.categories.colored a.jquery,
-.categories.colored a.jquery:visited {
-	background-color: #4082ae;
-}
-
-.categories.colored a.seo,
-.categories.colored a.seo:visited {
-	background-color: #888;
-}
-
-.categories.colored a.symfony2,
-.categories.colored a.symfony2:visited {
-	background-color: #333;
-}
-
-.categories.colored a.symfony-1-4,
-.categories.colored a.symfony-1-4:visited {
-	background-color: #683b00;
-}
-
-.categories.colored a.css,
-.categories.colored a.css:visited {
-	background-color: #fbba00;
-}
-
-.categories.colored a.html5,
-.categories.colored a.html5:visited {
-	background-color: #ff8040;
-}
-
-.categories.colored a.api,
-.categories.colored a.api:visited {
-	background-color: #333;
-}
-
-.icategories {
-    
-}
-
 .icat {
     display: inline-block;
     width: 48px;
     height: 48px;
     background: url('../images/sprite-cicons.png') top left no-repeat;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    -ms-transition: 0.2s;
+    transition: 0.2s;
 }
 
 .icat.php, .icat.php5 { background-position: 0 0; }
@@ -117,6 +68,23 @@ div.gist .gist-file .gist-data {
 .icat.slynett { background-position: 0 -550px; }
 .icat.actualites { background-position: 0 -600px; }
 .icat.apache-nginx { background-position: 0 -650px; }
+
+.icat.php:hover, .icat.php5:hover,
+.icat.php.active, .icat.php5.active { background-position: -48px 0;  }
+.icat.html:hover, .icat.html5:hover,
+.icat.html.active, .icat.html5.active { background-position: -48px -50px; }
+.icat.api:hover, .icat.api.active { background-position: -48px -100px; }
+.icat.symfony-1-4:hover, .icat.symfony-1-4.active { background-position: -48px -150px; }
+.icat.symfony2:hover, .icat.symfony2.active { background-position: -48px -200px; }
+.icat.jquery:hover, .icat.jquery.active { background-position: -48px -250px; }
+.icat.css:hover, .icat.css.active { background-position: -48px -300px; }
+.icat.seo:hover, .icat.seo.active { background-position: -48px -350px; }
+.icat.e-communication:hover, .icat.e-communication.active { background-position: -48px -400px; }
+.icat.tutoriels:hover, .icat.tutoriels.active { background-position: -48px -450px; }
+.icat.autres:hover, .icat.autres.active { background-position: -48px -500px; }
+.icat.slynett:hover, .icat.slynett.active { background-position: -48px -550px; }
+.icat.actualites:hover, .icat.actualites.active { background-position: -48px -600px; }
+.icat.apache-nginx:hover, .icat.apache-nginx.active { background-position: -48px -650px; }
 
 section.list {
 	overflow: hidden;
@@ -371,25 +339,6 @@ figure.tpl4 p {
     line-height: 13px;
 }
 
-figure.tpl4 a.category {
-    opacity: 0.5;
-    -moz-opacity: 0.5;
-    -ms-filter: "alpha(opacity=50)";
-    filter: alpha(opacity=50);
-}
-
-figure.tpl4:hover a.category {
-    opacity: 1;
-    -moz-opacity: 1;
-    -ms-filter: "alpha(opacity=100)";
-    filter: alpha(opacity=100); 
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    -ms-transition: 0.3s;
-    transition: 0.3s;
-}
-
 figure.tpl4 h3 {
     margin: 0;
     padding: 10px;
@@ -413,67 +362,18 @@ figure.tpl4 ul.categories li {
 	padding: 0;
 }
 
-aside.tpl1 {
-    display: inline-block;
-    vertical-align: top;
-    width: 268px;
-    margin: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-aside.tpl1 h3 {
-	font-size: 16px;
-	padding-bottom: 0;
- margin: 0 0 10px 0;
-	border-bottom: none;
-}
-
-aside.tpl1 h3,
-aside.tpl1 h3 a,
-aside.tpl1 h3 a:visited {
-	color: #333;
-}
-
-aside.tpl1 abbr {
-	font-size: 11px;
-	color: #aaa;
-}
-
-aside.tpl1 .tags a {
-	margin-left: 0;
-	margin-right: 5px;
-}
-
-aside.tpl1 .minilink a,
-aside.tpl1 .minilink a:visited {
-	font-size: 11px;
-	color: #aaa;
-}
-
-aside.tpl1 ul.categories {
-	float: left;
-	margin: 0;
-	padding: 0;
-	text-align: right;
-}
-
-aside.tpl1 ul.categories li {
-	list-style: none;
-	margin: 0 10px 0 0;
-	padding: 0;
-}
-
 aside.tpl2 {
     margin-bottom: 5px;
 }
 
-aside.tpl2 abbr {
+aside.tpl2 abbr,
+aside.tpl2 a.category {
     font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
     font-size: 16px;
     padding-right: 5px;
     margin-right: 5px;
     border-right: 1px solid #ddd;
+    color: #333;
 }
 
 ul.sharebuttons.default {
@@ -506,13 +406,13 @@ section.sidebar ul.items li {
 	border-bottom: 1px solid #eee;
 }
 
-section.sidebar ul.items li img {
+section.sidebar ul.items.picture li img {
 	float: left;
 	width: 40px;
 	height: 40px;
 }
 
-section.sidebar ul.items li span {
+section.sidebar ul.items.picture li span {
 	display: block;
 	margin-left: 50px;
 }

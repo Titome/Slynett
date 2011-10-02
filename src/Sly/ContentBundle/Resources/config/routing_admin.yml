@@ -1,15 +1,15 @@
 blog_admin:
-  pattern: /b
+  pattern: /blog
   defaults: { _controller: SlyContentBundle:Admin:blog }
   
 snippet_admin:
-  pattern: /s
+  pattern: /snippets
   defaults: { _controller: SlyContentBundle:Admin:snippet }
   
 tutorial_admin:
-  pattern: /t
+  pattern: /tutoriels
   defaults: { _controller: SlyContentBundle:Admin:tutorial }
   
 watch_admin:
-  pattern: /w
+  pattern: /veille
   defaults: { _controller: SlyContentBundle:Admin:watch }

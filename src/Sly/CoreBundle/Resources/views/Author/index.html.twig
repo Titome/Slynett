@@ -20,13 +20,16 @@
 {% endblock rightSidebar %}
 
 {% block content %}
+    {% if app.request.query.get('page') <= 1 %}
+        <section class="introduction">
+            <blockquote>
+                {{ 'presentation.presentation.description1' | trans({}, 'author') }}
+            </blockquote>
+        </section>
+    {% endif %}
+
     <article class="tpl3">        
         <div class="header">
-            <img src="{{ '/uploads/example.jpg' | apply_filter('medium') }}" alt="{{ 'presentation.title' | trans({}, 'author') }}" class="medium" />
-            
-            <h3>{{ 'presentation.presentation.title' | trans({}, 'author') }}</h3>
-            
-            <p class="informations">{{ 'presentation.presentation.description1' | trans({}, 'author') }}</p>
             <p class="informations">{{ 'presentation.presentation.description2' | trans({}, 'author') }}</p>
             
             <h3>{{ 'presentation.founder' | trans({}, 'author') }}</h3>

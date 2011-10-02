@@ -877,7 +877,6 @@ ul.activity a {
 ul.activity li.twitter a,
 ul.activity li.twitter a:visited {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 12px;
     font-style: italic;
     color: #aaa;
 }
@@ -959,14 +958,14 @@ ul.activity a.type:hover {
 .sprite-activitytwitter{ background-position: 0 -160px; width: 14px; height: 16px; } 
 .sprite-activitywatch{ background-position: 0 -178px; width: 16px; height: 16px; }*/
 
-.homepage_introduction {
-    margin-bottom: 40px;
+.introduction {
+    margin: 40px 0;
 }
 
-.homepage_introduction blockquote {
+.introduction blockquote {
     margin: 0 50px;
     font-size: 18px;
-    line-height: 28px;
+    line-height: 22px;
 }
 
 .slider {
@@ -993,4 +992,9 @@ ul.activity a.type:hover {
 .grid_8 .slider .label_skitter p a,
 .grid_8 .slider .label_skitter p a:visited {
     color: #fff;
+}
+
+.sidebar.right img.medium {
+    width: 100%;
+    height: auto;
 }

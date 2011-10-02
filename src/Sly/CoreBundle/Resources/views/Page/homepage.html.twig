@@ -4,9 +4,7 @@
 {% block description %}{{ 'homepage.seo.description' | trans({'%name%': project.name}, 'page') }}{% endblock description %}
 
 {% block content %}
-    <div class="homepage_introduction">
-        <h3>{{ 'homepage.intro.title' | trans({}, 'page') }}</h3>
-        
+    <section class="introduction">
         <blockquote>
             {{ 'homepage.intro.msg11' | trans({}, 'page') }}
             <a href="{{ path('blog') }}">{{ 'homepage.intro.msg12' | trans({}, 'page') }}</a>,
@@ -16,7 +14,7 @@
             <a href="{{ path('snippet') }}">{{ 'homepage.intro.msg16' | trans({}, 'page') }}</a>
             {{ 'homepage.intro.msg17' | trans({}, 'page') }}
         </blockquote>
-    </div>
+    </section>
 
     <div class="grid_8 alpha">
         <h3>{{ 'homepage.lastitems.blog_title' | trans({}, 'page') }}</h3>

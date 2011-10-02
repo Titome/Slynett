@@ -1,29 +1,19 @@
 {% spaceless %}
-    <aside class="tpl1">
-        {% if item.categories | length %}
-            <ul class="categories colored">
-                {% for k, cat in item.categories %}
-                    <li>
-                        <a href="{{ path('watch_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}" title="{{ cat }}">{{ cat }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+    <aside class="tpl2">
+        {% for k, cat in item.categories %}
+            <a href="{{ path('snippet_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>
+        {% endfor %}
         
-        <abbr title="{{ item.publishedAt | date('core.date.time.big' | trans) }}" class="dtstart">{{ item.publishedAt | date('core.date.time.big' | trans) }}</abbr>
-        
-        <h3>
-            <a href="{{ path('snippet_show', {'slug': item.slug }) }}" title="{{ item }}">
-                {{ item }}
-            </a>
-        </h3>
+        <a href="{{ path('snippet_show', {'slug': item.slug }) }}" title="{{ item }}">
+            {{ item }}
+        </a>
         
         {% if item.tags | length %}
-            <p class="tags">
+            <span class="tags">
                 {% for tag in item.tagsCollection %}
                     <a href="#" class="tag">{{ tag }}</a>
                 {% endfor %}
-            </p>
+            </span>
         {% endif %}
     </aside>
 {% endspaceless %}
