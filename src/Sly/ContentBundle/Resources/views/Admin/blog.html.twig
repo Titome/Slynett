@@ -1,11 +1,5 @@
 {% extends "SlyCoreBundle:Layout:layout.html.twig" %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    
-    <link href="{{ asset('bundles/slycontent/css/admin.css') }}" type="text/css" rel="stylesheet" />
-{% endblock stylesheets %}
-
 {% block content %}
     <h2>{{ 'blog.new.title' | trans({}, 'admin') }}</h2>
     

@@ -8,35 +8,37 @@
         {% if app.request.attributes.get('_route') == 'blog' %}
             <link rel="alternate" type="application/rss+xml" title="{{ project.name }} RSS Feed" href="{{ networks.rss }}" />
         {% endif %}
-        {% stylesheets output='css/x.css' filter='cssrewrite'
-            'bundles/slycore/vendor/960gs/code/css/min/reset.css'
-            'bundles/slycore/vendor/960gs/code/css/min/960_16_col.css'
-            'bundles/slycontent/vendor/skitter-slideshow/css/skitter.styles.css'
-            'bundles/slycore/css/core.css'
-            'bundles/slycontent/css/content.css'
-            'bundles/slycontent/css/admin.css' %}
-            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
-        {% endstylesheets %}
+
         {% block stylesheets %}
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" type="text/css" media="screen" />
+
+            {% stylesheets output='css/packed' filter='cssrewrite,?yui_css'
+                'bundles/slycore/vendor/960gs/code/css/min/reset.css'
+                'bundles/slycore/vendor/960gs/code/css/min/960_16_col.css'
+                'bundles/slycontent/vendor/skitter-slideshow/css/skitter.styles.css'
+                'bundles/slycore/css/core.css'
+                'bundles/slycontent/css/content.css' %}
+
+                <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+            {% endstylesheets %}
         {% endblock stylesheets %}
     </head>
     <body>
         {% block header %}{% endblock header %}
         
-        {% block body %}{% endblock body %}
+        {% block body %}{% endblock body %}  
         
-        {% javascripts output='js/x.js'
-            'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'
-            'bundles/slycore/js/core.js'
-            'bundles/slycontent/vendor/skitter-slideshow/js/jquery.easing.1.3.js'
-            'bundles/slycontent/vendor/skitter-slideshow/js/jquery.skitter.min.js'
-            'bundles/slycontent/js/content.js' %}
-    
-            <script type="text/javascript" src="{{ asset_url }}"></script>
-        {% endjavascripts %}    
-        
-        {% block javascripts %}{% endblock javascripts %}
+        {% block javascripts %}
+            {% javascripts output='js/packed.js' filter='yui_js'
+                'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'
+                'bundles/slycore/js/core.js'
+                'bundles/slycontent/vendor/skitter-slideshow/js/jquery.easing.1.3.js'
+                'bundles/slycontent/vendor/skitter-slideshow/js/jquery.skitter.min.js'
+                'bundles/slycontent/js/content.js' %}
+
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}  
+        {% endblock javascripts %}
         
         <script type="text/javascript">
           var _gaq = _gaq || [];
