@@ -5,35 +5,17 @@
             
             {% include 'SlyCoreBundle:Block:mainMenu.html.twig' %}
         </aside>
-        
+
         <aside class="grid_4 colborder">
-            <h4>Lorem ipsum dolor sit amet</h4>
+            <h4>{{ 'core.footer.last.blog' | trans }}</h4>
             
-            <ul>
-                <li><a href="#" title="">Lorem</a></li>
-                <li><a href="#" title="">Ipsum</a></li>
-                <li><a href="#" title="">Dolor</a></li>
-                <li><a href="#" title="">Sit</a></li>
-                <li><a href="#" title="">Amet</a></li>
-                <li><a href="#" title="">Lorem</a></li>
-                <li><a href="#" title="">Ipsum</a></li>
-                <li><a href="#" title="">Dolor</a></li>
-            </ul>
+            {% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog'} %}
         </aside>
         
         <aside class="grid_4 colborder">
-            <h4>Lorem ipsum dolor sit amet</h4>
+            <h4>{{ 'core.footer.last.tutorial' | trans }}</h4>
             
-            <ul>
-                <li><a href="#" title="">Lorem</a></li>
-                <li><a href="#" title="">Ipsum</a></li>
-                <li><a href="#" title="">Dolor</a></li>
-                <li><a href="#" title="">Sit</a></li>
-                <li><a href="#" title="">Amet</a></li>
-                <li><a href="#" title="">Lorem</a></li>
-                <li><a href="#" title="">Ipsum</a></li>
-                <li><a href="#" title="">Dolor</a></li>
-            </ul>
+            {% render 'SlyContentBundle:Component:lastItems' with {'type': 'tutorial'} %}
         </aside>
         
         <aside class="grid_4 right">

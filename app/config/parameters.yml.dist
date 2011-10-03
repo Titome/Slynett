@@ -1,0 +1,46 @@
+parameters:
+  database_driver: pdo_mysql
+  database_host: localhost
+#  database_port:
+  database_name: XXXXXXXXXXXXXXX
+  database_user: XXXXXXXXXXXXXXX
+  database_password: XXXXXXXXXXXXXXX
+
+  mailer_transport: smtp
+  mailer_host: localhost
+#  mailer_user:
+#  mailer_password:
+
+  locale: fr
+
+  secret: XXXXXXXXXXXXXXX
+
+  project_name: Slynett Labs
+  project_url: http://www.slynett.com
+  project_simpleurl: www.slynett.com
+  project_email: hello@slynett.com
+  project_shortemail: c@sly.mx
+  project_github_sources: http://github.com/Ph3nol/Slynett
+  project_google_analytics_id: XXXXXXXXXXXXXXX
+
+  admin_pass: XXXXXXXXXXXXXXX
+
+  cdn_main: http://v2.slynett.com/
+  cdn_main_https: https://v2.slynett.com/
+
+  networks_rss: http://f.sly.mx
+  networks_twitter_url: http://t.sly.mx
+  networks_twitter_username: Ph3nol
+  networks_facebook_url: http://fb.sly.mx
+  networks_facebook_username: slynett
+  networks_linkedin: http://in.sly.mx
+  networks_googleplus: http://gp.sly.mx
+  networks_flickr: http://fr.sly.mx
+  networks_foursquare: http://fs.sly.mx
+
+  bitly_username: XXXXXXXXXXXXXXX
+  bitly_apikey: XXXXXXXXXXXXXXX
+
+  disqus_username: slynett
+
+  twitter_watch_username: Ph3nol

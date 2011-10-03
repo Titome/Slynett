@@ -37,6 +37,9 @@ core:
    
   footer:
     rights: Tous droits réservés
+    last:
+      blog: Derniers articles
+      tutorial: Derniers tutoriels
       
   soon: Prochainement disponible.
   

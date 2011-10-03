@@ -32,7 +32,7 @@ Configuration
 -------------
 
 Should you need to overwrite the values used in the provided configuration,
-you can configure the project by creating a `app/config/parameters.ini`.
+you can configure the project by creating a `app/config/parameters.yml`.
 
 To do that, just copy and edit the corresponding `.dist` files.
 

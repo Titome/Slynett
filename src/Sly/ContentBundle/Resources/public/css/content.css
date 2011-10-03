@@ -307,6 +307,7 @@ figure.tpl4 {
     width: 268px;
     margin: 20px;
     border: 1px solid #eee;
+    vertical-align: top;
 }
 
 figure.tpl4:hover {
