@@ -1,25 +1,7 @@
 seo:
-  title: Tutoriels — Développement Web Symfony Symfony2 PHP5 CSS3 jQuery et autres
-  description: Découvrez au travers de tutoriels vidéo et textuels de nombreuses technologies très convoitées : PHP5, symfony 1.4, Symfony2, CSS3, jQuery et bien d'autres.
+  title: Tutoriels développement Web
+  description: Tous les tutoriels vidéo et textuels en matière de développement Web.
   
-title: Tutoriels vidéo et textuels
-
 list:
+  title: Retrouvez régulièrement des tutoriels concernant PHP5, symfony 1.4, Symfony2, jQuery et autres au format vidéo ou textuel.
   nocontent: Aucun tutoriel.
-  categories: '{1} Catégorie :|]1,Inf] Catégories :'
-  nocategory: Aucune catégorie
-  publishedat: Publié le
-  read: Voir le tutoriel
-
-category:
-  seo:
-    description: Tous les tutoriels vidéo et textuels sur %category%.
-
-  title: Tutoriels de la catégorie "%category%"
-  
-sidebar:
-  item:
-    share:
-      title: Partager ce tutoriel
-    others:
-      title: Mais aussi...

@@ -1,13 +1,33 @@
-{% from "SlyContentBundle::macro.socialShare.html.twig" import shareButtons %}
+{% from "SlyContentBundle::macro.socialShare.html.twig" import shareButtons, shareBigButtons %}
 
-<aside>
-    <h3>{{ 'sidebar.item.share.title' | trans({}, 'blog') }}</h3>
-    
-    {{ shareButtons(url('blog_show', {'slug': item.slug}), item, 'default') }}
-</aside>
+<h3 class="title">{{ 'categories.title' | trans }}</h3>
 
-<aside>
-    <h3>{{ 'sidebar.item.others.title' | trans({}, 'blog') }}</h3>
+<nav>
+    {% render 'SlyContentBundle:Component:categories' with {'type': 'blog', 'activeCategories': item.categories} %}
+</nav>
 
-    {% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog', 'categories': item.categories, 'withoutItem': item, 'withPicture': true} %}
-</aside>
+<div class="hsep_1"></div>
+
+<h3 class="title" id="sidebar-sharebuttons">{{ 'share.title' | trans }}</h3>
+
+{{ shareBigButtons(url('blog_show', {'slug': item.slug}), item) }}
+
+<div class="hsep_1"></div>
+
+{% include 'SlyCoreBundle:Block:Com/Sidebar/250x250.html.twig' %}
+
+<div class="hsep_1"></div>
+
+<h3 class="title">{{ 'items.others.title' | trans }}</h3>
+
+{% render 'SlyContentBundle:Component:lastItems' with {
+    'type': 'blog',
+    'categories': item.categories,
+    'withoutItem': item,
+    'withPicture': true,
+    'template': 'tpl1'
+} %}
+
+<div class="hsep_1"></div>
+
+{% include 'SlyCoreBundle:Block:sidebarGitHub.html.twig' %}

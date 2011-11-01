@@ -23,38 +23,16 @@
     {% if app.request.query.get('page') <= 1 %}
         <section class="introduction">
             <blockquote>
-                {{ 'presentation.presentation.description1' | trans({}, 'author') }}
+                {{ 'presentation.presentation.description' | trans({}, 'author') }}
             </blockquote>
         </section>
     {% endif %}
 
     <article class="tpl3">        
         <div class="header">
-            <p class="informations">{{ 'presentation.presentation.description2' | trans({}, 'author') }}</p>
+            <h3>{{ 'presentation.more' | trans({}, 'author') }}</h3>
             
-            <h3>{{ 'presentation.founder' | trans({}, 'author') }}</h3>
-            
-            <ul class="list">
-                <li>
-                    <a href="{{ project.url }}" onclick="var w=window.open(this.href); w.focus(); return false;" title="{{ project.name }}">
-                        {{ project.name }}
-                    </a>
-                </li>
-                <li>
-                    <a href="http://socontest.com" onclick="var w=window.open(this.href); w.focus(); return false;" title="SoContest">
-                        SoContest
-                    </a>
-                </li>
-                <li>
-                    <a href="http://goog.la" onclick="var w=window.open(this.href); w.focus(); return false;" title="Goog.la">
-                        Goog.la
-                    </a>
-                </li>
-            </ul>
-        </div>
-    
-        <div class="item_content">
-            qsffsqqsffqsqfsqfs
+            {% include 'SlyCoreBundle:Author:mainMenu.html.twig' with {'withoutFirst': true} %}
         </div>
     </article>
 {% endblock content %}

@@ -1,14 +1,7 @@
 seo:
-  title: Veille — Développement Web Symfony Symfony2 PHP5 CSS3 jQuery et autres
-  description: Un regroupement et classement des découvertes quotidiennes que je prends plaisir à partager avec vous sur Twitter ou LinkedIn.
-  
-title: Veille Développement Web
-
-category:
-  seo:
-    description: Retrouvez toute ma veille concernant %category%.
-    
-  title: Veille sur la catégorie "%category%"
+  title: Veille développement Web
+  description: Toute ma veille quotidienne concernant PHP5, symfony 1.4, Symfony2, jQuery et autres.
   
 list:
-  nocontent: Aucun élément de veille n'est actuellement disponible.
+  title: Retrouvez toute ma veille quotidienne concernant PHP5, symfony 1.4, Symfony2, jQuery et autres.
+  nocontent: Aucun lien.

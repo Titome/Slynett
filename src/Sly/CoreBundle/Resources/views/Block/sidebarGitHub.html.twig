@@ -1,0 +1,11 @@
+<aside>
+    <span class="icon github"></span>
+    
+    {{ 'sidebar.github.text' | trans({'%name%': project.name}) }}
+    
+    <p>
+        <a href="{{ project.github.sources.url }}" class="button" onclick="var w=window.open(this.href);w.focus();return false;">
+            {{ 'sidebar.github.sources' | trans }}
+        </a>
+    </p>
+</aside>

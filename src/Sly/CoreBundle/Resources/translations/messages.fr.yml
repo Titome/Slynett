@@ -52,3 +52,8 @@ core:
       small: "d/m/Y à H:i"
       normal: "d M Y à H:i"
       big: "d F Y à H:i"
+
+sidebar:
+  github:
+    text: Retrouvez les sources de %name% (sous Symfony2) sur GitHub.
+    sources: Sources

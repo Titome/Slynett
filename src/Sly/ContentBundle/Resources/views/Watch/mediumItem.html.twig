@@ -1,15 +1,19 @@
 {% spaceless %}
-    <aside class="tpl2">
-        <abbr title="{{ item.publishedAt | date('core.date.time.small' | trans) }}" class="dtstart">{{ item.publishedAt | date('core.date.small' | trans) }}</abbr>
+    <li>
+        <ul class="category small">
+            {% for k, cat in item.categories %}
+                <li><a href="#{{ cat.slug }}" class="caticon small {{ cat.slug }}" title="{{ cat }}"></a></li>
+            {% endfor %}
+        </ul>
         
-        <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;">{{ item }}</a>
+        <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;" title="{{ item }}">{{ item }}</a>
         
         {% if item.tags | length %}
-            <span class="tags">
+            <ul class="tags">
                 {% for tag in item.tagsCollection %}
-                    <a href="#" class="tag">{{ tag }}</a>
+                    <li><a href="#" class="tag">{{ tag }}</a></li>
                 {% endfor %}
-            </span>
+            </ul>
         {% endif %}
-    </aside>
+    </li>
 {% endspaceless %}

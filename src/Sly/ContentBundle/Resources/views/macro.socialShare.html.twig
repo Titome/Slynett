@@ -1,14 +1,14 @@
-{% macro shareButtons(link, title, template) %}
-    <ul class="sharebuttons {{ template | default('default') }}">   
+{% macro shareButtons(link, title) %}
+    <ul class="sharebuttons">   
         <li class="facebook">
             <iframe src="http://www.facebook.com/plugins/like.php?href={{ link }}&amp;layout=button_count&amp;show_faces=false&amp;width=200&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;"></iframe>
         </li>
         <li class="facebookshare">
-            <a name="fb_share" type="button_count" share_url="{{ link }}" href="http://www.facebook.com/sharer.php">{{ 'social.share' | trans }}</a>
+            <a name="fb_share" type="button_count" share_url="{{ link }}" href="http://www.facebook.com/sharer.php">{{ 'share.buttons.facebook' | trans }}</a>
             <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
         </li>
         <li class="twitter">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-counturl="{{ link }}" data-count="horizontal" data-lang="{{ app.session.locale }}">{{ 'social.tweet' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="horizontal" data-lang="{{ app.session.locale }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
         </li>
         <li class="googleplus">
             <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: '{{ app.session.locale }}'}</script>
@@ -16,7 +16,30 @@
         </li>
         <li class="linkedin last">
             <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
-            <script type="IN/Share" data-url="{{ link }}" data-counter="right"></script>
+            <script type="IN/Share" data-url="{{ link }}" data-counter="left"></script>
+        </li>
+    </ul>
+{% endmacro %}
+
+{% macro shareBigButtons(link, title) %}
+    <ul class="sharebuttons big">
+        <li class="facebook">
+            <iframe src="http://www.facebook.com/plugins/like.php?href={{ link }}&amp;layout=box_count&amp;show_faces=false&amp;width=88&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:88px; height:65px;"></iframe>
+        </li>
+        <li class="facebookshare">
+            <a name="fb_share" type="button_count" share_url="{{ link }}" href="http://www.facebook.com/sharer.php">{{ 'share.buttons.facebook' | trans }}</a>
+            <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+        </li>
+        <li class="twitter">
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="vertical" data-lang="{{ app.session.locale }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        </li>
+        <li class="googleplus">
+            <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: '{{ app.session.locale }}'}</script>
+            <g:plusone size="tall" href="{{ link }}"></g:plusone>
+        </li>
+        <li class="linkedin last">
+            <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+            <script type="IN/Share" data-url="{{ link }}" data-counter="top"></script>
         </li>
     </ul>
 {% endmacro %}

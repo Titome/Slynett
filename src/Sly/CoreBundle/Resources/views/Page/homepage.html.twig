@@ -20,7 +20,7 @@
         <h3>{{ 'homepage.lastitems.blog_title' | trans({}, 'page') }}</h3>
         
         <aside class="slider">
-            {% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog', 'slider': true} %}
+            {% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog', 'template': 'sld1'} %}
         </aside>
     </div>
     
@@ -28,7 +28,7 @@
         <h3>{{ 'homepage.lastitems.tutorials_title' | trans({}, 'page') }}</h3>
         
         <aside class="slider">
-            {% render 'SlyContentBundle:Component:lastItems' with {'type': 'tutorial', 'slider': true} %}
+            {% render 'SlyContentBundle:Component:lastItems' with {'type': 'tutorial', 'template': 'sld1'} %}
         </aside>
     </div>
 

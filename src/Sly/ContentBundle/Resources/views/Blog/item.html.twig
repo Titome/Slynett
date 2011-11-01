@@ -1,36 +1,59 @@
-<article class="tpl3">    
-    <div class="header">
-        {%if item.picture %}
-            <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium') }}" alt="{{ item }}" class="medium" />
+<article>    
+    <h3 class="title"><a href="{{ path('blog_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item.title }}</a></h3>
+    
+    <div class="hsep_1 t3"></div>
+    
+    <ul class="infos">
+        <li class="published_at">
+            <a href="#publishedat">
+                <abbr title="{{ item.publishedAt | date('core.date.time.big' | trans) }}" class="dtstart">
+                    {{ 'infos.publishedat' | trans({'%date%': item.publishedAt | date('core.date.time.normal' | trans)}) }}
+                </abbr>
+            </a>
+        </li>
+        <li class="comments">
+            <a href="#disqus_thread" data-disqus-identifier="{{ item.disqusId }}" class="goto">&nbsp;</a>
+        </li>
+        <li class="share">
+            <a href="#sidebar-sharebuttons" class="light_sidebarsharebuttons goto">
+                {{ 'infos.share' | trans }}
+            </a>
+        </li>
+    </ul>
+    
+    <div class="hsep_1 t3"></div>
+    
+    <p class="description">
+        {% if item.excerpt %}
+            {{ item.excerpt | striptags }}
+        {% else %}
+            {{ item.content | striptags | truncate(250) }}
         {% endif %}
+    </p>
+    
+    <div class="media">
+        <ul class="category">
+            {% for k, cat in item.categories %}
+                <li><a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="caticon medium {{ cat.slug }}" title="{{ cat }}"></a></li>
+            {% endfor %}
+        </ul>
         
-        <h2>{{ item.title }}</h2>
-        
-        <p class="informations">       
-            {{ 'list.publishedat' | trans({}, 'blog') }}
-            <abbr title="{{ item.publishedAt | date('core.date.time.big' | trans) }}" class="dtstart">{{ item.publishedAt | date('core.date.time.big' | trans) }}</abbr>
-        </p>
-        
-        <p class="categories">
-            {% if item.categories | length %}
-                {% for k, cat in item.categories %}
-                    <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="icat {{ cat.slug }}" title="{{ cat }}"></a>
-                {% endfor %}
-            {% else %}
-                {{ 'list.nocategory' | trans({}, 'blog') }}
-            {% endif %}
-        </p>
-        
-        {% if item.tags | length %}
-            <p class="tags">
-                {% for tag in item.tagsCollection %}
-                    <a href="#">{{ tag }}</a>
-                {% endfor %}
-            </p>
-        {% endif %}
+        <a href="{{ path('blog_show', {'slug': item.slug }) }}" title="{{ item }}">
+            <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium_m') }}" alt="{{ item }}" />
+        </a>
     </div>
+    
+    {% if item.tags | length %}
+        <ul class="tags">
+            {% for tag in item.tagsCollection %}
+                <li><a href="#{{ tag }}" class="container">{{ tag }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 
-    <div class="item_content">
-        {{ item.content | raw }}
+    <div class="hsep_1 t1"></div>
+    
+    <div class="item_content">      
+        {{ item.content | contentFilters | raw }}
     </div>
 </article>

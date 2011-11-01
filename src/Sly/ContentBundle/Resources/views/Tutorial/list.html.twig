@@ -3,36 +3,36 @@
 {% block title %}{{ 'seo.title' | trans({}, 'tutorial') }}{% endblock title %}
 {% block description %}{{ 'seo.description' | trans({}, 'tutorial') }}{% endblock description %}
 
-{% set topMain = true %}
-
-{% block topMainTitle %}
-    <a href="{{ path('tutorial') }}" title="{{ 'core.menu.tutorial' | trans }}">
-        {{ 'title' | trans({}, 'tutorial') }}
-    </a>
-{% endblock topMainTitle %}
-
-{% block topMainMenu %}
-    {% render 'SlyContentBundle:Component:categories' with {'type': 'tutorial'} %}
-{% endblock topMainMenu %}
-
 {% block content %}
     {% if app.request.query.get('page') <= 1 %}
-        <section class="introduction">
-            <blockquote>
-                {{ 'seo.description' | trans({}, 'tutorial') }}
-            </blockquote>
+        <section role="contentinfo">
+            <h2>{{ 'list.title' | trans({}, 'tutorial') }}</h2>
         </section>
+    
+        <div class="hsep_1 t1"></div>
     {% endif %}
 
-    <section class="tutorial list">
-        {% for item in contentPaginator %}
-            {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'item': item } %}
+    <section role="main" class="tpl1">
+        {% for k, item in contentPaginator %}
+            {% if app.request.query.get('page') <= 1 %}
+                {% if k == 0 %}
+                    {% include 'SlyContentBundle:Tutorial:bigItem.html.twig' with {'k': k, 'item': item } %}
+
+                    <div class="hsep_1 t1"></div>
+                {% else %}
+                    {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'k': k-1, 'item': item } %}
+                {% endif %}
+            {% else %}
+                {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'k': k, 'item': item } %}
+            {% endif %}
         {% else %}
             <p class="empty">{{ 'list.nocontent' | trans({}, 'tutorial') }}</p>
         {% endfor %}
     </section>
     
     {% if contentPaginator | length %}
+        <div class="hsep_1 t2"></div>
+
         <div class="pager">
             {{ pagerfanta(contentPaginator, 'default') }}
         </div>

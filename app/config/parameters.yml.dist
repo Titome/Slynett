@@ -20,8 +20,10 @@ parameters:
   project_simpleurl: www.slynett.com
   project_email: hello@slynett.com
   project_shortemail: c@sly.mx
-  project_github_sources: http://github.com/Ph3nol/Slynett
+  project_github_sources_url: http://github.com/Ph3nol/Slynett
   project_google_analytics_id: XXXXXXXXXXXXXXX
+  project_author_name: Ph3
+  project_author_email: ph3@slynett.com
 
   admin_pass: XXXXXXXXXXXXXXX
 
@@ -37,6 +39,7 @@ parameters:
   networks_googleplus: http://gp.sly.mx
   networks_flickr: http://fr.sly.mx
   networks_foursquare: http://fs.sly.mx
+  networks_gravatar_email: ph3@slynett.com
 
   bitly_username: XXXXXXXXXXXXXXX
   bitly_apikey: XXXXXXXXXXXXXXX

@@ -1,0 +1,151 @@
+.tpl1 article {
+    display:inline-block;
+    width:270px;
+    margin-right:30px;
+    padding-right:40px;
+    margin-bottom:60px;
+    vertical-align:top;
+    background:url('../../slycore/images/vsep-1.png') 100% 50px no-repeat;
+}
+
+.tpl1 article.last,
+.tpl1 article:last-child {
+    margin-right:0;
+    padding-right:0;
+    background:none;
+}
+
+.tpl1 article div {
+    position:relative;
+    overflow:hidden;
+    margin:10px 0 0 0;
+    padding:10px 10px 20px 10px;
+    background:url('../images/picture-bg2.png') no-repeat;
+}
+
+.tpl1 article div ul.category {
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+
+.tpl1 article div .overlay {
+    position:absolute;
+    top:0;
+    bottom:20px;
+    right:-270px;
+    left:-270px;
+    padding:20px 70px 20px 20px;
+    background:url('../images/picture-bg2-h.png') no-repeat;
+    text-align:right;
+    -webkit-transition:0.4s;
+    -moz-transition:0.4s;
+    -o-transition:0.4s;
+    -ms-transition:0.4s;
+    transition:0.4s;
+}
+
+.tpl1 article:hover h3,
+.tpl1 article:hover h3 a, .tpl1 article:hover h3 a:visited {
+    color:#dc3e00;
+    -webkit-transition:0.4s;
+    -moz-transition:0.4s;
+    -o-transition:0.4s;
+    -ms-transition:0.4s;
+    transition:0.4s;
+}
+
+.tpl1 article:hover p.description,
+.tpl1 article:hover p.description a, .tpl1 article:hover p.description a:visited {
+    color:#888;
+    -webkit-transition:0.4s;
+    -moz-transition:0.4s;
+    -o-transition:0.4s;
+    -ms-transition:0.4s;
+    transition:0.4s;
+}
+
+.tpl1 article:hover div .overlay {
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.tpl1 article div img {
+    -webkit-border-radius:10px;
+    -khtml-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+}
+
+.tpl1 article p,
+.tpl1 article p a, .tpl1 article p a:visited {
+    font-family:Georgia, "Times New Roman", serif;
+    text-decoration:none;
+    color:#a9a9a9;
+    text-shadow:1px 1px 1px #fff;
+    font-size:14px;
+    line-height:22px;
+}
+
+.tpl1 article.big {
+    width:100%;
+}
+
+.tpl1 article.big h3 {
+    font-size:24px;
+    line-height:32px;
+}
+
+.tpl1 article.big {
+    padding-right:0;
+    margin:0;
+    background:none;
+}
+
+.tpl1 article.big div {
+    float:right;
+    position:relative;
+    overflow:hidden;
+    margin:0 0 0 10px;
+    padding:10px 10px 30px 10px;
+    width:380px;
+    height:140px;
+    background:url('../images/picture-bg1.png') no-repeat;
+}
+
+.tpl1 article.big p,
+.tpl1 article.big ul.tags {
+    margin:20px 420px 0 0;
+}
+
+.tpl1 article.big p.description a {
+    font-size:14px;
+    line-height:22px;
+}
+
+.tpl1 article.big ul.tags {
+    text-align:right;
+}
+
+.tpl1 article.big ul.tags li {
+    margin-right:0;
+    margin-left:5px;
+}
+
+.tpl1 article.big div .overlay {
+    margin:0;
+    right:-420px;
+    left:-420px;
+    background:url('../images/picture-bg1-h.png') no-repeat;
+}
+
+.tpl1 article.big:hover div .overlay {
+    left:0;
+    right:0;
+}
+
+.tpl1.sidebar article {
+    margin:0 0 20px 0;
+    background:none;
+}

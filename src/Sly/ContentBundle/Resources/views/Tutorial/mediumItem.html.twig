@@ -1,39 +1,33 @@
 {% spaceless %}
-    <figure class="tpl4">
-        {% if item.categories | length %}
-            <ul class="categories">
+    <article class="{% if (k +1) is divisibleby(3) %}last{% endif %}">
+        <h3><a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item.title }}</a></h3>
+
+        <div>
+            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}" class="overlay"></a>
+
+            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
+                {%if item.picture %}
+                    <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium') }}" alt="{{ item }}" />
+                {% else %}
+                    <img src="{{ '/uploads/tutorial.jpg' | apply_filter('medium') }}" alt="{{ item }}" />
+                {% endif %}
+            </a>
+
+            <ul class="category small">
                 {% for k, cat in item.categories %}
-                    <li>
-                        <a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="icat {{ cat.slug }} active" title="{{ cat }}"></a>
-                    </li>
+                    <li><a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="caticon small {{ cat.slug }}" title="{{ cat }}"></a></li>
                 {% endfor %}
             </ul>
-        {% endif %}
-        
-        {% if item.link %}
-            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
-                <img src="{{ item.dailyMotionPictureUrl }}" class="tutorial" alt="{{ item }}" />
-            </a>
-        {% else %}
-            {%if item.picture %}
-                <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
-                    <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('tutorial') }}" alt="{{ item }}" class="tutorial" />
-                </a>
-            {% endif %}
-        {% endif %}
-        
-        <h3>
-            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
-                {{ item }}
-            </a>
-        </h3>
+        </div>
 
         <p class="description">
-            {% if item.excerpt %}
-                {{ item.excerpt | striptags }}
-            {% else %}
-                {{ item.content | striptags | truncate(250) }}
-            {% endif %}
+            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
+                {% if item.excerpt %}
+                    {{ item.excerpt | striptags }}
+                {% else %}
+                    {{ item.content | striptags | truncate(250) }}
+                {% endif %}
+            </a>
         </p>
-    </figure>
+    </article>
 {% endspaceless %}

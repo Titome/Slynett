@@ -16,9 +16,8 @@ presentation:
     description: Cédric Dugat - Développeur PHP5, Symfony 1.4, Symfony2 à Orange (Vaucluse - région PACA).
   presentation:
     title: En quelques mots...
-    description1: Développeur Web passionné, j'ai spécialisé mes compétences dans l'utilisation de technologies Open Source telles que PHP5, LAMP et le framework Symfony (1.4 et 2).
-    description2: Egalement fondateur de services novateurs tels que SoContest, plateforme d'organisation de concours en ligne, j'affiche un intérêt particulier pour l'entreprenariat Web et la e-communication.
-  founder: Fondateur de
+    description: Développeur Web passionné, j'ai spécialisé mes compétences dans l'utilisation de technologies Open Source telles que PHP5, LAMP et le framework Symfony (1.4 et 2).
+  more: En savoir plus...
 
 skills:
   seo:
@@ -41,7 +40,7 @@ skills:
     msg1: J'ai découvert ce framework PHP5 il y a deux ans, sous la version 1.1.
     msg2: Ayant très vite été conscient de son potentiel, je me suis investi dans l'utilisation approfondie et experte de ce dernier.
     msg3: Après avoir sorti plusieurs sites et services sous symfony 1.4, j'ai fait de cet exceptionnel framework ma spécialité.
-    msg4: Depuis sa sortie officielle en 2011, j'utilise également Symfony2 pour mes projets, donc le site sur lequel vous êtes ! :)
+    msg4: Depuis sa sortie officielle en 2011, j'utilise également Symfony2 pour mes projets, donc le site sur lequel vous êtes !
     github: Voir les sources sur GitHub
   api:
     title: API

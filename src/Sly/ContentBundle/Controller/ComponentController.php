@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ComponentController extends Controller
 {
-    public function categoriesAction($type, $activeCategory = null, $noActive = null)
+    public function categoriesAction($type, $activeCategories = null, $noActive = null)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
@@ -16,18 +16,18 @@ class ComponentController extends Controller
             'categories' => $categories,
             'mainRoute' => $type,
             'catRoute' => sprintf('%s_category', $type),
-            'activeCategory' => $activeCategory,
+            'activeCategories' => $activeCategories,
             'noActive' => $noActive,
         ));
     }
     
-    public function lastItemsAction($type = null, $categories = null, $slider = false, $withoutItem = null, $withPicture = null)
+    public function lastItemsAction($type = null, $categories = null, $withoutItem = null, $withPicture = null, $template = null)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
         $items = $em->getRepository('SlyContentBundle:Content')->getLastItems($type, $categories, $this->container->getParameter('sly.content.blog.otheritems.number', 5), $withoutItem);
         
-        return $this->render(sprintf('SlyContentBundle:Component:%s.html.twig', $slider?'lastItemsSlider':'lastItems'), array(
+        return $this->render(sprintf('SlyContentBundle:Component:lastItems%s.html.twig', $template?'.'.$template:null), array(
             'items' => $items,
             'mainRoute' => $type,
             'itemRoute' => sprintf('%s_show', $type),

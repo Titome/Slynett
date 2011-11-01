@@ -10,14 +10,21 @@
         {% endif %}
 
         {% block stylesheets %}
-            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" type="text/css" media="screen" />
+            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Open+Sans+Condensed:300|Ubuntu+Condensed" type="text/css" media="screen" />
 
             {% stylesheets output='css/packed' filter='cssrewrite,?yui_css'
-                'bundles/slycore/vendor/960gs/code/css/min/reset.css'
-                'bundles/slycore/vendor/960gs/code/css/min/960_16_col.css'
+                'bundles/slycore/css/reset.css'
                 'bundles/slycontent/vendor/skitter-slideshow/css/skitter.styles.css'
                 'bundles/slycore/css/core.css'
-                'bundles/slycontent/css/content.css' %}
+                'bundles/slycore/css/buttons.css'
+                'bundles/slycore/css/sidebar.css'
+                'bundles/slycore/css/pager.css'
+                'bundles/slycontent/css/content.css'
+                'bundles/slycontent/css/content.tpl1.css'
+                'bundles/slycontent/css/content.tpl2.css'
+                'bundles/slycontent/css/content.tpl3.css'
+                'bundles/slycontent/css/content.tpl4.css'
+                'bundles/slycontent/css/disqus.css' %}
 
                 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
             {% endstylesheets %}
@@ -31,13 +38,15 @@
         {% block javascripts %}
             {% javascripts output='js/packed.js' filter='yui_js'
                 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'
+                'bundles/slycore/js/jquery.scrollto.min.js'
+                'bundles/slycore/js/html5-ie.js'
                 'bundles/slycore/js/core.js'
                 'bundles/slycontent/vendor/skitter-slideshow/js/jquery.easing.1.3.js'
                 'bundles/slycontent/vendor/skitter-slideshow/js/jquery.skitter.min.js'
                 'bundles/slycontent/js/content.js' %}
 
                 <script type="text/javascript" src="{{ asset_url }}"></script>
-            {% endjavascripts %}  
+            {% endjavascripts %}
         {% endblock javascripts %}
         
         <script type="text/javascript">

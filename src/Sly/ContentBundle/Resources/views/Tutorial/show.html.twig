@@ -3,18 +3,6 @@
 {% block title %}{{ item }} | {{ 'seo.title' | trans({}, 'tutorial') }}{% endblock title %}
 {% block description %}{{ item.excerpt | striptags }}{% endblock description %}
 
-{% set topMain = true %}
-
-{% block topMainTitle %}
-    <a href="{{ path('blog') }}" title="{{ 'core.menu.tutorial' | trans }}">
-        {{ 'title' | trans({}, 'blog') }}
-    </a>
-{% endblock topMainTitle %}
-
-{% block topMainMenu %}
-    {% render 'SlyContentBundle:Component:categories' with {'type': 'tutorial', 'noActive': true} %}
-{% endblock topMainMenu %}
-
 {% block stylesheets %}
     {{ parent() }}
 
@@ -26,7 +14,13 @@
 {% endblock rightSidebar %}
 
 {% block content %}
-    {% include 'SlyContentBundle:Tutorial:item.html.twig' with {'item': item } %}
+    <section role="main" class="tpl2">
+        {% include 'SlyContentBundle:Tutorial:item.html.twig' with {'item': item } %}
+    </section>
+
+    <div class="hsep_1 t1"></div>
+    
+    <h3 class="title">{{ 'comments.title' | trans }}</h3>
     
     <div id="disqus_thread"></div>
 {% endblock content %}
@@ -35,5 +29,6 @@
     {{ parent() }}
     
     {% include 'SlyContentBundle::inc.syntaxhighlighter.js.html.twig' %}
-    {% render 'SlyContentBundle:Component:disqusJS' with {'item': item, 'type': 'watch'} %}
+    {% render 'SlyContentBundle:Component:disqusCountJS' %}
+    {% render 'SlyContentBundle:Component:disqusJS' with {'item': item, 'type': 'tutorial'} %}
 {% endblock javascripts %}

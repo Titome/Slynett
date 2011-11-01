@@ -70,10 +70,6 @@
 [submodule "vendor/bundles/Avalanche/Bundle/ImagineBundle"]
 	path = vendor/bundles/Avalanche/Bundle/ImagineBundle
 	url = http://github.com/avalanche123/AvalancheImagineBundle.git
-[submodule "src/Sly/CoreBundle/Resources/public/vendor/960gs"]
-	path = src/Sly/CoreBundle/Resources/public/vendor/960gs
-	url = http://github.com/nathansmith/960-Grid-System.git
-
 [submodule "src/Sly/ContentBundle/Resources/public/vendor/skitter-slideshow"]
 	path = src/Sly/ContentBundle/Resources/public/vendor/skitter-slideshow
 	url = http://github.com/thiagosf/SkitterSlideshow.git

@@ -1,0 +1,115 @@
+section.sidebar section,
+section.sidebar aside,
+section.sidebar nav {
+    margin-bottom:60px;
+}
+
+section.sidebar ul.categories {
+    margin-left:0;
+    margin-right:0;
+}
+
+section.sidebar ul.categories li {
+    list-style:none;
+    margin-bottom:5px;
+    text-transform:uppercase;
+}
+
+section.sidebar ul.categories li a,
+section.sidebar ul.categories li a:visited {
+    display:block;
+    padding:10px 20px;
+    background-color:rgba(255,255,255,.3);
+    -webkit-border-radius:10px;
+    -khtml-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    transition:0.4s;
+    -webkit-transition:0.4s;
+    -moz-transition:0.4s;
+    -o-transition:0.4s;
+    -ms-transition:0.4s;
+}
+
+section.sidebar ul.categories li.active a,
+section.sidebar ul.categories li.active a:visited {
+    color:#dc3e00;
+    background-color:rgba(255,255,255,1);
+}
+
+section.sidebar ul.categories li a:hover {
+    color:#dc3e00;
+    text-decoration:none;
+    background-color:rgba(255,255,255,1);
+    transition:0.4s;
+    -webkit-transition:0.4s;
+    -moz-transition:0.4s;
+    -o-transition:0.4s;
+    -ms-transition:0.4s;
+}
+
+section.sidebar ul.sharebuttons {
+    padding:10px;
+    background-color:rgba(255,255,255,.3);
+    -webkit-border-radius:10px;
+    -khtml-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    text-align:center;
+    transition:0.4s;
+    -webkit-transition:0.4s;
+    -moz-transition:0.4s;
+    -o-transition:0.4s;
+    -ms-transition:0.4s;
+}
+
+section.sidebar ul.sharebuttons:hover {
+    background-color:rgba(255,255,255,1);
+}
+
+section.sidebar ul.sharebuttons li {
+    display:inline-block;
+    vertical-align:top;
+    text-align:left;
+    width:45%;
+    margin:0 5px 10px 5px;
+    list-style:none;
+}
+
+section.sidebar h3.title {
+    font-size:24px;
+    line-height:32px;
+    font-weight:normal;
+    margin-bottom:20px;
+    color:#a9a9a9;
+}
+
+section.sidebar p,
+section.sidebar ul {
+    margin:10px 0;
+}
+
+section.sidebar aside span.icon {
+    float:left;
+    margin:0 20px 20px 0;
+    transition:0.4s;
+    -webkit-transition:0.4s;
+    -moz-transition:0.4s;
+    -o-transition:0.4s;
+    -ms-transition:0.4s;
+    opacity:0.3;
+    -moz-opacity:0.3;
+    -ms-filter:'alpha(opacity=30)';
+    filter:'alpha(opacity=30)';
+}
+
+section.sidebar aside:hover span.icon {
+    opacity:1;
+    -moz-opacity:1;
+    -ms-filter:'alpha(opacity=100)';
+    filter:'alpha(opacity=100)';
+}
+
+section.sidebar ul.category {
+    margin:0;
+}

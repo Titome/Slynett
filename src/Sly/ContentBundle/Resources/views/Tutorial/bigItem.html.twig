@@ -1,0 +1,47 @@
+{% spaceless %}
+    <article class="big">
+        <h3><a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item.title }}</a></h3>
+
+        <div>
+            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}" class="overlay"></a>
+
+            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
+                {%if item.picture %}
+                    <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium_b') }}" alt="{{ item }}" />
+                {% else %}
+                    <img src="{{ '/uploads/tutorial.jpg' | apply_filter('medium_b') }}" alt="{{ item }}" />
+                {% endif %}
+            </a>
+
+            <ul class="category medium">
+                {% for k, cat in item.categories %}
+                    <li><a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="caticon medium {{ cat.slug }}" title="{{ cat }}"></a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <p>
+            <abbr title="{{ item.publishedAt | date('core.date.time.big' | trans) }}" class="dtstart">
+                {{ 'infos.publishedat' | trans({'%date%': item.publishedAt | date('core.date.time.normal' | trans)}) }}
+            </abbr>
+        </p>
+
+        <p class="description">
+            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
+                {% if item.excerpt %}
+                    {{ item.excerpt | striptags }}
+                {% else %}
+                    {{ item.content | striptags | truncate(250) }}
+                {% endif %}
+            </a>
+        </p>
+        
+        {% if item.tags | length %}
+            <ul class="tags">
+                {% for tag in item.tagsCollection %}
+                    <li><a href="#{{ tag }}" class="container">{{ tag }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </article>
+{% endspaceless %}

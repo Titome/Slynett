@@ -1,0 +1,62 @@
+.pager {
+    overflow:hidden;
+    margin:20px 0;
+    text-align:center;
+    font-size:12px;
+}
+
+.pager span,
+.pager a,
+.pager a:visited {
+    display:inline-block;
+    margin:0 2px;
+    padding:2px 12px;
+    background-color:#fff;
+    -webkit-border-radius:5px;
+    -khtml-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+
+.pager:hover span,
+.pager:hover a,
+.pager:hover a:visited {
+    opacity:0.3;
+    -moz-opacity:0.3;
+    -ms-filter:'alpha(opacity=30)';
+    filter:'alpha(opacity=30)';
+}
+
+.pager span:hover,
+.pager a:hover {
+    opacity:1;
+    -moz-opacity:1;
+    -ms-filter:'alpha(opacity=100)';
+    filter:'alpha(opacity=100)';
+}
+
+.pager a:hover {
+    text-decoration:none;
+    background-color:rgba(255,255,255,1);
+    -webkit-transition:0.4s;
+    -moz-transition:0.4s;
+    -o-transition:0.4s;
+    -ms-transition:0.4s;
+    transition:0.4s;
+}
+
+.pager a:focus,
+.pager a:active,
+.pager span.current,
+.pager span.current:hover {
+    color:#fff;
+    background-color:#dc3e00;
+    opacity:1;
+    -moz-opacity:1;
+    -ms-filter:'alpha(opacity=100)';
+    filter:'alpha(opacity=100)';
+}
+
+.pager span.disabled {
+    display:none;
+}

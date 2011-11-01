@@ -1,31 +1,9 @@
 seo:
-  title: Blog — Développement Web Symfony Symfony2 PHP5 CSS3 jQuery et autres
-  description: Découvrez au quotidien mes découvertes, les actualités, mes analyses et expertises en matière de développment Web. PHP5, symfony 1.4, Symfony2, jQuery, e-Communication et bien d'autres thèmes sont de la partie.
-  
-title: Blog WebDev
+  title: Blog développement Web/Symfony
+  description: Découvertes développement Web au quotidien. PHP5, Symfony, jQuery, CSS3 et autres.
   
 list:
+  title: Découvertes développement Web au quotidien. PHP5, Symfony, jQuery, CSS3 et autres.
   nocontent: Aucun article.
-  categories: '{1} Catégorie :|]1,Inf] Catégories :'
-  nocategory: Aucune catégorie
-  publishedat: Publié le
-  read: Lire l'article
-
-category:
-  seo:
-    description: Toute l'actualité et les découvertes %category% au quotidien.
-  
-  title: Articles de la catégorie "%category%"
-
-sidebar:
-  follow:
-    msg1: Suivez l'actualité du Blog depuis vos réseaux sociaux préférés.
-  about:
-    title: A propos
-    msg1: Découvertes, actualités, astuces et conseils en matière de développement Web et e-communication.
-    msg2: Professionnel et acteur du Web depuis quelques années déjà, je vous propose mes trouvailles et articles au quotidien.
   item:
-    share:
-      title: Partager cet article
-    others:
-      title: Mais aussi...
+    author: Par

@@ -3,36 +3,56 @@
 {% block title %}{{ 'seo.title' | trans({}, 'watch') }}{% endblock title %}
 {% block description %}{{ 'seo.description' | trans({}, 'watch') }}{% endblock description %}
 
-{% set topMain = true %}
-
-{% block topMainTitle %}
-    <a href="{{ path('watch') }}" title="{{ 'core.menu.watch' | trans }}">
-        {{ 'title' | trans({}, 'watch') }}
-    </a>
-{% endblock topMainTitle %}
-
-{% block topMainMenu %}
-    {% render 'SlyContentBundle:Component:categories' with {'type': 'watch'} %}
-{% endblock topMainMenu %}
-
 {% block content %}
     {% if app.request.query.get('page') <= 1 %}
-        <section class="introduction">
-            <blockquote>
-                {{ 'seo.description' | trans({}, 'watch') }}
-            </blockquote>
+        <section role="contentinfo">
+            <h2>{{ 'list.title' | trans({}, 'watch') }}</h2>
         </section>
+    
+        <div class="hsep_1 t1"></div>
     {% endif %}
 
-    <section class="watch list">
-        {% for item in contentPaginator %}
+    <section class="tpl4">
+        {% for k, item in contentPaginator %}
+            {% if date is defined %}
+                {% if date != item.publishedAt | date('Ymd') %}
+                    </ul>
+                    
+                    <div class="hsep_1 t3"></div>
+
+                    <h3>
+                        <abbr title="{{ item.publishedAt | date('core.date.time.small' | trans) }}" class="dtstart">
+                            {{ item.publishedAt | date('core.date.small' | trans) }}
+                        </abbr>
+                    </h3>
+
+                    <ul>
+                {% endif %}
+            {% else %}
+                <h3>
+                    <abbr title="{{ item.publishedAt | date('core.date.time.small' | trans) }}" class="dtstart">
+                        {{ item.publishedAt | date('core.date.small' | trans) }}
+                    </abbr>
+                </h3>
+            
+                <ul>
+            {% endif %}
+            
+            {% set date = item.publishedAt | date('Ymd') %}
+            
             {% include 'SlyContentBundle:Watch:mediumItem.html.twig' with {'item': item } %}
+            
+            {% if k+1 == contentPaginator.currentPageResults | length %}
+                </ul>
+            {% endif %}
         {% else %}
             <p class="empty">{{ 'list.nocontent' | trans({}, 'watch') }}</p>
         {% endfor %}
     </section>
     
     {% if contentPaginator | length %}
+        <div class="hsep_1 t1"></div>
+    
         <div class="pager">
             {{ pagerfanta(contentPaginator, 'default') }}
         </div>

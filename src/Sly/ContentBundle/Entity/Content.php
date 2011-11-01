@@ -35,7 +35,7 @@ class Content
      */
     protected $title;
     /**
-     * @Gedmo\Slug
+     * @Gedmo\Slug(updatable=false, unique=true)
      * @ORM\Column(type="string", length=255, unique=true)
      */
     protected $slug;
@@ -276,6 +276,11 @@ class Content
             $hashtags .= sprintf('#%s ', $t);
         
         return trim($hashtags);
+    }
+    
+    public function getDisqusId()
+    {
+        return sprintf('slynett-%s', $this->slug);
     }
     
     public function __toString()

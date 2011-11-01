@@ -1,7 +1,7 @@
 <script type="text/javascript">
     var disqus_shortname = '{{ disqus.username }}';
-    var disqus_identifier = '{{ type }}-{{ item.id }}-{{ item.slug }}';
-    var disqus_url = '{{ url('blog_show', {'slug': item.slug}) }}';
+    var disqus_identifier = '{{ item.disqusId }}';
+    var disqus_url = '{{ url('%type%_show' | replace({'%type%': type}), {'slug': item.slug}) }}';
     var disqus_title = '{{ item }}';
 
     (function() {

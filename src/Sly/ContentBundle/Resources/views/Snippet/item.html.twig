@@ -36,7 +36,13 @@
         {% endif %}
         
         {% if item.githubFile %}
-            <pre class="brush: {{ item.getGithubFileType }};">{{ '%prefix%%file%' | replace({'%prefix%': githubRawUrl, '%file%': item.githubFile}) | getContentFromUrl }}</pre>
+            <pre class="brush: {{ item.getGithubFileType }};">
+                {{ '%prefix%%file%' | replace({
+                        '%prefix%': githubRawUrl,
+                        '%file%': item.githubFile
+                    }) | getContentFromUrl
+                }}
+            </pre>
         {% endif %}
     </div>
 </article>

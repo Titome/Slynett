@@ -1,7 +1,21 @@
 categories:
+  title: Catégories
   all: Toutes
-  noitem: Aucun contenu pour cette catégorie.
   
-social:
-  tweet: Tweeter
+items:
+  others:
+    title: Mais aussi...
+  empty: Aucun élément relatif.
+    
+comments:
+  title: Commentaires
+  
+infos:
+  publishedat: Publié le %date%
   share: Partager
+  
+share:
+  title: Partager
+  buttons:
+    facebook: Partager
+    twitter: Tweet

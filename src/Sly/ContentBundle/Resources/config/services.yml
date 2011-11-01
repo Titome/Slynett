@@ -1,4 +1,6 @@
 parameters:
+  sly.core.slycontentextension.class: Sly\ContentBundle\Extension\SlyContentExtension
+  
   sly.content.disqus:
     username: %disqus_username%
   
@@ -6,15 +8,19 @@ parameters:
   sly.content.blog.otheritems.number: 5
   sly.content.watch.maxperpage: 30
   sly.content.watch.feedtitleskel: '__TITLE__ __MINILINK__ #veille __HASHTAGS__'
-  sly.content.tutorial.maxperpage: 9
+  sly.content.tutorial.maxperpage: 7
   sly.content.tutorial.dmplayer:
-    width: 620
-    height: 340
+    width: 580
+    height: 330
   sly.content.snippet.maxperpage: 30
   sly.content.snippet.githubrawurlprefix: 'https://raw.github.com/Ph3nol/mySnippets/master/'
 
 services:
   twig.extension.text:
       class: Twig_Extensions_Extension_Text
+      tags:
+          - { name: twig.extension }
+  twig.extension.sly_content:
+      class: %sly.core.slycontentextension.class%
       tags:
           - { name: twig.extension }

@@ -34,10 +34,14 @@ twig:
         email: %project_email%
         shortemail: %project_shortemail%
         github:
-          sources: %project_github_sources%
+          sources:
+            url: %project_github_sources_url%
         google:
           analytics:
             id: %project_google_analytics_id%
+        author:
+          name: %project_author_name%
+          email: %project_author_email%
       networks:
         rss: %networks_rss%
         twitter:
@@ -104,13 +108,16 @@ avalanche_imagine:
     filters:
         thumbnail:
             type: thumbnail
-            options: { size: [80, 80], mode: inset }
+            options: { size: [110, 110], mode: outbound }
         medium:
             type: thumbnail
-            options: { size: [300, 300], mode: inset }
-        tutorial:
+            options: { size: [250, 90], mode: outbound }
+        medium_b:
             type: thumbnail
-            options: { size: [320, 240], mode: inset }
+            options: { size: [380, 140], mode: outbound }
+        medium_m:
+            type: thumbnail
+            options: { size: [580, 330], mode: outbound }
         homeslider:
             type: thumbnail
             options: { size: [500, 250], mode: outbound }

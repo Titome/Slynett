@@ -1,0 +1,11 @@
+{% spaceless %}
+    <aside class="tpl1 sidebar">
+        {% for k, item in items %}
+            {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'k': k, 'item': item } %}
+        {% else %}
+            <p class="empty">
+                {{ 'items.empty' | trans }}
+            </p>
+        {% endfor %}
+    </aside>
+{% endspaceless %}
