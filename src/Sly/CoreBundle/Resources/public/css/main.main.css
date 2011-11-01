@@ -1,0 +1,27 @@
+#main {
+    overflow: hidden;
+    margin-top: 60px;
+}
+
+#main h2 {
+    margin-bottom: 80px;
+    font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    line-height: 34px;
+    color: #aaa;
+    text-shadow: 1px 1px 1px #fff;
+    font-weight: normal;
+}
+
+#main.right-sidebar {
+    
+}
+
+#main.right-sidebar div.main-content {
+    float: left;
+    width: 660px;
+}
+
+#main.right-sidebar #right-sidebar {
+    margin-left: 720px;
+}

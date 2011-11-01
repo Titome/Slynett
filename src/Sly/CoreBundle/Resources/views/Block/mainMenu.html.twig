@@ -1,37 +1,58 @@
-<ul>
-    <li class="homepage {{ app.request.attributes.get('_route') | checkActive(['homepage']) }}">
-        <a href="{{ path('homepage') }}" title="{{ 'core.menu.homepage' | trans }}">
-            {{ 'core.menu.homepage' | trans }}
-        </a>
-    </li>
-    <li class="blog {{ app.request.attributes.get('_route') | checkActive(['blog', 'blog_category', 'blog_show']) }}">
-        <a href="{{ path('blog') }}" title="{{ 'core.menu.blog' | trans }}">
-            {{ 'core.menu.blog' | trans }}
-        </a>
-    </li>
-    <li class="tutorials {{ app.request.attributes.get('_route') | checkActive(['tutorial', 'tutorial_category', 'tutorial_show']) }}">
-        <a href="{{ path('tutorial') }}" title="{{ 'core.menu.tutorials' | trans }}">
-            {{ 'core.menu.tutorials' | trans }}
-        </a>
-    </li>
-    <li class="watch {{ app.request.attributes.get('_route') | checkActive(['watch', 'watch_category']) }}">
-        <a href="{{ path('watch') }}" title="{{ 'core.menu.watch' | trans }}">
-            {{ 'core.menu.watch' | trans }}
-        </a>
-    </li>
-    <li class="snippets {{ app.request.attributes.get('_route') | checkActive(['snippet', 'snippet_category', 'snippet_show']) }}">
-        <a href="{{ path('snippet') }}" title="{{ 'core.menu.snippets' | trans }}">
-            {{ 'core.menu.snippets' | trans }}
-        </a>
-    </li>
-    <!-- <li class="resources {{ app.request.attributes.get('_route') | checkActive(['resource']) }}">
-        <a href="{{ path('resource') }}" title="{{ 'core.menu.resources' | trans }}">
-            {{ 'core.menu.resources' | trans }}
-        </a>
-    </li> -->
-    <li class="resources {{ app.request.attributes.get('_route') | checkActive(['contact']) }}">
-        <a href="{{ path('contact') }}" title="{{ 'core.menu.contact' | trans }}">
-            {{ 'core.menu.contact' | trans }}
-        </a>
-    </li>
-</ul>
+{% spaceless %}
+    <ul class="menu">
+        <li class="{{ app.request.attributes.get('_route') | checkActive(['blog', 'blog_category', 'blog_show']) }}">
+            <a href="{{ path('blog') }}">
+                <span class="icon">B</span>
+                <div class="content">
+                    <h2 class="main">{{ 'core.menu.blog.label' | trans }}</h2>
+                    <h3 class="sub">{{ 'core.menu.blog.text' | trans }}</h3>
+                </div>
+            </a>
+        </li>
+        <li class="{{ app.request.attributes.get('_route') | checkActive(['tutorial', 'tutorial_category', 'tutorial_show']) }}">
+            <a href="{{ path('tutorial') }}">
+                <span class="icon">M</span>
+                <div class="content">
+                    <h2 class="main">{{ 'core.menu.tutorials.label' | trans }}</h2>
+                    <h3 class="sub">{{ 'core.menu.tutorials.text' | trans }}</h3>
+                </div>
+            </a>
+        </li>
+        <li class="{{ app.request.attributes.get('_route') | checkActive(['watch', 'watch_category']) }}">
+            <a href="{{ path('watch') }}">
+                <span class="icon">K</span>
+                <div class="content">
+                    <h2 class="main">{{ 'core.menu.watch.label' | trans }}</h2>
+                    <h3 class="sub">{{ 'core.menu.watch.text' | trans }}</h3>
+                </div>
+            </a>
+        </li>
+        <li class="{{ app.request.attributes.get('_route') | checkActive(['snippet', 'snippet_category', 'snippet_show']) }}">
+            <a href="{{ path('snippet') }}">
+                <span class="icon">²</span>
+                <div class="content">
+                    <h2 class="main">{{ 'core.menu.snippets.label' | trans }}</h2>
+                    <h3 class="sub">{{ 'core.menu.snippets.text' | trans }}</h3>
+                </div>
+            </a>
+        </li>
+        <li class="{{ app.request.attributes.get('_route') | checkActive(['resource']) }}">
+            <a href="{{ path('resource') }}">
+                <span class="icon">A</span>
+                <div class="content">
+                    <h2 class="main">{{ 'core.menu.resources.label' | trans }}</h2>
+                    <h3 class="sub">{{ 'core.menu.resources.text' | trans }}</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('homepage') }}">
+                <span class="icon">I</span>
+                <div class="content">
+                    <h2 class="main">{{ 'core.menu.projects.label' | trans }}</h2>
+                    <h3 class="sub">{{ 'core.menu.projects.text' | trans({'%name%': project.name}) }}</h3>
+                </div>
+            </a>
+        </li>
+    </ul>
+{% endspaceless %}

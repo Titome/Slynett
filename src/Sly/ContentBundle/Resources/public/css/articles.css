@@ -1,0 +1,125 @@
+/* ------------- BLOG - List */
+
+article.blog {
+    overflow: hidden;
+}
+
+article.blog header {
+    margin-bottom: 20px;
+}
+
+article.blog header h3 a,
+article.blog header h3 a:visited {
+    font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    text-shadow: 1px 1px 1px #fff;
+    text-decoration: none;
+}
+
+article.blog header h3 a:hover {
+    text-decoration: underline;
+}
+
+article.blog section {
+    float: left;
+    width: 420px;
+    padding: 10px;
+    background-color: #fff;
+    line-height: 24px;
+}
+
+article.blog section img {
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+article.blog section a.category,
+article.blog section a.category:visited {
+    color: #116fe3;
+    text-decoration: none;
+}
+
+article.blog section a.category:hover {
+    text-decoration: underline;
+}
+
+article.blog section a.read,
+article.blog section a.read:visited {
+    color: #116fe3;
+    text-decoration: none;
+}
+
+article.blog section a.read:hover {
+    text-decoration: underline;
+}
+
+article.blog footer {
+    margin-left: 460px;
+}
+
+article.blog footer time {
+    display: block;
+    margin-bottom: 20px;
+    font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    text-shadow: 1px 1px 1px #fff;
+    color: #aaa;
+}
+
+article.blog footer p {
+    margin-bottom: 20px;
+}
+
+article.blog footer p img {
+    vertical-align: middle;
+}
+
+article.blog footer ul.tags li {
+    float: left;
+    margin: 0 5px 5px 0;
+}
+
+article.blog footer ul.tags li a,
+article.blog footer ul.tags li a:visited {
+    padding: 2px 4px;
+    color: #fff;
+    background-color: #ccc;
+    font-size: 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+article.blog footer ul.tags li a:hover {
+    background-color: #bbb;
+}
+
+/* ------------- General / Article Content Show */
+
+article .content-show a,
+article .content-show a:visited {
+    color: #116fe3;
+}
+
+article .content-show h3,
+article .content-show p,
+article .content-show ul {
+    line-height: 24px;
+    margin: 40px 0;
+}
+
+article .content-show h3 {
+    font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+article .content-show ul {
+    padding: 10px 0 10px 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-left: 5px solid #116fe3;
+}
+
+article .content-show ul li {
+    list-style: square;
+}

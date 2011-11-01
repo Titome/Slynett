@@ -3,15 +3,17 @@
 {% block body %}
     {% include 'SlyCoreBundle:Layout:header.html.twig' %}
     
-    <section class="wrap main">
-        <section class="rightSidebarContent">
-            {% block content %}{% endblock content %}
-        </section>
+    <div id="main" class="wrap right-sidebar">
+        <div class="main-content">
+            <section role="main">
+                {% block content %}{% endblock content %}
+            </section>
+        </div>
 
-        <section class="sidebar rightSidebar">
+        <aside class="sidebar" id="right-sidebar">
             {% block rightSidebar %}{% endblock rightSidebar %}
-        </section>
-    </section>
+        </aside>
+    </div>  
                 
     {% include 'SlyCoreBundle:Layout:footer.html.twig' %}
 {% endblock %}

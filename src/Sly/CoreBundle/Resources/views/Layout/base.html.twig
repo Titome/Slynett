@@ -10,21 +10,19 @@
         {% endif %}
 
         {% block stylesheets %}
-            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Open+Sans+Condensed:300|Ubuntu+Condensed" type="text/css" media="screen" />
+            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Terminal+Dosis" type="text/css" media="screen" />
 
             {% stylesheets output='css/packed' filter='cssrewrite,?yui_css'
-                'bundles/slycore/css/reset.css'
                 'bundles/slycontent/vendor/skitter-slideshow/css/skitter.styles.css'
-                'bundles/slycore/css/core.css'
-                'bundles/slycore/css/buttons.css'
-                'bundles/slycore/css/sidebar.css'
-                'bundles/slycore/css/pager.css'
-                'bundles/slycontent/css/content.css'
-                'bundles/slycontent/css/content.tpl1.css'
-                'bundles/slycontent/css/content.tpl2.css'
-                'bundles/slycontent/css/content.tpl3.css'
-                'bundles/slycontent/css/content.tpl4.css'
-                'bundles/slycontent/css/disqus.css' %}
+                'bundles/slycore/css/jquery.uniform.css'
+                'bundles/slycore/css/main.css'
+                'bundles/slycore/css/main.mainmenu.css'
+                'bundles/slycore/css/main.header.search.css'
+                'bundles/slycore/css/main.main.css'
+                'bundles/slycore/css/main.main.articles.css'
+                'bundles/slycore/css/main.sidebar.css'
+                'bundles/slycore/css/main.sidebar.tabs.css'
+                'bundles/slycontent/css/articles.css' %}
 
                 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
             {% endstylesheets %}
@@ -38,12 +36,10 @@
         {% block javascripts %}
             {% javascripts output='js/packed.js' filter='yui_js'
                 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'
-                'bundles/slycore/js/jquery.scrollto.min.js'
+                'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'
                 'bundles/slycore/js/html5-ie.js'
-                'bundles/slycore/js/core.js'
-                'bundles/slycontent/vendor/skitter-slideshow/js/jquery.easing.1.3.js'
-                'bundles/slycontent/vendor/skitter-slideshow/js/jquery.skitter.min.js'
-                'bundles/slycontent/js/content.js' %}
+                'bundles/slycore/js/jquery.uniform.js'
+                'bundles/slycore/js/main.js' %}
 
                 <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}

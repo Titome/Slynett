@@ -1,22 +1,30 @@
 core:
   date:
     mini: d/m/Y
-  
-  header:
-    follow:
-      msg1: Suivez %name% et
-      msg2: son auteur
-      msg3: sur
-      msg4: ou encore
       
   menu:
     homepage: Accueil
-    blog: Blog
-    tutorials: Tutoriels
-    watch: Veille WebDev
-    snippets: Snippets
-    resources: Ressources
+    author: L'auteur, le taulier des lieux
+    github: %name% sur GitHub
     contact: Contact
+    blog:
+      label: Blog
+      text: Actualités et découvertes en développement Web
+    tutorials:
+      label: Tutoriels
+      text: Tutoriels Vidéo PHP5, Symfony, jQuery et autres
+    watch:
+      label: Veille WebDev
+      text: Veille WebDev quotidienne Twitter, LinkedIn
+    snippets:
+      label: Snippets
+      text: Bouts de code en tous genres
+    resources:
+      label: Ressources
+      text: Prochainement
+    projects:
+      label: Projets
+      text: Les projets %name%
     credits: Crédits
     terms: Mentions légales
    

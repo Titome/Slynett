@@ -1,0 +1,98 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,dialog,div,dl,dt,em,embed,fieldset,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,meter,nav,object,ol,output,p,pre,progress,q,rp,rt,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video,xmp{border:0;margin:0;padding:0;font-size:100%}html,body{height:100%}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}b,strong{font-weight:bold}img{color:transparent;font-size:0;vertical-align:middle;-ms-interpolation-mode:bicubic}ol,ul{list-style:none}li{display:list-item}table{border-collapse:collapse;border-spacing:0}th,td,caption{font-weight:normal;vertical-align:top;text-align:left}q{quotes:none}q:before,q:after{content:'';content:none}sub,sup,small{font-size:75%}sub,sup{line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}svg{overflow:hidden}
+
+@font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('../fonts/websymbols-regular-webfont.eot');
+    src: url('../fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/websymbols-regular-webfont.woff') format('woff'),
+        url('../fonts/websymbols-regular-webfont.ttf') format('truetype'),
+        url('../fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    background-image: url('../images/background.png');
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: .8em;
+    color: #000;
+}
+
+a,
+a:visited {
+    color: #000;
+}
+
+label {
+    cursor: pointer;
+}
+
+input {
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 1em;
+}
+
+.clear {
+    clear: both;
+}
+
+.wrap {
+    margin: 0 auto;
+    width: 1024px;
+}
+
+.content.c10 { padding: 10px; }
+.content.c20 { padding: 20px; }
+.content.c40 { padding: 40px; }
+
+#header {
+    height: 100px;
+    background-color: #fff;
+}
+
+#header #logo {
+    float: left;
+}
+
+#header #logo a {
+    display: block;
+    width: 310px;
+    height: 100px;
+    background-image: url('../images/logo.png');
+}
+
+nav[role=navigation] {
+    position: relative;
+    margin-top: 220px;
+    height: 80px;
+    background-color: #fff;
+    font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
+    -moz-box-shadow: 0 0 10px #ddd;
+    -webkit-box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
+}
+
+nav.sec {
+    margin: 30px auto;
+}
+
+nav.sec ul.menu li {
+    float: left;
+    margin-right: 40px;
+}
+
+nav.sec ul.menu li:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+nav.sec ul.menu li a {
+    text-shadow: 1px 1px 1px #fff;
+}
+
+nav.sec ul.menu li.active a,
+nav.sec ul.menu li.active a:visited {
+    color: #116fe3;
+}

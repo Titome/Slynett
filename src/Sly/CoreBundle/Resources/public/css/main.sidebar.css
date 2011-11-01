@@ -1,0 +1,152 @@
+#main .sidebar section {
+    margin-bottom: 40px;
+}
+
+#main .sidebar section h3 {
+    margin-bottom: 10px;
+    font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    line-height: 28px;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+#main .sidebar section div.content {
+    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+}
+
+#main .sidebar section div.content ul.list {
+    margin: 20px;
+}
+#main .sidebar section div.content ul.list li {
+    list-style: disc;
+}
+
+
+#main .sidebar section div.content p {
+    margin: 20px 0;
+}
+
+#main .sidebar section div.content ul.categories li {
+    margin-bottom: 1px;
+}
+
+#main .sidebar section div.content ul.categories li a,
+#main .sidebar section div.content ul.categories li a:visited {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 10px;
+    background-color: #eee;
+    text-decoration: none;
+}
+
+#main .sidebar section div.content ul.categories li a:hover {
+    background-image: url('../images/background.png');
+}
+
+#main .sidebar section div.content ul.categories li a span.i {
+    position: absolute;
+    top: 0;
+    right: -40px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-family: 'WebSymbolsRegular', cursive, Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    background-color: #116fe3;
+    color: #fff;
+    -webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+#main .sidebar section div.content ul.categories li a:hover span.i {
+    right: 0;
+}
+
+#main .sidebar section div.content ul.items li {
+    position: relative;
+    overflow: hidden;
+    width: 81px;
+    height: 81px;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+#main .sidebar section div.content ul.items li:nth-child(3n) {
+    margin-right: 0;
+}
+
+#main .sidebar section div.content ul.items li a {
+    display: block;
+    padding: 10px;
+    font-size: .85em;
+}
+
+#main .sidebar section div.content ul.items li img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 69px;
+    height: 69px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+#main .sidebar section div.content ul.items li:hover img {
+    bottom: -75px;
+    background-color: #116fe3;
+    border-color: #116fe3;
+}
+
+#main .sidebar section div.content ul.networks {
+    overflow: hidden;
+}
+
+#main .sidebar section div.content ul.networks li {
+    float: left;
+    width: 32%;
+    margin: 0 2% 20px 0;
+    text-align: center;
+}
+
+#main .sidebar section div.content ul.networks li:nth-child(3n) {
+    margin-right: 0;
+}
+
+#main .sidebar section div.content ul.networks li a,
+#main .sidebar section div.content ul.networks li a:visited {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    font-family: 'WebSymbolsRegular', cursive, Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 44px;
+    color: #aaa;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+#main .sidebar section div.content ul.networks li a:hover {
+    color: #116fe3;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}

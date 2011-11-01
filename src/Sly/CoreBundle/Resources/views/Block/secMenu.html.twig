@@ -1,0 +1,22 @@
+<ul class="menu">
+    <li class="{{ app.request.attributes.get('_route') | checkActive(['homepage']) }}">
+        <a href="{{ path('homepage') }}">
+            {{ 'core.menu.homepage' | trans }}
+        </a>
+    </li>
+    <li class="{{ app.request.attributes.get('_route') | checkActive(['author', 'author_portfolio', 'author_skills', 'author_hire']) }}">
+        <a href="{{ path('author') }}">
+            {{ 'core.menu.author' | trans }}
+        </a>
+    </li>
+    <li class="{{ app.request.attributes.get('_route') | checkActive(['todo']) }}">
+        <a href="{{ path('homepage') }}">
+            {{ 'core.menu.github' | trans({'%name%': project.name}) }}
+        </a>
+    </li>
+    <li class="{{ app.request.attributes.get('_route') | checkActive(['contact']) }}">
+        <a href="{{ path('contact') }}">
+            {{ 'core.menu.contact' | trans }}
+        </a>
+    </li>
+</ul>

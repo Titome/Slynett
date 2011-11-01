@@ -5,3 +5,6 @@ document.createElement("aside");
 document.createElement("nav");
 document.createElement("article");
 document.createElement("figure");
+document.createElement("figcaption");
+document.createElement("hgroup");
+document.createElement("time");

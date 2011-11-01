@@ -9,24 +9,16 @@
 
 {% block content %}
     {% if app.request.query.get('page') <= 1 %}
-        <section role="contentinfo">
-            <h2>{{ 'list.title' | trans({}, 'blog') }}</h2>
-        </section>
-    
-        <div class="hsep_1 t1"></div>
+        <h2 role="contentinfo">{{ 'list.title' | trans({}, 'blog') }}</h2>
     {% endif %}
-
-    <section role="main" class="tpl3">
-        {% for k, item in contentPaginator %}
-            {% include 'SlyContentBundle:Blog:mediumItem.html.twig' with {'k': k, 'item': item } %}
-        {% else %}
-            <p class="empty">{{ 'list.nocontent' | trans({}, 'blog') }}</p>
-        {% endfor %}
-    </section>
+    
+    {% for k, item in contentPaginator %}
+        {% include 'SlyContentBundle:Blog:mediumItem.html.twig' with {'k': k, 'item': item } %}
+    {% else %}
+        <p class="empty">{{ 'list.nocontent' | trans({}, 'blog') }}</p>
+    {% endfor %}
     
     {% if contentPaginator | length %}
-        <div class="hsep_1 t2"></div>
-
         <div class="pager">
             {{ pagerfanta(contentPaginator, 'default') }}
         </div>

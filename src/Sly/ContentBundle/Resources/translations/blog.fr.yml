@@ -6,4 +6,5 @@ list:
   title: Découvertes développement Web au quotidien. PHP5, Symfony, jQuery, CSS3 et autres.
   nocontent: Aucun article.
   item:
-    author: Par
+    author: Ecrit par
+    read: Lire

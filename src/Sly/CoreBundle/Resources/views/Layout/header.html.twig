@@ -1,28 +1,61 @@
-<header class="container_16">
-    <div class="grid_16 top">
-        <div class="grid_4 alpha left">
-            <a href="{{ path('homepage') }}" title="{{ project.name }}">
-                <img src="{{ asset('bundles/slycore/images/slynett-logo.png') }}" alt="{{ project.name }}" />
-            </a>
-        </div>
-        
-        <div class="grid_12 omega right">
-            <aside>
-                {{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }}
-                <a href="{{ path('author') }}" title="{{ project.name }} - {{ 'core.header.follow.msg2' | trans }}">{{ 'core.header.follow.msg2' | trans }}</a>
-                {{ 'core.header.follow.msg3' | trans }}
-                <a href="{{ networks.twitter.url }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Twitter" onclick="var w = window.open(this.href); w.focus(); return false;">Twitter</a>,
-                <a href="{{ networks.facebook.url }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Facebook" onclick="var w = window.open(this.href); w.focus(); return false;">Facebook</a>,
-                <a href="{{ networks.linkedin }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} LinkedIn" onclick="var w = window.open(this.href); w.focus(); return false;">LinkedIn</a>,
-                {{ 'core.header.follow.msg4' | trans }}
-                <a href="{{ networks.googleplus }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Google+" onclick="var w = window.open(this.href); w.focus(); return false;">Google+</a>
-            </aside>
-            
-            <nav class="primary">
-                {% include 'SlyCoreBundle:Block:mainMenu.html.twig' %}
-            </nav>
-        </div>
-    </div>
-    
-    <div class="bottom"></div>
+<header id="header" class="wrap">
+    <h1 id="logo"><a href="{{ path('homepage') }}" title="{{ project.name }}"></a></h1>
+
+    <section id="search" role="search">
+        <form class="form-stacked">
+            <div>
+                <span class="i search"><a href="#">L</a></span>
+                <input type="text" placeholder="Recherche..." />
+                <span class="i closefilters"><a href="#">'</a></span>
+            </div>
+
+            <div class="filters">
+                <ul>
+                    <li>
+                        <input type="checkbox" name="categories[]" id="search-categories-blog" value="blog" checked="checked" />
+                        <label for="search-categories-blog">Blog</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="categories[]" id="search-categories-tutorial" value="tutorial" checked="checked" />
+                        <label for="search-categories-tutorial">Tutoriels</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="categories[]" id="search-categories-snippet" value="snippet" checked="checked" />
+                        <label for="search-categories-snippet">Snippets</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="categories[]" id="search-categories-watch" value="watch" checked="checked" />
+                        <label for="search-categories-watch">Veille</label>
+                    </li>
+                </ul>
+
+                <p>
+                    Sélectionner les sections dans lesquelles vous souhaitez porter votre recherche.
+                </p>
+
+                <p class="submit">
+                    <input type="submit" name="search" value="Rechercher" />
+                </p>
+            </div>
+        </form>
+    </section>
 </header>
+
+<nav class="wrap sec">
+    {% include 'SlyCoreBundle:Block:secMenu.html.twig' %}
+</nav>
+
+<nav role="navigation">
+    <div class="wrap">
+        {% include 'SlyCoreBundle:Block:mainMenu.html.twig' %}
+    </div>
+
+    <ul class="networks">
+        <li class="i">h</li>
+        <li><a href="#">r</a></li>
+        <li><a href="#">t</a></li>
+        <li><a href="#">f</a></li>
+        <li><a href="#">l</a></li>
+        <li><a href="#">g</a></li>
+    </ul>
+</nav>
