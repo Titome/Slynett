@@ -29,7 +29,7 @@
                 {{ item.content | striptags | truncate(250) }}
             {% endif %}
             
-            <br />
+            <br /><br />
             
             <a href="{{ path('blog_show', {'slug': item.slug }) }}" title="{{ item }}" class="read">
                 {{ 'list.item.read' | trans({}, 'blog') }} &raquo;

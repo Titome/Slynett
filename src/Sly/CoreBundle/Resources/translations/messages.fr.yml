@@ -63,5 +63,11 @@ core:
 
 sidebar:
   github:
-    text: Retrouvez les sources de %name% (sous Symfony2) sur GitHub.
+    title: Les sources sur GitHub
+    text: |
+      Retrouvez les sources du projet %name% (sous Symfony2) sur GitHub.
+      C'est cadeau ! :)
     sources: Sources
+  categories:
+    title: Catégories
+    all: Toutes

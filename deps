@@ -3,23 +3,23 @@
 
 [twig]
     git=http://github.com/fabpot/Twig.git
-    version=v1.2.0
+    version=origin/master
 
 [monolog]
     git=http://github.com/Seldaek/monolog.git
-    version=1.0.1
+    version=1.0.2
 
 [doctrine-common]
     git=http://github.com/doctrine/common.git
-    version=origin/2.1.x
+    version=origin/master
 
 [doctrine-dbal]
     git=http://github.com/doctrine/dbal.git
-    version=origin/2.1.x
+    version=origin/master
 
 [doctrine]
     git=http://github.com/doctrine/doctrine2.git
-    version=origin/2.1.x
+    version=origin/master
 
 [swiftmailer]
     git=http://github.com/swiftmailer/swiftmailer.git
@@ -34,7 +34,7 @@
 
 [metadata]
     git=http://github.com/schmittjoh/metadata.git
-    version=origin/1.0.x
+    version=1.1.0
 
 [SensioFrameworkExtraBundle]
     git=http://github.com/sensio/SensioFrameworkExtraBundle.git
@@ -57,4 +57,3 @@
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
     version=v1.0.1
-

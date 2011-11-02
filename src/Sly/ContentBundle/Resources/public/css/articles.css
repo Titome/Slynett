@@ -21,6 +21,7 @@ article.blog header h3 a:hover {
 }
 
 article.blog section {
+    position: relative;
     float: left;
     width: 420px;
     padding: 10px;
@@ -43,9 +44,17 @@ article.blog section a.category:hover {
     text-decoration: underline;
 }
 
+article.blog section a.read {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
 article.blog section a.read,
 article.blog section a.read:visited {
-    color: #116fe3;
+    padding: 2px 4px;
+    color: #fff;
+    background-color: #116fe3;
     text-decoration: none;
 }
 

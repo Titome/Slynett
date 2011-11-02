@@ -21,6 +21,20 @@
 -->
 
 <section>
+    <h3>{{ 'sidebar.categories.title' | trans }}</h3>
+    
+    <div class="content">
+        <nav>
+            {% if category is defined %}
+                {% render 'SlyContentBundle:Component:categories' with {'type': 'blog', 'activeCategories': item.categories} %}
+            {% else %}
+                {% render 'SlyContentBundle:Component:categories' with {'type': 'blog'} %}
+            {% endif %}
+        </nav>
+    </div>
+</section>
+
+<section>
     <div class="tabs">
         <ul>
             <li>
