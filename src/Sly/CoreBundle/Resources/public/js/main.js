@@ -42,3 +42,16 @@ function searchFilters(obj, sfActive)
         filtersDiv.slideUp();
     }
 }
+
+/* --- MainMenu Scroll ----------------- */
+
+
+var menuYloc = -400;
+
+$(window).scroll(function () { 
+    offset = menuYloc + $(document).scrollTop();
+
+    if(offset < 0) offset = 0;
+
+    $('nav[role=navigation]').animate({ top: offset + "px" }, { duration: 500, queue: false });
+});

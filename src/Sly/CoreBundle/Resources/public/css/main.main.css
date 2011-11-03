@@ -4,13 +4,42 @@
 }
 
 #main h2 {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 28px;
     line-height: 34px;
     color: #aaa;
     text-shadow: 1px 1px 1px #fff;
     font-weight: normal;
+}
+
+#main section[role=main] nav ul.categories {
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+#main section[role=main] nav ul.categories li {
+    float: left;
+    margin-right: 1px;
+}
+
+#main section[role=main] nav ul.categories li a,
+#main section[role=main] nav ul.categories li a:visited {
+    display: block;
+    padding: 10px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #aaa;
+}
+
+#main section[role=main] nav ul.categories li a:hover {
+    color: #000;
+}
+
+#main section[role=main] nav ul.categories li.active a,
+#main section[role=main] nav ul.categories li.active a:visited {
+    color: #fff;
+    background-color: #116fe3;
 }
 
 #main.right-sidebar {

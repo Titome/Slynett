@@ -7,9 +7,25 @@
         {% endif %}
         
         <div class="mask">
-            <h2><a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item.title }}</a></h2>
-            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
-            <a href="#" class="info">Read More</a>
+            <h3><a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item.title }}</a></h3>
+            <p>
+                <span>
+                    {% if item.categories | length %}
+                        {% for k, cat in item.categories %}
+                            <a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>{% if k+1 < item.categories | length %} / {% endif %}
+                        {% endfor %}
+
+                        —
+                    {% endif %}
+                </span>
+                
+                <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
+                    A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+                </a>
+            </p>
+            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}" class="info">
+                {{ 'list.show' | trans({}, 'tutorial') }}
+            </a>
         </div>
     </article>
 {% endspaceless %}

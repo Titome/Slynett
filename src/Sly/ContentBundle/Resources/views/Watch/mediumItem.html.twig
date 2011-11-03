@@ -1,19 +1,25 @@
 {% spaceless %}
-    <li>
-        <ul class="category small">
-            {% for k, cat in item.categories %}
-                <li><a href="#{{ cat.slug }}" class="caticon small {{ cat.slug }}" title="{{ cat }}"></a></li>
-            {% endfor %}
-        </ul>
+    <article>
+        {% if item.categories | length %}     
+            <span class="categories">
+                {% for k, cat in item.categories %}
+                    <a href="{{ path('watch_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>{% if k+1 < item.categories | length %} / {% endif %}
+                {% endfor %}
+
+                —
+            </span>
+        {% endif %}
         
         <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;" title="{{ item }}">{{ item }}</a>
         
         {% if item.tags | length %}
-            <ul class="tags">
-                {% for tag in item.tagsCollection %}
-                    <li><a href="#" class="tag">{{ tag }}</a></li>
-                {% endfor %}
-            </ul>
+            <footer>
+                <ul class="tags">
+                    {% for tag in item.tagsCollection %}
+                        <li><a href="#" class="tag">{{ tag }}</a></li>
+                    {% endfor %}
+                </ul>
+            </footer>
         {% endif %}
-    </li>
+    </article>
 {% endspaceless %}

@@ -64,8 +64,8 @@ input {
 
 nav[role=navigation] {
     position: relative;
-    margin-top: 220px;
-    height: 80px;
+    margin-top: 200px;
+    height: 120px;
     background-color: #fff;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     -moz-box-shadow: 0 0 10px #ddd;

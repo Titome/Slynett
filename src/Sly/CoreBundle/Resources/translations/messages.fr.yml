@@ -4,7 +4,7 @@ core:
       
   menu:
     homepage: Accueil
-    author: L'auteur, le taulier des lieux
+    author: A propos / L'auteur
     github: %name% sur GitHub
     contact: Contact
     blog:
@@ -14,7 +14,7 @@ core:
       label: Tutoriels
       text: Tutoriels Vidéo PHP5, Symfony, jQuery et autres
     watch:
-      label: Veille WebDev
+      label: Veille
       text: Veille WebDev quotidienne Twitter, LinkedIn
     snippets:
       label: Snippets

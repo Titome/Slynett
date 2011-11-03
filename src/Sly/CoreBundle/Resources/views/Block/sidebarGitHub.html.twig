@@ -1,11 +1,12 @@
-<section class="author">
+<section class="github">
     <h3>{{ 'sidebar.github.title' | trans }}</h3>
     
     <div class="content">    
         {{ 'sidebar.github.text' | trans({'%name%': project.name}) }}
 
         <p>
-            <a href="{{ project.github.sources.url }}" onclick="var w=window.open(this.href);w.focus();return false;">
+            <a href="{{ project.github.sources.url }}" onclick="var w=window.open(this.href);w.focus();return false;" class="sws html">
+                <span></span>
                 {{ 'sidebar.github.sources' | trans }}
             </a>
         </p>

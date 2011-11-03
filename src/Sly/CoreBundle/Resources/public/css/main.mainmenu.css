@@ -56,8 +56,8 @@ nav[role=navigation] ul.menu li .content {
 }
 
 nav[role=navigation] ul.menu li .main {
-    margin: 15px 0;
-    font-size: 20px;
+    margin: 5px 0;
+    font-size: 28px;
     text-align: center;
     -webkit-transition: all 200ms linear;
     -moz-transition: all 200ms linear;
@@ -166,7 +166,7 @@ nav[role=navigation] ul.menu li.active .sub {
 
 nav[role=navigation] ul.networks {
     position: absolute;
-    top: 15px;
+    top: 30px;
     right: 0;
     width: 50px;
     height: 50px;

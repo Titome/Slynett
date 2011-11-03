@@ -1,0 +1,13 @@
+<section>
+    <h3>{{ 'sidebar.categories.title' | trans }}</h3>
+    
+    <div class="content">
+        <nav>
+            {% if category is defined %}
+                {% render 'SlyContentBundle:Component:categories' with {'type': 'watch', 'activeCategories': item.categories} %}
+            {% else %}
+                {% render 'SlyContentBundle:Component:categories' with {'type': 'watch'} %}
+            {% endif %}
+        </nav>
+    </div>
+</section>

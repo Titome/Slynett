@@ -1,31 +1,31 @@
 {% spaceless %}
-    <li class="item">
-        <abbr title="{{ item.publishedAt | date('Y-m-dTH:i:m') }}" class="dtstart">{{ item.publishedAt | date('Y, M d @ H:i') }}</abbr>
-        
-        /
-        
-        {% for k, cat in item.categories %}
-            <a href="{{ path('watch_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
+    <time datetime="{{ item.publishedAt | date('core.date.time.big' | trans) }}">
+        {{ item.publishedAt | date('core.date.small' | trans) }}
+    </time>
+
+    /
+
+    {% for k, cat in item.categories %}
+        <a href="{{ path('watch_category', {'slug': cat.slug}) }}" class="category">{{ cat }}</a>{% if k < (item.categories | length - 1) %},{% endif %}
+    {% endfor %}
+
+    <br />
+
+    <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="link">
+        {{ item }}
+    </a>
+
+    <br />
+
+    <a href="{{ item.minilink }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="minilink">
+        {{ item.minilink }}
+    </a>
+
+    {% if item.tags | length %}
+        <br />
+
+        {% for tag in item.tagsCollection %}
+            <a href="#" class="tag">{{ tag }}</a>
         {% endfor %}
-        
-        <br />
-    
-        <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="link">
-            {{ item }}
-        </a>
-        
-        <br />
-        
-        <a href="{{ item.minilink }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="minilink">
-            {{ item.minilink }}
-        </a>
-        
-        {% if item.tags | length %}
-            <br />
-            
-            {% for tag in item.tagsCollection %}
-                <a href="#" class="tag">{{ tag }}</a>
-            {% endfor %}
-        {% endif %}
-    </li>
+    {% endif %}
 {% endspaceless %}
