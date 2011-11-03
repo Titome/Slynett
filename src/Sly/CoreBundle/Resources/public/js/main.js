@@ -43,15 +43,31 @@ function searchFilters(obj, sfActive)
     }
 }
 
-/* --- MainMenu Scroll ----------------- */
+/* --- TopMenu Scroll ----------------- */
 
+var menuYloc = -180;
 
-var menuYloc = -400;
-
-$(window).scroll(function () { 
-    offset = menuYloc + $(document).scrollTop();
+$(window).scroll(function(){
+    scrollTop = $(document).scrollTop();
+    offset = menuYloc + scrollTop;
 
     if(offset < 0) offset = 0;
+    
+    if (scrollTop > Math.abs(menuYloc))
+        navOpacity = 1;
+    else
+        navOpacity = 0;
 
-    $('nav[role=navigation]').animate({ top: offset + "px" }, { duration: 500, queue: false });
+    $('#top-nav').animate(
+        { opacity: navOpacity },
+        { duration: 500, queue: false }
+    );
+});
+
+/* --- Scroll to Top link ----------------- */
+
+$('#top-nav ul li.sws.reply').click(function(){
+    $('html, body').animate({ scrollTop: 0 }, 400);
+    
+    return false; 
 });

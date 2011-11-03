@@ -1,0 +1,60 @@
+{% spaceless %}
+    <ul class="menu">
+        <li class="sws tag {{ app.request.attributes.get('_route') | checkActive(['homepage']) }}">
+            <a href="{{ path('homepage') }}">
+                <span></span>
+                {{ 'core.menu.homepage' | trans }}
+            </a>
+        </li>
+        <li class="sws rss {{ app.request.attributes.get('_route') | checkActive(['blog', 'blog_category', 'blog_show']) }}">
+            <a href="{{ path('blog') }}">
+                <span></span>
+                {{ 'core.menu.blog.label' | trans }}
+            </a>
+        </li>
+        <li class="sws movie {{ app.request.attributes.get('_route') | checkActive(['tutorial', 'tutorial_category', 'tutorial_show']) }}">            
+            <a href="{{ path('tutorial') }}">
+                <span></span>
+                {{ 'core.menu.tutorials.label' | trans }}
+            </a>
+        </li>
+        <li class="sws link {{ app.request.attributes.get('_route') | checkActive(['watch', 'watch_category']) }}">
+            <a href="{{ path('watch') }}">
+                <span></span>
+                {{ 'core.menu.watch.label' | trans }}
+            </a>
+        </li>
+        <li class="sws list {{ app.request.attributes.get('_route') | checkActive(['snippet', 'snippet_category', 'snippet_show']) }}">
+            <a href="{{ path('snippet') }}">
+                <span></span>
+                {{ 'core.menu.snippets.label' | trans }}
+            </a>
+        </li>
+        <li class="sws attachment {{ app.request.attributes.get('_route') | checkActive(['resource']) }}">
+            <a href="{{ path('resource') }}">
+                <span></span>
+                {{ 'core.menu.resources.label' | trans }}
+            </a>
+        </li>
+        <li class="sws image">
+            <a href="{{ path('homepage') }}">
+                <span></span>
+                {{ 'core.menu.projects.label' | trans }}
+            </a>
+        </li>
+        <li class="sws reply">
+            <a href="#">
+                <span></span>
+                {{ 'core.menu.totop' | trans }}
+            </a>
+        </li>
+    </ul>
+
+    <ul class="networks">
+        <li class="sws googleplus"><a href="{{ networks.googleplus }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
+        <li class="sws linkedin"><a href="{{ networks.linkedin }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
+        <li class="sws facebook"><a href="{{ networks.facebook.url }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
+        <li class="sws twitter"><a href="{{ networks.twitter.url }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
+        <li class="sws rss"><a href="{{ networks.rss }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
+    </ul>
+{% endspaceless %}

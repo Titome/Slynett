@@ -27,6 +27,7 @@ core:
       text: Les projets %name%
     credits: Crédits
     terms: Mentions légales
+    totop: Retour en haut
    
   networks:
     rss: Flux RSS
