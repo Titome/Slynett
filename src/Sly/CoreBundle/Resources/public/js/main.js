@@ -45,23 +45,15 @@ function searchFilters(obj, sfActive)
 
 /* --- TopMenu Scroll ----------------- */
 
-var menuYloc = -180;
+var menuYloc = -260;
 
 $(window).scroll(function(){
     scrollTop = $(document).scrollTop();
-    offset = menuYloc + scrollTop;
-
-    if(offset < 0) offset = 0;
     
     if (scrollTop > Math.abs(menuYloc))
-        navOpacity = 1;
+        $('#top-nav').fadeIn('slow');
     else
-        navOpacity = 0;
-
-    $('#top-nav').animate(
-        { opacity: navOpacity },
-        { duration: 500, queue: false }
-    );
+        $('#top-nav').fadeOut('slow');
 });
 
 /* --- Scroll to Top link ----------------- */
