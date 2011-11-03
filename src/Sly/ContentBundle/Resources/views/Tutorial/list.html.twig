@@ -5,34 +5,18 @@
 
 {% block content %}
     {% if app.request.query.get('page') <= 1 %}
-        <section role="contentinfo">
-            <h2>{{ 'list.title' | trans({}, 'tutorial') }}</h2>
-        </section>
-    
-        <div class="hsep_1 t1"></div>
+        <h2 role="contentinfo">{{ 'list.title' | trans({}, 'tutorial') }}</h2>
     {% endif %}
 
-    <section role="main" class="tpl1">
-        {% for k, item in contentPaginator %}
-            {% if app.request.query.get('page') <= 1 %}
-                {% if k == 0 %}
-                    {% include 'SlyContentBundle:Tutorial:bigItem.html.twig' with {'k': k, 'item': item } %}
-
-                    <div class="hsep_1 t1"></div>
-                {% else %}
-                    {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'k': k-1, 'item': item } %}
-                {% endif %}
-            {% else %}
-                {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'k': k, 'item': item } %}
-            {% endif %}
-        {% else %}
-            <p class="empty">{{ 'list.nocontent' | trans({}, 'tutorial') }}</p>
-        {% endfor %}
-    </section>
+    {% for k, item in contentPaginator %}
+        {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'k': k, 'item': item } %}
+    {% else %}
+        <p class="empty">{{ 'list.nocontent' | trans({}, 'tutorial') }}</p>
+    {% endfor %}
+    
+    <div class="clear"></div>
     
     {% if contentPaginator | length %}
-        <div class="hsep_1 t2"></div>
-
         <div class="pager">
             {{ pagerfanta(contentPaginator, 'default') }}
         </div>

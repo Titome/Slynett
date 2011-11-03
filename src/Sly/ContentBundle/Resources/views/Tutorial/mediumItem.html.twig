@@ -1,33 +1,15 @@
 {% spaceless %}
-    <article class="{% if (k +1) is divisibleby(3) %}last{% endif %}">
-        <h3><a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item.title }}</a></h3>
-
-        <div>
-            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}" class="overlay"></a>
-
-            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
-                {%if item.picture %}
-                    <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium') }}" alt="{{ item }}" />
-                {% else %}
-                    <img src="{{ '/uploads/tutorial.jpg' | apply_filter('medium') }}" alt="{{ item }}" />
-                {% endif %}
-            </a>
-
-            <ul class="category small">
-                {% for k, cat in item.categories %}
-                    <li><a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="caticon small {{ cat.slug }}" title="{{ cat }}"></a></li>
-                {% endfor %}
-            </ul>
+    <article class="tutorial">
+        {%if item.picture %}
+            <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('tutorial') }}" alt="{{ item }}" />
+        {% else %}
+            <img src="{{ '/uploads/tutorial.jpg' | apply_filter('tutorial') }}" alt="{{ item }}" />
+        {% endif %}
+        
+        <div class="mask">
+            <h2><a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item.title }}</a></h2>
+            <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+            <a href="#" class="info">Read More</a>
         </div>
-
-        <p class="description">
-            <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
-                {% if item.excerpt %}
-                    {{ item.excerpt | striptags }}
-                {% else %}
-                    {{ item.content | striptags | truncate(250) }}
-                {% endif %}
-            </a>
-        </p>
     </article>
 {% endspaceless %}
