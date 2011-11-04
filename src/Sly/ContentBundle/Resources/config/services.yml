@@ -8,7 +8,7 @@ parameters:
   sly.content.blog.otheritems.number: 5
   sly.content.watch.maxperpage: 20
   sly.content.watch.feedtitleskel: '__TITLE__ __MINILINK__ #veille __HASHTAGS__'
-  sly.content.tutorial.maxperpage: 7
+  sly.content.tutorial.maxperpage: 6
   sly.content.tutorial.dmplayer:
     width: 580
     height: 330
