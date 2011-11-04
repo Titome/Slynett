@@ -2,6 +2,7 @@
 
 article.blog {
     overflow: hidden;
+    margin-bottom: 40px;
 }
 
 article.blog header {
@@ -423,12 +424,83 @@ article.snippet a.btn {
 
 /* ------------- General / Article Content Show */
 
-article.show header img {
-    width: 640px;
-    height: auto;
+#main article.show header section[role=contentinfo] h2 {
+    margin-bottom: 10px;
+}
+
+#main article.show header h2 a.category,
+#main article.show header h2 a.category:visited {
+    color: #333;
+}
+
+article.show header {
     margin-bottom: 40px;
-    padding: 10px;
+}
+
+article.show header ul {
+    overflow: hidden;
+}
+
+article.show header ul li {
+    float: left;
+    margin-right: 40px;
+    line-height: 42px;
+}
+
+article.show header ul li time {
+    font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    text-shadow: 1px 1px 1px #fff;
+    color: #116fe3;
+}
+
+article.show header ul li.comments a,
+article.show header ul li.comments a:visited {
+    text-decoration: none;
+}
+
+article.show header ul li.comments a:hover {
+    text-decoration: underline;
+}
+
+article.show section.body {
+    margin-bottom: 40px;
+    padding: 20px;
     background-color: #fff;
+}
+
+article.show section.body div.intro {
+    margin-bottom: 40px;
+}
+
+article.show section.body div.intro img.item-picture {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+article.show section.body div.intro ul {
+    overflow: hidden;
+}
+
+article.show section.body div.intro ul li {
+    float: right;
+    margin-right: 5px;
+}
+
+article.show section.body div.intro ul li a,
+article.show section.body div.intro ul li a:visited {
+    display: block;
+    padding: 3px 6px;
+    text-transform: uppercase;
+    background-color: #eee;
+    color: #aaa;
+    text-decoration: none;
+}
+
+article.show section.body div.intro ul li a:hover {
+    text-decoration: none;
+    color: #333;
 }
 
 article.show .content-show a,

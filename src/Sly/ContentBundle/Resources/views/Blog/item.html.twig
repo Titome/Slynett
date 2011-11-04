@@ -1,57 +1,55 @@
 <article class="show">
     <header>
         <section role="contentinfo">
-            <h2><a href="{{ path('blog_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item }}</a></h2>
+            <h2>
+                {% if item.categories | length %}                
+                    {% for k, cat in item.categories %}
+                        <a href="{{ path('blog_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>{% if k+1 < item.categories | length %} / {% endif %}
+                    {% endfor %}
+
+                    —
+                {% endif %}
+                
+                <a href="{{ path('blog_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item }}</a>
+            </h2>
         </section>
         
-        <a href="{{ path('blog_show', {'slug': item.slug }) }}" title="{{ item }}">
-            <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('show') }}" alt="{{ item }}" class="show" />
-        </a>
+        <ul>
+            <li>
+                <time datetime="{{ item.publishedAt | date('core.date.time.big' | trans) }}">
+                    {{ item.publishedAt | date('core.date.normal' | trans) }}
+                </time>
+            </li>
+            <li>
+                <a href="{{ path('author') }}" title="{{ project.author.name }}">
+                    <img src="http://0.gravatar.com/avatar/{{ project.author.email | md5 }}?s=32" alt="" />
+                </a>
+                {{ 'list.item.author' | trans({'%authorName%': project.author.name}, 'blog') }}
+                <a href="{{ path('author') }}" title="{{ project.author.name }}">{{ project.author.name }}</a>
+            </li>
+            <li class="comments">
+                <a href="#disqus_thread" data-disqus-identifier="{{ item.disqusId }}">&nbsp;</a>
+            </li>
+        </ul>
     </header>
-    
-    <ul class="infos">
-        <li class="published_at">
-            <a href="#publishedat">
-                <abbr title="{{ item.publishedAt | date('core.date.time.big' | trans) }}" class="dtstart">
-                    {{ 'infos.publishedat' | trans({'%date%': item.publishedAt | date('core.date.time.normal' | trans)}) }}
-                </abbr>
+        
+    <section class="body">
+        <div class="intro">
+            <a href="{{ path('blog_show', {'slug': item.slug }) }}" title="{{ item }}">
+                <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('show') }}" alt="{{ item }}" class="item-picture" />
             </a>
-        </li>
-        <li class="comments">
-            <a href="#disqus_thread" data-disqus-identifier="{{ item.disqusId }}" class="goto">&nbsp;</a>
-        </li>
-        <li class="share">
-            <a href="#sidebar-sharebuttons" class="light_sidebarsharebuttons goto">
-                {{ 'infos.share' | trans }}
-            </a>
-        </li>
-    </ul>
-    
-    <p class="description">
-        {% if item.excerpt %}
-            {{ item.excerpt | striptags }}
-        {% else %}
-            {{ item.content | striptags | truncate(250) }}
-        {% endif %}
-    </p>
-    
-    <div class="media">
-        <ul class="category">
-            {% for k, cat in item.categories %}
-                <li><a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="caticon medium {{ cat.slug }}" title="{{ cat }}"></a></li>
-            {% endfor %}
-        </ul>
-    </div>
-    
-    {% if item.tags | length %}
-        <ul class="tags">
-            {% for tag in item.tagsCollection %}
-                <li><a href="#{{ tag }}" class="container">{{ tag }}</a></li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-    
-    <div class="content-show">
-        {{ item.content | contentFilters | raw }}
-    </div>
+            
+            {% if item.tags | length %}
+                <ul>
+                    {% for tag in item.tagsCollection %}
+                        <li><a href="#{{ tag }}">{{ tag }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="content-show">
+            {{ item.content | contentFilters | raw }}
+        </div>
+    </section>
 </article>

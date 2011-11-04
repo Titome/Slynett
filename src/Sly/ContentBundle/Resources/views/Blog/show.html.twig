@@ -24,7 +24,7 @@
 {% block content %}
     {% include 'SlyContentBundle:Blog:item.html.twig' with {'item': item } %}
     
-    <h3 class="title">{{ 'comments.title' | trans }}</h3>
+    <h2>{{ 'comments.title' | trans }}</h2>
     
     <div id="disqus_thread"></div>
 {% endblock content %}
