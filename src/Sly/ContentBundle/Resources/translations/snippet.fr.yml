@@ -1,15 +1,15 @@
 seo:
   title: Snippets — Développement Web Symfony Symfony2 PHP5 CSS3 jQuery et autres
   description: Quelques bouts de code toujours utile à garder sous la main. Regroupés en plusieurs thèmes, ces quelques lignes sont prêtes à copier/coller dans vos projets et à retrouver directement sur mon GitHub.
-  
-title: Snippets — Bouts de code en tous genres
 
 list:
+  title: Quelques bouts de code toujours utile à garder sous la main. Regroupés en plusieurs thèmes, ces quelques lignes sont prêtes à copier/coller dans vos projets et à retrouver directement sur mon GitHub.
   nocontent: Aucun snippet.
   categories: '{1} Catégorie :|]1,Inf] Catégories :'
   nocategory: Aucune catégorie
   publishedat: Publié le
   read: Voir le snippet sur Gist
+  show: Voir le snippet
 
 category:
   seo:

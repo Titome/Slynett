@@ -17,20 +17,14 @@
 
 {% block content %}
     {% if app.request.query.get('page') <= 1 %}
-        <section class="introduction">
-            <blockquote>
-                {{ 'seo.description' | trans({}, 'snippet') }}
-            </blockquote>
-        </section>
+        <h2 role="contentinfo">{{ 'list.title' | trans({}, 'snippet') }}</h2>
     {% endif %}
 
-    <section class="snippet list">
-        {% for item in contentPaginator %}
-            {% include 'SlyContentBundle:Snippet:mediumItem.html.twig' with {'item': item } %}
-        {% else %}
-            <p class="empty">{{ 'list.nocontent' | trans({}, 'snippet') }}</p>
-        {% endfor %}
-    </section>
+    {% for item in contentPaginator %}
+        {% include 'SlyContentBundle:Snippet:mediumItem.html.twig' with {'item': item } %}
+    {% else %}
+        <p class="empty">{{ 'list.nocontent' | trans({}, 'snippet') }}</p>
+    {% endfor %}
     
     {% if contentPaginator | length %}
         <div class="pager">

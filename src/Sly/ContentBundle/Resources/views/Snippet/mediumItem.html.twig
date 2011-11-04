@@ -1,19 +1,31 @@
 {% spaceless %}
-    <aside class="tpl2">
-        {% for k, cat in item.categories %}
-            <a href="{{ path('snippet_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>
-        {% endfor %}
+    <article class="snippet">
+        <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;" title="{{ item }}" class="show">
+            {{ 'list.show' | trans({}, 'snippet') }}
+        </a>
+        
+        {% if item.categories | length %}     
+            <span class="categories">
+                {% for k, cat in item.categories %}
+                    <a href="{{ path('snippet_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>{% if k+1 < item.categories | length %} / {% endif %}
+                {% endfor %}
+
+                —
+            </span>
+        {% endif %}
         
         <a href="{{ path('snippet_show', {'slug': item.slug }) }}" title="{{ item }}">
             {{ item }}
         </a>
         
         {% if item.tags | length %}
-            <span class="tags">
-                {% for tag in item.tagsCollection %}
-                    <a href="#" class="tag">{{ tag }}</a>
-                {% endfor %}
-            </span>
+            <footer>
+                <ul class="tags">
+                    {% for tag in item.tagsCollection %}
+                        <li><a href="#" class="tag">{{ tag }}</a></li>
+                    {% endfor %}
+                </ul>
+            </footer>
         {% endif %}
-    </aside>
+    </article>
 {% endspaceless %}

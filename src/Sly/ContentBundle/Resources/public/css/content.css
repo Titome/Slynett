@@ -359,6 +359,89 @@ aside.watch footer ul.tags li a:hover {
     background-color: #bbb;
 }
 
+/* ------------- SNIPPET - List */
+
+article.snippet {
+    overflow: hidden;
+    float: left;
+    width: 492px;
+    margin: 0 40px 10px 0;
+}
+
+article.snippet:nth-child(2n+1) {
+    margin-right: 0;
+}
+
+article.snippet a,
+article.snippet a:visited {
+    text-decoration: none;
+}
+
+article.snippet a:hover {
+    text-decoration: underline;
+}
+
+article.snippet article {
+    margin-bottom: 10px;
+}
+
+article.snippet header {
+    margin-bottom: 20px;
+}
+
+article.snippet header h3 {
+    font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: #aaa;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+article.snippet span a,
+article.snippet span a:visited {
+    color: #116fe3;
+}
+
+article.snippet footer {
+    margin-top: 5px;
+}
+
+article.snippet footer ul.tags {
+    overflow: hidden;
+}
+
+article.snippet footer ul.tags li {
+    float: left;
+    margin: 0 5px 5px 0;
+}
+
+article.snippet footer ul.tags li a,
+article.snippet footer ul.tags li a:visited {
+    padding: 2px 4px;
+    color: #fff;
+    background-color: #ccc;
+    font-size: 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+article.snippet footer ul.tags li a:hover {
+    background-color: #bbb;
+}
+
+article.snippet a.show,
+article.snippet a.show:visited {
+    float: right;
+    margin: 0 0 10px 20px;
+    padding: 10px;
+    background-color: #116fe3;
+    color: #fff;
+    text-decoration: none;
+}
+
+article.snippet a.show:hover {
+    background-color: #333;
+}
+
 /* ------------- General / Article Content Show */
 
 article .content-show a,

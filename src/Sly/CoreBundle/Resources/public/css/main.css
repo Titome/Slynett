@@ -178,8 +178,9 @@ nav.sec ul.menu li.active a:visited {
 }
 
 .pager {
+    clear: both;
     overflow: hidden;
-    margin: 20px 0;
+    margin: 40px 0;
     text-align: right;
 }
 
