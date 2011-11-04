@@ -1,7 +1,13 @@
-<article>    
-    <h3 class="title"><a href="{{ path('blog_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item.title }}</a></h3>
-    
-    <div class="hsep_1 t3"></div>
+<article class="show">
+    <header>
+        <section role="contentinfo">
+            <h2><a href="{{ path('blog_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item }}</a></h2>
+        </section>
+        
+        <a href="{{ path('blog_show', {'slug': item.slug }) }}" title="{{ item }}">
+            <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('show') }}" alt="{{ item }}" class="show" />
+        </a>
+    </header>
     
     <ul class="infos">
         <li class="published_at">
@@ -21,8 +27,6 @@
         </li>
     </ul>
     
-    <div class="hsep_1 t3"></div>
-    
     <p class="description">
         {% if item.excerpt %}
             {{ item.excerpt | striptags }}
@@ -37,10 +41,6 @@
                 <li><a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="caticon medium {{ cat.slug }}" title="{{ cat }}"></a></li>
             {% endfor %}
         </ul>
-        
-        <a href="{{ path('blog_show', {'slug': item.slug }) }}" title="{{ item }}">
-            <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium_m') }}" alt="{{ item }}" />
-        </a>
     </div>
     
     {% if item.tags | length %}
@@ -50,10 +50,8 @@
             {% endfor %}
         </ul>
     {% endif %}
-
-    <div class="hsep_1 t1"></div>
     
-    <div class="item_content">      
+    <div class="content-show">
         {{ item.content | contentFilters | raw }}
     </div>
 </article>

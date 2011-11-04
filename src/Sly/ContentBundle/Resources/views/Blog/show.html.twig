@@ -18,15 +18,11 @@
 {% endblock stylesheets %}
 
 {% block rightSidebar %}
-    {% include 'SlyContentBundle:Blog:rightSidebarItem.html.twig' %}
+    {% include 'SlyContentBundle:Blog:rightSidebar.html.twig' %}
 {% endblock rightSidebar %}
 
 {% block content %}
-    <section role="main" class="tpl2">
-        {% include 'SlyContentBundle:Blog:item.html.twig' with {'item': item } %}
-    </section>
-
-    <div class="hsep_1 t1"></div>
+    {% include 'SlyContentBundle:Blog:item.html.twig' with {'item': item } %}
     
     <h3 class="title">{{ 'comments.title' | trans }}</h3>
     

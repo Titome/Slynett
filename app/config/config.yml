@@ -112,12 +112,6 @@ avalanche_imagine:
         tutorial:
             type: thumbnail
             options: { size: [300, 200], mode: outbound }
-        medium_b:
+        show:
             type: thumbnail
-            options: { size: [380, 140], mode: outbound }
-        medium_m:
-            type: thumbnail
-            options: { size: [580, 330], mode: outbound }
-        homeslider:
-            type: thumbnail
-            options: { size: [500, 250], mode: outbound }
+            options: { size: [660, 160], mode: outbound }

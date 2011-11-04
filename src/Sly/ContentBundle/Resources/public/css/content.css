@@ -44,22 +44,10 @@ article.blog section a.category:hover {
     text-decoration: underline;
 }
 
-article.blog section a.read {
+article.blog section a.show {
     position: absolute;
     bottom: 10px;
     right: 10px;
-}
-
-article.blog section a.read,
-article.blog section a.read:visited {
-    padding: 2px 4px;
-    color: #fff;
-    background-color: #116fe3;
-    text-decoration: none;
-}
-
-article.blog section a.read:hover {
-    text-decoration: underline;
 }
 
 article.blog footer {
@@ -428,47 +416,47 @@ article.snippet footer ul.tags li a:hover {
     background-color: #bbb;
 }
 
-article.snippet a.show,
-article.snippet a.show:visited {
+article.snippet a.btn {
     float: right;
     margin: 0 0 10px 20px;
-    padding: 10px;
-    background-color: #116fe3;
-    color: #fff;
-    text-decoration: none;
-}
-
-article.snippet a.show:hover {
-    background-color: #333;
 }
 
 /* ------------- General / Article Content Show */
 
-article .content-show a,
-article .content-show a:visited {
+article.show header img {
+    width: 640px;
+    height: auto;
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+article.show .content-show a,
+article.show .content-show a:visited {
     color: #116fe3;
 }
 
-article .content-show h3,
-article .content-show p,
-article .content-show ul {
+article.show .content-show h3,
+article.show .content-show p,
+article.show .content-show ul {
     line-height: 24px;
     margin: 40px 0;
 }
 
-article .content-show h3 {
+article.show .content-show h3 {
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 22px;
     text-shadow: 1px 1px 1px #fff;
+    color: #aaa;
 }
 
-article .content-show ul {
+article.show .content-show ul {
     padding: 10px 0 10px 40px;
     margin-left: 40px;
     margin-right: 40px;
     border-left: 5px solid #116fe3;
 }
 
-article .content-show ul li {
+article.show .content-show ul li {
     list-style: square;
 }

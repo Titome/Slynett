@@ -8,9 +8,24 @@
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 28px;
     line-height: 34px;
+    font-weight: normal;
+}
+
+#main h2,
+#main h2 a,
+#main h2 a:visited,
+#main h2 a:hover {
     color: #aaa;
     text-shadow: 1px 1px 1px #fff;
-    font-weight: normal;
+}
+
+#main h2 a,
+#main h2 a:visited {
+    text-decoration: none;
+}
+
+#main h2 a:hover {
+    text-decoration: underline;
 }
 
 #main section[role=main] nav ul.categories {
@@ -20,7 +35,7 @@
 
 #main section[role=main] nav ul.categories li {
     float: left;
-    margin-right: 1px;
+    margin-right: 10px;
 }
 
 #main section[role=main] nav ul.categories li a,
