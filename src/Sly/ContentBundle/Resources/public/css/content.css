@@ -454,15 +454,6 @@ article.show header ul li time {
     color: #116fe3;
 }
 
-article.show header ul li.comments a,
-article.show header ul li.comments a:visited {
-    text-decoration: none;
-}
-
-article.show header ul li.comments a:hover {
-    text-decoration: underline;
-}
-
 article.show section.body {
     margin-bottom: 40px;
     padding: 20px;

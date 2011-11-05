@@ -19,7 +19,7 @@
     {% include 'SlyContentBundle:Blog:item.html.twig' with {'item': item } %}
     
     <aside class="comments">
-        <h2>{{ 'comments.title' | trans }}</h2>
+        <h2><a href="#disqus_thread" data-disqus-identifier="{{ item.disqusId }}">&nbsp;</a></h2>
         
         <div id="disqus_thread"></div>
     </aside>
