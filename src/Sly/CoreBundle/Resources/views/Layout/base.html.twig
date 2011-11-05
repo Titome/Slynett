@@ -12,7 +12,7 @@
         {% block stylesheets %}
             <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Terminal+Dosis" type="text/css" media="screen" />
 
-            {% stylesheets output='css/packed' filter='cssrewrite,yui_css'
+            {% stylesheets output='css/*' filter='cssrewrite,yui_css'
                 'bundles/slycontent/vendor/skitter-slideshow/css/skitter.styles.css'
                 'bundles/slycore/css/jquery.uniform.css'
                 'bundles/slycore/css/slywebsymbols.css'
@@ -20,10 +20,12 @@
                 'bundles/slycore/css/main.mainmenu.css'
                 'bundles/slycore/css/main.header.search.css'
                 'bundles/slycore/css/main.main.css'
-                'bundles/slycore/css/main.main.articles.css'
                 'bundles/slycore/css/main.sidebar.css'
                 'bundles/slycore/css/main.sidebar.tabs.css'
-                'bundles/slycontent/css/content.css' %}
+                'bundles/slycontent/css/content.css'
+                'bundles/slycontent/vendor/syntax-highlighter/styles/shCore.css'
+                'bundles/slycontent/css/syntaxhighlighter.css'
+                'bundles/slycontent/css/disqus.css' %}
 
                 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
             {% endstylesheets %}
@@ -35,16 +37,30 @@
         {% block body %}{% endblock body %}  
         
         {% block javascripts %}
-            {% javascripts output='js/packed.js' filter='yui_js'
+            {% javascripts filter='yui_js'
                 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'
                 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'
                 'bundles/slycore/js/html5-ie.js'
                 'bundles/slycore/js/jquery.uniform.min.js'
+                'bundles/slycontent/vendor/syntax-highlighter/scripts/XRegExp.js'
+                'bundles/slycontent/vendor/syntax-highlighter/scripts/shCore.js'
+                'bundles/slycontent/vendor/syntax-highlighter/scripts/shAutoloader.js'
+                'bundles/slycontent/vendor/syntax-highlighter/scripts/shBrushPlain.js'
+                'bundles/slycontent/vendor/syntax-highlighter/scripts/shBrushCss.js'
+                'bundles/slycontent/vendor/syntax-highlighter/scripts/shBrushPhp.js'
+                'bundles/slycontent/vendor/syntax-highlighter/scripts/shBrushJScript.js'
+                'bundles/slycontent/vendor/syntax-highlighter/scripts/shBrushSql.js'
+                'bundles/slycontent/vendor/syntax-highlighter/scripts/shBrushXml.js'
+                'bundles/slycontent/vendor/syntax-highlighter/scripts/shBrushBash.js'
                 'bundles/slycore/js/main.js' %}
 
                 <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}
         {% endblock javascripts %}
+        
+        {% if item is defined %}
+            <script type="text/javascript">letsShowItem();</script>
+        {% endif %}
         
         <script type="text/javascript">
           var _gaq = _gaq || [];
@@ -56,6 +72,6 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
-        </script> 
+        </script>
     </body>
 </html>

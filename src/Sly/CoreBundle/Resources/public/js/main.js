@@ -79,3 +79,15 @@ $('#top-nav ul li.sws.reply').click(function(){
     
     return false; 
 });
+
+/* --- Let's show Item ----------------- */
+
+function letsShowItem()
+{
+    if (window.location.hash == '')
+        $('html, body').animate({ scrollTop: 360 }, 400);
+}
+
+/* --- SyntaxHighlighter --------------- */
+
+SyntaxHighlighter.all();

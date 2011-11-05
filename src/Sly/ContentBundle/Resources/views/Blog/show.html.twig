@@ -11,12 +11,6 @@
     {% endspaceless %}
 {% endblock description %}
 
-{% block stylesheets %}
-    {{ parent() }}
-
-    {% include 'SlyContentBundle::inc.syntaxhighlighter.css.html.twig' %}
-{% endblock stylesheets %}
-
 {% block rightSidebar %}
     {% include 'SlyContentBundle:Blog:rightSidebar.html.twig' %}
 {% endblock rightSidebar %}
@@ -24,15 +18,16 @@
 {% block content %}
     {% include 'SlyContentBundle:Blog:item.html.twig' with {'item': item } %}
     
-    <h2>{{ 'comments.title' | trans }}</h2>
-    
-    <div id="disqus_thread"></div>
+    <aside class="comments">
+        <h2>{{ 'comments.title' | trans }}</h2>
+        
+        <div id="disqus_thread"></div>
+    </aside>
 {% endblock content %}
 
 {% block javascripts %}
     {{ parent() }}
     
-    {% include 'SlyContentBundle::inc.syntaxhighlighter.js.html.twig' %}
     {% render 'SlyContentBundle:Component:disqusCountJS' %}
     {% render 'SlyContentBundle:Component:disqusJS' with {'item': item, 'type': 'tutorial'} %}
 {% endblock javascripts %}
