@@ -139,7 +139,7 @@ article.tutorial h3 a:visited {
     display: block;
    font-size: 17px;
    padding: 10px;
-   background: #333;
+   background: #000;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     font-weight: normal;
     text-decoration: none;
@@ -430,7 +430,7 @@ article.snippet a.btn {
 
 #main article.show header h2 a.category,
 #main article.show header h2 a.category:visited {
-    color: #333;
+    color: #000;
 }
 
 article.show header {
@@ -439,6 +439,15 @@ article.show header {
 
 article.show header ul {
     overflow: hidden;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #d5d5d5;
+}
+
+article.show header ul ul {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
 }
 
 article.show header ul li {
@@ -476,7 +485,8 @@ article.show section.body div.intro ul {
 
 article.show section.body div.intro ul li {
     float: right;
-    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 12px;
 }
 
 article.show section.body div.intro ul li a,
@@ -491,7 +501,7 @@ article.show section.body div.intro ul li a:visited {
 
 article.show section.body div.intro ul li a:hover {
     text-decoration: none;
-    color: #333;
+    color: #000;
 }
 
 article.show .content-show a,

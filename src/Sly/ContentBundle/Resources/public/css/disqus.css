@@ -1,7 +1,8 @@
 /* --- Last Comments Widget ----------- */
 
 #main .sidebar .dsq-widget ul.dsq-widget-list {	 padding: 0;	 margin: 0;	 text-align: left;	 }
-#main .sidebar a.dsq-widget-user {	 display: inline-block; margin-bottom: 5px; font-weight: normal; color: #fff; background-color: #aaa; padding: 2px 4px;	text-decoration: none; }	
+#main .sidebar a.dsq-widget-user {	 display: inline-block; margin-bottom: 5px; font-weight: normal; color: #aaa; background-color: #eee; padding: 2px 4px;	text-decoration: none; }	
+#main .sidebar a.dsq-widget-user:hover { color: #333; }
 #main .sidebar a.dsq-widget-thread {	 font-weight: bold;	 }	
 
 #main .sidebar span.dsq-widget-comment {
@@ -9,11 +10,11 @@
 }
 
 #main .sidebar span.dsq-widget-comment {
-
+    display: block;
 }
 
 #main .sidebar p.dsq-widget-meta {
-    clear: both;
+    clear: none;
     font-size: 12px;
     margin-top: 5px;
 }	
@@ -26,6 +27,15 @@
 
 #main .sidebar li.dsq-widget-item {	 
     clear: none;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+}	
+
+#main .sidebar li.dsq-widget-item:last-child {	 
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
 }	
 
 /* --- Item Comments ------------------ */
@@ -36,7 +46,7 @@
 }
 
 #disqus_thread #dsq-content .dsq-toolbar-item {
-    background: none #333;
+    background: none #000;
     border-radius: 0;
     color: #fff;
 }
@@ -44,6 +54,11 @@
 #disqus_thread #dsq-content h3,
 #disqus_thread .dsq-reply h3 {
     display: none;
+}
+
+#disqus_thread #dsq-content .dsq-comment-meta li,
+#disqus_thread #dsq-content .dsq-comment-actions li {
+    font-size: inherit;
 }
 
 #disqus_thread .dsq-comment-header {

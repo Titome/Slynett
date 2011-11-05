@@ -5,3 +5,8 @@ seo:
 list:
   title: Retrouvez toute ma veille quotidienne concernant PHP5, symfony 1.4, Symfony2, jQuery et autres.
   nocontent: Aucun lien.
+
+sidebar:
+  networks:
+    title: Suivre la veille
+    message: "N'hésitez pas à suivre %name% sur les réseaux suivants :"

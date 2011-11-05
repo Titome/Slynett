@@ -1,0 +1,12 @@
+ul.sharebuttons {
+    
+}
+
+ul.sharebuttons li {
+    float: left;
+    margin-right: 20px;
+}
+
+ul.sharebuttons li:last-child {
+    margin-right: 0;
+}

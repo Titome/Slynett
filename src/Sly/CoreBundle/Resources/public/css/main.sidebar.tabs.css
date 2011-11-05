@@ -54,48 +54,6 @@
 
 /* ----------------------------------------- */
 
-.ui-tabs .tabs-comments ul li {
-    overflow: hidden;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed #ddd;
-}
-
-.ui-tabs .tabs-comments ul li:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-.ui-tabs .tabs-comments ul li img {
-    float: left;
-    width: 40px;
-    height: auto;
-    margin: 0 10px 10px 0;
-}
-
-.ui-tabs .tabs-comments ul li span {
-    display: block;
-    margin-left: 50px;
-}
-
-.ui-tabs .tabs-comments ul li a.username {
-    font-weight: bold;
-}
-
-.ui-tabs .tabs-comments ul li time {
-    color: #aaa;
-    font-size: .9em;
-}
-
-.ui-tabs .tabs-comments ul li a.comment {
-    display: block;
-    margin-top: 5px;
-    text-decoration: none;
-}
-
-/* ----- */
-
 .ui-tabs .tabs-items ul li {
     overflow: hidden;
     margin-bottom: 10px;
@@ -116,7 +74,7 @@
 
 .ui-tabs .tabs-items ul li:hover a,
 .ui-tabs .tabs-items ul li:hover a:visited {
-    color: #333;
+    color: #000;
 }
 
 .ui-tabs .tabs-items ul li img {

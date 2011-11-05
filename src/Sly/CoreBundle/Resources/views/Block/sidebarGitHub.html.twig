@@ -2,12 +2,11 @@
     <h3>{{ 'sidebar.github.title' | trans }}</h3>
     
     <div class="content">    
-        {{ 'sidebar.github.text' | trans({'%name%': project.name}) }}
+        <p>{{ 'sidebar.github.text' | trans({'%name%': project.name}) }}</p>
 
         <p>
             <a href="{{ project.github.sources.url }}" onclick="var w=window.open(this.href);w.focus();return false;" class="btn sws html">
-                <span></span>
-                {{ 'sidebar.github.sources' | trans }}
+                <span></span> {{ 'sidebar.github.sources' | trans }}
             </a>
         </p>
     </div>

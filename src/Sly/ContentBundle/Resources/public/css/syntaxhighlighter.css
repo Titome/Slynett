@@ -16,10 +16,10 @@
   background-color: #e0e0e0 !important;
 }
 .syntaxhighlighter .line.highlighted.number {
-  color: #333 !important;
+  color: #000 !important;
 }
 .syntaxhighlighter table caption {
-  color: #333 !important;
+  color: #000 !important;
 }
 .syntaxhighlighter .gutter {
   color: #a9a9a9 !important;
@@ -59,10 +59,10 @@
   color: white !important;
 }
 .syntaxhighlighter .toolbar a:hover {
-  color: #333 !important;
+  color: #000 !important;
 }
 .syntaxhighlighter .plain, .syntaxhighlighter .plain a {
-  color: #333 !important;
+  color: #000 !important;
 }
 .syntaxhighlighter .comments, .syntaxhighlighter .comments a {
   color: #008200 !important;

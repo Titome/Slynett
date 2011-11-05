@@ -17,6 +17,7 @@
 }
 
 #main .sidebar section div.content ul.list {
+    overflow: hidden;
     margin: 20px;
 }
 #main .sidebar section div.content ul.list li {
@@ -25,7 +26,8 @@
 
 
 #main .sidebar section div.content p {
-    margin: 20px 0;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
 #main .sidebar section div.content ul.categories li {
@@ -94,43 +96,32 @@
 }
 
 #main .sidebar section div.content ul.networks {
-    overflow: hidden;
+
 }
 
 #main .sidebar section div.content ul.networks li {
-    float: left;
-    width: 32%;
-    margin: 0 2% 20px 0;
-    text-align: center;
+    margin-bottom: 1px;
+    font-size: 22px;
 }
 
-#main .sidebar section div.content ul.networks li:nth-child(3n) {
-    margin-right: 0;
+#main .sidebar section div.content ul.networks li span {
+    color: #116fe3;
+}
+
+#main .sidebar section div.content ul.networks li span.text {
+    font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: #000;
 }
 
 #main .sidebar section div.content ul.networks li a,
 #main .sidebar section div.content ul.networks li a:visited {
     display: block;
-    position: relative;
+    padding: 5px 10px;
+    background-color: #eee;
     text-decoration: none;
-    font-family: 'WebSymbolsRegular', cursive, Tahoma, Helvetica, Arial, sans-serif;
-    font-size: 44px;
-    color: #aaa;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    -webkit-transition: all 300ms linear;
-    -moz-transition: all 300ms linear;
-    -o-transition: all 300ms linear;
-    -ms-transition: all 300ms linear;
-    transition: all 300ms linear;
 }
 
 #main .sidebar section div.content ul.networks li a:hover {
-    color: #116fe3;
-    -webkit-transition: all 300ms linear;
-    -moz-transition: all 300ms linear;
-    -o-transition: all 300ms linear;
-    -ms-transition: all 300ms linear;
-    transition: all 300ms linear;
+    background-color: #ddd;
 }
