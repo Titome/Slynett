@@ -21,6 +21,14 @@
     </ul>
 {% endmacro %}
 
+{% macro shareRButtons(link, title) %}
+    <ul class="sharebuttons horizontal">   
+        <li class="twitter">
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="horizontal" data-lang="{{ app.session.locale }}" data-via="{{ networks.twitter.username }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        </li>
+    </ul>
+{% endmacro %}
+
 {% macro shareBigButtons(link, title) %}
     <ul class="sharebuttons big">
         <li class="facebook">

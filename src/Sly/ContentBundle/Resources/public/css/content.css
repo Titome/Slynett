@@ -292,6 +292,10 @@ aside.watch {
     margin-bottom: 10px;
 }
 
+aside.watch article {
+    overflow: hidden;
+}
+
 aside.watch a,
 aside.watch a:visited {
     text-decoration: none;
@@ -327,6 +331,8 @@ aside.watch footer {
 
 aside.watch footer ul.tags {
     overflow: hidden;
+    float: left;
+    margin-right: 40px;
 }
 
 aside.watch footer ul.tags li {
@@ -346,6 +352,10 @@ aside.watch footer ul.tags li a:visited {
 
 aside.watch footer ul.tags li a:hover {
     background-color: #bbb;
+}
+
+aside.watch footer ul.sharebuttons {
+
 }
 
 /* ------------- SNIPPET - List */

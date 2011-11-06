@@ -1,3 +1,5 @@
+{% from "SlyContentBundle::macro.socialShare.html.twig" import shareRButtons %}
+
 {% spaceless %}
     <article>
         {% if item.categories | length %}     
@@ -10,10 +12,12 @@
             </span>
         {% endif %}
         
-        <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;" title="{{ item }}">{{ item }}</a>
+        <a href="{{ item.minilink }}" onclick="var w=window.open(this.href); w.focus(); return false;" title="{{ item }}">{{ item }}</a>
         
         {% if item.tags | length %}
             <footer>
+                {{ shareRButtons(item.minilink, item.title) }}
+                
                 <ul class="tags">
                     {% for tag in item.tagsCollection %}
                         <li><a href="#" class="tag">{{ tag }}</a></li>
