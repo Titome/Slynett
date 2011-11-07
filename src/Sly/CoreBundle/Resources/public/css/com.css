@@ -1,0 +1,15 @@
+.moc {
+    
+}
+
+.moc.sidebar {
+    text-align: center;
+}
+
+.moc.sidebar.mimg img {
+    margin-bottom: 20px;
+}
+
+.moc.sidebar.mimg img:last-child {
+    margin-bottom: 0;
+}

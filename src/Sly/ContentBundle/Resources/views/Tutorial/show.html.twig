@@ -4,7 +4,7 @@
 {% block description %}{{ item.excerpt | striptags }}{% endblock description %}
 
 {% block rightSidebar %}
-    ---
+    {% include 'SlyContentBundle:Tutorial:rightSidebarItem.html.twig' %}
 {% endblock rightSidebar %}
 
 {% block content %}
