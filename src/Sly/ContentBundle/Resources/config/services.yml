@@ -4,14 +4,15 @@ parameters:
   sly.content.disqus:
     username: %disqus_username%
   
+  sly.content.feed.numberofitems: 20
   sly.content.blog.maxperpage: 20
   sly.content.blog.otheritems.number: 5
   sly.content.watch.maxperpage: 20
   sly.content.watch.feedtitleskel: '__TITLE__ __MINILINK__ #veille __HASHTAGS__'
   sly.content.tutorial.maxperpage: 6
   sly.content.tutorial.dmplayer:
-    width: 580
-    height: 330
+    width: 620
+    height: 400
   sly.content.snippet.maxperpage: 30
   sly.content.snippet.githubrawurlprefix: 'https://raw.github.com/Ph3nol/mySnippets/master/'
 

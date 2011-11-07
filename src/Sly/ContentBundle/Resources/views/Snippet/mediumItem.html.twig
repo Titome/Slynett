@@ -1,6 +1,6 @@
 {% spaceless %}
     <article class="snippet">
-        <a href="{{ item.link }}" onclick="var w=window.open(this.href); w.focus(); return false;" title="{{ item }}" class="btn">
+        <a href="{{ path('snippet_show', {'slug': item.slug }) }}" title="{{ item }}" class="btn">
             {{ 'list.show' | trans({}, 'snippet') }}
         </a>
         

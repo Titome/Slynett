@@ -1,15 +1,3 @@
-watch_twitter_feed:
-    pattern: /feed.{_format}/twitter
-    defaults: { _controller: SlyContentBundle:Watch:list, twitter: true }
-    requirements:
-      _format: xml
-
-watch_feed:
-    pattern: /feed.{_format}
-    defaults: { _controller: SlyContentBundle:Watch:list }
-    requirements:
-      _format: xml
-
 watch_category:
   pattern: /{slug}
   defaults: { _controller: SlyContentBundle:Watch:categoryList }

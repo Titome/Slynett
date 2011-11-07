@@ -246,6 +246,23 @@ class Content
     {
         return $this->categories;
     }
+    
+    public function getCategoriesList()
+    {
+        $categories = ''; $i = 1;
+        
+        foreach ($this->getCategories() as $c)
+        {
+            if ($i < count($this->getCategories()))
+                $categories .= sprintf('%s, ', $c);
+            else
+                $categories .= $c;
+            
+            $i++;
+        }
+        
+        return $categories;
+    }
 
     public function setCategories($categories)
     {

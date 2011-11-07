@@ -6,6 +6,27 @@ use Doctrine\ORM\EntityRepository;
 
 class ContentRepository extends EntityRepository
 {
+    public function getFeed($type, $numberOfItems = 10)
+    {
+        $q = $this->createQueryBuilder('c')
+            ->select('c, cat')
+            ->leftJoin('c.categories', 'cat')
+            ->where('c.status = true')
+            ->andWhere('c.publishedAt <= :now');
+        
+        if ($type)
+            $q->andWhere('c.type = :contentType')
+                ->setParameter('contentType', $type);
+        else
+            $q->andWhere('c.type NOT IN (\'watch\',\'twitter\')');
+            
+        $q->setParameter('now', date('Y-m-d H:i:s'))
+            ->orderBy('c.publishedAt', 'DESC')
+            ->setMaxResults($numberOfItems);
+        
+        return $q->getQuery()->getResult();
+    }
+    
     public function getContentQ($contentType = null)
     {
         $q = $this->createQueryBuilder('c')
@@ -107,11 +128,8 @@ class ContentRepository extends EntityRepository
             ->leftJoin('c.categories', 'cat')
             ->where('c.status = true')
             ->andWhere('c.publishedAt <= :now')
-            ->andWhere('c.type NOT IN (:notInTypes)')
-            ->setParameters(array(
-                'now' => date('Y-m-d H:i:s'),
-                'notInTypes' => array('watch', 'twitter'),
-            ))
+            ->andWhere('c.type NOT IN (\'watch\',\'twitter\')')
+            ->setParameter('now', date('Y-m-d H:i:s'))
             ->orderBy('c.publishedAt', 'DESC');
         
         return $q->getQuery()->getResult();

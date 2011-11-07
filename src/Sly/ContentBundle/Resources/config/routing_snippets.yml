@@ -1,3 +1,0 @@
-snippets:
-    pattern:  /
-    defaults: { _controller: SlyContentBundle:Snippet:index }

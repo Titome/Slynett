@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+        {% if type %}
+            <title>{{ 'feed.seo.title.%type%' | replace({'%type%': type}) | trans }} | {{ project.name }}</title>
+        {% else %}
+            <title>{{ 'feed.seo.title.main' | trans }} | {{ project.name }}</title>
+        {% endif %}
+        <description>{{ 'feed.seo.description' | trans }}</description>
+        <link>{{ url('feed') }}</link>
+        <lastBuildDate>{{ now | date('D, d M Y H:i:s') }}</lastBuildDate>
+        <pubDate>{{ now | date('D, d M Y H:i:s') }}</pubDate>
+        
+        {% for item in items %}
+            <item>
+                {% if type == 'watch' %}
+                    {% spaceless %}<title>
+                        {{ watchFeedTitle | replace({
+                            '__TITLE__': item,
+                            '__HASHTAGS__': item.hashtags,
+                            '__MINILINK__': item.minilink
+                        }) }}
+                    </title>{% endspaceless %}
+                {% else %}
+                    <title>{{ 'feed.items.title.%type%' | replace({'%type%': item.type}) | trans({'%catName%': item.categoriesList}) }} — {{ item }}</title>
+                {% endif %}
+                <description>
+                    {% if item.excerpt %}
+                        {{ item.excerpt | striptags }}
+                    {% else %}
+                        {{ item.content | striptags | truncate(150) }}
+                    {% endif %}
+                </description>
+                {% if type == 'watch' %}
+                    <link>{{ item.minilink }}</link>
+                {% else %}
+                    <link>{{ url('%type%_show' | replace({'%type%': item.type}), {'slug': item.slug}) }}</link>
+                {% endif %}
+                <guid>{{ item.id }}-{{ item.slug }}</guid>
+                <pubDate>{{ item.publishedAt | date('D, d M Y H:i:s') }}</pubDate>
+            </item>
+        {% endfor %}
+</channel>
+</rss>

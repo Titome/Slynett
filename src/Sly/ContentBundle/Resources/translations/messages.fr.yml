@@ -1,2 +1,18 @@
 comments:
   title: Commentaires
+  
+feed:
+  seo:
+    title:
+      main: Flux RSS général
+      blog: Flux RSS Blog
+      watch: Flux RSS Veille
+      tutorial: Flux RSS Tutoriels
+      snippet: Flux RSS Snippets
+    description: Restez informés des derniers articles, tutoriels, snippets et de la veille technique.
+  items:
+    title:
+      blog: Article %catName%
+      watch: Veille %catName%
+      tutorial: Tutoriel Vidéo %catName%
+      snippet: Snippet %catName%

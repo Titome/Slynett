@@ -1,3 +1,0 @@
-resources:
-    pattern:  /
-    defaults: { _controller: SlyContentBundle:Resource:index }

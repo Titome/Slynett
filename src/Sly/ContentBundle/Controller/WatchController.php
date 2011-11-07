@@ -15,7 +15,7 @@ use Sly\ContentBundle\Entity\Content;
 
 class WatchController extends Controller
 {
-    public function listAction($_format = 'html', $twitter = null)
+    public function listAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
 
@@ -25,11 +25,8 @@ class WatchController extends Controller
         $contentPaginator->setMaxPerPage($this->container->getParameter('sly.content.watch.maxperpage'));
         $contentPaginator->setCurrentPage($this->get('request')->query->get('page', 1));
         
-        return $this->render(sprintf('SlyContentBundle:Watch:list.%s.twig', $_format), array(
+        return $this->render('SlyContentBundle:Watch:list.html.twig', array(
             'contentPaginator' => $contentPaginator,
-            'now' => time(),
-            'feedTitleSkel' => $this->container->getParameter('sly.content.watch.feedtitleskel'),
-            'twitter' => $twitter,
         ));
     }
     

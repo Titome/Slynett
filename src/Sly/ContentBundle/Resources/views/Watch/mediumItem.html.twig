@@ -2,6 +2,10 @@
 
 {% spaceless %}
     <article>
+        <a href="{{ item.minilink }}" onclick="var w=window.open(this.href); w.focus(); return false;" title="{{ item }}" class="btn">
+            {{ 'list.show' | trans({}, 'watch') }}
+        </a>
+        
         {% if item.categories | length %}     
             <span class="categories">
                 {% for k, cat in item.categories %}

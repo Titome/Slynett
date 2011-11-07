@@ -1,3 +1,13 @@
+feed_cat:
+    pattern: /feed/{type}
+    defaults: { _controller: SlyContentBundle:Default:feed }
+    requirements:
+      type: blog|tutorial|watch|snippet
+      
+feed:
+    pattern: /feed
+    defaults: { _controller: SlyContentBundle:Default:feed }
+
 _resource:
     resource: "@SlyContentBundle/Resources/config/routing_resource.yml"
     prefix:   /ressources

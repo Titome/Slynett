@@ -6,3 +6,6 @@ list:
   title: Retrouvez régulièrement des tutoriels concernant PHP5, symfony 1.4, Symfony2, jQuery et autres au format vidéo ou textuel.
   nocontent: Aucun tutoriel.
   show: Voir le tutoriel
+  item:
+    author: Produit par
+    read: Voir le tutoriel

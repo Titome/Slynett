@@ -1,3 +1,0 @@
-tutorials:
-    pattern:  /
-    defaults: { _controller: SlyContentBundle:Tuto:index }

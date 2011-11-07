@@ -1,4 +1,60 @@
-<article>    
+{% from "SlyContentBundle::macro.socialShare.html.twig" import shareBigRButtons %}
+
+<article class="show">
+    <header>
+        <section role="contentinfo">
+            <h2>
+                {% if item.categories | length %}                
+                    {% for k, cat in item.categories %}
+                        <a href="{{ path('tutorial_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>{% if k+1 < item.categories | length %} / {% endif %}
+                    {% endfor %}
+
+                    —
+                {% endif %}
+                
+                <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item }}</a>
+            </h2>
+        </section>
+        
+        <ul>
+            <li>
+                <time datetime="{{ item.publishedAt | date('core.date.time.big' | trans) }}">
+                    {{ item.publishedAt | date('core.date.normal' | trans) }}
+                </time>
+            </li>
+            <li>
+                <a href="{{ path('author') }}" title="{{ project.author.name }}">
+                    <img src="http://0.gravatar.com/avatar/{{ project.author.email | md5 }}?s=32" alt="" />
+                </a>
+                {{ 'list.item.author' | trans({'%authorName%': project.author.name}, 'tutorial') }}
+                <a href="{{ path('author') }}" title="{{ project.author.name }}">{{ project.author.name }}</a>
+            </li>
+            <li class="share">
+                {{ shareBigRButtons(path('tutorial_show', {'slug': item.slug}), item) }}
+            </li>
+        </ul>
+    </header>
+        
+    <section class="body">
+        <div class="intro">
+            <iframe frameborder="0" width="{{ dmplayer.width }}" height="{{ dmplayer.height }}" src="{{ item.dailyMotionEmbedUrl }}?width={{ dmplayer.width }}"></iframe>
+            
+            {% if item.tags | length %}
+                <ul>
+                    {% for tag in item.tagsCollection %}
+                        <li><a href="#{{ tag }}">{{ tag }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="content-show">
+            {{ item.content | contentFilters | raw }}
+        </div>
+    </section>
+</article>
+
+<!--<article>    
     <h3 class="title"><a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item.title }}</a></h3>
     
     <div class="hsep_1 t3"></div>
@@ -58,4 +114,4 @@
     <div class="item_content">      
         {{ item.content | raw }}
     </div>
-</article>
+</article>-->

@@ -294,6 +294,19 @@ aside.watch {
 
 aside.watch article {
     overflow: hidden;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+}
+
+aside.watch article:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+aside.watch article .btn {
+    float: right;
 }
 
 aside.watch a,
