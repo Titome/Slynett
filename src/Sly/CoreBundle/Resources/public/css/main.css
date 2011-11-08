@@ -222,3 +222,12 @@ nav.sec ul.menu li.active a:visited {
     background-color: #116fe3;
     text-decoration: none !important;
 }
+
+ul.list {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+ul.list li {
+    list-style: disc;
+}

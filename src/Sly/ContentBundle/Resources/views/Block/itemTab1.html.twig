@@ -8,13 +8,7 @@
                 </a>
             </li>
             <li>
-                <a href="#tabs-items" class="sws listicons">
-                    <span></span>
-                    <span class="text">Autres</span>
-                </a>
-            </li>
-            <li>
-                <a href="#tabs-3" class="sws rss">
+                <a href="#tabs-rss" class="sws rss">
                     <span></span>
                     <span class="text">Flux</span>
                 </a>
@@ -22,33 +16,26 @@
         </ul>
 
         <div id="tabs-comments" class="tabs-comments">
-            <div id="recentcomments" class="dsq-widget">
-                <script type="text/javascript" src="http://slynett.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200"></script>
-            </div>
+            {% render 'SlyContentBundle:Component:disqusLastComments' %}
         </div>
-        <div id="tabs-items" class="tabs-items">
-            <ul>
+        <div id="tabs-rss" class="tabs-feeds">
+            <ul class="list">
                 <li>
-                    <a href="#"><img src="http://lorempixel.com/g/220/80/technics/" alt="" /></a>
-                    <a href="#">Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate [...]</a>
+                    <a href="{{ networks.rss }}" onclick="var w=window.open(this.href); w.focus(); return false;">
+                        {{ 'sidebar.feeds.general' | trans }}
+                    </a>
                 </li>
                 <li>
-                    <a href="#"><img src="http://lorempixel.com/g/220/80/technics/" alt="" /></a>
-                    <a href="#">Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate [...]</a>
+                    <a href="{{ networks.rss }}" onclick="var w=window.open(this.href); w.focus(); return false;">
+                        {{ 'sidebar.feeds.general' | trans }}
+                    </a>
                 </li>
                 <li>
-                    <a href="#"><img src="http://lorempixel.com/g/220/80/technics/" alt="" /></a>
-                    <a href="#">Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate [...]</a>
-                </li>
-                <li>
-                    <a href="#"><img src="http://lorempixel.com/g/220/80/technics/" alt="" /></a>
-                    <a href="#">Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate [...]</a>
+                    <a href="{{ networks.rss }}" onclick="var w=window.open(this.href); w.focus(); return false;">
+                        {{ 'sidebar.feeds.general' | trans }}
+                    </a>
                 </li>
             </ul>
-        </div>
-        <div id="tabs-3">
-            <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-            <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
         </div>
     </div>
 </section>

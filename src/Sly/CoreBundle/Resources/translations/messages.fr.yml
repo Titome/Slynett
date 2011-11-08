@@ -72,3 +72,5 @@ sidebar:
   categories:
     title: Catégories
     all: Toutes
+  feeds:
+    general: Flux Général

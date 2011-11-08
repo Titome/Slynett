@@ -1,9 +1,9 @@
 /* --- Last Comments Widget ----------- */
 
-#main .sidebar .dsq-widget ul.dsq-widget-list {	 padding: 0;	 margin: 0;	 text-align: left;	 }
-#main .sidebar a.dsq-widget-user {	 display: inline-block; margin-bottom: 5px; font-weight: normal; color: #aaa; background-color: #eee; padding: 2px 4px;	text-decoration: none; }	
+#main .sidebar .dsq-widget ul.dsq-widget-list { padding: 0; margin: 0; text-align: left; }
+#main .sidebar a.dsq-widget-user { display: inline-block; margin-bottom: 5px; font-weight: normal; color: #aaa; background-color: #eee; padding: 2px 4px;	text-decoration: none; }	
 #main .sidebar a.dsq-widget-user:hover { color: #333; }
-#main .sidebar a.dsq-widget-thread {	 font-weight: bold;	 }	
+#main .sidebar a.dsq-widget-thread { font-weight: bold; }	
 
 #main .sidebar span.dsq-widget-comment {
 
@@ -16,6 +16,7 @@
 #main .sidebar p.dsq-widget-meta {
     clear: none;
     font-size: 12px;
+    line-height: 15px;
     margin-top: 5px;
 }	
 

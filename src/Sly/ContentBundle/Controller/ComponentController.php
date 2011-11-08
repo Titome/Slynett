@@ -53,4 +53,11 @@ class ComponentController extends Controller
             'disqus' => $this->container->getParameter('sly.content.disqus'),
         ));
     }
+    
+    public function disqusLastCommentsAction()
+    {
+        return $this->render('SlyContentBundle:Component:disqusLastComments.html.twig', array(
+            'disqus' => $this->container->getParameter('sly.content.disqus'),
+        ));
+    }
 }

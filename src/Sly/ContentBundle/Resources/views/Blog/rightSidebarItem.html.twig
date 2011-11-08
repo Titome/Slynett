@@ -1,31 +1,15 @@
-<h3 class="title">{{ 'categories.title' | trans }}</h3>
+<section>
+    <h3>{{ 'sidebar.categories.title' | trans }}</h3>
+    
+    <div class="content">
+        <nav>
+            {% if category is defined %}
+                {% render 'SlyContentBundle:Component:categories' with {'type': 'blog', 'activeCategories': item.categories} %}
+            {% else %}
+                {% render 'SlyContentBundle:Component:categories' with {'type': 'blog'} %}
+            {% endif %}
+        </nav>
+    </div>
+</section>
 
-<nav>
-    {% render 'SlyContentBundle:Component:categories' with {'type': 'blog', 'activeCategories': item.categories} %}
-</nav>
-
-<div class="hsep_1"></div>
-
-<h3 class="title" id="sidebar-sharebuttons">{{ 'share.title' | trans }}</h3>
-
-{{ shareBigButtons(url('blog_show', {'slug': item.slug}), item) }}
-
-<div class="hsep_1"></div>
-
-{% include 'SlyCoreBundle:Block:Com/Sidebar/250x250.html.twig' %}
-
-<div class="hsep_1"></div>
-
-<h3 class="title">{{ 'items.others.title' | trans }}</h3>
-
-{% render 'SlyContentBundle:Component:lastItems' with {
-    'type': 'blog',
-    'categories': item.categories,
-    'withoutItem': item,
-    'withPicture': true,
-    'template': 'tpl1'
-} %}
-
-<div class="hsep_1"></div>
-
-{% include 'SlyCoreBundle:Block:sidebarGitHub.html.twig' %}
+{% include 'SlyContentBundle:Block:itemTab2.html.twig' %}
