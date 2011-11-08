@@ -54,30 +54,31 @@
 
 /* ----------------------------------------- */
 
-.ui-tabs .tabs-items ul li {
+.ui-tabs .tabs-items article {
     overflow: hidden;
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px dashed #ddd;
 }
 
-.ui-tabs .tabs-items ul li:last-child {
+.ui-tabs .tabs-items article:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
 }
 
-.ui-tabs .tabs-items ul li a,
-.ui-tabs .tabs-items ul li a:visited {
+.ui-tabs .tabs-items article a,
+.ui-tabs .tabs-items article a:visited {
     color: #aaa;
+    text-decoration: none;
 }
 
-.ui-tabs .tabs-items ul li:hover a,
-.ui-tabs .tabs-items ul li:hover a:visited {
+.ui-tabs .tabs-items article:hover a,
+.ui-tabs .tabs-items article:hover a:visited {
     color: #000;
 }
 
-.ui-tabs .tabs-items ul li img {
+.ui-tabs .tabs-items article img {
     width: 100%;
     height: auto;
     margin-bottom: 5px;

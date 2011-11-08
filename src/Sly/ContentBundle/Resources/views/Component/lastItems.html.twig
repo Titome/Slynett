@@ -1,6 +1,6 @@
 {% spaceless %}
     {% for item in items %}
-        <article>
+        <article class="gshe">
             {%if item.picture and withPicture %}
                 <a href="{{ path(itemRoute, {'slug': item.slug }) }}" title="{{ item }}">
                     <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('lsThumbnail') }}" alt="{{ item }}" />

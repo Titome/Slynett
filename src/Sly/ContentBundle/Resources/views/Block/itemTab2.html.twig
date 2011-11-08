@@ -16,24 +16,12 @@
         </ul>
         
         <div id="tabs-items" class="tabs-items">
-            <ul>
-                <li>
-                    <a href="#"><img src="http://lorempixel.com/g/220/80/technics/" alt="" /></a>
-                    <a href="#">Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate [...]</a>
-                </li>
-                <li>
-                    <a href="#"><img src="http://lorempixel.com/g/220/80/technics/" alt="" /></a>
-                    <a href="#">Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate [...]</a>
-                </li>
-                <li>
-                    <a href="#"><img src="http://lorempixel.com/g/220/80/technics/" alt="" /></a>
-                    <a href="#">Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate [...]</a>
-                </li>
-                <li>
-                    <a href="#"><img src="http://lorempixel.com/g/220/80/technics/" alt="" /></a>
-                    <a href="#">Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate [...]</a>
-                </li>
-            </ul>
+            {% render 'SlyContentBundle:Component:lastItems' with {
+                'type': 'blog',
+                'categories': item.categories,
+                'withoutItem': item,
+                'withPicture': true
+            } %}
         </div>
         <div id="tabs-rss">
             <ul>
