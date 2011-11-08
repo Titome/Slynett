@@ -556,3 +556,37 @@ article.show .content-show ul {
 article.show .content-show ul li {
     list-style: square;
 }
+
+aside.related {
+    overflow: hidden;
+    margin: 40px 0;
+}
+
+aside.related article {
+    float: left;
+    margin-right: 40px;
+    padding: 10px;
+    width: 173px;
+    background-color: #fff;
+}
+
+aside.related article:last-child {
+    margin-right: 0;
+}
+
+aside.related article img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+aside.related article a,
+aside.related article a:visited {
+    text-decoration: none;
+    color: #aaa;
+}
+
+aside.related article:hover a,
+aside.related article:hover a:visited {
+    color: #333;
+}

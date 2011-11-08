@@ -46,6 +46,10 @@ input {
 .content.c20 { padding: 20px; }
 .content.c40 { padding: 40px; }
 
+.imp {
+    color: #116fe3;
+}
+
 #k {
     position: fixed;
     top: 50px;
@@ -123,7 +127,7 @@ input {
 
 #header #logo a {
     display: block;
-    width: 310px;
+    width: 390px;
     height: 100px;
     background-image: url('../images/logo.png');
 }

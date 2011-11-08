@@ -18,6 +18,18 @@
 {% block content %}
     {% include 'SlyContentBundle:Blog:item.html.twig' with {'item': item } %}
     
+    <h2>{{ 'list.item.related' | trans({}, 'blog') }}</h2>
+    
+    <aside class="related">
+        {% render 'SlyContentBundle:Component:lastItems' with {
+            'type': 'blog',
+            'categories': item.categories,
+            'withoutItem': item,
+            'withPicture': true,
+            'count': 3
+        } %}
+    </aside>
+    
     <aside class="comments">
         <h2><a href="#disqus_thread" data-disqus-identifier="{{ item.disqusId }}">&nbsp;</a></h2>
         

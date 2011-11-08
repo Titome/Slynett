@@ -1,25 +1,5 @@
 {% from "SlyContentBundle::macro.socialShare.html.twig" import shareButtons, shareBigButtons %}
 
-<!--
-<h3 class="title">{{ 'categories.title' | trans }}</h3>
-
-<nav>
-    {% if category is defined %}
-        {% render 'SlyContentBundle:Component:categories' with {'type': 'blog', 'activeCategories': item.categories} %}
-    {% else %}
-        {% render 'SlyContentBundle:Component:categories' with {'type': 'blog'} %}
-    {% endif %}
-</nav>
-
-<div class="hsep_1"></div>
-
-{% include 'SlyCoreBundle:Block:Com/Sidebar/250x250.html.twig' %}
-
-<div class="hsep_1"></div>
-
-{% include 'SlyCoreBundle:Block:sidebarGitHub.html.twig' %}
--->
-
 <section>
     <h3>{{ 'sidebar.categories.title' | trans }}</h3>
     
@@ -34,57 +14,4 @@
     </div>
 </section>
 
-<section>
-    <div class="tabs">
-        <ul>
-            <li>
-                <a href="#tabs-comments" class="sws comment">
-                    <span></span>
-                    <span class="text">Commentaires</span>
-                </a>
-            </li>
-            <li>
-                <a href="#tabs-items" class="sws listicons">
-                    <span></span>
-                    <span class="text">Autres</span>
-                </a>
-            </li>
-            <li>
-                <a href="#tabs-3" class="sws rss">
-                    <span></span>
-                    <span class="text">Flux</span>
-                </a>
-            </li>
-        </ul>
-
-        <div id="tabs-comments" class="tabs-comments">
-            <div id="recentcomments" class="dsq-widget">
-                <script type="text/javascript" src="http://slynett.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200"></script>
-            </div>
-        </div>
-        <div id="tabs-items" class="tabs-items">
-            <ul>
-                <li>
-                    <a href="#"><img src="http://lorempixel.com/g/220/80/technics/" alt="" /></a>
-                    <a href="#">Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate [...]</a>
-                </li>
-                <li>
-                    <a href="#"><img src="http://lorempixel.com/g/220/80/technics/" alt="" /></a>
-                    <a href="#">Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate [...]</a>
-                </li>
-                <li>
-                    <a href="#"><img src="http://lorempixel.com/g/220/80/technics/" alt="" /></a>
-                    <a href="#">Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate [...]</a>
-                </li>
-                <li>
-                    <a href="#"><img src="http://lorempixel.com/g/220/80/technics/" alt="" /></a>
-                    <a href="#">Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate [...]</a>
-                </li>
-            </ul>
-        </div>
-        <div id="tabs-3">
-            <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-            <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
-        </div>
-    </div>
-</section>
+{% include 'SlyContentBundle:Block:itemTab1.html.twig' %}

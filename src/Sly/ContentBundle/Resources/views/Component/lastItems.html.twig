@@ -1,27 +1,15 @@
 {% spaceless %}
-    <ul class="items {% if withPicture %}picture{% endif %} last">
-        {% for item in items %}
-            <li class="item">
-                {%if item.picture and withPicture %}
-                    <a href="{{ path(itemRoute, {'slug': item.slug }) }}" title="{{ item }}">
-                        <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('thumbnail') }}" alt="{{ item }}" class="thumbnail" />
-                    </a>
-                {% elseif item.type == 'tutorial' and item.link and withPicture %}
-                    <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">
-                        <img src="{{ item.dailyMotionPictureUrl }}" class="tutorial" alt="{{ item }}" />
-                    </a>
-                {% endif %}
-                
-                <span>
-                    <a href="{{ path(itemRoute, {'slug': item.slug}) }}" title="{{ item }}">
-                        {{ item }}
-                    </a>
-                </span>
-            </li>
-        {% else %}
-            <li class="empty">
-                {{ 'items.empty' | trans }}
-            </li>
-        {% endfor %}
-    </ul>
+    {% for item in items %}
+        <article>
+            {%if item.picture and withPicture %}
+                <a href="{{ path(itemRoute, {'slug': item.slug }) }}" title="{{ item }}">
+                    <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('lsThumbnail') }}" alt="{{ item }}" />
+                </a>
+            {% endif %}
+            
+            <a href="{{ path(itemRoute, {'slug': item.slug}) }}" title="{{ item }}">{{ item }}</a>
+        </article>
+    {% else %}
+        <p>{{ 'items.empty' | trans }}</p>
+    {% endfor %}
 {% endspaceless %}

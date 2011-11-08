@@ -109,6 +109,9 @@ avalanche_imagine:
         thumbnail:
             type: thumbnail
             options: { size: [110, 110], mode: outbound }
+        lsThumbnail:
+            type: thumbnail
+            options: { size: [300, 120], mode: outbound }
         tutorial:
             type: thumbnail
             options: { size: [300, 200], mode: outbound }

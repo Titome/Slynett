@@ -13,7 +13,7 @@
         
         {% for item in items %}
             <item>
-                {% if type == 'watch' %}
+                {% if type == 'watch' and app.request.get('twitter') %}
                     {% spaceless %}<title>
                         {{ watchFeedTitle | replace({
                             '__TITLE__': item,
@@ -21,6 +21,8 @@
                             '__MINILINK__': item.minilink
                         }) }}
                     </title>{% endspaceless %}
+                {% elseif type == 'watch' %}
+                    <title>{{ item }}</title>
                 {% else %}
                     <title>{{ 'feed.items.title.%type%' | replace({'%type%': item.type}) | trans({'%catName%': item.categoriesList}) }} — {{ item }}</title>
                 {% endif %}

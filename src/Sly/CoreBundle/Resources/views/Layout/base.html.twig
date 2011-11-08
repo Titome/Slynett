@@ -4,7 +4,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}{% endblock title %}{% if app.request.attributes.get('_route') != 'homepage' %} — {{ project.name }}{% endif %}</title>
         <meta name="description" content="{% block description %}{% endblock description %}" />
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="shortcut icon" href="{{ asset('bundles/slycore/images/favicon.ico') }}" />
+        <link rel="shortcut icon" type="image/png" href="{{ asset('bundles/slycore/images/favicon.png') }}" />
         {% if app.request.attributes.get('_route') == 'blog' %}
             <link rel="alternate" type="application/rss+xml" title="{{ project.name }} RSS Feed" href="{{ networks.rss }}" />
         {% endif %}

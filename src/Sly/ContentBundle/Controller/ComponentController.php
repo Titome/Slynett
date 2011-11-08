@@ -21,11 +21,14 @@ class ComponentController extends Controller
         ));
     }
     
-    public function lastItemsAction($type = null, $categories = null, $withoutItem = null, $withPicture = null, $template = null)
+    public function lastItemsAction($type = null, $categories = null, $withoutItem = null, $withPicture = null, $template = null, $count = null)
     {
         $em = $this->getDoctrine()->getEntityManager();
+        
+        if (!$count)
+            $count = $this->container->getParameter('sly.content.blog.otheritems.number', 5);
 
-        $items = $em->getRepository('SlyContentBundle:Content')->getLastItems($type, $categories, $this->container->getParameter('sly.content.blog.otheritems.number', 5), $withoutItem);
+        $items = $em->getRepository('SlyContentBundle:Content')->getLastItems($type, $categories, $count, $withoutItem);
         
         return $this->render(sprintf('SlyContentBundle:Component:lastItems%s.html.twig', $template?'.'.$template:null), array(
             'items' => $items,
