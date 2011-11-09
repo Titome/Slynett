@@ -73,4 +73,12 @@ sidebar:
     title: Catégories
     all: Toutes
   feeds:
-    general: Flux Général
+    general: Flux général
+    blog: Flux RSS du blog
+    tutorial: Flux RSS des tutoriels
+    watch: Flux RSS de la veille
+    snippet: Flux RSS des snippets
+    
+share:
+  buttons:
+    facebook: Partager

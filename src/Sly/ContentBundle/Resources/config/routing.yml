@@ -1,4 +1,4 @@
-feed_cat:
+feed_type:
     pattern: /feed/{type}
     defaults: { _controller: SlyContentBundle:Default:feed }
     requirements:

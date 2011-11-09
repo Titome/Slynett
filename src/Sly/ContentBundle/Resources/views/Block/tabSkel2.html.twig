@@ -1,0 +1,77 @@
+{% from "SlyContentBundle:Macro:socialShare.html.twig" import facebookButton, twitterButton, facebookShareButton, googlePlusButton, linkedInButton %}
+
+<section>
+    <div class="tabs">
+        <ul>
+            <li>
+                <a href="#tabs-share" class="sws replyall">
+                    <span></span>
+                    <span class="text">Partager</span>
+                </a>
+            </li>
+            <li>
+                <a href="#tabs-items" class="sws listicons">
+                    <span></span>
+                    <span class="text">Autres</span>
+                </a>
+            </li>
+            <li>
+                <a href="#tabs-feeds" class="sws rss">
+                    <span></span>
+                    <span class="text">Flux</span>
+                </a>
+            </li>
+        </ul>
+        
+        <div id="tabs-share" class="tabs-share">
+            <p>
+                Vous souhaitez partager <strong>{{ item }}</strong> ? Utilisez les réseaux suivants.
+            </p>
+            
+            <ul class="share">
+                <li class="facebook-button">{{ facebookButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
+                <li class="twitter-button">{{ twitterButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
+                <li class="googleplus-button">{{ googlePlusButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
+                <li class="linkedin-button">{{ linkedInButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
+                <li class="facebook-share-button">{{ facebookShareButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
+            </ul>
+        </div>
+        <div id="tabs-items" class="tabs-items">
+            {% render 'SlyContentBundle:Component:lastItems' with {
+                'type': 'blog',
+                'categories': item.categories,
+                'withoutItem': item,
+                'withPicture': true
+            } %}
+        </div>
+        <div id="tabs-feeds" class="tabs-feeds">
+            <ul>
+                <li>
+                    <a href="{{ networks.rss }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="sws rss">
+                        <span></span> {{ 'sidebar.feeds.general' | trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('feed_type', {'type': 'blog'}) }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="sws rss">
+                        <span></span> {{ 'sidebar.feeds.blog' | trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('feed_type', {'type': 'tutorial'}) }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="sws rss">
+                        <span></span> {{ 'sidebar.feeds.tutorial' | trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('feed_type', {'type': 'watch'}) }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="sws rss">
+                        <span></span> {{ 'sidebar.feeds.watch' | trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('feed_type', {'type': 'snippet'}) }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="sws rss">
+                        <span></span> {{ 'sidebar.feeds.snippet' | trans }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

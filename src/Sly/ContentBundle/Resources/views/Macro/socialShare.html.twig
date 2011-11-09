@@ -1,0 +1,22 @@
+{% macro facebookButton(link, title) %}
+    <iframe src="http://www.facebook.com/plugins/like.php?href={{ link }}&amp;layout=button_count&amp;show_faces=false&amp;width=200&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;"></iframe>
+{% endmacro %}
+
+{% macro twitterButton(link, title) %}
+    <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="horizontal" data-lang="{{ app.session.locale }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+{% endmacro %}
+
+{% macro facebookShareButton(link, title) %}
+    <a name="fb_share" type="button_count" share_url="{{ link }}" href="http://www.facebook.com/sharer.php">{{ 'share.buttons.facebook' | trans }}</a>
+    <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+{% endmacro %}
+
+{% macro googlePlusButton(link, title) %}
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: '{{ app.session.locale }}'}</script>
+    <g:plusone href="{{ link }}"></g:plusone>
+{% endmacro %}
+
+{% macro linkedInButton(link, title) %}
+    <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+    <script type="IN/Share" data-url="{{ link }}" data-counter="left"></script>
+{% endmacro %}

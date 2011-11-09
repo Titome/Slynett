@@ -37,6 +37,39 @@ jQuery(function($){
         $('body').prepend('<div id="k"><object style="height: 390px; width: 640px"><param name="movie" value="http://www.youtube.com/v/-ecg5_Y08KI?version=3&feature=player_detailpage&autoplay=1"><param name="autoplay" value="true"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/-ecg5_Y08KI?version=3&autoplay=1&feature=player_detailpage" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="360"></object></div>');
       }
     });
+    
+    /* --- Share Overlay ------------------- */
+
+    $('.go-share').click(function(){
+        var parentTabs = $('ul.share:last').parents('div.tabs');
+        
+        $('#overlay').css('z-index', '1000').fadeIn();
+        
+        if (parentTabs.length > 0)
+        {
+            parentTabs.tabs('select', 0);
+            
+            parentTabs.css('z-index', '2000');
+            $.scrollTo(parentTabs, 800, { offset: -200 });
+            
+            $('#overlay').delay(1500).fadeOut(1000);
+            $('#overlay').css('z-index', 0);
+            parentTabs.css('z-index', 0);
+        }
+        else
+        {
+            var shareElement = $('ul.share:last');
+            
+            shareElement.css('z-index', '2000');
+            $.scrollTo(shareElement, 800, { offset: -200 });
+            
+            $('#overlay').delay(1500).fadeOut(1000);
+            $('#overlay').css('z-index', 0);
+            shareElement.css('z-index', 0);
+        }
+        
+        return false;
+    });
 });
 
 /* --- Main Search ----------------- */
@@ -85,7 +118,7 @@ $('#top-nav ul li.sws.reply').click(function(){
 function letsShowItem()
 {
     if (window.location.hash == '')
-        $('html, body').animate({ scrollTop: 360 }, 400);
+        $.scrollTo('section[role=contentinfo] h2:first', 800, { offset: -100 });
 }
 
 /* --- SyntaxHighlighter --------------- */

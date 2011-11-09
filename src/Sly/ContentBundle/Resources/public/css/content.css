@@ -367,10 +367,6 @@ aside.watch footer ul.tags li a:hover {
     background-color: #bbb;
 }
 
-aside.watch footer ul.sharebuttons {
-
-}
-
 /* ------------- SNIPPET - List */
 
 article.snippet {
@@ -535,7 +531,7 @@ article.show .content-show a:visited {
 article.show .content-show h3,
 article.show .content-show p,
 article.show .content-show ul {
-    line-height: 24px;
+    line-height: 20px;
     margin: 40px 0;
 }
 

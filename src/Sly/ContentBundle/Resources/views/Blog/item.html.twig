@@ -1,5 +1,3 @@
-{% from "SlyContentBundle::macro.socialShare.html.twig" import shareBigRButtons %}
-
 <article class="show">
     <header>
         <section role="contentinfo">
@@ -29,8 +27,8 @@
                 {{ 'list.item.author' | trans({'%authorName%': project.author.name}, 'blog') }}
                 <a href="{{ path('author') }}" title="{{ project.author.name }}">{{ project.author.name }}</a>
             </li>
-            <li class="share">
-                {{ shareBigRButtons(path('blog_show', {'slug': item.slug}), item) }}
+            <li>
+                <a href="#" class="btn go-share">{{ 'list.item.share' | trans({}, 'blog') }}</a>
             </li>
         </ul>
     </header>

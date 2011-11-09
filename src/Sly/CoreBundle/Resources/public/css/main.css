@@ -50,6 +50,20 @@ input {
     color: #116fe3;
 }
 
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    opacity: .5;
+    -moz-opacity: .5;
+    -ms-filter: "alpha(opacity=50)";
+    filter: alpha(opacity=50);
+}
+
 #k {
     position: fixed;
     top: 50px;
@@ -204,8 +218,7 @@ nav.sec ul.menu li.active a:visited {
 
 .btn,
 .btn:visited {
-    display: inline-block;
-    padding: 5px;
+    padding: 10px 20px;
     background-color: #aaa;
     color: #fff;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
@@ -230,4 +243,23 @@ ul.list {
 
 ul.list li {
     list-style: disc;
+}
+
+/* --- Share -------------------------------- */
+
+ul.share {
+    overflow: hidden;
+}
+
+ul.share li {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ddd;
+}
+
+ul.share li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
 }
