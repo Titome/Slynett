@@ -21,9 +21,7 @@
                 </time>
             </li>
             <li>
-                <a href="{{ path('author') }}" title="{{ project.author.name }}">
-                    <img src="http://0.gravatar.com/avatar/{{ project.author.email | md5 }}?s=32" alt="" />
-                </a>
+                <img src="http://0.gravatar.com/avatar/{{ project.author.email | md5 }}?s=32" alt="" />
                 {{ 'list.item.author' | trans({'%authorName%': project.author.name}, 'blog') }}
                 <a href="{{ path('author') }}" title="{{ project.author.name }}">{{ project.author.name }}</a>
             </li>

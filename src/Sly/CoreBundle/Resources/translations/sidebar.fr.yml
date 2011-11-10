@@ -1,0 +1,9 @@
+tabs:
+  title:
+    feeds: Flux
+    comments: Commentaires
+    items: Autres
+    share: Partager
+  content:
+    share:
+      message: Vous souhaitez partager <strong>%title%</strong> ? Utilisez les réseaux suivants.

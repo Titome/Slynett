@@ -1,0 +1,9 @@
+{% from "SlyContentBundle:Macro:socialShare.html.twig" import facebookButton, twitterButton, facebookShareButton, googlePlusButton, linkedInButton %}
+
+<ul class="share">
+    <li class="facebook-button">{{ facebookButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
+    <li class="twitter-button">{{ twitterButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
+    <li class="googleplus-button">{{ googlePlusButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
+    <li class="linkedin-button">{{ linkedInButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
+    <li class="facebook-share-button">{{ facebookShareButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
+</ul>

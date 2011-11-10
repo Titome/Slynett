@@ -61,8 +61,8 @@
 
 .ui-tabs .tabs-items article {
     overflow: hidden;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
     border-bottom: 1px dashed #ddd;
 }
 

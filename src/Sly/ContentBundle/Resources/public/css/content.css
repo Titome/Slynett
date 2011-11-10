@@ -327,9 +327,12 @@ aside.watch header {
 }
 
 aside.watch header h3 {
+    clear: both;
+    overflow: hidden;
+    margin: 25px 0;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 18px;
-    color: #aaa;
+    color: #000;
     text-shadow: 1px 1px 1px #fff;
 }
 
@@ -496,6 +499,9 @@ article.show section.body div.intro img.item-picture {
     width: 100%;
     height: auto;
     margin-bottom: 5px;
+}
+
+article.show section.body div.intro iframe {
 }
 
 article.show section.body div.intro ul {

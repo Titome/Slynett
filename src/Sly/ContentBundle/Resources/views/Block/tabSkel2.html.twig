@@ -1,40 +1,30 @@
-{% from "SlyContentBundle:Macro:socialShare.html.twig" import facebookButton, twitterButton, facebookShareButton, googlePlusButton, linkedInButton %}
-
 <section>
     <div class="tabs">
         <ul>
             <li>
                 <a href="#tabs-share" class="sws replyall">
                     <span></span>
-                    <span class="text">Partager</span>
+                    <span class="text">{{ 'tabs.title.share' | trans({}, 'sidebar') }}</span>
                 </a>
             </li>
             <li>
                 <a href="#tabs-items" class="sws listicons">
                     <span></span>
-                    <span class="text">Autres</span>
+                    <span class="text">{{ 'tabs.title.items' | trans({}, 'sidebar') }}</span>
                 </a>
             </li>
             <li>
                 <a href="#tabs-feeds" class="sws rss">
                     <span></span>
-                    <span class="text">Flux</span>
+                    <span class="text">{{ 'tabs.title.feeds' | trans({}, 'sidebar') }}</span>
                 </a>
             </li>
         </ul>
         
         <div id="tabs-share" class="tabs-share">
-            <p>
-                Vous souhaitez partager <strong>{{ item }}</strong> ? Utilisez les réseaux suivants.
-            </p>
+            <p>{{ 'tabs.content.share.message' | trans({'%title%': item}, 'sidebar') | raw }}</p>
             
-            <ul class="share">
-                <li class="facebook-button">{{ facebookButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
-                <li class="twitter-button">{{ twitterButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
-                <li class="googleplus-button">{{ googlePlusButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
-                <li class="linkedin-button">{{ linkedInButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
-                <li class="facebook-share-button">{{ facebookShareButton(path('%type%_show' | replace({'%type%': type}), {'slug': item.slug}), item) }}</li>
-            </ul>
+            {% include 'SlyContentBundle:Block/Content:socialNetworks.html.twig' %}
         </div>
         <div id="tabs-items" class="tabs-items">
             {% render 'SlyContentBundle:Component:lastItems' with {

@@ -4,13 +4,13 @@
             <li>
                 <a href="#tabs-comments" class="sws comment">
                     <span></span>
-                    <span class="text">Commentaires</span>
+                    <span class="text">{{ 'tabs.title.comments' | trans({}, 'sidebar') }}</span>
                 </a>
             </li>
             <li>
                 <a href="#tabs-feeds" class="sws rss">
                     <span></span>
-                    <span class="text">Flux</span>
+                    <span class="text">{{ 'tabs.title.feeds' | trans({}, 'sidebar') }}</span>
                 </a>
             </li>
         </ul>
@@ -19,23 +19,7 @@
             {% render 'SlyContentBundle:Component:disqusLastComments' %}
         </div>
         <div id="tabs-feeds" class="tabs-feeds">
-            <ul class="list">
-                <li>
-                    <a href="{{ networks.rss }}" onclick="var w=window.open(this.href); w.focus(); return false;">
-                        {{ 'sidebar.feeds.general' | trans }}
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ networks.rss }}" onclick="var w=window.open(this.href); w.focus(); return false;">
-                        {{ 'sidebar.feeds.general' | trans }}
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ networks.rss }}" onclick="var w=window.open(this.href); w.focus(); return false;">
-                        {{ 'sidebar.feeds.general' | trans }}
-                    </a>
-                </li>
-            </ul>
+            {% include 'SlyContentBundle:Block/Content:rssFeeds.html.twig' %}
         </div>
     </div>
 </section>

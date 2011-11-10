@@ -62,6 +62,7 @@ input {
     -moz-opacity: .5;
     -ms-filter: "alpha(opacity=50)";
     filter: alpha(opacity=50);
+    z-index: 1000;
 }
 
 #k {
@@ -218,7 +219,8 @@ nav.sec ul.menu li.active a:visited {
 
 .btn,
 .btn:visited {
-    padding: 10px 20px;
+    display: inline-block;
+    padding: 5px 10px;
     background-color: #aaa;
     color: #fff;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;

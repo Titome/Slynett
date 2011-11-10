@@ -42,30 +42,36 @@ jQuery(function($){
 
     $('.go-share').click(function(){
         var parentTabs = $('ul.share:last').parents('div.tabs');
+        var zIndexOverlay = $('#overlay').css('z-index');
+        var shareElementZIndex = (zIndexOverlay*1) + 1;
         
-        $('#overlay').css('z-index', '1000').fadeIn();
+        console.log(shareElementZIndex);
+        
+        $('#overlay').fadeIn();
         
         if (parentTabs.length > 0)
         {
             parentTabs.tabs('select', 0);
             
-            parentTabs.css('z-index', '2000');
+            parentTabs.css('zIndex', shareElementZIndex);
             $.scrollTo(parentTabs, 800, { offset: -200 });
             
-            $('#overlay').delay(1500).fadeOut(1000);
-            $('#overlay').css('z-index', 0);
-            parentTabs.css('z-index', 0);
+            var shareInvertTimer = setTimeout((function(){
+                $('#overlay').fadeOut(1000);
+                parentTabs.css('zIndex', 0);
+            }), 2500);
         }
         else
         {
             var shareElement = $('ul.share:last');
             
-            shareElement.css('z-index', '2000');
+            shareElement.css('zIndex', shareElementZIndex);
             $.scrollTo(shareElement, 800, { offset: -200 });
             
-            $('#overlay').delay(1500).fadeOut(1000);
-            $('#overlay').css('z-index', 0);
-            shareElement.css('z-index', 0);
+            var shareInvertTimer = setTimeout((function(){
+                $('#overlay').fadeOut(1000).css('zIndex', 0);
+                shareElement.css('zIndex', 0);
+            }), 2500);
         }
         
         return false;

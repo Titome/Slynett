@@ -1,48 +1,64 @@
-<article class="tpl3">
-    {%if item.picture %}
-        <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('medium') }}" alt="{{ item }}" class="medium" />
-    {% endif %}
-    
-    <div class="header">
-        <h2>{{ item.title }}</h2>
-        
-        <p class="informations">       
-            {{ 'list.publishedat' | trans({}, 'snippet') }}
-            <abbr title="{{ item.publishedAt | date('core.date.time.big' | trans) }}" class="dtstart">{{ item.publishedAt | date('core.date.time.big' | trans) }}</abbr>
-        </p>
-        
-        <p class="categories">
-            {% if item.categories | length %}
-                {% for k, cat in item.categories %}
-                    <a href="{{ path('snippet_category', {'slug': cat.slug}) }}" class="icat {{ cat.slug }}" title="{{ cat }}"></a>
-                {% endfor %}
-            {% else %}
-                {{ 'list.nocategory' | trans({}, 'snippet') }}
-            {% endif %}
-        </p>
-        
-        {% if item.tags | length %}
-            <p class="tags">
-                {% for tag in item.tagsCollection %}
-                    <a href="#">{{ tag }}</a>
-                {% endfor %}
-            </p>
-        {% endif %}
-    </div>
+<article class="show">
+    <header>
+        <section role="contentinfo">
+            <h2>
+                {% if item.categories | length %}                
+                    {% for k, cat in item.categories %}
+                        <a href="{{ path('snippet_category', {'slug': cat.slug}) }}" class="category {{ cat.slug }}">{{ cat }}</a>{% if k+1 < item.categories | length %} / {% endif %}
+                    {% endfor %}
 
-    <div class="item_content">    
-        {% if item.excerpt %}
-            {{ item.excerpt }}
-        {% endif %}
+                    —
+                {% endif %}
+                
+                <a href="{{ path('snippet_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item }}</a>
+            </h2>
+        </section>
         
-        {% if item.githubFile %}
-            <pre class="brush: {{ item.getGithubFileType }};">
-                {{ '%prefix%%file%' | replace({
+        <ul>
+            <li>
+                <time datetime="{{ item.publishedAt | date('core.date.time.big' | trans) }}">
+                    {{ item.publishedAt | date('core.date.normal' | trans) }}
+                </time>
+            </li>
+            <li>
+                <img src="http://0.gravatar.com/avatar/{{ project.author.email | md5 }}?s=32" alt="" />
+                {{ 'list.item.author' | trans({'%authorName%': project.author.name}, 'snippet') }}
+                <a href="{{ path('author') }}" title="{{ project.author.name }}">{{ project.author.name }}</a>
+            </li>
+            <li>
+                <a href="#" class="btn go-share">{{ 'list.item.share' | trans({}, 'snippet') }}</a>
+            </li>
+            <li>
+                <a href="{{ githubRawUrl | replace({'raw.': 'www.', 'master/': 'blob/master/'}) }}{{ item.getGithubFile }}" class="btn" onclick="var w=window.open(this.href); w.focus(); return false;">
+                    {{ 'list.item.ongithub' | trans({}, 'snippet') }}
+                </a>
+            </li>
+        </ul>
+    </header>
+        
+    <section class="body">
+        <div class="intro">
+            {% if item.tags | length %}
+                <ul>
+                    {% for tag in item.tagsCollection %}
+                        <li><a href="#{{ tag }}">{{ tag }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        
+        <div class="content-show">
+            {% if item.excerpt %}
+                {{ item.excerpt }}
+            {% endif %}
+
+            {% if item.githubFile %}
+                <pre class="brush: {{ item.getGithubFileType }};">{{ '%prefix%%file%' | replace({
                         '%prefix%': githubRawUrl,
                         '%file%': item.githubFile
                     }) | getContentFromUrl
-                }}
-            </pre>
-        {% endif %}
-    </div>
+                }}</pre>
+            {% endif %}
+        </div>
+    </section>
 </article>

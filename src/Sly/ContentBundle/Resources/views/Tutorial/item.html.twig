@@ -23,14 +23,12 @@
                 </time>
             </li>
             <li>
-                <a href="{{ path('author') }}" title="{{ project.author.name }}">
-                    <img src="http://0.gravatar.com/avatar/{{ project.author.email | md5 }}?s=32" alt="" />
-                </a>
+                <img src="http://0.gravatar.com/avatar/{{ project.author.email | md5 }}?s=32" alt="" />
                 {{ 'list.item.author' | trans({'%authorName%': project.author.name}, 'tutorial') }}
                 <a href="{{ path('author') }}" title="{{ project.author.name }}">{{ project.author.name }}</a>
             </li>
-            <li class="share">
-                {{ shareBigRButtons(path('tutorial_show', {'slug': item.slug}), item) }}
+            <li>
+                <a href="#" class="btn go-share">{{ 'list.item.share' | trans({}, 'blog') }}</a>
             </li>
         </ul>
     </header>

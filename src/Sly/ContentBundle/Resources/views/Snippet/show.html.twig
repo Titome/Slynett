@@ -11,39 +11,35 @@
     {% endspaceless %}
 {% endblock description %}
 
-{% set topMain = true %}
-
-{% block topMainTitle %}
-    <a href="{{ path('snippet') }}" title="{{ 'core.menu.snippet' | trans }}">
-        {{ 'title' | trans({}, 'snippet') }}
-    </a>
-{% endblock topMainTitle %}
-
-{% block topMainMenu %}
-    {% render 'SlyContentBundle:Component:categories' with {'type': 'snippet', 'noActive': true} %}
-{% endblock topMainMenu %}
-
-{% block stylesheets %}
-    {{ parent() }}
-
-    {% include 'SlyContentBundle::inc.syntaxhighlighter.css.html.twig' %}
-{% endblock stylesheets %}
-
 {% block rightSidebar %}
-    <div class="p_sidebar">
-        {% include 'SlyContentBundle:Snippet:rightSidebarItem.html.twig' with {'item': item} %}
-    </div>
+    {% include 'SlyContentBundle:Snippet:rightSidebarItem.html.twig' %}
 {% endblock rightSidebar %}
 
 {% block content %}
-    {% include 'SlyContentBundle:Snippet:item.html.twig' with {'item': item } %}
+    {% include 'SlyContentBundle:Snippet:item.html.twig' %}
     
-    <div id="disqus_thread" class="disqus"></div>
+    <h2>{{ 'list.item.related' | trans({}, 'snippet') }}</h2>
+    
+    <aside class="related">
+        {% render 'SlyContentBundle:Component:lastItems' with {
+            'type': 'snippet',
+            'categories': item.categories,
+            'withoutItem': item,
+            'withPicture': true,
+            'count': 3
+        } %}
+    </aside>
+    
+    <aside class="comments">
+        <h2><a href="#disqus_thread" data-disqus-identifier="{{ item.disqusId }}">&nbsp;</a></h2>
+        
+        <div id="disqus_thread"></div>
+    </aside>
 {% endblock content %}
 
 {% block javascripts %}
     {{ parent() }}
     
-    {% include 'SlyContentBundle::inc.syntaxhighlighter.js.html.twig' %}
+    {% render 'SlyContentBundle:Component:disqusCountJS' %}
     {% render 'SlyContentBundle:Component:disqusJS' with {'item': item, 'type': 'snippet'} %}
 {% endblock javascripts %}

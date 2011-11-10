@@ -1,0 +1,31 @@
+<section>
+    <div class="tabs">
+        <ul>
+            <li>
+                <a href="#tabs-share" class="sws replyall">
+                    <span></span>
+                    <span class="text">{{ 'tabs.title.share' | trans({}, 'sidebar') }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="#tabs-items" class="sws listicons">
+                    <span></span>
+                    <span class="text">{{ 'tabs.title.items' | trans({}, 'sidebar') }}</span>
+                </a>
+            </li>
+        </ul>
+        
+        <div id="tabs-share" class="tabs-share">
+            <p>{{ 'tabs.content.share.message' | trans({'%title%': item}, 'sidebar') | raw }}</p>
+            
+            {% include 'SlyContentBundle:Block/Content:socialNetworks.html.twig' %}
+        </div>
+        <div id="tabs-items" class="tabs-items">
+            {% render 'SlyContentBundle:Component:lastItems' with {
+                'type': 'blog',
+                'categories': item.categories,
+                'withoutItem': item,
+                'withPicture': true
+            } %}
+        </div>
+</section>

@@ -1,4 +1,4 @@
-.sws span { margin-right: 5px; font-family: 'WebSymbolsRegular', cursive; font-size: 1.2em; }
+.sws span { display: inline-block; margin-right: 5px; font-family: 'WebSymbolsRegular', cursive; font-size: 1.2em; vertical-align: middle; }
 .sws.after span { margin-left: 0; margin-right: 5px; }
 
 .sws.image span:first-child:before { content: 'I'; }

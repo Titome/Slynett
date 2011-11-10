@@ -1,37 +1,15 @@
-{% from "SlyContentBundle::macro.socialShare.html.twig" import shareButtons %}
-
-<aside>
-    <p>
-        <a href="#" onclick="var w=window.open(this.href); w.focus(); return false;" class="btn small">
-            {{ 'list.read' | trans({}, 'snippet') }}
-        </a>
-    </p>
-</aside>
-
-<aside>
-    <h3>{{ 'sidebar.item.share.title' | trans({}, 'snippet') }}</h3>
+<section>
+    <h3>{{ 'sidebar.categories.title' | trans }}</h3>
     
-    {{ shareButtons(url('snippet_show', {'slug': item.slug}), item, 'default') }}
-</aside>
+    <div class="content">
+        <nav>
+            {% if category is defined %}
+                {% render 'SlyContentBundle:Component:categories' with {'type': 'snippet', 'activeCategories': item.categories} %}
+            {% else %}
+                {% render 'SlyContentBundle:Component:categories' with {'type': 'snippet'} %}
+            {% endif %}
+        </nav>
+    </div>
+</section>
 
-<aside>
-    <h3>{{ 'sidebar.item.others.title' | trans({}, 'snippet') }}</h3>
-
-    {% render 'SlyContentBundle:Component:lastItems' with {'type': 'blog', 'categories': item.categories, 'withoutItem': item} %}
-</aside>
-
-<aside>
-    <p class="amc c1206001">
-        <script type="text/javascript"><!--
-        google_ad_client = "ca-pub-8858711354167822";
-    
-        google_ad_slot = "8522590177";
-        google_ad_width = 160;
-        google_ad_height = 600;
-        //-->
-        </script>
-        <script type="text/javascript"
-        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-        </script>
-    </p>
-</aside>
+{% include 'SlyContentBundle:Block:tabSkel3.html.twig' with {'type': 'snippet'} %}
