@@ -11,7 +11,6 @@ class SlyExtension extends \Twig_Extension {
             'textEncode'  => new \Twig_Filter_Method($this, 'textEncode'),
             'getContentFromUrl'  => new \Twig_Filter_Method($this, 'getContentFromUrl'),
             'contentFilters'  => new \Twig_Filter_Method($this, 'contentFilters'),
-            'checkActiveContentCategory' => new \Twig_Function_Method($this, 'checkActiveContentCategory'),
         );
     }
     
@@ -70,17 +69,6 @@ class SlyExtension extends \Twig_Extension {
          */
         
         return $content;
-    }
-    
-    public function checkActiveContentCategory($category, $contentCategories)
-    {
-        $contentCategoriesArray = array();
-        
-        foreach ($contentCategories as $cCat)
-            $contentCategoriesArray[] = $cCat->getId();
-        
-        if (in_array($category->getId(), $contentCategoriesArray))
-            return 'active';
     }
     
     public function getName()

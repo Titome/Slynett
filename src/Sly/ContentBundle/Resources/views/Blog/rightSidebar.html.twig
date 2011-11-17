@@ -4,7 +4,7 @@
     <div class="content">
         <nav>
             {% if category is defined %}
-                {% render 'SlyContentBundle:Component:categories' with {'type': 'blog', 'activeCategories': item.categories} %}
+                {% render 'SlyContentBundle:Component:categories' with {'type': 'blog', 'activeCategory': category} %}
             {% else %}
                 {% render 'SlyContentBundle:Component:categories' with {'type': 'blog'} %}
             {% endif %}

@@ -1,6 +1,9 @@
 seo:
   title: Blog développement Web/Symfony
   description: Découvertes développement Web au quotidien. PHP5, Symfony, jQuery, CSS3 et autres.
+  category:
+    title: Articles de la catégorie "%catName%" du blog.
+    description: Articles de la catégorie "%catName%" du blog.
   
 list:
   title: Découvertes développement Web au quotidien. PHP5, Symfony, jQuery, CSS3 et autres.
@@ -10,3 +13,6 @@ list:
     read: Lire l'article
     related: Ces articles peuvent vous intéresser
     share: Partager l'article
+    
+category:
+  title: Articles de la catégorie "%catName%" du blog.

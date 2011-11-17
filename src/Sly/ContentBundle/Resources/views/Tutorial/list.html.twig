@@ -8,13 +8,7 @@
         <h2 role="contentinfo">{{ 'list.title' | trans({}, 'tutorial') }}</h2>
     {% endif %}
     
-    <nav>
-        {% if category is defined %}
-            {% render 'SlyContentBundle:Component:categories' with {'type': 'tutorial', 'activeCategories': item.categories} %}
-        {% else %}
-            {% render 'SlyContentBundle:Component:categories' with {'type': 'tutorial'} %}
-        {% endif %}
-    </nav>
+    <nav>{% render 'SlyContentBundle:Component:categories' with {'type': 'tutorial'} %}</nav>
 
     {% for k, item in contentPaginator %}
         {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'k': k, 'item': item } %}

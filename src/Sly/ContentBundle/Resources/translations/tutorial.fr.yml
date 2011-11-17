@@ -1,6 +1,9 @@
 seo:
   title: Tutoriels développement Web
   description: Tous les tutoriels vidéo et textuels en matière de développement Web.
+  category:
+    title: Tutoriels de la catégorie "%catName%".
+    description: Tutoriels de la catégorie "%catName%".
   
 list:
   title: Retrouvez régulièrement des tutoriels concernant PHP5, symfony 1.4, Symfony2, jQuery et autres au format vidéo ou textuel.
@@ -11,3 +14,6 @@ list:
     read: Voir le tutoriel
     related: Ces tutoriels peuvent aussi vous intéresser
     share: Partager le tutoriel
+    
+category:
+  title: Tutoriels de la catégorie "%catName%".

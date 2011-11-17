@@ -1,6 +1,6 @@
 {% spaceless %}
     <ul class="categories {{ mainRoute }}">
-        <li class="item all {% if activeCategories is empty and noActive is null %}active{% endif %}">
+        <li class="item all {% if activeCategory is null and noActiveCategory is null %}active{% endif %}">
             <a href="{{ path(mainRoute) }}">
                 {{ 'sidebar.categories.all' | trans }}
             </a>
@@ -8,8 +8,8 @@
         
         {% for cat in categories %}
             {% if (cat.content | length) %}
-                {% if activeCategories %}
-                    <li class="item {{ checkActiveContentCategory(cat, activeCategories) }}">
+                {% if activeCategory == cat %}
+                    <li class="item active">
                 {% else %}
                     <li class="item">
                 {% endif %}

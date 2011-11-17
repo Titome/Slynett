@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ComponentController extends Controller
 {
-    public function categoriesAction($type, $activeCategories = null, $noActive = null)
+    public function categoriesAction($type, $activeCategory = null, $noActiveCategory = null)
     {
         $em = $this->getDoctrine()->getEntityManager();
 
@@ -16,8 +16,8 @@ class ComponentController extends Controller
             'categories' => $categories,
             'mainRoute' => $type,
             'catRoute' => sprintf('%s_category', $type),
-            'activeCategories' => $activeCategories,
-            'noActive' => $noActive,
+            'activeCategory' => $activeCategory,
+            'noActiveCategory' => $noActiveCategory,
         ));
     }
     

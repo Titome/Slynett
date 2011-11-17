@@ -28,26 +28,28 @@
                 <a href="{{ path('author') }}" title="{{ project.author.name }}">{{ project.author.name }}</a>
             </li>
             <li>
-                <a href="#" class="btn go-share">{{ 'list.item.share' | trans({}, 'blog') }}</a>
+                <a href="#" class="btn go-share">{{ 'list.item.share' | trans({}, 'tutorial') }}</a>
             </li>
         </ul>
     </header>
         
     <section class="body">
-        <div class="intro">
-            <iframe frameborder="0" width="{{ dmplayer.width }}" height="{{ dmplayer.height }}" src="{{ item.dailyMotionEmbedUrl }}?width={{ dmplayer.width }}"></iframe>
-            
-            {% if item.tags | length %}
-                <ul>
-                    {% for tag in item.tagsCollection %}
-                        <li><a href="#{{ tag }}">{{ tag }}</a></li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </div>
+        <iframe frameborder="0" width="{{ dmplayer.width }}" height="{{ dmplayer.height }}" src="{{ item.dailyMotionEmbedUrl }}?width={{ dmplayer.width }}"></iframe>
 
-        <div class="content-show">
-            {{ item.content | contentFilters | raw }}
-        </div>
+        <!-- {% if item.tags | length %}
+            <ul>
+                {% for tag in item.tagsCollection %}
+                    <li><a href="#{{ tag }}">{{ tag }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}-->
     </section>
+
+    {% if item.content %}
+        <section class="body">
+            <div class="content-show">
+                {{ item.content | contentFilters | raw }}
+            </div>
+        </section>
+    {% endif %}
 </article>

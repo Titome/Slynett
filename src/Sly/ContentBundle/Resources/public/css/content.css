@@ -491,44 +491,6 @@ article.show section.body {
     background-color: #fff;
 }
 
-article.show section.body div.intro {
-    margin-bottom: 40px;
-}
-
-article.show section.body div.intro img.item-picture {
-    width: 100%;
-    height: auto;
-    margin-bottom: 5px;
-}
-
-article.show section.body div.intro iframe {
-}
-
-article.show section.body div.intro ul {
-    overflow: hidden;
-}
-
-article.show section.body div.intro ul li {
-    float: right;
-    margin-left: 5px;
-    font-size: 12px;
-}
-
-article.show section.body div.intro ul li a,
-article.show section.body div.intro ul li a:visited {
-    display: block;
-    padding: 3px 6px;
-    text-transform: uppercase;
-    background-color: #eee;
-    color: #aaa;
-    text-decoration: none;
-}
-
-article.show section.body div.intro ul li a:hover {
-    text-decoration: none;
-    color: #000;
-}
-
 article.show .content-show a,
 article.show .content-show a:visited {
     color: #116fe3;

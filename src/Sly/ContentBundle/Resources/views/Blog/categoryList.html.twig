@@ -1,24 +1,22 @@
 {% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
 
 {% block title %}{{ category }} | {{ 'seo.title' | trans({}, 'blog') }}{% endblock title %}
-{% block description %}{{ 'category.seo.description' | trans({'%category%': category}, 'blog') }}{% endblock description %}
+{% block description %}{{ 'seo.category.description' | trans({'%catName%': category}, 'blog') }}{% endblock description %}
 
 {% block rightSidebar %}
     {% include 'SlyContentBundle:Blog:rightSidebar.html.twig' %}
 {% endblock rightSidebar %}
 
 {% block content %}
-    <section role="main" class="tpl3">
-        {% for k, item in contentPaginator %}
-            {% include 'SlyContentBundle:Blog:mediumItem.html.twig' with {'k': k, 'item': item } %}
-        {% else %}
-            <p class="empty">{{ 'list.nocontent' | trans({}, 'blog') }}</p>
-        {% endfor %}
-    </section>
+    <h2 role="contentinfo">{{ 'category.title' | trans({'%catName%': category}, 'blog') }}</h2>
+
+    {% for k, item in contentPaginator %}
+        {% include 'SlyContentBundle:Blog:mediumItem.html.twig' with {'k': k, 'item': item } %}
+    {% else %}
+        <p class="empty">{{ 'list.nocontent' | trans({}, 'blog') }}</p>
+    {% endfor %}
     
     {% if contentPaginator | length %}
-        <div class="hsep_1 t2"></div>
-
         <div class="pager">
             {{ pagerfanta(contentPaginator, 'default') }}
         </div>
