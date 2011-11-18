@@ -108,6 +108,21 @@ nav[role=navigation] ul.menu li.active .sub {
     -ms-animation: moveFromBottom 500ms ease;
 }
 
+nav[role=navigation] ul.menu li.na .icon,
+nav[role=navigation] ul.menu li.na a,
+nav[role=navigation] ul.menu li.na a:visited,
+nav[role=navigation] ul.menu li.na a:hover,
+nav[role=navigation] ul.menu li.na:hover a,
+nav[role=navigation] ul.menu li.na:hover a:visited,
+nav[role=navigation] ul.menu li.na:hover a:hover {
+    color: #aaa;
+}
+
+nav[role=navigation] ul.menu li.na:hover,
+nav[role=navigation] ul.menu li.na.active {
+    border-color: #aaa;
+}
+
 @-webkit-keyframes moveFromLeftRotate {
     from {
         -webkit-transform: translateX(-100%) rotate(-90deg);

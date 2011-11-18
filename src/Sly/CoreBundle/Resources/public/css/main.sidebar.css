@@ -54,9 +54,8 @@
 
 #main .sidebar section div.content ul.categories li.active a,
 #main .sidebar section div.content ul.categories li.active a:visited {
-    background-image: none;
-    background-color: transparent;
-    color: #116fe3;
+    background-color: #116fe3;
+    color: #fff;
 }
 
 /* --- Networks ------------------------- */

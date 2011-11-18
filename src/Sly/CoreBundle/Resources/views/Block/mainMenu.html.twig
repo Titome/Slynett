@@ -36,7 +36,7 @@
                 </div>
             </a>
         </li>
-        <li class="{{ app.request.attributes.get('_route') | checkActive(['resource']) }}">
+        <li class="na {{ app.request.attributes.get('_route') | checkActive(['resource']) }}">
             <a href="{{ path('resource') }}">
                 <span class="icon">A</span>
                 <div class="content">
@@ -45,7 +45,7 @@
                 </div>
             </a>
         </li>
-        <li>
+        <li class="na">
             <a href="{{ path('homepage') }}">
                 <span class="icon">I</span>
                 <div class="content">
