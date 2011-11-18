@@ -4,6 +4,12 @@ items:
 comments:
   title: Commentaires
   
+type:
+  blog: Blog
+  snippet: Snippets
+  tutorial: Tutoriels
+  watch: Veille
+  
 feed:
   seo:
     title:
@@ -19,3 +25,18 @@ feed:
       watch: Veille %catName%
       tutorial: Tutoriel Vidéo %catName%
       snippet: Snippet %catName%
+      
+search:
+  seo:
+    title: Résultats pour "%query%"
+    description: Résultats pour "%query%"
+  title: Résultats pour "%query%"
+  title_count: %count% résultats pour "%query%"
+  input: Rechercher...
+  category:
+    blog: Blog
+    watch: Veille
+    snippet: Snippets
+    tutorial: Tutoriels
+  message: Sélectionner les sections dans lesquelles vous souhaitez porter votre recherche.
+  submit: Rechercher

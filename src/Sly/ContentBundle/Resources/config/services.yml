@@ -4,6 +4,7 @@ parameters:
   sly.content.disqus:
     username: %disqus_username%
   
+  sly.content.search.numberofitems: 20
   sly.content.feed.numberofitems: 20
   sly.content.blog.maxperpage: 20
   sly.content.blog.otheritems.number: 5

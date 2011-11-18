@@ -1,0 +1,34 @@
+<form method="get" action="{{ path('search_redirect') }}">
+    <div>
+        <span class="i search"><a href="#">L</a></span>
+        <input type="text" name="q" placeholder="{{ 'search.input' | trans }}" value="{% if searchQuery is defined %}{{ searchQuery }}{% endif %}" />
+        <span class="i closefilters"><a href="#">'</a></span>
+    </div>
+
+    <div class="filters">
+        <ul>
+            <li>
+                <input type="checkbox" name="c[]" id="search-categories-blog" value="blog" checked="checked" />
+                <label for="search-categories-blog">{{ 'search.category.blog' | trans }}</label>
+            </li>
+            <li>
+                <input type="checkbox" name="c[]" id="search-categories-tutorial" value="tutorial" checked="checked" />
+                <label for="search-categories-tutorial">{{ 'search.category.tutorial' | trans }}</label>
+            </li>
+            <li>
+                <input type="checkbox" name="c[]" id="search-categories-snippet" value="snippet" checked="checked" />
+                <label for="search-categories-snippet">{{ 'search.category.snippet' | trans }}</label>
+            </li>
+            <li>
+                <input type="checkbox" name="c[]" id="search-categories-watch" value="watch" checked="checked" />
+                <label for="search-categories-watch">{{ 'search.category.watch' | trans }}</label>
+            </li>
+        </ul>
+
+        <p>{{ 'search.message' | trans }}</p>
+
+        <p class="submit">
+            <input type="submit" value="{{ 'search.submit' | trans }}" />
+        </p>
+    </div>
+</form>

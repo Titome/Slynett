@@ -1,0 +1,32 @@
+{% extends "SlyCoreBundle:Layout:layout.html.twig" %}
+
+{% block title %}{{ 'search.seo.title' | trans({'%query%': searchQuery}) }}{% endblock title %}
+{% block description %}{{ 'search.seo.description' | trans({'%query%': searchQuery}) }}{% endblock description %}
+
+{% block content %}
+    <h2>{{ 'search.title_count' | trans({'%count%': items | length, '%query%': searchQuery}) }}</h2>
+
+    <ul>
+        {% for item in items %}
+            <li>
+                <strong>
+                    {% for k, cat in item.categories %}
+                        {{ cat }}{% if k+1 < item.categories | length %} / {% endif %}
+                    {% endfor %}
+                </strong>
+
+                -
+                
+                {% if item.type == 'watch' %}
+                    <a href="{{ item.minilink }}" onclick="var w=window.open(this.href); w.focus(); return false;" title="{{ item }}">
+                        {{ item }}
+                    </a>
+                {% else %}
+                    <a href="{{ url('%type%_show' | replace({'%type%': item.type}), {'slug': item.slug}) }}" title="{{ item }}">
+                        {{ item }}
+                    </a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

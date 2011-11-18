@@ -4,10 +4,8 @@ namespace Sly\CoreBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-
 class ToolController extends Controller
 {
-    
     public function sitemapAction($_format = 'xml')
     {
         $staticRoutes = array('homepage', 'terms', 'credits', 'contact');

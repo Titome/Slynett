@@ -5,42 +5,7 @@
     <h1 id="logo"><a href="{{ path('homepage') }}" title="{{ project.name }}"></a></h1>
 
     <section id="search" role="search">
-        <form>
-            <div>
-                <span class="i search"><a href="#">L</a></span>
-                <input type="text" placeholder="Recherche..." />
-                <span class="i closefilters"><a href="#">'</a></span>
-            </div>
-
-            <div class="filters">
-                <ul>
-                    <li>
-                        <input type="checkbox" name="categories[]" id="search-categories-blog" value="blog" checked="checked" />
-                        <label for="search-categories-blog">Blog</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="categories[]" id="search-categories-tutorial" value="tutorial" checked="checked" />
-                        <label for="search-categories-tutorial">Tutoriels</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="categories[]" id="search-categories-snippet" value="snippet" checked="checked" />
-                        <label for="search-categories-snippet">Snippets</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="categories[]" id="search-categories-watch" value="watch" checked="checked" />
-                        <label for="search-categories-watch">Veille</label>
-                    </li>
-                </ul>
-
-                <p>
-                    Sélectionner les sections dans lesquelles vous souhaitez porter votre recherche.
-                </p>
-
-                <p class="submit">
-                    <input type="submit" name="search" value="Rechercher" />
-                </p>
-            </div>
-        </form>
+        {% include 'SlyCoreBundle:Block:searchForm.html.twig' %}
     </section>
 </header>
 

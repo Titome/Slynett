@@ -25,15 +25,11 @@ class TwitterWatchCommand extends ContainerAwareCommand
         
         $lastTweet = $em->getRepository('SlyContentBundle:Content')->getLastTweet();
         
-        $lastTweetId = null;
-        
-        foreach ($lastTweet as $t)
+        if ($lastTweet)
         {
-            $lastTweetId = $t->getSocialNetworkId();
-            break;
+            $lastTweetId = $lastTweet->getSocialNetworkId();
+            $twitter->setLastTweetId($lastTweetId);
         }
-        
-        $twitter->setLastTweetId($lastTweetId?$lastTweetId:null);
         
         foreach ($twitter->getTweets() as $t)
         {

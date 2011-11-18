@@ -3,6 +3,7 @@
 namespace Sly\ContentBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sly\ContentBundle\Form\SearchType;
 
 class ComponentController extends Controller
 {

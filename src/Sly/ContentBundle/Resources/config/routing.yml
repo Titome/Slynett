@@ -7,7 +7,15 @@ feed_type:
 feed:
     pattern: /feed
     defaults: { _controller: SlyContentBundle:Default:feed }
+    
+search_redirect:
+    pattern: /recherche-go
+    defaults: { _controller: SlyContentBundle:Default:searchRedirect }
 
+search:
+    pattern: /recherche/{categories}/{query}
+    defaults: { _controller: SlyContentBundle:Default:search }
+    
 _resource:
     resource: "@SlyContentBundle/Resources/config/routing_resource.yml"
     prefix:   /ressources

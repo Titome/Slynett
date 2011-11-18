@@ -128,8 +128,11 @@ class ContentRepository extends EntityRepository
             ->leftJoin('c.categories', 'cat')
             ->where('c.status = true')
             ->andWhere('c.publishedAt <= :now')
-            ->andWhere('c.type NOT IN (\'watch\',\'twitter\')')
-            ->setParameter('now', date('Y-m-d H:i:s'))
+            ->andWhere('c.type NOT IN (:excludedTypes)')
+            ->setParameters(array(
+                'now' => date('Y-m-d H:i:s'),
+                'excludedTypes' => array('watch', 'twitter')
+            ))
             ->orderBy('c.publishedAt', 'DESC');
         
         return $q->getQuery()->getResult();
@@ -143,6 +146,24 @@ class ContentRepository extends EntityRepository
             ->setParameter('type', 'twitter')
             ->orderBy('c.socialNetworkId', 'DESC')
             ->setMaxResults(1);
+        
+        return $q->getQuery()->getOneOrNullResult();
+    }
+    
+    public function searchContent($query, $categories, $count)
+    {
+        $q = $this->createQueryBuilder('c')
+            ->select('c, cat')
+            ->leftJoin('c.categories', 'cat')
+            ->where('c.status = true')
+            ->andWhere('c.type IN (:type)')
+            ->andWhere('(c.title LIKE :query) OR (c.tags LIKE :query)')
+            ->setParameters(array(
+                'type' => $categories,
+                'query' => '%'.$query.'%',
+            ))
+            ->orderBy('c.publishedAt', 'DESC')
+            ->setMaxResults($count);
         
         return $q->getQuery()->getResult();
     }
