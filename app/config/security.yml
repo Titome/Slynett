@@ -5,11 +5,12 @@ security:
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
-
+        
     providers:
         in_memory:
-            users:
-                ph3: { password: %admin_pass%, roles: [ 'ROLE_ADMIN' ] }
+            memory:
+                users:
+                    user: { password: %admin_pass%, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:

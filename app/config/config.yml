@@ -19,7 +19,6 @@ framework:
         http: [%cdn_main%]
         ssl: [%cdn_main_https%]
     session:
-        default_locale: %locale%
         auto_start: true
 
 # Twig Configuration
