@@ -4,6 +4,7 @@ imports:
 
 framework:
     #esi: ~
+    default_locale: %locale%
     translator: { fallback: %locale% }
     secret: %secret%
     charset: UTF-8
@@ -13,7 +14,7 @@ framework:
     validation: { enable_annotations: true }
     templating:
       engines: ['twig']
-      assets_version: 2011100301
+      assets_version: 2011111901
       assets_version_format: %%s?v=%%s
       assets_base_urls:
         http: [%cdn_main%]
@@ -116,4 +117,4 @@ avalanche_imagine:
             options: { size: [300, 200], mode: outbound }
         show:
             type: thumbnail
-            options: { size: [660, 160], mode: outbound }
+            options: { size: [620, 180], mode: outbound }

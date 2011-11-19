@@ -109,7 +109,7 @@ article.tutorial {
    background-color: #fff;
 }
 
-article.tutorial:nth-child(3n+2) {
+article.tutorial:nth-child(3n+3) {
     margin-right: 0;
 }
 
@@ -376,7 +376,7 @@ article.snippet {
     margin: 0 40px 10px 0;
 }
 
-article.snippet:nth-child(2n+1) {
+article.snippet:nth-child(2n+2) {
     margin-right: 0;
 }
 
@@ -486,6 +486,37 @@ article.show section.body {
     margin-bottom: 40px;
     padding: 20px;
     background-color: #fff;
+}
+
+article.show section.body div.intro ul {
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+article.show section.body div.intro ul li {
+    float: right;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+article.show section.body div.intro ul li a,
+article.show section.body div.intro ul li a:visited {
+    display: block;
+    padding: 3px 6px;
+    text-transform: uppercase;
+    background-color: #eee;
+    color: #aaa;
+    text-decoration: none;
+}
+
+article.show section.body div.intro ul li a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+article.show .content-show .moc.content {
+    float: right;
+    margin: 0 0 20px 20px;
 }
 
 article.show .content-show a,

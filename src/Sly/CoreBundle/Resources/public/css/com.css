@@ -13,3 +13,16 @@
 .moc.sidebar.mimg img:last-child {
     margin-bottom: 0;
 }
+
+.moc.content {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.moc.content.mimg img {
+    margin-right: 50px;
+}
+
+.moc.content.mimg img:last-child {
+    margin-right: 0;
+}

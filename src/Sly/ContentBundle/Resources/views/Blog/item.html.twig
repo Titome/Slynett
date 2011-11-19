@@ -47,6 +47,8 @@
         </div>
 
         <div class="content-show">
+            {% include 'SlyCoreBundle:Block/Com/Content:250x250.html.twig' %}
+            
             {{ item.content | contentFilters | raw }}
         </div>
     </section>

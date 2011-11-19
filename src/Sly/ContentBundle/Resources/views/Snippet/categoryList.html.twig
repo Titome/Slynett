@@ -8,6 +8,8 @@
     
     <nav>{% render 'SlyContentBundle:Component:categories' with {'type': 'snippet'} %}</nav>
     
+    {% include 'SlyCoreBundle:Block/Com/Content:728x90.html.twig' %}
+    
     <div class="clear"></div>
 
     {% for item in contentPaginator %}

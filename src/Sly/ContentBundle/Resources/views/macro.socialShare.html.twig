@@ -8,10 +8,10 @@
             <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
         </li>
         <li class="twitter">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="horizontal" data-lang="{{ app.session.locale }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="horizontal" data-lang="{{ app.request.locale }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
         </li>
         <li class="googleplus">
-            <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: '{{ app.session.locale }}'}</script>
+            <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: '{{ app.request.locale }}'}</script>
             <g:plusone href="{{ link }}"></g:plusone>
         </li>
         <li class="linkedin">
@@ -24,7 +24,7 @@
 {% macro shareRButtons(link, title) %}
     <ul class="sharebuttons horizontal">   
         <li class="twitter">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="horizontal" data-lang="{{ app.session.locale }}" data-via="{{ networks.twitter.username }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="horizontal" data-lang="{{ app.request.locale }}" data-via="{{ networks.twitter.username }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
         </li>
     </ul>
 {% endmacro %}
@@ -39,10 +39,10 @@
             <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
         </li>
         <li class="twitter">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="vertical" data-lang="{{ app.session.locale }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="vertical" data-lang="{{ app.request.locale }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
         </li>
         <li class="googleplus">
-            <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: '{{ app.session.locale }}'}</script>
+            <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: '{{ app.request.locale }}'}</script>
             <g:plusone size="tall" href="{{ link }}"></g:plusone>
         </li>
         <li class="linkedin">
@@ -58,10 +58,10 @@
             <iframe src="http://www.facebook.com/plugins/like.php?href={{ link }}&amp;layout=box_count&amp;show_faces=false&amp;width=60&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:60px; height:65px;"></iframe>
         </li>
         <li class="twitter">
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="vertical" data-lang="{{ app.session.locale }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="vertical" data-lang="{{ app.request.locale }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
         </li>
         <li class="googleplus">
-            <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: '{{ app.session.locale }}'}</script>
+            <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: '{{ app.request.locale }}'}</script>
             <g:plusone size="tall" href="{{ link }}"></g:plusone>
         </li>
     </ul>

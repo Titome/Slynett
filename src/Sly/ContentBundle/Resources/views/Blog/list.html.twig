@@ -13,6 +13,8 @@
     {% endif %}
     
     {% for k, item in contentPaginator %}
+        {% if k == 1 %}{% include 'SlyCoreBundle:Block/Com/Content:468x60.html.twig' %}{% endif %}
+    
         {% include 'SlyContentBundle:Blog:mediumItem.html.twig' with {'k': k, 'item': item } %}
     {% else %}
         <p class="empty">{{ 'list.nocontent' | trans({}, 'blog') }}</p>

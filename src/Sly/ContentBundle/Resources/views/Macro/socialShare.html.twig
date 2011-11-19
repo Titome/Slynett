@@ -3,7 +3,7 @@
 {% endmacro %}
 
 {% macro twitterButton(link, title) %}
-    <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="horizontal" data-lang="{{ app.session.locale }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{ link }}" data-text="{{ title }}" data-counturl="{{ link }}" data-count="horizontal" data-lang="{{ app.request.locale }}">{{ 'share.buttons.twitter' | trans }}</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 {% endmacro %}
 
 {% macro facebookShareButton(link, title) %}
@@ -12,7 +12,7 @@
 {% endmacro %}
 
 {% macro googlePlusButton(link, title) %}
-    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: '{{ app.session.locale }}'}</script>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: '{{ app.request.locale }}'}</script>
     <g:plusone href="{{ link }}"></g:plusone>
 {% endmacro %}
 

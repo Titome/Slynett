@@ -7,6 +7,8 @@
     <h2 role="contentinfo">{{ 'category.title' | trans({'%catName%': category}, 'tutorial') }}</h2>
     
     <nav>{% render 'SlyContentBundle:Component:categories' with {'type': 'tutorial', 'activeCategory': category} %}</nav>
+    
+    {% include 'SlyCoreBundle:Block/Com/Content:728x90.html.twig' %}
 
     {% for k, item in contentPaginator %}
         {% include 'SlyContentBundle:Tutorial:mediumItem.html.twig' with {'k': k, 'item': item } %}
