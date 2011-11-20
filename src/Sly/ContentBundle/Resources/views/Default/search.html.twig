@@ -4,29 +4,11 @@
 {% block description %}{{ 'search.seo.description' | trans({'%query%': searchQuery}) }}{% endblock description %}
 
 {% block content %}
-    <h2>{{ 'search.title_count' | trans({'%count%': items | length, '%query%': searchQuery}) }}</h2>
+    <h2 role="contentinfo">{{ 'search.title_count' | trans({'%count%': items | length, '%query%': searchQuery}) }}</h2>
+    
+    {% include 'SlyCoreBundle:Block/Com/Content:728x90.html.twig' %}
 
-    <ul>
-        {% for item in items %}
-            <li>
-                <strong>
-                    {% for k, cat in item.categories %}
-                        {{ cat }}{% if k+1 < item.categories | length %} / {% endif %}
-                    {% endfor %}
-                </strong>
-
-                -
-                
-                {% if item.type == 'watch' %}
-                    <a href="{{ item.minilink }}" onclick="var w=window.open(this.href); w.focus(); return false;" title="{{ item }}">
-                        {{ item }}
-                    </a>
-                {% else %}
-                    <a href="{{ url('%type%_show' | replace({'%type%': item.type}), {'slug': item.slug}) }}" title="{{ item }}">
-                        {{ item }}
-                    </a>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+    {% for item in items %}
+        {% include 'SlyContentBundle:Default:searchItem.html.twig' %}
+    {% endfor %}
 {% endblock content %}

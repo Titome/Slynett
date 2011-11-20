@@ -12,6 +12,7 @@ nav[role=navigation] ul.menu li {
     float:left;
     background: #fff;
     margin: 0 5px;
+    border-bottom: 10px solid #fff;
     -webkit-transition: all 300ms linear;
     -moz-transition: all 300ms linear;
     -o-transition: all 300ms linear;

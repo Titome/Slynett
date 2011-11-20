@@ -18,12 +18,8 @@
 {% endblock topMainTitle %}
 
 {% block content %}
-    <section class="introduction">
-        <blockquote>
-            {{ 'contact.seo.description' | trans({}, 'page') }}
-        </blockquote>
-    </section>
-    
+    <h2 role="contentinfo">{{ 'contact.title' | trans({}, 'page') }}</h2>
+
     <p>
         {{ 'contact.email.msg1' | trans({}, 'page') }}
         <a href="mailto:{{ project.email | textEncode | raw }}">{{ project.email | textEncode | raw }}</a> /

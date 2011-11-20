@@ -441,6 +441,65 @@ article.snippet a.btn {
     margin: 0 0 10px 20px;
 }
 
+/* ------------- SEARCH - List */
+
+article.search {
+    overflow: hidden;
+    float: left;
+    margin: 0 80px 0 0;
+    width: 285px;
+    height: 150px;
+}
+
+article.search:nth-child(3n+2) {
+    margin-right: 0;
+}
+
+article.search header {
+}
+
+article.search header h3 {
+    font-weight: normal;
+}
+
+article.search header a.type,
+article.search header a.type:visited {
+    margin-right: 10px;
+    display: inline-block;
+    padding: 10px;
+    background-color: #fff;
+    color: #aaa;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+article.search header a.type:hover {
+    color: #000;
+}
+
+article.search div {
+    overflow: hidden;
+    padding: 10px;
+    background-color: #fff;
+}
+
+article.search div a,
+article.search div a:visited {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+article.search div a:hover {
+    color: #116fe3;
+}
+
+article.search div img {
+    float: left;
+    margin: 0 20px 0 0;
+    width: 70px;
+    height: auto;
+}
+
 /* ------------- General / Article Content Show */
 
 #main article.show header section[role=contentinfo] h2 {

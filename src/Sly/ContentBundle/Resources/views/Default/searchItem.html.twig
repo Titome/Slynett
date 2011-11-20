@@ -1,0 +1,39 @@
+{% spaceless %}
+    <article class="search">
+        <header>
+            <h3>
+                <a href="{{ path(item.type) }}" class="type">
+                    {{ 'type.%type%' | replace({'%type%': item.type}) | trans }}
+                </a>
+
+                <span class="categories">
+                    {% if item.categories | length %}
+                        {% for k, cat in item.categories %}
+                            <a href="{{ path('%type%_category' | replace({'%type%': item.type}), {'slug': cat.slug}) }}">{{ cat }}</a>
+
+                            {% if k+1 < item.categories | length %} / {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </span>
+            </h3>
+        </header>
+
+        <div>
+            {% if item.picture %}
+                <a href="{{ path('%type%_show' | replace({'%type%': item.type}), {'slug': item.slug }) }}" title="{{ item }}">
+                    <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('thumbnail') }}" alt="{{ item }}" class="item-picture" />
+                </a>
+            {% endif %}
+            
+            {% if item.type == 'watch' %}
+                <a href="{{ item.minilink }}" onclick="var w=window.open(this.href); w.focus(); return false;" title="{{ item }}">
+                    {{ item }}
+                </a>
+            {% else %}
+                <a href="{{ url('%type%_show' | replace({'%type%': item.type}), {'slug': item.slug}) }}" title="{{ item }}">
+                    {{ item }}
+                </a>
+            {% endif %}
+        </div>
+    </article>
+{% endspaceless %}
