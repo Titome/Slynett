@@ -28,7 +28,7 @@ label {
     cursor: pointer;
 }
 
-input {
+input, select, button, textarea {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: 1em;
 }
@@ -164,7 +164,7 @@ nav.sec {
 
 nav.sec ul.menu li {
     float: left;
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
 nav.sec ul.menu li:last-child {
@@ -173,13 +173,28 @@ nav.sec ul.menu li:last-child {
     border-right: none;
 }
 
-nav.sec ul.menu li a {
+nav.sec ul.menu li a,
+nav.sec ul.menu li a:visited {
+    display: block;
+    padding: 10px;
     text-shadow: 1px 1px 1px #fff;
+    text-decoration: none;
+}
+
+nav.sec ul.menu li a:hover {
+    text-decoration: underline;
 }
 
 nav.sec ul.menu li.active a,
 nav.sec ul.menu li.active a:visited {
-    color: #116fe3;
+    color: #fff;
+    background-color: #116fe3;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+nav.sec ul.menu li.active a:hover {
+    text-decoration: none;
 }
 
 #footer {
@@ -187,8 +202,8 @@ nav.sec ul.menu li.active a:visited {
     margin-top: 40px;
     padding: 20px 0 40px 0;
     line-height: 22px;
-    border-top: 10px solid #fff;
     text-align: right;
+    background-color: #fff;
 }
 
 #footer,
@@ -275,7 +290,9 @@ nav.sec ul.menu li.active a:visited {
 }
 
 .btn,
-.btn:visited {
+.btn:visited,
+input[type=submit],
+button {
     display: inline-block;
     padding: 5px 10px;
     background-color: #aaa;
@@ -283,6 +300,7 @@ nav.sec ul.menu li.active a:visited {
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     text-decoration: none;
     text-transform: uppercase;
+    border: none;
     -webkit-transition: all 300ms linear;
     -moz-transition: all 300ms linear;
     -o-transition: all 300ms linear;
@@ -290,7 +308,9 @@ nav.sec ul.menu li.active a:visited {
     transition: all 300ms linear;
 }
 
-.btn:hover {
+.btn:hover,
+input[type=submit]:hover,
+button:hover {
     background-color: #116fe3;
     text-decoration: none !important;
 }
@@ -321,4 +341,57 @@ ul.share li:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
+}
+
+/* --- Forms -------------------------------- */
+
+div.form {
+    margin: 40px 0;
+}
+
+div.form div {
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    width: 440px;
+}
+
+div.form div label {
+    display: block;
+    margin-bottom: 2px;
+    color: #888;
+}
+
+div.form div input[type=text],
+div.form div input[type=url],
+div.form div input[type=email],
+div.form div input[type=password],
+div.form div select,
+div.form div textarea {
+    width: 390px;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    background-color: #fff;
+}
+
+div.form div textarea {
+    height: 120px;
+}
+
+div.form input[type=submit],
+div.form button {
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px;
+}
+
+div.form textarea,
+div.form input[type=submit],
+div.form button {
+    width: auto;
+}
+
+div.form .mlkqsd {
+    display: none;
 }

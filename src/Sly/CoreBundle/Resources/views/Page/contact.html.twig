@@ -1,21 +1,7 @@
-{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
+{% extends "SlyCoreBundle:Layout:layout.html.twig" %}
 
 {% block title %}{{ 'contact.seo.title' | trans({}, 'page') }}{% endblock title %}
 {% block description %}{{ 'contact.seo.description' | trans({}, 'page') }}{% endblock description %}
-
-{% block rightSidebar %}
-    <blockquote>{{ 'contact.sidebar.follow' | trans({'%name%': project.name}, 'page') }}</blockquote>
-
-    {% include 'SlyCoreBundle:Block:socialNetworks.html.twig' %}
-{% endblock rightSidebar %}
-
-{% set topMain = true %}
-
-{% block topMainTitle %}
-    <a href="{{ path('contact') }}" title="{{ 'contact.title' | trans({}, 'page') }}">
-        {{ 'contact.title' | trans({}, 'page') }}
-    </a>
-{% endblock topMainTitle %}
 
 {% block content %}
     <h2 role="contentinfo">{{ 'contact.title' | trans({}, 'page') }}</h2>
@@ -48,7 +34,9 @@
             </div>
 
             <div class="submit">
-              <input type="submit" value="{{ 'contact.form.submit' | trans({}, 'page') }}" />  
+              <button type="submit">
+                  {{ 'contact.form.submit' | trans({}, 'page') }}
+              </button>
             </div>
         </div>
         
