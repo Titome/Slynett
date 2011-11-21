@@ -358,8 +358,9 @@ div.form div {
 
 div.form div label {
     display: block;
-    margin-bottom: 2px;
-    color: #888;
+    margin-bottom: 5px;
+    color: #aaa;
+    text-transform: uppercase;
 }
 
 div.form div input[type=text],
@@ -369,7 +370,7 @@ div.form div input[type=password],
 div.form div select,
 div.form div textarea {
     width: 390px;
-    padding: 5px;
+    padding: 10px;
     font-size: 16px;
     border: none;
     background-color: #fff;
