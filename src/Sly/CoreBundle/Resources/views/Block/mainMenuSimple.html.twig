@@ -1,0 +1,25 @@
+{% spaceless %}
+    <ul class="menu primary mainmenu">
+        <li class="{{ app.request.attributes.get('_route') | checkActive(['homepage']) }}">
+            <a href="{{ path('homepage') }}">{{ 'core.menu.homepage' | trans }}</a>
+        </li>
+        <li class="{{ app.request.attributes.get('_route') | checkActive(['blog', 'blog_category', 'blog_show']) }}">
+            <a href="{{ path('blog') }}">{{ 'core.menu.blog.label' | trans }}</a>
+        </li>
+        <li class="{{ app.request.attributes.get('_route') | checkActive(['tutorial', 'tutorial_category', 'tutorial_show']) }}">
+            <a href="{{ path('tutorial') }}">{{ 'core.menu.tutorials.label' | trans }}</a>
+        </li>
+        <li class="{{ app.request.attributes.get('_route') | checkActive(['watch', 'watch_category']) }}">
+            <a href="{{ path('watch') }}">{{ 'core.menu.watch.label' | trans }}</a>
+        </li>
+        <li class="{{ app.request.attributes.get('_route') | checkActive(['snippet', 'snippet_category', 'snippet_show']) }}">
+            <a href="{{ path('snippet') }}">{{ 'core.menu.snippets.label' | trans }}</a>
+        </li>
+        <li class="na {{ app.request.attributes.get('_route') | checkActive(['resource']) }}">
+            <a href="{{ path('resource') }}">{{ 'core.menu.resources.label' | trans }}</a>
+        </li>
+        <li class="na">
+            <a href="{{ path('homepage') }}">{{ 'core.menu.projects.label' | trans }}</a>
+        </li>
+    </ul>
+{% endspaceless %}

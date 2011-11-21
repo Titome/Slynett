@@ -24,4 +24,4 @@ security:
                 realm: "Admin - Restricted access"
 
     access_control:
-        - { path: ^/_admin/*, roles: ROLE_ADMIN }
+        # - { path: ^/_admin/*, roles: ROLE_ADMIN }

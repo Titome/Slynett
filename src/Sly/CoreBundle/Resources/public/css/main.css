@@ -182,6 +182,63 @@ nav.sec ul.menu li.active a:visited {
     color: #116fe3;
 }
 
+#footer {
+    overflow: hidden;
+    margin-top: 40px;
+    padding: 20px 0 40px 0;
+    line-height: 22px;
+    border-top: 10px solid #fff;
+    text-align: right;
+}
+
+#footer,
+#footer a,
+#footer a:visited {
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+#footer {
+    color: #888;
+}
+
+#footer a,
+#footer a:visited {
+    color: #000;
+}
+
+#footer ul.menu.second a,
+#footer ul.menu.second a:visited {
+    color: #888;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+#footer aside.left {
+    float: left;
+    width: 600px;
+}
+
+#footer aside.left ul {
+    overflow: hidden;
+}
+
+#footer aside.left ul li {
+    float: left;
+    margin-right: 20px;
+}
+
+#footer aside.left ul li:last-child {
+    margin-right: 0;
+}
+
+#footer aside.right {
+    margin-left: 640px;
+    text-align: right;
+}
+
 .pager {
     clear: both;
     overflow: hidden;

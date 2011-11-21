@@ -1,5 +1,5 @@
 {% spaceless %}
-    <ul class="menu">
+    <ul class="menu primary mainmenu">
         <li class="{{ app.request.attributes.get('_route') | checkActive(['blog', 'blog_category', 'blog_show']) }}">
             <a href="{{ path('blog') }}">
                 <span class="icon">B</span>

@@ -1,9 +1,11 @@
-<ul class="menu">
-    <li class="{{ app.request.attributes.get('_route') | checkActive(['homepage']) }}">
-        <a href="{{ path('homepage') }}">
-            {{ 'core.menu.homepage' | trans }}
-        </a>
-    </li>
+<ul class="menu second">
+    {% if noHome is not defined %}
+        <li class="{{ app.request.attributes.get('_route') | checkActive(['homepage']) }}">
+            <a href="{{ path('homepage') }}">
+                {{ 'core.menu.homepage' | trans }}
+            </a>
+        </li>
+    {% endif %}
     <li class="{{ app.request.attributes.get('_route') | checkActive(['author', 'author_portfolio', 'author_skills', 'author_hire']) }}">
         <a href="{{ path('author') }}">
             {{ 'core.menu.author' | trans }}

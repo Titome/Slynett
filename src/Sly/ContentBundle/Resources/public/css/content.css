@@ -446,8 +446,8 @@ article.snippet a.btn {
 article.search {
     overflow: hidden;
     float: left;
-    margin: 0 80px 0 0;
-    width: 285px;
+    margin: 0 50px 0 0;
+    width: 308px;
     height: 150px;
 }
 
@@ -467,14 +467,14 @@ article.search header a.type:visited {
     margin-right: 10px;
     display: inline-block;
     padding: 10px;
+    font-weight: bold;
     background-color: #fff;
-    color: #aaa;
     text-decoration: none;
     text-transform: uppercase;
 }
 
 article.search header a.type:hover {
-    color: #000;
+    text-decoration: underline;
 }
 
 article.search div {
@@ -485,7 +485,6 @@ article.search div {
 
 article.search div a,
 article.search div a:visited {
-    font-weight: bold;
     text-decoration: none;
 }
 

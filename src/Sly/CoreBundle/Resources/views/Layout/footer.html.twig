@@ -1,0 +1,14 @@
+<footer id="footer">
+    <section class="wrap">
+        <aside class="left">
+            {% include 'SlyCoreBundle:Block:mainMenuSimple.html.twig' %}
+            {% include 'SlyCoreBundle:Block:secMenu.html.twig' with {'noHome': true} %}
+        </aside>
+        
+        <aside class="right">
+            &copy; 2011
+            <a href="{{ path('homepage') }}">{{ project.name }}</a>
+            - All rights reserved
+        </aside>
+    </section>
+</footer>
