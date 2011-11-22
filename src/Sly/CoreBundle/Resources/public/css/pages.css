@@ -1,5 +1,5 @@
 section.page h3 {
-    margin: 20px 0;
+    margin: 40px 0;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 22px;
     text-shadow: 1px 1px 1px #fff;
@@ -46,46 +46,51 @@ div.author section.page div.content img.author {
      float: left;
 }
 
-div.author section.page div.content.author-skills aside {
+div.author section.page div.author-skills aside {
     overflow: hidden;
     float: left;
-    width: 31%;
-    margin-right: 2%;
+    width: 27%;
+    margin-right: 6%;
     margin-bottom: 20px;
 }
 
-div.author section.page div.content.author-skills aside:nth-child(3n+3) {
+div.author section.page div.author-skills aside:nth-child(3n+3) {
     width: 33%;
     margin-right: 0;
 }
 
-div.author section.page div.content.author-skills aside h4 {
+div.author section.page div.author-skills aside h4 {
     margin-bottom: 10px;
     color: #116fe3;
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
+    font-weight: normal;
     text-transform: uppercase;
 }
 
-div.author section.page div.content.author-skills aside ul li {
+div.author section.page div.author-skills aside ul li {
     margin-bottom: 5px;
     padding-bottom: 5px;
     border-bottom: 1px dashed #ddd;
     color: #888;
 }
 
-div.author section.page div.content.author-skills aside ul li:last-child {
+div.author section.page div.author-skills aside ul li:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
 }
 
-div.author section.page div.content.author-skills aside ul li a,
-div.author section.page div.content.author-skills aside ul li a:visited {
+div.author section.page div.author-skills aside ul li a,
+div.author section.page div.author-skills aside ul li a:visited {
     color: #000;
     text-decoration: none;
 }
 
-div.author section.page div.content.author-skills aside ul li a:hover {
+div.author section.page div.author-skills aside ul li a:hover {
     text-decoration: underline;
+}
+
+div.author section.page div.author-portfolio p {
+    margin: 20px 0;
 }

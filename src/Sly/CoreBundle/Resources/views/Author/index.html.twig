@@ -11,11 +11,11 @@
     <div class="author" id="author">
         <h2 role="contentinfo">{{ 'title' | trans({}, 'author') }}</h2>
 
-        <nav id="author-main">{% include 'SlyCoreBundle:Author:mainMenu.html.twig' %}</nav>
+        <nav id="author-main">{% include 'SlyCoreBundle:Author:Block/mainMenu.html.twig' %}</nav>
 
         <section class="page">
             <div class="content">
-                <img src="{{ '/uploads/author-cedric-dugat.jpg' | apply_filter('thumbnail') }}" alt="{{ 'presentation.title' | trans({}, 'author') }}" class="medium author" />
+                <img src="{{ '/uploads/author/cedric-dugat.jpg' | apply_filter('thumbnail') }}" alt="{{ 'presentation.title' | trans({}, 'author') }}" class="medium author" />
 
                 <p>{{ 'presentation' | trans({}, 'author') | raw }}</p>
             </div>
@@ -26,7 +26,7 @@
             </h3>
             
             <div class="content author-skills">
-                {% include 'SlyCoreBundle:Author:skills.html.twig' %}
+                {% include 'SlyCoreBundle:Author:Block/skills.html.twig' %}
             </div>
             
             <h3 id="author-portfolio">
@@ -34,8 +34,10 @@
                 <a href="#author-main" class="sgoto">{{ 'totop' | trans({}, 'author') }}</a>
             </h3>
             
-            <div class="content">
-                ---
+            <div class="author-portfolio">
+                <p>{{ 'portfolio.message' | trans({}, 'author') }}</p>
+                
+                {% include 'SlyCoreBundle:Author:Block/portfolio.html.twig' %}
             </div>
             
             <h3 id="author-contact">
@@ -43,7 +45,7 @@
                 <a href="#author-main" class="sgoto">{{ 'totop' | trans({}, 'author') }}</a>
             </h3>
             
-            <div class="content">
+            <div class="content author-contact">
                 ---
             </div>
         </section>

@@ -1,5 +1,8 @@
 jQuery(function($){
     $('div.tabs').tabs();
+    
+    /* --- Others -------------------------- */
+    
     $('select, input:checkbox, input:radio, input:file').uniform();
     
     /* --- Main Search ----------------- */
