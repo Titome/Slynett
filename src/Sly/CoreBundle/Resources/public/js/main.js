@@ -42,10 +42,8 @@ jQuery(function($){
 
     $('.go-share').click(function(){
         var parentTabs = $('ul.share:last').parents('div.tabs');
-        var zIndexOverlay = $('#overlay').css('z-index');
+        var zIndexOverlay = $('#overlay').css('zIndex');
         var shareElementZIndex = (zIndexOverlay*1) + 1;
-        
-        console.log(shareElementZIndex);
         
         $('#overlay').fadeIn();
         
@@ -73,6 +71,18 @@ jQuery(function($){
                 shareElement.css('zIndex', 0);
             }), 2500);
         }
+        
+        $('#overlay').css('zIndex', zIndexOverlay);
+        
+        return false;
+    });
+    
+    /* --- Scroll To Links ------------- */
+    
+    $('.sgoto').click(function(){
+        var linkDestinationID = $(this).attr('href');
+        
+        $.scrollTo(linkDestinationID, 800, { offset: -120 });
         
         return false;
     });
@@ -125,6 +135,13 @@ function letsShowItem()
 {
     if (window.location.hash == '')
         $.scrollTo('section[role=contentinfo] h2:first', 800, { offset: -100 });
+}
+
+/* --- Let's show Author --------------- */
+
+function letsShowAuthor()
+{
+    $.scrollTo('#author', 800, { offset: -130 });
 }
 
 /* --- SyntaxHighlighter --------------- */

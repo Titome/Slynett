@@ -1,24 +1,22 @@
 {% spaceless %}
-    <ul>
-        {% if withoutFirst is not defined %}
-            <li class="{{ app.request.attributes.get('_route') | checkActive(['author']) }}">
-                <a href="{{ path('author') }}" title="{{ 'menu.presentation' | trans({}, 'author') }}">
-                    {{ 'menu.presentation' | trans({}, 'author') }}
-                </a>
-            </li>
-        {% endif %}
-        <li class="{{ app.request.attributes.get('_route') | checkActive(['author_skills']) }}">
-            <a href="{{ path('author_skills') }}" title="{{ 'menu.skills' | trans({}, 'author') }}">
+    <ul class="categories">
+        <li class="active">
+            <a href="#author-main" class="sgoto">
+                {{ 'menu.presentation' | trans({}, 'author') }}
+            </a>
+        </li>
+        <li>
+            <a href="#author-skills" class="sgoto">
                 {{ 'menu.skills' | trans({}, 'author') }}
             </a>
         </li>
-        <li class="{{ app.request.attributes.get('_route') | checkActive(['author_portfolio']) }}">
-            <a href="{{ path('author_portfolio') }}" title="{{ 'menu.portfolio' | trans({}, 'author') }}">
+        <li>
+            <a href="#author-portfolio" class="sgoto">
                 {{ 'menu.portfolio' | trans({}, 'author') }}
             </a>
         </li>
-        <li class="{{ app.request.attributes.get('_route') | checkActive(['contact']) }}">
-            <a href="{{ path('contact', {'ref': 'me'}) }}" title="{{ 'menu.contact' | trans({}, 'author') }}">
+        <li>
+            <a href="#author-contact" class="sgoto">
                 {{ 'menu.contact' | trans({}, 'author') }}
             </a>
         </li>

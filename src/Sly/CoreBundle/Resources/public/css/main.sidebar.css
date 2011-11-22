@@ -17,21 +17,42 @@
 #main .sidebar section div.content {
     overflow: hidden;
     padding: 20px;
+    margin-bottom: 20px;
     background-color: #fff;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+}
+
+#main .sidebar section div.content:last-child {
+    margin-bottom: 0;
 }
 
 #main .sidebar section div.content ul.list {
-    overflow: hidden;
-    margin: 20px;
+    margin: 0;
 }
+
 #main .sidebar section div.content ul.list li {
     list-style: disc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px dashed #ddd;
+}
+
+#main .sidebar section div.content ul.list li:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
 }
 
 
-#main .sidebar section div.content p {
+#main .sidebar section div.content p,
+#main .sidebar section div.content ul {
     overflow: hidden;
     margin-bottom: 20px;
+}
+
+#main .sidebar section div.content p:last-child,
+#main .sidebar section div.content ul:last-child {
+    margin-bottom: 0;
 }
 
 /* --- Categories ----------------------- */
@@ -92,4 +113,20 @@
 
 #main .sidebar section div.content ul.networks li a:hover {
     background-color: #ddd;
+}
+
+/* --- E-mail ------------------------------ */
+
+#main .sidebar section.email a,
+#main .sidebar section.email a:visited {
+    display: inline-block;
+    font-weight: bold;
+    padding: 1px 2px;
+    text-decoration: none;
+}
+
+#main .sidebar section.email a:hover {
+    color: #fff;
+    background-color: #116fe3;
+    text-shadow: none;
 }

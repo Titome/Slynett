@@ -153,9 +153,6 @@ nav[role=navigation] {
     height: 120px;
     background-color: #fff;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
-    -moz-box-shadow: 0 0 10px #ddd;
-    -webkit-box-shadow: 0 0 10px #ddd;
-    box-shadow: 0 0 10px #ddd;
 }
 
 nav.sec {
@@ -350,10 +347,7 @@ div.form {
 }
 
 div.form div {
-    float: left;
     margin-bottom: 20px;
-    margin-right: 40px;
-    width: 440px;
 }
 
 div.form div label {
@@ -369,27 +363,47 @@ div.form div input[type=email],
 div.form div input[type=password],
 div.form div select,
 div.form div textarea {
-    width: 390px;
-    padding: 10px;
+    width: 90%;
+    padding: 8px;
+    border: 2px solid #fff;
     font-size: 16px;
     border: none;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+}
+
+div.form div input[type=text]:focus,
+div.form div input[type=url]:focus,
+div.form div input[type=email]:focus,
+div.form div input[type=password]:focus,
+div.form div select:focus,
+div.form div textarea:focus {
+    border-bottom-color: #ccc;
+}
+
+div.form div input[type=text]:required,
+div.form div input[type=url]:required,
+div.form div input[type=email]:required,
+div.form div input[type=password]:required,
+div.form div select:required,
+div.form div textarea:required {
+    background-color: rgba(255, 255, 255, 1);
 }
 
 div.form div textarea {
-    height: 120px;
+    height: 180px;
 }
 
-div.form input[type=submit],
-div.form button {
+div.form div input[type=submit],
+div.form div button {
     cursor: pointer;
     font-size: 18px;
     padding: 10px;
 }
 
-div.form textarea,
-div.form input[type=submit],
-div.form button {
+div.form div select,
+div.form div input[type=submit],
+div.form div button {
     width: auto;
 }
 

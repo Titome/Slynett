@@ -4,28 +4,7 @@
     <div class="content">
         <p>{{ 'sidebar.networks.message' | trans({'%name%': project.name}, 'watch') }}</p>
         
-        <ul class="networks">
-            <li>
-                <a href="{{ networks.twitter.url }}" class="sws twitter" onclick="var w=window.open(this.href);w.focus();return false;">
-                    <span></span> <span class="text">Twitter</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ networks.facebook.url }}" class="sws facebook" onclick="var w=window.open(this.href);w.focus();return false;">
-                    <span></span> <span class="text">Facebook</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ networks.linkedin }}" class="sws linkedin" onclick="var w=window.open(this.href);w.focus();return false;">
-                    <span></span> <span class="text">LinkedIn</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ networks.googleplus }}" class="sws googleplus" onclick="var w=window.open(this.href);w.focus();return false;">
-                    <span></span> <span class="text">Google+</span>
-                </a>
-            </li>
-        </ul>
+        {% include 'SlyCoreBundle:Block:socialNetworks.html.twig' %}
     </div>
 </section>
 

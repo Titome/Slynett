@@ -1,0 +1,42 @@
+{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
+
+{% block title %}{{ 'contact.seo.title' | trans({}, 'page') }}{% endblock title %}
+{% block description %}{{ 'contact.seo.description' | trans({}, 'page') }}{% endblock description %}
+
+{% block rightSidebar %}
+    {% include 'SlyCoreBundle:Page:Contact/rightSidebar.html.twig' %}
+{% endblock rightSidebar %}
+
+{% block content %}
+    <h2 role="contentinfo">{{ 'contact.title' | trans({}, 'page') }}</h2>
+
+    {% if app.session.hasFlash('success') %}
+        <section class="flash success">
+            <strong>{{ app.session.flash('success') }}</strong>
+        </section>
+    {% endif %}
+    
+    <form action="{{ path('contact') }}" method="post" {{ form_enctype(contactForm) }}>
+        {{ form_errors(contactForm) }}
+        
+        <div class="form">
+            {{ form_row(contactForm.name, {'label': 'contact.form.name' | trans({}, 'page')}) }}
+            {{ form_row(contactForm.email, {'label': 'contact.form.email' | trans({}, 'page')}) }}
+            {{ form_row(contactForm.twitter, {'label': 'contact.form.twitter' | trans({}, 'page')}) }}
+            {{ form_row(contactForm.subject, {'label': 'contact.form.subject' | trans({}, 'page')}) }}
+            {{ form_row(contactForm.message, {'label': 'contact.form.message' | trans({}, 'page')}) }}
+            
+            <div class="mlkqsd">
+                {{ form_row(contactForm.mlkqsd, {'label': 'MLKQSD'}) }}
+            </div>
+
+            <div class="submit">
+              <button type="submit">
+                  {{ 'contact.form.submit' | trans({}, 'page') }}
+              </button>
+            </div>
+        </div>
+        
+        {{ form_rest(contactForm) }}
+    </form>
+{% endblock content %}

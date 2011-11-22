@@ -1,0 +1,80 @@
+section.page h3 {
+    margin: 20px 0;
+    font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    text-shadow: 1px 1px 1px #fff;
+    text-decoration: none;
+}
+
+section.page h3 a.sgoto,
+section.page h3 a.sgoto:visited {
+    margin-left: 10px;
+    color: #aaa;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+section.page h3 a.sgoto:hover {
+    text-decoration: underline;
+}
+
+section.page div.content {
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+section.page div.content:last-child {
+    margin-bottom: 0;
+}
+
+section.page div.content p,
+section.page div.content ul {
+    margin-bottom: 20px;
+    line-height: 18px;
+}
+
+section.page div.content p:last-child,
+section.page div.content ul:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Author ------------------ */
+
+div.author section.page div.content img.author {
+     float: left;
+}
+
+div.author section.page div.content.author-skills aside {
+    overflow: hidden;
+    float: left;
+    width: 31%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+}
+
+div.author section.page div.content.author-skills aside:nth-child(3n+3) {
+    width: 33%;
+    margin-right: 0;
+}
+
+div.author section.page div.content.author-skills aside h4 {
+    margin-bottom: 10px;
+    color: #116fe3;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+}
+
+div.author section.page div.content.author-skills aside ul li {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ddd;
+}
+
+div.author section.page div.content.author-skills aside ul li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}

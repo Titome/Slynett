@@ -46,13 +46,20 @@ contact:
     msg1: Contactez-moi par e-mail sur
     msg2: ou remplissez le formulaire ci-dessous.
   form:
-    name: Nom complet
-    email: Adresse e-mail
+    name: Nom complet (obligatoire)
+    email: Adresse e-mail (obligatoire)
     twitter: Pseudonyme Twitter
     subject: Sujet
-    message: Message
+    message: Message (obligatoire)
     submit: Envoyer le message
   sidebar:
-    follow: N'hésitez pas à suivre %name% et son auteur depuis vos réseaux préférés !
+    email:
+      title: Via e-mail
+      message: |
+        Vous pouvez également me contacter par e-mail sur
+        <a href="mailto:%email%">%email%</a>
+        ou <a href="mailto:%shortEmail%">%shortEmail%</a>.
+    networks:
+      title: Via réseaux sociaux
   flash:
     success: Votre message a bien été envoyé.

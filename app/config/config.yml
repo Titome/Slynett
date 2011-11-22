@@ -53,6 +53,7 @@ twig:
         linkedin: %networks_linkedin%
         googleplus: %networks_googleplus%
         flickr: %networks_flickr%
+        github: %networks_github%
         foursquare: %networks_foursquare%
 
 # Assetic Configuration

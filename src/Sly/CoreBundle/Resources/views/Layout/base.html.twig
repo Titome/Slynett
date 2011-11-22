@@ -24,6 +24,7 @@
                 'bundles/slycore/css/main.main.css'
                 'bundles/slycore/css/main.sidebar.css'
                 'bundles/slycore/css/main.sidebar.tabs.css'
+                'bundles/slycore/css/pages.css'
                 'bundles/slycore/css/com.css'
                 'bundles/slycontent/css/content.css'
                 'bundles/slycontent/vendor/syntax-highlighter/styles/shCore.css'
@@ -62,9 +63,8 @@
             {% endjavascripts %}
         {% endblock javascripts %}
         
-        {% if item is defined %}
-            <script type="text/javascript">letsShowItem();</script>
-        {% endif %}
+        {% if item is defined %}<script type="text/javascript">letsShowItem();</script>{% endif %}
+        {% if app.request.attributes.get('_route') == 'author' %}<script type="text/javascript">letsShowAuthor();</script>{% endif %}
         
         <script type="text/javascript">
           var _gaq = _gaq || [];

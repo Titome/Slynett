@@ -1,95 +1,69 @@
-{% extends "SlyCoreBundle:Layout:layout.rightSidebar.html.twig" %}
+{% spaceless %}
+    <aside>
+        <h4>{{ 'skills.part.webdevelopment' | trans({}, 'author') }}</h4>
 
-{% block title %}{{ 'skills.seo.title' | trans({}, 'author') }} | {{ 'seo.title' | trans({}, 'author') }}{% endblock title %}
-{% block description %}{{ 'skills.seo.description' | trans({}, 'author') }}{% endblock description %}
-
-{% set topMain = true %}
-
-{% block topMainTitle %}
-    <a href="{{ path('author') }}" title="{{ 'title' | trans({}, 'author') }}">
-        {{ 'title' | trans({}, 'author') }}
-    </a>
-{% endblock topMainTitle %}
-
-{% block topMainMenu %}
-    {% include 'SlyCoreBundle:Author:mainMenu.html.twig' %}
-{% endblock topMainMenu %}
-
-{% block rightSidebar %}
-    {% include 'SlyCoreBundle:Author:rightSidebar.html.twig' %}
-{% endblock rightSidebar %}
-
-{% block content %}
-    <article class="tpl3">        
-        <h3>{{ 'skills.title' | trans({}, 'author') }}</h3>
-        
-        <div class="clearfix"></div>
-        
-        <div class="grid_6 alpha">
-            <h4>{{ 'skills.webdev.title' | trans({}, 'author') }}</h4>
-            
-            <ul class="list">
-                <li>PHP5 {{ 'skills.webdev.list.php' | trans({}, 'author') }}</li>
-                <li>
-                    {{ 'skills.webdev.list.frameworks' | trans({}, 'author') }}
-                    symfony 1.4 / Symfony2 /
-                    Zend {{ 'skills.webdev.list.notions' | trans({}, 'author') }} /
-                    CakePHP {{ 'skills.webdev.list.notions' | trans({}, 'author') }}
-                </li>
-                <li>SQL / MySQL / {{ 'skills.webdev.list.doctrine' | trans({}, 'author') }}</li>
-                <li>xHTML / HTML5</li>
-                <li>
-                    CSS / CSS3 /
-                    {{ 'skills.webdev.list.frameworks' | trans({}, 'author') }}
-                    960gs, BluePrint, Bootstrap
-                </li>
-                <li>JavaScript / Ajax / jQuery</li>
-                <li>XML / JSON</li>
-                <li>{{ 'skills.webdev.list.cms' | trans({}, 'author') }} WordPress 3 / Joomla 1.6</li>
-                <li>SEO / SEM / SEA / SMO</li>
-                <li>
-                    {{ 'skills.webdev.list.environments' | trans({}, 'author') }}
-                    Ubuntu / LAMP / NginX - Mac OSX - Windows / WAMP
-                </li>
-                <li>{{ 'skills.webdev.list.versioning' | trans({}, 'author') }} LAMP / NginX / Ubuntu</li>
-                <li>Git + {{ 'skills.webdev.list.github' | trans({}, 'author') }} / SVN</li>
-            </ul>
-        </div>
-    
-        <div class="grid_6 omega">
-            <h4>{{ 'skills.symfony.title' | trans({}, 'author') }}</h4>
-            
-            <p>
-                {{ 'skills.symfony.msg1' | trans({}, 'author') }}
-                {{ 'skills.symfony.msg2' | trans({}, 'author') }}
-                {{ 'skills.symfony.msg3' | trans({}, 'author') }}
-                {{ 'skills.symfony.msg4' | trans({}, 'author') }}
-                
-                -
-                
-                <a href="{{ project.github.sources }}" title="{{ project.name }} GitHub" onclick="var w=window.open(this.href); w.focus(); return false;">
-                    {{ 'skills.symfony.github' | trans({}, 'author') }}
-                </a>
-            </p>
-        </div>
-        
-        <div class="clearfix"></div>
-            
-        <h4>{{ 'skills.api.title' | trans({}, 'author') }}</h4>
-        
-        <ul class="list">
-            <li>Paypal / Paypal IPN</li>
-            <li>Facebook / Facebook API Graph</li>
-            <li>Twitter / REST, OAuth</li>
-            <li>{{ 'skills.api.list.oauth' | trans({}, 'author') }}</li>
+        <ul>
+            <li>PHP5 {{ 'sidebar.skills.list.php' | trans({}, 'author') }}</li>
+            <li>
+                {{ 'sidebar.skills.list.frameworks' | trans({}, 'author') }}
+                <a href="http://www.symfony-project.org" onclick="var w=window.open(this.href); w.focus(); return false;">symfony 1.4</a> /
+                <a href="http://www.symfony.com" onclick="var w=window.open(this.href); w.focus(); return false;">Symfony2</a> /
+                <a href="http://framework.zend.com" onclick="var w=window.open(this.href); w.focus(); return false;">Zend</a>
+                {{ 'sidebar.skills.list.notions' | trans({}, 'author') }} /
+                <a href="http://cakephp.org" onclick="var w=window.open(this.href); w.focus(); return false;">CakePHP</a>
+                {{ 'sidebar.skills.list.notions' | trans({}, 'author') }}
+            </li>
+            <li>SQL / MySQL / {{ 'sidebar.skills.list.doctrine' | trans({}, 'author') }}</li>
+            <li>xHTML / HTML5</li>
+            <li>
+                CSS / CSS3 /
+                {{ 'sidebar.skills.list.frameworks' | trans({}, 'author') }}
+                <a href="http://960.gs" onclick="var w=window.open(this.href); w.focus(); return false;">960gs</a>,
+                <a href="http://blueprintcss.org" onclick="var w=window.open(this.href); w.focus(); return false;">BluePrint</a>,
+                <a href="http://twitter.github.com/bootstrap" onclick="var w=window.open(this.href); w.focus(); return false;">Bootstrap</a>
+            </li>
+            <li>JavaScript / Ajax / jQuery</li>
+            <li>XML / JSON</li>
         </ul>
-        
-        <h4>{{ 'skills.more.title' | trans({}, 'author') }}</h4>
-        
-        <p>
-            {{ 'skills.more.linkedin.msg1' | trans({}, 'author') }}                
-            <a href="{{ networks.linkedin }}" title="{{ 'title' | trans({}, 'author') }} LinkedIn" onclick="var w=window.open(this.href); w.focus(); return false;">LinkedIn</a>
-            {{ 'skills.more.linkedin.msg2' | trans({}, 'author') }}
-        </p>
-    </article>
-{% endblock content %}
+    </aside>
+
+    <aside>
+        <h4>{{ 'skills.part.cms' | trans({}, 'author') }}</h4>
+
+        <ul>
+            <li><a href="http://www.wordpress.org" onclick="var w=window.open(this.href); w.focus(); return false;">WordPress 3</a></li>
+            <li><a href="http://www.joomla.org" onclick="var w=window.open(this.href); w.focus(); return false;">Joomla 1.5+</a></li>
+        </ul>
+    </aside>
+
+    <aside>
+        <h4>{{ 'skills.part.versioning' | trans({}, 'author') }}</h4>
+
+        <ul>
+            <li>Git + <a href="{{ networks.github }}" onclick="var w=window.open(this.href); w.focus(); return false;">{{ 'sidebar.skills.list.github' | trans({}, 'author') }}</a></li>
+            <li>SVN</li>
+        </ul>
+    </aside>
+
+    <aside>
+        <h4>{{ 'skills.part.indexation' | trans({}, 'author') }}</h4>
+
+        <ul>
+            <li>SEO</li>
+            <li>SEM</li>
+            <li>SEA</li>
+            <li>SMO</li>
+        </ul>
+    </aside>
+
+    <aside>
+        <h4>{{ 'skills.part.environments' | trans({}, 'author') }}</h4>
+
+        <ul>
+            <li>Ubuntu</li>
+            <li>LAMP / NginX</li>
+            <li>Mac OSX / MAMP</li>
+            <li>Windows / WAMP</li>
+        </ul>
+    </aside>
+{% endspaceless %}

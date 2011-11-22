@@ -66,7 +66,7 @@ class PageController extends Controller
             }
         }
         
-        return $this->render('SlyCoreBundle:Page:contact.html.twig', array(
+        return $this->render('SlyCoreBundle:Page:Contact/form.html.twig', array(
             'contactForm' => $contactForm->createView(),
         ));
     }

@@ -38,6 +38,7 @@ parameters:
   networks_linkedin: http://in.sly.mx
   networks_googleplus: http://gp.sly.mx
   networks_flickr: http://fr.sly.mx
+  networks_github: http://gh.sly.mx
   networks_foursquare: http://fs.sly.mx
   networks_gravatar_email: ph3@slynett.com
 

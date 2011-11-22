@@ -1,5 +1,9 @@
-<p>
-    <img src="{{ '/uploads/author-cedric-dugat.jpg' | apply_filter('medium') }}" alt="{{ 'presentation.title' | trans({}, 'author') }}" class="medium author" />
-</p>
+<section>
+    <h3>{{ 'sidebar.networks.title' | trans({}, 'author') }}</h3>
 
-{% include 'SlyCoreBundle:Block:socialProNetworks.html.twig' %}
+    <div class="content">
+        <p>{{ 'sidebar.networks.message' | trans({'%name%': project.name}, 'watch') }}</p>
+        
+        {% include 'SlyCoreBundle:Block:socialNetworks.html.twig' %}
+    </div>
+</section>

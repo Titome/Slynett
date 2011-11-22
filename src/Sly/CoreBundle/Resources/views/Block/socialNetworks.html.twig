@@ -1,44 +1,24 @@
-<ul class="networks">
-    <li class="rss">
-        <a href="{{ networks.rss }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} FeedBurner/RSS" onclick="var w = window.open(this.href); w.focus(); return false;">
-            <span></span>
-            {{ 'core.networks.rss' | trans }}
-        </a>
-    </li>
-    <li class="twitter">
-        <a href="{{ networks.twitter.url }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Twitter" onclick="var w = window.open(this.href); w.focus(); return false;">
-            <span></span>
-            Twitter
-        </a>
-    </li>
-    <li class="facebook">
-        <a href="{{ networks.facebook.url }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Facebook" onclick="var w = window.open(this.href); w.focus(); return false;">
-            <span></span>
-            Facebook
-        </a>
-    </li>
-    <li class="linkedin">
-        <a href="{{ networks.linkedin }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} LinkedIn" onclick="var w = window.open(this.href); w.focus(); return false;">
-            <span></span>
-            LinkedIn
-        </a>
-    </li>
-    <li class="googleplus">
-        <a href="{{ networks.googleplus }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Google+" onclick="var w = window.open(this.href); w.focus(); return false;">
-            <span></span>
-            Google+
-        </a>
-    </li>
-    <li class="foursquare">
-        <a href="{{ networks.foursquare }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Foursquare" onclick="var w = window.open(this.href); w.focus(); return false;">
-            <span></span>
-            Foursquare
-        </a>
-    </li>
-    <li class="flickr">
-        <a href="{{ networks.flickr }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} FlickR" onclick="var w = window.open(this.href); w.focus(); return false;">
-            <span></span>
-            FlickR
-        </a>
-    </li>
-</ul>
+{% spaceless %}
+    <ul class="networks">
+        <li>
+            <a href="{{ networks.twitter.url }}" class="sws twitter" onclick="var w=window.open(this.href);w.focus();return false;">
+                <span></span> <span class="text">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ networks.facebook.url }}" class="sws facebook" onclick="var w=window.open(this.href);w.focus();return false;">
+                <span></span> <span class="text">Facebook</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ networks.linkedin }}" class="sws linkedin" onclick="var w=window.open(this.href);w.focus();return false;">
+                <span></span> <span class="text">LinkedIn</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ networks.googleplus }}" class="sws googleplus" onclick="var w=window.open(this.href);w.focus();return false;">
+                <span></span> <span class="text">Google+</span>
+            </a>
+        </li>
+    </ul>
+{% endspaceless %}
