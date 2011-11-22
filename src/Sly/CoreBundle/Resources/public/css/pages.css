@@ -71,10 +71,21 @@ div.author section.page div.content.author-skills aside ul li {
     margin-bottom: 5px;
     padding-bottom: 5px;
     border-bottom: 1px dashed #ddd;
+    color: #888;
 }
 
 div.author section.page div.content.author-skills aside ul li:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
+}
+
+div.author section.page div.content.author-skills aside ul li a,
+div.author section.page div.content.author-skills aside ul li a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+div.author section.page div.content.author-skills aside ul li a:hover {
+    text-decoration: underline;
 }
