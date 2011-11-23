@@ -1,0 +1,69 @@
+.va-container{
+	position:relative;
+	margin:40px 0;
+}
+.va-wrapper{
+	width:100%;
+	height:100%;
+	position:relative;
+	overflow:hidden;
+	background:#000;
+}
+.va-slice{
+	cursor:pointer;
+	position:absolute;
+	width:100%;
+	left:0px;
+	overflow:hidden;
+}
+.va-title{
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-transform:uppercase;
+	font-size:60px;
+	margin-left:20px;
+	color:#fff;
+	text-shadow: 0px 0px 1px white;
+}
+.va-content{
+	display:none;
+	margin-left:25px;
+}
+.va-slice p{
+	font-size: 22px;
+	font-style: italic;
+	font-family:Georgia, serif;
+}
+.va-slice ul{
+	margin-top:20px;
+}
+.va-slice ul li{
+	float:left;
+	margin:0px 2px;
+}
+.va-slice ul li a{
+	color:#000;
+	background:#eede2f;
+	padding:3px 6px;
+	font-size:14px;
+	font-family:'PT Sans', sans-serif;
+	text-transform:uppercase;
+}
+.va-slice ul li a:hover{
+	background:#000;
+	color:#fff;
+	text-shadow:none;
+}
+.va-nav span{
+	position:absolute;
+	top:-35px;
+	cursor:pointer;
+	display:none;
+	z-index:100;
+}
+.va-nav span.va-nav-next{
+	top:auto;
+	bottom:-35px;
+}
+.va-nav span:hover{
+	opacity:1.0;
+}

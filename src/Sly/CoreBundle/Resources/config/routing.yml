@@ -1,6 +1,6 @@
-_author:
-    resource: "@SlyCoreBundle/Resources/config/routing_author.yml"
-    prefix:   /me
+author:
+  pattern: /me
+  defaults: { _controller: SlyCoreBundle:Author:index }
 
 sitemap:
     pattern: /sitemap.{_format}

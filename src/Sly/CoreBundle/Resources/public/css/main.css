@@ -9,6 +9,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         url('../fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-smooth: always;
 }
 
 body {

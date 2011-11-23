@@ -8,7 +8,12 @@
         <aside class="right">
             &copy; 2011
             <a href="{{ path('homepage') }}">{{ project.name }}</a>
-            - All rights reserved
+            - {{ 'footer.rights' | trans }}
+            {% if app.request.attributes.get('_route') != 'author' %}
+                - <img src="http://sly.mx/ukwc0s" alt="" />
+                <br />
+                {{ 'footer.enjoy' | trans }}
+            {% endif %}
         </aside>
     </section>
 </footer>

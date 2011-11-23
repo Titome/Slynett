@@ -2,6 +2,7 @@ section.page h3 {
     margin: 40px 0;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 22px;
+    font-weight: normal;
     text-shadow: 1px 1px 1px #fff;
     text-decoration: none;
 }
@@ -61,36 +62,127 @@ div.author section.page div.author-skills aside:nth-child(3n+3) {
 
 div.author section.page div.author-skills aside h4 {
     margin-bottom: 10px;
-    color: #116fe3;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-    font-weight: normal;
+    padding: 10px;
+    font-weight: bold;
     text-transform: uppercase;
+    color: #116fe3;
+    border-left: 5px solid #116fe3;
 }
 
 div.author section.page div.author-skills aside ul li {
-    margin-bottom: 5px;
-    padding-bottom: 5px;
-    border-bottom: 1px dashed #ddd;
     color: #888;
-}
-
-div.author section.page div.author-skills aside ul li:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
 }
 
 div.author section.page div.author-skills aside ul li a,
 div.author section.page div.author-skills aside ul li a:visited {
-    color: #000;
-    text-decoration: none;
+    color: #333;
 }
 
 div.author section.page div.author-skills aside ul li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 div.author section.page div.author-portfolio p {
     margin: 20px 0;
+}
+
+div.author section.page div.author-portfolio ul {
+    margin: 40px 0;
+}
+
+div.author section.page div.author-portfolio ul li {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+div.author section.page div.author-portfolio ul li:last-child {
+    margin-bottom: 0;
+}
+
+div.author section.page div.author-portfolio ul li img {
+    width: 100%;
+    height: auto;
+}
+
+div.author section.page div.author-portfolio ul li div {
+    position: absolute;
+    top: 0;
+    right: -800px;
+    padding: 10px;
+    width: 640px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+div.author section.page div.author-portfolio ul li:hover div {
+    right: 0;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+div.author section.page div.author-portfolio ul li div .btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+div.author section.page div.author-portfolio ul li div h4 span {
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-left: 10px;
+    padding: 2px 5px;
+    color: #fff;
+    background-color: #000;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+div.author section.page div.author-portfolio ul li.perso div h4 span {
+    background-color: #116fe3;
+}
+
+div.author section.page div.author-portfolio ul li div h4 a,
+div.author section.page div.author-portfolio ul li div h4 a:visited {
+    font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+div.author section.page div.author-portfolio ul li div p {
+    margin: 10px 0;
+    font-size: 11px;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+div.author section.page div.author-portfolio ul li div p,
+div.author section.page div.author-portfolio ul li div p a,
+div.author section.page div.author-portfolio ul li div p a:visited {
+    color: #aaa;
+    text-decoration: none;
+}
+
+div.author section.page div.author-portfolio ul li div ul {
+    margin: 0;
+}
+
+div.author section.page div.author-portfolio ul li div ul li {
+    float: left;
+    padding: 2px 5px;
+    margin-right: 5px;
+    color: #fff;
+    background-color: #aaa;
+    font-size: 11px;
+    text-shadow: none;
+    text-transform: uppercase;
 }

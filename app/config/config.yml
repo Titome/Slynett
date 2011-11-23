@@ -121,4 +121,4 @@ avalanche_imagine:
             options: { size: [620, 180], mode: outbound }
         portfolio:
             type: thumbnail
-            options: { size: [360, 160], mode: outbound }
+            options: { size: [660, 110], mode: outbound }

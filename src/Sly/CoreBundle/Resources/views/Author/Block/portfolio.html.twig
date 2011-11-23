@@ -1,3 +1,41 @@
 {% spaceless %}
-    --- TODO ---
+    <ul>
+        {% for item in portfolioItems %}
+            <li class="{{ item.type }}">
+                <div>
+                    <a href="{{ item.url }}" title="{{ item.title }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="btn">
+                        {{ 'portfolio.show' | trans({}, 'author') }}
+                    </a>
+                    
+                    <h4>
+                        <a href="{{ item.url }}" title="{{ item.title }}" onclick="var w=window.open(this.href); w.focus(); return false;">
+                            {{ item.title }}
+                        </a>
+                        
+                        <span>{{ 'portfolio.type.%type%' | replace({'%type%': item.type}) | trans({}, 'author') }}</span>
+                    </h4>
+
+                    <p>
+                        <a href="{{ item.url }}" title="{{ item.title }}" onclick="var w=window.open(this.href); w.focus(); return false;">
+                            {{ item.description }}
+                        </a>
+                    </p>
+
+                    {% if item.tech | length %}
+                        <ul>
+                            {% for t in item.tech %}
+                                <li>{{ t }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+                <a href="{{ item.url }}" title="{{ item.title }}" onclick="var w=window.open(this.href); w.focus(); return false;">
+                    <img src="{{ '/uploads/author/portfolio/%picture%'
+                         | replace({'%picture%': item.picture})
+                         | apply_filter('portfolio') }}" alt="{{ item.title }}" />
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
 {% endspaceless %}

@@ -40,6 +40,19 @@ skills:
 portfolio:
   title: Portoflio
   message: Retrouvez une sélection de mes projets personnels et professionnels.
+  show: Visiter le site
+  type:
+    pro: Projet Professionnel
+    perso: Projet Personnel
+  items:
+    ftda:
+      description: France terre d'asile est une association de solidarité française, dont le principal objet est le soutien aux demandeurs d'asile et la défense du droit d'asile en France.
+    socontest:
+      description: Création et production de la première plateforme d'organisation de concours en ligne (Twitter, Facebook et blogs).
+    maxh:
+      description: Max Havelaar est une branche de l'association internationale Fairtrade Labelling Organizations International (FLO). Max Havelaar est actuellement l'un des principaux acteurs du commerce équitable.
+    googla:
+      description: Goog.la est un service Web offrant un accès direct à votre profil G+ via une URL courte et à des statistiques détaillées sur l'utilisation de ce lien.
   
 contact:
   title: Me contacter
