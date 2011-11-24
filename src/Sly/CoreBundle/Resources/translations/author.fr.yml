@@ -25,7 +25,7 @@ presentation: |
 skills:
   title: Compétences
   part:
-    webdevelopment: Dév. Web
+    webdevelopment: Développement Web
     versioning: Versioning
     cms: CMS
     environments: Environnements
@@ -42,6 +42,7 @@ portfolio:
   message: Retrouvez une sélection de mes projets personnels et professionnels.
   show: Visiter le site
   disabled: Ce site n'est plus en ligne
+  private: Ce site n'est pas en accès public
   type:
     pro: Projet Professionnel
     perso: Projet Personnel

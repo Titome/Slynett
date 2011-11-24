@@ -33,7 +33,7 @@ class AuthorController extends Controller
                 'tech' => array('Joomla', 'jQuery'),
             ),
             array(
-                'type' => 'pro', 'url' => 'http://www.france-terre-asile.org', 'title' => 'France Terre d\'Asile (applications Web)', 'picture' => 'ftda-plateforme.png',
+                'type' => 'pro', 'private' => true, 'title' => 'France Terre d\'Asile (applications Web)', 'picture' => 'ftda-plateforme.png',
                 'description' => $trans->trans('portfolio.items.ftdaapps.description', array(), 'author'),
                 'tech' => array('symfony 1.4', 'Doctrine', 'jQuery'),
             ),
@@ -48,7 +48,7 @@ class AuthorController extends Controller
                 'tech' => array('Joomla', 'jQuery'),
             ),
             array(
-                'type' => 'pro', 'url' => 'http://www.pretdhonneur.com', 'title' => 'Rhône-Alpes Initiative', 'picture' => 'rhone-alpes-initiative.png',
+                'type' => 'pro', 'url' => 'http://www.pretdhonneur.com', 'title' => 'Prêt d\'Honneur - Rhône-Alpes Initiative', 'picture' => 'rhone-alpes-initiative.png',
                 'description' => $trans->trans('portfolio.items.rai.description', array(), 'author'),
                 'tech' => array('Joomla', 'jQuery'),
             ),
@@ -73,7 +73,7 @@ class AuthorController extends Controller
                 'tech' => array('symfony 1.4', 'Doctrine', 'jQuery', 'Twitter API', 'Facebook API Graph'),
             ),
             array(
-                'type' => 'pro', 'disabled' => true, 'url' => 'http://www.slynett.com', 'title' => 'Slynett Agency', 'picture' => 'slynett-agency.png',
+                'type' => 'pro', 'disabled' => true, 'title' => 'Slynett Agency', 'picture' => 'slynett-agency.png',
                 'description' => $trans->trans('portfolio.items.slynettagency.description', array(), 'author'),
                 'tech' => array('WordPress', 'jQuery'),
             ),
