@@ -1,18 +1,24 @@
 {% spaceless %}
     <ul>
         {% for item in portfolioItems %}
-            <li class="{{ item.type }}">
+            <li class="{{ item.type }} {% if item.disabled is defined %}disabled{% endif %}">
                 <div>
-                    <a href="{{ item.url }}" title="{{ item.title }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="btn">
-                        {{ 'portfolio.show' | trans({}, 'author') }}
-                    </a>
+                    <h5>{{ 'portfolio.type.%type%' | replace({'%type%': item.type}) | trans({}, 'author') }}</h5>
+                    
+                    {% if item.disabled is defined %}
+                        <span class="btn">
+                            {{ 'portfolio.disabled' | trans({}, 'author') }}
+                        </span>
+                    {% else %}
+                        <a href="{{ item.url }}" title="{{ item.title }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="btn">
+                            {{ 'portfolio.show' | trans({}, 'author') }}
+                        </a>
+                    {% endif %}
                     
                     <h4>
                         <a href="{{ item.url }}" title="{{ item.title }}" onclick="var w=window.open(this.href); w.focus(); return false;">
                             {{ item.title }}
                         </a>
-                        
-                        <span>{{ 'portfolio.type.%type%' | replace({'%type%': item.type}) | trans({}, 'author') }}</span>
                     </h4>
 
                     <p>

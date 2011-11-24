@@ -41,18 +41,37 @@ portfolio:
   title: Portoflio
   message: Retrouvez une sélection de mes projets personnels et professionnels.
   show: Visiter le site
+  disabled: Ce site n'est plus en ligne
   type:
     pro: Projet Professionnel
     perso: Projet Personnel
   items:
     ftda:
-      description: France terre d'asile est une association de solidarité française, dont le principal objet est le soutien aux demandeurs d'asile et la défense du droit d'asile en France.
+      description: France Terre d'Asile est une association de solidarité française, dont le principal objet est le soutien aux demandeurs d'asile et la défense du droit d'asile en France.
+    ftdaapps:
+      description: Applications France Terre d'Asile.
     socontest:
       description: Création et production de la première plateforme d'organisation de concours en ligne (Twitter, Facebook et blogs).
     maxh:
       description: Max Havelaar est une branche de l'association internationale Fairtrade Labelling Organizations International (FLO). Max Havelaar est actuellement l'un des principaux acteurs du commerce équitable.
     googla:
       description: Goog.la est un service Web offrant un accès direct à votre profil G+ via une URL courte et à des statistiques détaillées sur l'utilisation de ce lien.
+    rai:
+      description: CRAIRA, aide et accompagnement à la création d'entreprise, financement de projet, crédit solidaire.
+    twcontest:
+      description: Plateforme d'organisation de concours Twitter en ligne.
+    slynettlabs:
+      description: Portail de développement Web - Blog, tutoriels, veille et autres.
+    slynettagency:
+      description: Ancienne agence de développement Web, WebDesign, Etudes et Analyses, Référencement SEO basée à Orange.
+    magiciencloseup:
+      description: Site de mon activité extra-professionnelle de Magicien Close-up.
+    socook:
+      description: Blog culinaire - Recettes de tous les jours, détaillées et illustrées.
+    domaineceserac:
+      description: Site du Domaine de Céserac, situé à Montfrin, dans le Gard.
+    exaint:
+      description: The heart of Exa International engineering activities is the production of hydrogen for the synthesis of ammonia, methanol and monomers.
   
 contact:
   title: Me contacter
