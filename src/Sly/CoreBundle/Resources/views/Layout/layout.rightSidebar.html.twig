@@ -10,14 +10,14 @@
             </section>
         </div>
 
-        <aside class="sidebar" id="right-sidebar">
+        <aside class="sidebar {% if app.request.attributes.get('_route') == 'author' %}persistent{% endif %}" id="right-sidebar">
             {% block rightSidebar %}{% endblock rightSidebar %}
             
             {% if app.request.attributes.get('_route') != 'author' %}
                 {% include 'SlyCoreBundle:Block/Com/Sidebar:250x250.html.twig' %}
-            {% endif %}
                 
-            {% include 'SlyCoreBundle:Block:sidebarGitHub.html.twig' %}
+                {% include 'SlyCoreBundle:Block:sidebarGitHub.html.twig' %}
+            {% endif %}
         </aside>
     </div>  
                 

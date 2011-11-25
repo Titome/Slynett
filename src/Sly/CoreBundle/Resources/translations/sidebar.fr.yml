@@ -7,3 +7,6 @@ tabs:
   content:
     share:
       message: Vous souhaitez partager <strong>%title%</strong> ? Utilisez les réseaux suivants.
+
+networks:
+  others: 'Ou via les réseaux suivants :'

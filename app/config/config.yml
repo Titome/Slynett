@@ -54,7 +54,12 @@ twig:
         googleplus: %networks_googleplus%
         flickr: %networks_flickr%
         github: %networks_github%
+        githubp: %networks_githubp%
         foursquare: %networks_foursquare%
+        facebookp: %networks_facebookp%
+        googleplusp: %networks_googleplusp%
+        viadeo: %networks_viadeo%
+        flickr: %networks_flickr%
 
 # Assetic Configuration
 assetic:

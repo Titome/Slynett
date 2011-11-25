@@ -6,8 +6,8 @@
                     <div>
                         <h5>{{ 'portfolio.type.%type%' | replace({'%type%': item.type}) | trans({}, 'author') }}</h5>
                         <span class="btn">{{ 'portfolio.disabled' | trans({}, 'author') }}</span>
-                        <h4><a href="#" title="{{ item.title }}">{{ item.title }}</a></h4>
-                        <p><a href="#" title="{{ item.title }}">{{ item.description }}</a></p>
+                        <h4><a href="#na" title="{{ item.title }}">{{ item.title }}</a></h4>
+                        <p><a href="#na" title="{{ item.title }}">{{ item.description }}</a></p>
                         {% if item.tech | length %}
                             <ul>
                                 {% for t in item.tech %}
@@ -17,7 +17,7 @@
                         {% endif %}
                     </div>
 
-                    <a href="#" title="{{ item.title }}">
+                    <a href="#na" title="{{ item.title }}">
                         <img src="{{ '/uploads/author/portfolio/%picture%'
                              | replace({'%picture%': item.picture})
                              | apply_filter('portfolio') }}" alt="{{ item.title }}" />
@@ -28,8 +28,8 @@
                     <div>
                         <h5>{{ 'portfolio.type.%type%' | replace({'%type%': item.type}) | trans({}, 'author') }}</h5>
                         <span class="btn">{{ 'portfolio.private' | trans({}, 'author') }}</span>
-                        <h4><a href="#" title="{{ item.title }}">{{ item.title }}</a></h4>
-                        <p><a href="#" title="{{ item.title }}">{{ item.description }}</a></p>
+                        <h4><a href="#na" title="{{ item.title }}">{{ item.title }}</a></h4>
+                        <p><a href="#na" title="{{ item.title }}">{{ item.description }}</a></p>
                         {% if item.tech | length %}
                             <ul>
                                 {% for t in item.tech %}
@@ -39,7 +39,7 @@
                         {% endif %}
                     </div>
 
-                    <a href="#" title="{{ item.title }}">
+                    <a href="#na" title="{{ item.title }}">
                         <img src="{{ '/uploads/author/portfolio/%picture%'
                              | replace({'%picture%': item.picture})
                              | apply_filter('portfolio') }}" alt="{{ item.title }}" />

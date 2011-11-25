@@ -1,54 +1,83 @@
 {% spaceless %}
-    <ul class="menu">
-        <li class="sws tag {{ app.request.attributes.get('_route') | checkActive(['homepage']) }}">
-            <a href="{{ path('homepage') }}">
-                <span></span>
-                {{ 'core.menu.homepage' | trans }}
-            </a>
-        </li>
-        <li class="sws rss {{ app.request.attributes.get('_route') | checkActive(['blog', 'blog_category', 'blog_show']) }}">
-            <a href="{{ path('blog') }}">
-                <span></span>
-                {{ 'core.menu.blog.label' | trans }}
-            </a>
-        </li>
-        <li class="sws movie {{ app.request.attributes.get('_route') | checkActive(['tutorial', 'tutorial_category', 'tutorial_show']) }}">            
-            <a href="{{ path('tutorial') }}">
-                <span></span>
-                {{ 'core.menu.tutorials.label' | trans }}
-            </a>
-        </li>
-        <li class="sws link {{ app.request.attributes.get('_route') | checkActive(['watch', 'watch_category']) }}">
-            <a href="{{ path('watch') }}">
-                <span></span>
-                {{ 'core.menu.watch.label' | trans }}
-            </a>
-        </li>
-        <li class="sws list {{ app.request.attributes.get('_route') | checkActive(['snippet', 'snippet_category', 'snippet_show']) }}">
-            <a href="{{ path('snippet') }}">
-                <span></span>
-                {{ 'core.menu.snippets.label' | trans }}
-            </a>
-        </li>
-        <li class="sws attachment {{ app.request.attributes.get('_route') | checkActive(['resource']) }}">
-            <a href="{{ path('resource') }}">
-                <span></span>
-                {{ 'core.menu.resources.label' | trans }}
-            </a>
-        </li>
-        <li class="sws image">
-            <a href="{{ path('homepage') }}">
-                <span></span>
-                {{ 'core.menu.projects.label' | trans }}
-            </a>
-        </li>
-        <li class="sws reply">
-            <a href="#">
-                <span></span>
-                {{ 'core.menu.totop' | trans }}
-            </a>
-        </li>
-    </ul>
+    {% if app.request.attributes.get('_route') == 'author' %}
+        <ul class="menu author">
+            <li class="sws user active">
+                <a href="#author-main" class="sgoto">
+                    <span></span>
+                    {{ 'menu.presentation' | trans({}, 'author') }}
+                </a>
+            </li>
+            <li class="sws html">
+                <a href="#author-skills" class="sgoto">
+                    <span></span>
+                    {{ 'menu.skills' | trans({}, 'author') }}
+                </a>
+            </li>
+            <li class="sws listicons">
+                <a href="#author-portfolio" class="sgoto">
+                    <span></span>
+                    {{ 'menu.portfolio' | trans({}, 'author') }}
+                </a>
+            </li>
+            <li class="sws reply">
+                <a href="{{ path('homepage') }}">
+                    <span></span>
+                    {{ 'core.menu.homepagews' | trans }}
+                </a>
+            </li>
+        </ul>
+    {% else %}
+        <ul class="menu">
+            <li class="sws tag {{ app.request.attributes.get('_route') | checkActive(['homepage']) }}">
+                <a href="{{ path('homepage') }}">
+                    <span></span>
+                    {{ 'core.menu.homepage' | trans }}
+                </a>
+            </li>
+            <li class="sws rss {{ app.request.attributes.get('_route') | checkActive(['blog', 'blog_category', 'blog_show']) }}">
+                <a href="{{ path('blog') }}">
+                    <span></span>
+                    {{ 'core.menu.blog.label' | trans }}
+                </a>
+            </li>
+            <li class="sws movie {{ app.request.attributes.get('_route') | checkActive(['tutorial', 'tutorial_category', 'tutorial_show']) }}">            
+                <a href="{{ path('tutorial') }}">
+                    <span></span>
+                    {{ 'core.menu.tutorials.label' | trans }}
+                </a>
+            </li>
+            <li class="sws link {{ app.request.attributes.get('_route') | checkActive(['watch', 'watch_category']) }}">
+                <a href="{{ path('watch') }}">
+                    <span></span>
+                    {{ 'core.menu.watch.label' | trans }}
+                </a>
+            </li>
+            <li class="sws list {{ app.request.attributes.get('_route') | checkActive(['snippet', 'snippet_category', 'snippet_show']) }}">
+                <a href="{{ path('snippet') }}">
+                    <span></span>
+                    {{ 'core.menu.snippets.label' | trans }}
+                </a>
+            </li>
+            <li class="sws attachment {{ app.request.attributes.get('_route') | checkActive(['resource']) }}">
+                <a href="{{ path('resource') }}">
+                    <span></span>
+                    {{ 'core.menu.resources.label' | trans }}
+                </a>
+            </li>
+            <li class="sws image">
+                <a href="{{ path('homepage') }}">
+                    <span></span>
+                    {{ 'core.menu.projects.label' | trans }}
+                </a>
+            </li>
+            <li class="sws reply totop">
+                <a href="#">
+                    <span></span>
+                    {{ 'core.menu.totop' | trans }}
+                </a>
+            </li>
+        </ul>
+    {% endif %}
 
     <ul class="networks">
         <li class="sws googleplus"><a href="{{ networks.googleplus }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>

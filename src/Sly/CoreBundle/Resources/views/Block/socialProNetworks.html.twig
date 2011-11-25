@@ -1,14 +1,33 @@
-<ul class="networks">
-    <li class="linkedin">
-        <a href="{{ networks.linkedin }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} LinkedIn" onclick="var w = window.open(this.href); w.focus(); return false;">
-            <span></span>
-            LinkedIn
-        </a>
-    </li>
-    <li class="twitter">
-        <a href="{{ networks.twitter.url }}" title="{{ 'core.header.follow.msg1' | trans({'%name%': project.name}) }} Twitter" onclick="var w = window.open(this.href); w.focus(); return false;">
-            <span></span>
-            Twitter
-        </a>
-    </li>
-</ul>
+{% spaceless %}
+    <ul class="networks">
+        <li>
+            <a href="{{ networks.twitter.url }}" class="sws twitter" onclick="var w=window.open(this.href);w.focus();return false;">
+                <span></span> <span class="text">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ networks.facebookp }}" class="sws facebook" onclick="var w=window.open(this.href);w.focus();return false;">
+                <span></span> <span class="text">Facebook</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ networks.linkedin }}" class="sws linkedin" onclick="var w=window.open(this.href);w.focus();return false;">
+                <span></span> <span class="text">LinkedIn</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ networks.googleplusp }}" class="sws googleplus" onclick="var w=window.open(this.href);w.focus();return false;">
+                <span></span> <span class="text">Google+</span>
+            </a>
+        </li>
+    </ul>
+
+    <p>
+        {{ 'networks.others' | trans({}, 'sidebar') }}
+        
+        <a href="{{ networks.viadeo }}" onclick="var w=window.open(this.href);w.focus();return false;">Viadeo</a>,
+        <a href="{{ networks.flickr }}" onclick="var w=window.open(this.href);w.focus();return false;">Flickr</a>,
+        <a href="{{ networks.githubp }}" onclick="var w=window.open(this.href);w.focus();return false;">GitHub</a>,
+        <a href="{{ networks.foursquare }}" onclick="var w=window.open(this.href);w.focus();return false;">Foursquare</a>.
+    </p>
+{% endspaceless %}

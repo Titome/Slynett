@@ -11,14 +11,15 @@
             </a>
         </li>
         <li>
-            <a href="{{ networks.linkedin }}" class="sws linkedin" onclick="var w=window.open(this.href);w.focus();return false;">
-                <span></span> <span class="text">LinkedIn</span>
-            </a>
-        </li>
-        <li>
             <a href="{{ networks.googleplus }}" class="sws googleplus" onclick="var w=window.open(this.href);w.focus();return false;">
                 <span></span> <span class="text">Google+</span>
             </a>
         </li>
     </ul>
+
+    <p>
+        {{ 'networks.others' | trans({}, 'sidebar') }}
+        
+        <a href="{{ networks.github }}" onclick="var w=window.open(this.href);w.focus();return false;">GitHub</a>.
+    </p>
 {% endspaceless %}

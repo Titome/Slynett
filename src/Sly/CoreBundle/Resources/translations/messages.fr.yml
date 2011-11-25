@@ -4,6 +4,7 @@ core:
       
   menu:
     homepage: Accueil
+    homepagews: Accueil du site
     author: A propos / L'auteur
     github: %name% sur GitHub
     contact: Contact

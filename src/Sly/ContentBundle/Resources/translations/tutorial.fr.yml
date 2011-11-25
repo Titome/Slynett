@@ -2,7 +2,7 @@ seo:
   title: Tutoriels développement Web
   description: Tous les tutoriels vidéo et textuels en matière de développement Web.
   category:
-    title: Tutoriels de la catégorie "%catName%".
+    title: Tutoriels de la catégorie "%catName%"
     description: Tutoriels de la catégorie "%catName%".
   
 list:

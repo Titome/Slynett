@@ -67,5 +67,6 @@
 }
 
 #main.right-sidebar #right-sidebar {
+    position: relative;
     margin-left: 720px;
 }

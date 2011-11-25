@@ -89,6 +89,28 @@ jQuery(function($){
         
         return false;
     });
+    
+    /* --- Active Menus - Author Part -- */
+    
+    $('#top-nav ul.author li:not(.reply) a').click(function(){
+        $(this).parent('li').addClass('active').siblings('li').removeClass('active');
+        
+        linkHref = $(this).attr('href');
+        $('#author-main ul.categories li').removeClass('active');
+        $('#author-main ul.categories li a[href='+linkHref+']').parent('li').addClass('active');
+
+        return false;
+    });
+    
+    $('#author-main ul.categories li a').click(function(){
+        $(this).parent('li').addClass('active').siblings('li').removeClass('active');
+        
+        linkHref = $(this).attr('href');
+        $('#top-nav ul.author li').removeClass('active');
+        $('#top-nav ul.author li a[href='+linkHref+']').parent('li').addClass('active');
+
+        return false;
+    });
 });
 
 /* --- Main Search ----------------- */
@@ -124,9 +146,22 @@ $(window).scroll(function(){
         $('#top-nav').fadeOut('slow');
 });
 
+/* --- Sidebar persistence --------- */
+
+var name = 'aside.sidebar.persistent';
+var menuYloc = -380;
+
+$(window).scroll(function(){
+    offset = menuYloc + $(document).scrollTop();
+    if (offset < 0) offset = 0;
+    $(name).animate({
+        top: offset + 'px'
+    }, { duration: 500, queue: false });
+});
+
 /* --- Scroll to Top link -------------- */
 
-$('#top-nav ul li.sws.reply').click(function(){
+$('#top-nav ul li.sws.totop').click(function(){
     $('html, body').animate({ scrollTop: 0 }, 400);
     
     return false; 

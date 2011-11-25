@@ -39,8 +39,13 @@ parameters:
   networks_googleplus: http://gp.sly.mx
   networks_flickr: http://fr.sly.mx
   networks_github: http://gh.sly.mx
+  networks_githubp: http://gh.sly.mx
   networks_foursquare: http://fs.sly.mx
   networks_gravatar_email: ph3@slynett.com
+  networks_facebookp: http://pfb.sly.mx
+  networks_googleplusp: http://pgp.sly.mx
+  networks_viadeo: http://v.sly.mx
+  networks_flickr: http://fr.sly.mx
 
   bitly_username: XXXXXXXXXXXXXXX
   bitly_apikey: XXXXXXXXXXXXXXX

@@ -2,12 +2,15 @@ menu:
   presentation: Présentation
   skills: Compétences
   portfolio: Portfolio
-  hire: M'embaucher ?
-  contact: Me contacter
   
 sidebar:
   networks:
-    title: Réseaux sociaux
+    title: Rentrer en contact
+    message: Vous pouvez me suivre ou me contacter sur les réseaux sociaux suivants.
+  cv:
+    title: Curriculum Vitae
+    message: Cliquez ci-dessous pour télécharger mon CV au format PDF (3 Mo).
+    download: Télécharger
 
 seo:
   title: Cédric Dugat — Développeur PHP5/Symfony Orange Vaucluse PACA
@@ -16,26 +19,29 @@ seo:
 title: Cédric Dugat — Développeur PHP5/Symfony
 totop: Retour
 
-presentation: |
-  Développeur Web passionné, j'ai spécialisé mes compétences dans l'utilisation
-  de technologies Open Source telles que <strong>PHP5</strong>, LAMP et le framework <strong>Symfony (1.4 et 2)</strong>.
-  Egalement fondateur de services novateurs tels que SoContest, plateforme d'organisation de concours en ligne,
-  j'affiche un intérêt particulier pour l'entreprenariat Web et la e-communication.
+presentation:
+  message: |
+    Développeur Web passionné, j'ai spécialisé mes compétences dans l'utilisation
+    de technologies Open Source telles que <strong>PHP5</strong>, LAMP et le framework <strong>Symfony (1.4 et 2)</strong>.
+    Egalement fondateur de services novateurs tels que SoContest, plateforme d'organisation de concours en ligne,
+    j'affiche un intérêt particulier pour l'entreprenariat Web et la e-communication.
+  available: |
+    Startups et agences Web : je suis intéressé par vos propositions d'emploi développeur PHP5/Symfony en région PACA et à proximité d'Avignon (84).
+  contact: Contactez-moi !
   
 skills:
   title: Compétences
   part:
     webdevelopment: Développement Web
-    versioning: Versioning
-    cms: CMS
-    environments: Environnements
-    indexation: Référencement
+    versioning: Versioning / Gestion de sources
+    cms: CMS / Gestion de contenus
+    environments: Environnements / Systèmes d'exploitation
+    indexation: Référencement / Positionnement
   list:
     notions: (connaissances)
-    php: (POO - modèle MVC)
+    php: (POO - MVC)
     frameworks: 'Frameworks :'
-    doctrine: ORM (Doctrine, Doctrine2)
-    github: support GitHub
+    github: Support GitHub
     
 portfolio:
   title: Portoflio
