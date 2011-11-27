@@ -3,9 +3,15 @@ seo:
   description: Toute ma veille quotidienne concernant PHP5, symfony 1.4, Symfony2, jQuery et autres.
   
 list:
-  title: Veille "%catName%"
+  title: Toute ma veille quotidienne concernant PHP5, symfony 1.4, Symfony2, jQuery et autres
   nocontent: Aucun lien.
   show: Accéder
+  
+category:
+  list:
+    title: Toute ma veille quotidienne concernant "%catName%"
+  seo:
+    description: Toute ma veille quotidienne concernant "%catName%".
 
 sidebar:
   networks:

@@ -4,13 +4,17 @@ menu:
   portfolio: Portfolio
   
 sidebar:
-  networks:
+  contact:
     title: Rentrer en contact
-    message: Vous pouvez me suivre ou me contacter sur les réseaux sociaux suivants.
+    email: |
+      Contactez-moi par e-mail sur
+      <a href="mailto:%email%">%email%</a>,
+      <a href="mailto:%shortEmail%">%shortEmail%</a>,
+      ou via le <a href="%contactForm%">formulaire de contact</a>.
+    networks: Vous pouvez également me suivre ou me contacter sur les réseaux sociaux suivants.
   cv:
     title: Curriculum Vitae
-    message: Cliquez ci-dessous pour télécharger mon CV au format PDF (3 Mo).
-    download: Télécharger
+    download: Télécharger au format PDF - 3 Mo
 
 seo:
   title: Cédric Dugat — Développeur PHP5/Symfony Orange Vaucluse PACA

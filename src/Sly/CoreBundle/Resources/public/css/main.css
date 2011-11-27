@@ -48,7 +48,7 @@ input, select, button, textarea {
 .content.c40 { padding: 40px; }
 
 .imp {
-    color: #116fe3;
+    color: #a82525;
 }
 
 hr {
@@ -215,7 +215,7 @@ nav.sec ul.menu li a:hover {
 nav.sec ul.menu li.active a,
 nav.sec ul.menu li.active a:visited {
     color: #fff;
-    background-color: #116fe3;
+    background-color: #a82525;
     text-decoration: none;
     text-shadow: none;
 }
@@ -294,14 +294,9 @@ nav.sec ul.menu li.active a:hover {
     display: inline-block;
     margin-left: 5px;
     padding: 2px 6px;
-    border-bottom: 1px solid #eee;
-    border-right: 1px solid #eee;
 }
 
 .pager a:hover {
-    background-color: #eee;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
     text-decoration: none;
 }
 
@@ -309,7 +304,7 @@ nav.sec ul.menu li.active a:hover {
 .pager a:active,
 .pager span.current {
     color: #fff;
-    background-color: #116fe3;
+    background-color: #a82525;
 }
 
 .pager span.disabled {
@@ -338,7 +333,7 @@ button {
 .btn:hover,
 input[type=submit]:hover,
 button:hover {
-    background-color: #116fe3;
+    background-color: #a82525;
     text-decoration: none !important;
 }
 

@@ -2,23 +2,7 @@ homepage:
   seo:
     title: %name% — Expertise PHP5 et symfony1.4/symfony2 — Blog, Tutoriels, Veille, Ressources et autres
     description: Blog, tutoriels vidéos, ressources, snippets, veille et autres.
-  title: Accueil
-  intro:
-    title: En quelques mots...
-    msg11: Passionné des technologies Web open source telles que PHP5, symfony 1.4, Symfony2, jQuery, CSS3/HTML5, je prends plaisir à partager avec vous
-    msg12: mes découvertes et expertises
-    msg13: tutoriels
-    msg14: ma veille quotidienne
-    msg15: ou encore
-    msg16: mes snippets
-    msg17: les plus pratiques.
-  lastitems:
-    blog_title: Derniers articles
-    tutorials_title: Derniers tutoriels
-  backstage:
-    title: Backstage
-    msg1: Les sources de ce site, entièrement réalisé sous
-    msg2: sont disponibles sur
+  title: Labs d'un développeur Web passionné — Expérimentations, études, analyses, partages et plus encore.
 
 terms:
   seo:
@@ -56,7 +40,7 @@ contact:
     email:
       title: Via e-mail
       message: |
-        Vous pouvez également me contacter par e-mail sur
+        Contactez-moi par e-mail sur
         <a href="mailto:%email%">%email%</a>
         ou <a href="mailto:%shortEmail%">%shortEmail%</a>.
     networks:

@@ -2,8 +2,6 @@
     <h3>{{ 'sidebar.cv.title' | trans({}, 'author') }}</h3>
     
     <div class="content">
-        <p>{{ 'sidebar.cv.message' | trans({}, 'author') }}</p>
-        
         <p>
             <a href="#" class="sws btn attachment">
                 <span></span>
@@ -14,10 +12,23 @@
 </section>
 
 <section>
-    <h3>{{ 'sidebar.networks.title' | trans({}, 'author') }}</h3>
+    <h3>{{ 'sidebar.contact.title' | trans({}, 'author') }}</h3>
 
     <div class="content">
-        <p>{{ 'sidebar.networks.message' | trans({}, 'author') }}</p>
+        <p>
+            {{
+                'sidebar.contact.email'
+                    | trans({}, 'author')
+                    | replace({
+                        '%email%': project.email | textEncode,
+                        '%shortEmail%': project.shortemail | textEncode,
+                        '%contactForm%': path('contact')
+                    })
+                    | raw
+            }}
+        </p>
+        
+        <p>{{ 'sidebar.contact.networks' | trans({}, 'author') }}</p>
         
         {% include 'SlyCoreBundle:Block:socialProNetworks.html.twig' %}
     </div>

@@ -52,8 +52,8 @@ div.author section.page div.author-skills h4 {
     padding: 10px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #116fe3;
-    border-left: 5px solid #116fe3;
+    color: #a82525;
+    border-left: 5px solid #a82525;
 }
 
 div.author section.page div.author-skills ul li {
@@ -74,13 +74,13 @@ div.author section.page div.author-portfolio p {
 }
 
 div.author section.page div.author-portfolio ul {
-    margin: 40px 0;
+    margin: 80px 0;
 }
 
 div.author section.page div.author-portfolio ul li {
     position: relative;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 80px;
     background-color: #fff;
     -webkit-transition: all 300ms linear;
     -moz-transition: all 300ms linear;
@@ -106,7 +106,6 @@ div.author section.page div.author-portfolio ul li div {
     bottom: 0;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.95);
-    z-index: 10;
     opacity: 0;
     -moz-opacity: 0;
     -ms-filter: "alpha(opacity=0)";
@@ -147,8 +146,8 @@ div.author section.page div.author-portfolio ul li.private div .btn {
 
 div.author section.page div.author-portfolio ul li div h5 {
     position: absolute;
-    top: 0;
-    right: -220px;
+    top: -50px;
+    left: 0;
     width: 180px;
     height: 30px;
     line-height: 30px;
@@ -158,11 +157,12 @@ div.author section.page div.author-portfolio ul li div h5 {
     background-color: #000;
     border: 10px solid #fff;
     text-transform: uppercase;
+    font-weight: normal;
     font-size: 11px;
 }
 
 div.author section.page div.author-portfolio ul li.perso div h5 {
-    background-color: #116fe3;
+    background-color: #a82525;
 }
 
 div.author section.page div.author-portfolio ul li div h4 a,

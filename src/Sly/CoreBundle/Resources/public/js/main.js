@@ -179,7 +179,7 @@ function letsShowItem()
 
 function letsShowAuthor()
 {
-    $.scrollTo('#author', 800, { offset: -130 });
+    $.scrollTo('#author', 800, { offset: -90 });
 }
 
 /* --- SyntaxHighlighter --------------- */

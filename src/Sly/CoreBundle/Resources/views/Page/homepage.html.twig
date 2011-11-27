@@ -4,5 +4,5 @@
 {% block description %}{{ 'homepage.seo.description' | trans({'%name%': project.name}, 'page') }}{% endblock description %}
 
 {% block content %}
-    <h2 role="contentinfo">--- Homepage ---</h2>
+    <h2 role="contentinfo">{{ 'homepage.title' | trans({}, 'page') }}</h2>
 {% endblock content %}

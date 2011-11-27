@@ -82,12 +82,12 @@ nav[role=navigation] ul.menu li .sub {
 
 nav[role=navigation] ul.menu li:hover,
 nav[role=navigation] ul.menu li.active {
-    border-bottom: 10px solid #116fe3;
+    border-bottom: 10px solid #a82525;
 }
 
 nav[role=navigation] ul.menu li:hover .icon,
 nav[role=navigation] ul.menu li.active .icon {
-    color: #116fe3;
+    color: #a82525;
     font-size: 70px;
 }
 
@@ -98,7 +98,7 @@ nav[role=navigation] ul.menu li:hover .main {
 }
 
 nav[role=navigation] ul.menu li.active .main {
-    color: #116fe3;
+    color: #a82525;
 }
 
 nav[role=navigation] ul.menu li:hover .sub,
@@ -108,19 +108,19 @@ nav[role=navigation] ul.menu li.active .sub {
     -ms-animation: moveFromBottom 500ms ease;
 }
 
-nav[role=navigation] ul.menu li.na .icon,
-nav[role=navigation] ul.menu li.na .sub,
-nav[role=navigation] ul.menu li.na a,
-nav[role=navigation] ul.menu li.na a:visited,
-nav[role=navigation] ul.menu li.na a:hover,
-nav[role=navigation] ul.menu li.na:hover a,
-nav[role=navigation] ul.menu li.na:hover a:visited,
-nav[role=navigation] ul.menu li.na:hover a:hover {
-    color: #ddd;
-}
-
+nav[role=navigation] ul.menu li.na,
 nav[role=navigation] ul.menu li.na:hover,
-nav[role=navigation] ul.menu li.na.active {
+nav[role=navigation] ul.menu li.na.active,
+nav[role=navigation] ul.menu li.na *,
+nav[role=navigation] ul.menu li.na:hover *,
+nav[role=navigation] ul.menu li.na.active *,
+nav[role=navigation] ul.menu li.na a *,
+nav[role=navigation] ul.menu li.na a:visited *,
+nav[role=navigation] ul.menu li.na a:hover * {
+    -webkit-animation: none;
+    -moz-animation: none;
+    -ms-animation: none;
+    color: #ddd;
     border-bottom: none;
 }
 
@@ -228,7 +228,7 @@ nav[role=navigation] ul.networks li a:hover {
 }
 
 nav[role=navigation] ul.networks li.i {
-    background-color: #116fe3;
+    background-color: #a82525;
     color: #fff;
     -webkit-transition: all 0ms linear;
     -moz-transition: all 0ms linear;

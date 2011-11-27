@@ -10,9 +10,7 @@
             <a href="{{ path('homepage') }}">{{ project.name }}</a>
             - {{ 'footer.rights' | trans }}
             {% if app.request.attributes.get('_route') != 'author' %}
-                - <img src="http://sly.mx/ukwc0s" alt="" />
-                <br />
-                {{ 'footer.enjoy' | trans }}
+                <img src="http://sly.mx/ukwc0s" alt="" />
             {% endif %}
         </aside>
     </section>

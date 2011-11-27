@@ -3,18 +3,8 @@
 {% block title %}{{ 'seo.title' | trans({}, 'resource') }}{% endblock title %}
 {% block description %}{{ 'seo.description' | trans({}, 'resource') }}{% endblock description %}
 
-{% set topMain = true %}
-
-{% block topMainTitle %}
-    <a href="{{ path('resource') }}" title="{{ 'core.menu.resource' | trans }}">
-        {{ 'title' | trans({}, 'tutorial') }}
-    </a>
-{% endblock topMainTitle %}
-
-{% block topMainMenu %}
-    {% render 'SlyContentBundle:Component:categories' with {'type': 'resource'} %}
-{% endblock topMainMenu %}
-
 {% block content %}
+    <h2 role="contentinfo">{{ 'title' | trans({}, 'resource') }}</h2>
+
     <p class="empty">{{ 'core.soon' | trans }}</p>
 {% endblock content %}
