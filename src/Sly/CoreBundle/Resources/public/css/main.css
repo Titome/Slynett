@@ -365,6 +365,64 @@ ul.share li:last-child {
     border-bottom: none;
 }
 
+/* --- Activity ----------------------------- */
+
+ul.activity {
+}
+
+ul.activity li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+}
+
+ul.activity li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+ul.activity li span.sws {
+    margin-right: 5px;
+}
+
+ul.activity li span {
+    font-size: 24px;
+    color: #ddd;
+}
+
+ul.activity li.twitter a.title,
+ul.activity li.twitter a.title:visited {
+    color: #aaa;
+}
+
+ul.activity li a.type,
+ul.activity li a.type:visited {
+    margin-right: 10px;
+    padding: 2px 4px;
+    color: #fff;
+    background-color: #a82525;
+    text-decoration: none;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+ul.activity li.twitter a.type,
+ul.activity li.twitter a.type:visited {
+    color: #fff;
+    background-color: #ccc;
+}
+
+ul.activity li a.type:hover,
+ul.activity li.twitter a.type:hover{
+    background-color: #000;
+}
+
+ul.activity li a:hover {
+    text-decoration: none;
+}
+
+
 /* --- Forms -------------------------------- */
 
 div.form {

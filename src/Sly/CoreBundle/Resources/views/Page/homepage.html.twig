@@ -5,4 +5,32 @@
 
 {% block content %}
     <h2 role="contentinfo">{{ 'homepage.title' | trans({}, 'page') }}</h2>
+    
+    <div class="homepage">
+        <section class="page">
+            <p>---</p>
+            
+            <h3>{{ 'homepage.lastposts.title' | trans({}, 'page') }}</h3>
+            
+            <div class="content">
+                ---
+            </div>
+            
+            <h3>{{ 'homepage.lasttutorials.title' | trans({}, 'page') }}</h3>
+            
+            <div class="content">
+                ---
+            </div>
+            
+            <h3>{{ 'homepage.tech.title' | trans({}, 'page') }}</h3>
+            
+            <div class="content">
+                ---
+            </div>
+        </section>
+        
+        <section class="activity">            
+            {% render 'SlyCoreBundle:Component:lastActivity' %}
+        </section>
+    </div>
 {% endblock content %}

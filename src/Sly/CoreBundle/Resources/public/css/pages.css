@@ -62,7 +62,7 @@ div.author section.page div.author-skills ul li {
 
 div.author section.page div.author-skills ul li a,
 div.author section.page div.author-skills ul li a:visited {
-    color: #333;
+    color: #000;
 }
 
 div.author section.page div.author-skills ul li a:hover {
@@ -208,4 +208,17 @@ div.author section.page div.author-portfolio ul li:hover div * {
     -moz-opacity: 1;
     -ms-filter: "alpha(opacity=100)";
     filter: alpha(opacity=100);
+}
+
+/* --- Homepage ------------------ */
+
+div.homepage section.page {
+    float: left;
+    width: 540px;
+}
+
+div.homepage section.activity {
+    margin-left: 580px;
+    padding: 20px;
+    background-color: #fff;
 }
