@@ -37,7 +37,7 @@ article.blog section img {
 
 article.blog section a.category,
 article.blog section a.category:visited {
-    color: #a82525;
+    color: #2ea2c8;
     text-decoration: none;
 }
 
@@ -159,7 +159,7 @@ article.tutorial p a:visited {
 
 article.tutorial p span a,
 article.tutorial p span a:visited {
-    color: #a82525;
+    color: #2ea2c8;
 }
 
 article.tutorial p span a:hover {
@@ -173,7 +173,7 @@ article.tutorial a.info {
    text-transform: uppercase;
    padding: 7px 14px;
    background: #fff;
-   color: #a82525;
+   color: #2ea2c8;
 }
 
 /* --- */
@@ -335,7 +335,7 @@ aside.watch article {
 
 aside.watch span a,
 aside.watch span a:visited {
-    color: #a82525;
+    color: #2ea2c8;
 }
 
 aside.watch footer {
@@ -406,7 +406,7 @@ article.snippet header h3 {
 
 article.snippet span a,
 article.snippet span a:visited {
-    color: #a82525;
+    color: #2ea2c8;
 }
 
 article.snippet footer {
@@ -489,7 +489,7 @@ article.search div a:visited {
 }
 
 article.search div a:hover {
-    color: #a82525;
+    color: #2ea2c8;
 }
 
 article.search div img {
@@ -537,7 +537,7 @@ article.show header ul li time {
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 22px;
     text-shadow: 1px 1px 1px #fff;
-    color: #a82525;
+    color: #2ea2c8;
 }
 
 article.show section.body {
@@ -579,7 +579,7 @@ article.show .content-show .moc.content {
 
 article.show .content-show a,
 article.show .content-show a:visited {
-    color: #a82525;
+    color: #2ea2c8;
 }
 
 article.show .content-show h3,
@@ -600,7 +600,7 @@ article.show .content-show ul {
     padding: 10px 0 10px 40px;
     margin-left: 40px;
     margin-right: 40px;
-    border-left: 5px solid #a82525;
+    border-left: 5px solid #2ea2c8;
 }
 
 article.show .content-show ul li {

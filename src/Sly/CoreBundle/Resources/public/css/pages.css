@@ -52,8 +52,8 @@ div.author section.page div.author-skills h4 {
     padding: 10px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #a82525;
-    border-left: 5px solid #a82525;
+    color: #2ea2c8;
+    border-left: 5px solid #2ea2c8;
 }
 
 div.author section.page div.author-skills ul li {
@@ -162,7 +162,7 @@ div.author section.page div.author-portfolio ul li div h5 {
 }
 
 div.author section.page div.author-portfolio ul li.perso div h5 {
-    background-color: #a82525;
+    background-color: #2ea2c8;
 }
 
 div.author section.page div.author-portfolio ul li div h4 a,

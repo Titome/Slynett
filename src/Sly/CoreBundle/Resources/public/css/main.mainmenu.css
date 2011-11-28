@@ -82,12 +82,12 @@ nav[role=navigation] ul.menu li .sub {
 
 nav[role=navigation] ul.menu li:hover,
 nav[role=navigation] ul.menu li.active {
-    border-bottom: 10px solid #a82525;
+    border-bottom: 10px solid #2ea2c8;
 }
 
 nav[role=navigation] ul.menu li:hover .icon,
 nav[role=navigation] ul.menu li.active .icon {
-    color: #a82525;
+    color: #2ea2c8;
     font-size: 70px;
 }
 
@@ -98,7 +98,7 @@ nav[role=navigation] ul.menu li:hover .main {
 }
 
 nav[role=navigation] ul.menu li.active .main {
-    color: #a82525;
+    color: #2ea2c8;
 }
 
 nav[role=navigation] ul.menu li:hover .sub,
@@ -228,7 +228,7 @@ nav[role=navigation] ul.networks li a:hover {
 }
 
 nav[role=navigation] ul.networks li.i {
-    background-color: #a82525;
+    background-color: #2ea2c8;
     color: #fff;
     -webkit-transition: all 0ms linear;
     -moz-transition: all 0ms linear;

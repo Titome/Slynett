@@ -77,7 +77,7 @@
 
 #main .sidebar section div.content ul.categories li.active a,
 #main .sidebar section div.content ul.categories li.active a:visited {
-    background-color: #a82525;
+    background-color: #2ea2c8;
     color: #fff;
 }
 
@@ -94,7 +94,7 @@
 }
 
 #main .sidebar section div.content ul.networks li span {
-    color: #a82525;
+    color: #2ea2c8;
 }
 
 #main .sidebar section div.content ul.networks li span.text {
