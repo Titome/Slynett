@@ -48,7 +48,7 @@
 }
 
 #main section[role=main] nav ul.categories li a:hover {
-    color: #000;
+    color: #333;
 }
 
 #main section[role=main] nav ul.categories li.active a,

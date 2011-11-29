@@ -8,24 +8,48 @@
     
     <div class="homepage">
         <section class="page">
-            <p>---</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
             
             <h3>{{ 'homepage.lastposts.title' | trans({}, 'page') }}</h3>
             
             <div class="content">
-                ---
+                {% render 'SlyContentBundle:Component:lastItems' with {
+                    'type': 'blog',
+                    'withPicture': true,
+                    'count': 3
+                } %}
             </div>
             
             <h3>{{ 'homepage.lasttutorials.title' | trans({}, 'page') }}</h3>
             
             <div class="content">
-                ---
+                {% render 'SlyContentBundle:Component:lastItems' with {
+                    'type': 'tutorial',
+                    'withPicture': true,
+                    'count': 2
+                } %}
             </div>
             
             <h3>{{ 'homepage.tech.title' | trans({}, 'page') }}</h3>
             
             <div class="content">
-                ---
+                <p>{{ 'homepage.tech.message1' | trans({}, 'page') | raw }}</p>
+                <p>
+                    {{ 'homepage.tech.message2' | trans({
+                        '%authorUrl%': path('author')
+                    }, 'page') | raw }}
+                </p>
+                <p>
+                    <a href="{{ project.github.sources.url }}" onclick="var w=window.open(this.href);w.focus();return false;" class="btn sws html">
+                        <span></span>
+                        {{ 'homepage.tech.sources' | trans({}, 'page') }}
+                    </a>
+                </p>
             </div>
         </section>
         

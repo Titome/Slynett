@@ -7,7 +7,7 @@
 	height:100%;
 	position:relative;
 	overflow:hidden;
-	background:#000;
+	background:#333;
 }
 .va-slice{
 	cursor:pointer;
@@ -41,7 +41,7 @@
 	margin:0px 2px;
 }
 .va-slice ul li a{
-	color:#000;
+	color:#333;
 	background:#eede2f;
 	padding:3px 6px;
 	font-size:14px;
@@ -49,7 +49,7 @@
 	text-transform:uppercase;
 }
 .va-slice ul li a:hover{
-	background:#000;
+	background:#333;
 	color:#fff;
 	text-shadow:none;
 }

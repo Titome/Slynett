@@ -3,11 +3,15 @@
         <article class="gshe">
             {%if item.picture and withPicture %}
                 <a href="{{ path(itemRoute, {'slug': item.slug }) }}" title="{{ item }}">
-                    <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('lsThumbnail') }}" alt="{{ item }}" />
+                    <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('lsThumbnail') }}" alt="{{ item }}" class="item" />
+                </a>
+            {% else %}
+                <a href="{{ path(itemRoute, {'slug': item.slug }) }}" title="{{ item }}">
+                    <img src="{{ '/uploads/labs.jpg' | apply_filter('lsThumbnail') }}" alt="{{ item }}" class="item" />
                 </a>
             {% endif %}
             
-            <a href="{{ path(itemRoute, {'slug': item.slug}) }}" title="{{ item }}">{{ item }}</a>
+            <a href="{{ path(itemRoute, {'slug': item.slug}) }}" title="{{ item }}" class="title">{{ item }}</a>
         </article>
     {% else %}
         <p>{{ 'items.empty' | trans }}</p>

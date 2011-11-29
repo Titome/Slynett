@@ -25,7 +25,7 @@ core:
       text: Prochainement
     projects:
       label: Projets
-      text: Les projets %name%
+      text: Prochainement
     credits: Crédits
     terms: Mentions légales
     totop: Retour en haut

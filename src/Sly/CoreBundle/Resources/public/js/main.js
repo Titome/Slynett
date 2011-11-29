@@ -1,4 +1,5 @@
 jQuery(function($){
+    // initImgs();
     $('div.tabs').tabs();
     
     /* --- Others ---------------------- */
@@ -37,7 +38,16 @@ jQuery(function($){
       {
         $(document).unbind('keydown', arguments.callee);
         
-        $('body').prepend('<div id="k"><object style="height: 390px; width: 640px"><param name="movie" value="http://www.youtube.com/v/-ecg5_Y08KI?version=3&feature=player_detailpage&autoplay=1"><param name="autoplay" value="true"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/-ecg5_Y08KI?version=3&autoplay=1&feature=player_detailpage" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="360"></object></div>');
+        $('body').prepend('<a href="http://www.youtube.com/v/-ecg5_Y08KI?autoplay=1" onclick="var w=window.open(this.href); w.focus(); return false;"><img id="k" src="/uploads/chuck.png" alt="Chuck" /></a>');
+        
+        $('#overlay').css('backgroundColor', '#fff').fadeIn();
+        
+        $('#k').animate({
+            'left': '80%'
+        }, {'duration': 3000, 'easing': 'easeInOutCirc'}).animate({
+            'left': '80%',
+            'top': '422px'
+        }, {'duration': 1000, 'easing': 'easeInOutBack'});
       }
     });
     
@@ -185,3 +195,67 @@ function letsShowAuthor()
 /* --- SyntaxHighlighter --------------- */
 
 SyntaxHighlighter.all();
+
+/* --- HTML5/Canvas greyscale convertor  */
+
+function initImgs(){
+  $("img.item").each(function(){
+    var el = $(this);
+    var parent = el.parent();
+    $(this).one("load",function() {
+      el.animate({
+        opacity : 1
+      }, 500);
+  
+      el.wrap('<div class="imgwrapper">').clone().addClass('grayscale').css({
+        "position" : "absolute",
+        "z-index" : "0",
+        "opacity" : "0"
+      }).insertBefore(el).mouseover(function(){
+        parent.find('img:first').stop().animate({
+          opacity : 1
+        }, 500);
+      }).mouseout(function(){
+        $(this).stop().animate({
+          opacity : 0
+        }, 1000);
+      });
+      if($.browser.msie){
+        grayscaleIE(this);
+      } else {
+        this.src = grayscale(this);
+      }
+    }).each(function(){
+      if(this.complete || (jQuery.browser.msie && parseInt(jQuery.browser.version) == 6))
+        $(this).trigger("load");
+    });
+  });
+};
+
+
+function grayscaleIE(img) {
+  img.style.filter = 'progid:DXImageTransform.Microsoft.BasicImage(grayScale=1)';
+}
+    
+function grayscale(img) {
+  var canvas = document.createElement('canvas');
+
+  var ctx = canvas.getContext('2d');
+  var imgObj = new Image();
+  imgObj.src = img.src;
+  canvas.width = imgObj.width;
+  canvas.height = imgObj.height;
+  ctx.drawImage(imgObj, 0, 0);
+  var imgPixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  for(var y = 0; y < imgPixels.height; y++) {
+    for(var x = 0; x < imgPixels.width; x++) {
+      var i = (y * 4) * imgPixels.width + x * 4;
+      var avg = (imgPixels.data[i] + imgPixels.data[i + 1] + imgPixels.data[i + 2]) / 3;
+      imgPixels.data[i] = avg;
+      imgPixels.data[i + 1] = avg;
+      imgPixels.data[i + 2] = avg;
+    }
+  }
+  ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
+  return canvas.toDataURL();
+}

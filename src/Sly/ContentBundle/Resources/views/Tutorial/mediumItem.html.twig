@@ -3,7 +3,7 @@
         {%if item.picture %}
             <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('tutorial') }}" alt="{{ item }}" />
         {% else %}
-            <img src="{{ '/uploads/tutorial.jpg' | apply_filter('tutorial') }}" alt="{{ item }}" />
+            <img src="{{ '/uploads/labs.jpg' | apply_filter('tutorial') }}" alt="{{ item }}" />
         {% endif %}
         
         <div class="mask">

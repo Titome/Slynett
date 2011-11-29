@@ -21,8 +21,16 @@
         <div>
             {% if item.picture %}
                 <a href="{{ path('%type%_show' | replace({'%type%': item.type}), {'slug': item.slug }) }}" title="{{ item }}">
-                    <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('thumbnail') }}" alt="{{ item }}" class="item-picture" />
+                    <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('thumbnail') }}" alt="{{ item }}" class="item" />
                 </a>
+            {% else %}
+                {% if item.type != 'watch' %}
+                    <a href="{{ path('%type%_show' | replace({'%type%': item.type}), {'slug': item.slug }) }}" title="{{ item }}">
+                        <img src="{{ '/uploads/labs.jpg' | apply_filter('thumbnail') }}" alt="{{ item }}" class="item" />
+                    </a>
+                {% else %}
+                    <img src="{{ '/uploads/labs.jpg' | apply_filter('thumbnail') }}" alt="{{ item }}" class="item" />
+                {% endif %}
             {% endif %}
             
             {% if item.type == 'watch' %}

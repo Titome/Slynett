@@ -139,7 +139,7 @@ article.tutorial h3 a:visited {
     display: block;
    font-size: 17px;
    padding: 10px;
-   background: #000;
+   background: #333;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     font-weight: normal;
     text-decoration: none;
@@ -325,7 +325,7 @@ aside.watch header h3 {
     margin: 0 20px 0 0;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 18px;
-    color: #000;
+    color: #333;
     text-shadow: 1px 1px 1px #fff;
 }
 
@@ -507,7 +507,7 @@ article.search div img {
 
 #main article.show header h2 a.category,
 #main article.show header h2 a.category:visited {
-    color: #000;
+    color: #333;
 }
 
 article.show header {
@@ -569,7 +569,7 @@ article.show section.body div.intro ul li a:visited {
 
 article.show section.body div.intro ul li a:hover {
     text-decoration: none;
-    color: #000;
+    color: #333;
 }
 
 article.show .content-show .moc.content {
@@ -638,5 +638,5 @@ aside.related article a:visited {
 
 aside.related article:hover a,
 aside.related article:hover a:visited {
-    color: #000;
+    color: #333;
 }

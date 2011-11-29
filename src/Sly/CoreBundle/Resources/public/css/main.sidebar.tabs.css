@@ -23,13 +23,13 @@
 }
 
 .ui-tabs .ui-tabs-nav a:hover span {
-    color: #000;
+    color: #333;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
     margin-bottom: 0;
     padding-bottom: 1px;
-    color: #000;
+    color: #333;
     background-color: #fff;
 }
 
@@ -44,7 +44,7 @@
     font-size: 18px;
 }
 
-.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; color: #000; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; color: #333; }
 .ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; }
 .ui-tabs .ui-tabs-panel {
     display: block; border-width: 0; padding: 1em 1.4em; background: none; background-color: #fff;
@@ -80,7 +80,7 @@
 
 .ui-tabs .tabs-items article:hover a,
 .ui-tabs .tabs-items article:hover a:visited {
-    color: #000;
+    color: #333;
 }
 
 .ui-tabs .tabs-items article img {
@@ -129,5 +129,5 @@
 }
 
 .ui-tabs .tabs-feeds ul li a:hover span {
-    color: #000;
+    color: #333;
 }

@@ -17,12 +17,13 @@ body {
     background-image: url('../images/background-wine-cork.png');
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: .8em;
-    color: #000;
+    line-height: 18px;
+    color: #333;
 }
 
 a,
 a:visited {
-    color: #000;
+    color: #333;
 }
 
 label {
@@ -87,7 +88,7 @@ hr.sep3 {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #000;
+    background-color: #333;
     opacity: .5;
     -moz-opacity: .5;
     -ms-filter: "alpha(opacity=50)";
@@ -96,14 +97,12 @@ hr.sep3 {
 }
 
 #k {
-    position: fixed;
-    top: 50px;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    text-align: center;
-    z-index: 20;
+    position: absolute;
+    z-index: 10000;
+    top: 254px;
+    left: -500px;
+    width: 140px;
+    height: auto;
 }
 
 #top-nav {
@@ -246,7 +245,7 @@ nav.sec ul.menu li.active a:hover {
 
 #footer a,
 #footer a:visited {
-    color: #000;
+    color: #333;
 }
 
 #footer ul.menu.second a,
@@ -371,6 +370,7 @@ ul.activity {
 }
 
 ul.activity li {
+    overflow: hidden;
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px dashed #ddd;
@@ -391,8 +391,15 @@ ul.activity li span {
     color: #ddd;
 }
 
-ul.activity li.twitter a.title,
-ul.activity li.twitter a.title:visited {
+ul.activity li a.title,
+ul.activity li a.title:visited {
+    float: right;
+    display: block;
+    width: 300px;
+}
+
+ul.activity li.twitter a,
+ul.activity li.twitter a:visited {
     color: #aaa;
 }
 
@@ -415,7 +422,7 @@ ul.activity li.twitter a.type:visited {
 
 ul.activity li a.type:hover,
 ul.activity li.twitter a.type:hover{
-    background-color: #000;
+    background-color: #333;
 }
 
 ul.activity li a:hover {

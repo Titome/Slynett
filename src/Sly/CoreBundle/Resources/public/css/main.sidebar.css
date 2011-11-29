@@ -100,7 +100,7 @@
 #main .sidebar section div.content ul.networks li span.text {
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     font-size: 18px;
-    color: #000;
+    color: #333;
 }
 
 #main .sidebar section div.content ul.networks li a,
