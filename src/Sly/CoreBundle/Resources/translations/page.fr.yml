@@ -11,7 +11,7 @@ homepage:
     title: Hey ! Ce projet est fun !
     message1: |
       Ce projet est fun pour plusieurs raisons : déjà parce qu'il est sous <strong>Symfony2</strong> et ça, c'est cool.<br />
-      Il est également saupoudré de <strong>HTML5</strong> et <strong>CSS3</strong>, avec une sauce <strong>jQuery</strong>.
+      Il est également saupoudré de <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>jQuery</strong> et a été noyé de caféine (avec une moyenne de 4 cafés par jour).
     message2: |
       Parce que <a href="%authorUrl%">le taulier des lieux</a> est très sympa, vous pouvez également manger du code en découvrant les sources du projet.
     sources: Voir les sources / manger du code

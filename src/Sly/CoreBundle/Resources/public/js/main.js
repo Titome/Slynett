@@ -38,14 +38,14 @@ jQuery(function($){
       {
         $(document).unbind('keydown', arguments.callee);
         
-        $('body').prepend('<a href="http://www.youtube.com/v/-ecg5_Y08KI?autoplay=1" onclick="var w=window.open(this.href); w.focus(); return false;"><img id="k" src="/uploads/chuck.png" alt="Chuck" /></a>');
+        $('body').prepend('<a href="http://www.youtube.com/-ecg5_Y08KI?autoplay=1" onclick="var w=window.open(this.href); w.focus(); return false;"><img id="k" src="/uploads/chuck.png" alt="Chuck" /></a>');
         
         $('#overlay').css('backgroundColor', '#fff').fadeIn();
         
         $('#k').animate({
-            'left': '80%'
+            'left': '70%'
         }, {'duration': 3000, 'easing': 'easeInOutCirc'}).animate({
-            'left': '80%',
+            'left': '70%',
             'top': '422px'
         }, {'duration': 1000, 'easing': 'easeInOutBack'});
       }
