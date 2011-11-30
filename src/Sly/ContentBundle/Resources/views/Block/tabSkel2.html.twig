@@ -35,33 +35,7 @@
             } %}
         </div>
         <div id="tabs-feeds" class="tabs-feeds">
-            <ul>
-                <li>
-                    <a href="{{ networks.rss }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="sws rss">
-                        <span></span> {{ 'sidebar.feeds.general' | trans }}
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ path('feed_type', {'type': 'blog'}) }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="sws rss">
-                        <span></span> {{ 'sidebar.feeds.blog' | trans }}
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ path('feed_type', {'type': 'tutorial'}) }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="sws rss">
-                        <span></span> {{ 'sidebar.feeds.tutorial' | trans }}
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ path('feed_type', {'type': 'watch'}) }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="sws rss">
-                        <span></span> {{ 'sidebar.feeds.watch' | trans }}
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ path('feed_type', {'type': 'snippet'}) }}" onclick="var w=window.open(this.href); w.focus(); return false;" class="sws rss">
-                        <span></span> {{ 'sidebar.feeds.snippet' | trans }}
-                    </a>
-                </li>
-            </ul>
+            {% include 'SlyContentBundle:Block/Content:rssFeeds.html.twig' %}
         </div>
     </div>
 </section>

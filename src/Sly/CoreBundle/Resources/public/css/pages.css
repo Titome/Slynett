@@ -257,6 +257,7 @@ div.homepage section.page div.content article a:visited {
     text-decoration: none;
 }
 
-div.homepage section.page div.content article a:hover {
+div.homepage section.page div.content article:hover a,
+div.homepage section.page div.content article:hover a:visited {
     color: #333;
 }

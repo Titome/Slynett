@@ -97,37 +97,17 @@
 
 .ui-tabs .tabs-feeds ul li {
     overflow: hidden;
-    float: left;
-    margin: 0 20px 20px 0;
-    text-align: center;
-    line-height: 13px;
+    margin-bottom: 10px;
 }
 
-.ui-tabs .tabs-feeds ul li:nth-child(2n+2) {
-    margin-right: 0;
-}
-
-.ui-tabs .tabs-feeds ul li a,
-.ui-tabs .tabs-feeds ul li a:visited {
-    display: block;
-    width: 104px;
-    padding: 10px;
-    text-decoration: none;
-    background-color: #eee;
+.ui-tabs .tabs-feeds ul li:last-child {
+    margin-bottom: 0;
 }
 
 .ui-tabs .tabs-feeds ul li a:hover {
-    background-color: #ddd;
+    text-decoration: none;
 }
 
-.ui-tabs .tabs-feeds ul li a span,
-.ui-tabs .tabs-feeds ul li a:visited span {
-    display: block;
-    margin: 10px 0 20px 0;
-    font-size: 24px;
-    color: #aaa;
-}
-
-.ui-tabs .tabs-feeds ul li a:hover span {
-    color: #333;
+.ui-tabs .tabs-feeds ul li span {
+    color: #ffa200;
 }

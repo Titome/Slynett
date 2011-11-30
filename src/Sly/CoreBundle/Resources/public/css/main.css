@@ -99,9 +99,8 @@ hr.sep3 {
 #k {
     position: absolute;
     z-index: 10000;
-    top: 254px;
+    top: 43px;
     left: -500px;
-    width: 140px;
     height: auto;
 }
 

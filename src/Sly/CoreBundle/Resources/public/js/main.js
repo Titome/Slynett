@@ -38,16 +38,29 @@ jQuery(function($){
       {
         $(document).unbind('keydown', arguments.callee);
         
-        $('body').prepend('<a href="http://www.youtube.com/-ecg5_Y08KI?autoplay=1" onclick="var w=window.open(this.href); w.focus(); return false;"><img id="k" src="/uploads/chuck.png" alt="Chuck" /></a>');
+        $('body').prepend('<a href="http://www.youtube.com/-ecg5_Y08KI?autoplay=1" onclick="var w=window.open(this.href); w.focus(); return false;"><img id="k" src="/uploads/chicken.gif" alt="Chicken" /></a>');
+               
+        $('#header *').fadeOut();
         
-        $('#overlay').css('backgroundColor', '#fff').fadeIn();
+        $('#header')
+            .animate({'height': '200px', 'width': '100%'})
+            .animate({'backgroundColor': '#ff0000'}, 1200)
+            .animate({'backgroundColor': '#00ff00'}, 1200)
+            .animate({'backgroundColor': '#fe00ee'}, 1200)
+            .animate({'backgroundColor': '#ff0000'}, 1200)
+            .animate({'backgroundColor': '#00ff00'}, 1200)
+            .animate({'backgroundColor': '#fe00ee'}, 1200)
+            .animate({'backgroundColor': '#ffffff', 'height': '100px', 'width': '1024px'}, 1200);
         
         $('#k').animate({
             'left': '70%'
         }, {'duration': 3000, 'easing': 'easeInOutCirc'}).animate({
-            'left': '70%',
-            'top': '422px'
+            'left': '23%'
         }, {'duration': 1000, 'easing': 'easeInOutBack'});
+        
+        $('#k').delay(9000).animate({'zIndex': '-1'}, 100).animate({'top': '200px'}, 1200).animate({'opacity': '0'}, 800);
+        $('#header *').delay(9000).fadeIn();
+        $('#header div.filters').delay(100).fadeOut();
       }
     });
     
