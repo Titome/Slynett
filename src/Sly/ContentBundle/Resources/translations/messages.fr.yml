@@ -34,9 +34,10 @@ search:
   title_count: Voici %count% résultats correspondant à votre recherche "%query%"
   input: Rechercher...
   category:
-    blog: Blog
-    watch: Veille
+    all: Toutes les catégories
+    blog: Articles de blogs
+    watch: Liens de veille
     snippet: Snippets
-    tutorial: Tutoriels
+    tutorial: Tutoriels vidéo
   message: Sélectionner les sections dans lesquelles vous souhaitez porter votre recherche.
   submit: Rechercher

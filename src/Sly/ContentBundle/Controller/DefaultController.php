@@ -48,8 +48,10 @@ class DefaultController extends Controller
         
         $em = $this->getDoctrine()->getEntityManager();
         
-        $query = urldecode(($query == '@')?'':$query);
-        $categories = ($categories == '@')?array('blog', 'tutorial', 'watch', 'snippet'):explode('-', urldecode($categories));
+        $allCategories = array('blog', 'tutorial', 'watch', 'snippet');
+        
+        $query = urldecode(($query == '!')?'':$query);
+        $categories = ($categories == '!')?$allCategories:explode('-', urldecode($categories));
 
         $contentResults = $em->getRepository('SlyContentBundle:Content')->searchContent(
                 $query,
@@ -60,32 +62,8 @@ class DefaultController extends Controller
         return $this->render('SlyContentBundle:Default:search.html.twig', array(
             'items' => $contentResults,
             'searchQuery' => $query,
-            'searchCategories' => implode('-', $categories),
-        ));
-        
-        /* --- */
-        
-        $em = $this->getDoctrine()->getEntityManager();
-        
-        $content = new Content();
-        
-        $searchForm = $this->createForm(new SearchType());
-        
-        $request = $this->get('request');
-        
-        print_r($request->query->get('categories'));
-        
-//        if ($request->getMethod() == 'POST')
-//        {
-//            $searchForm->bindRequest($request);
-//            
-//            if ($searchForm->isValid())
-//            {
-//            }
-//        }
-        
-        return $this->render('SlyContentBundle:Default:search.html.twig', array(
-            'searchForm' => $searchForm->createView(),
+            'searchCategories' => $categories,
+            'allCategories' => $allCategories,
         ));
     }
 }

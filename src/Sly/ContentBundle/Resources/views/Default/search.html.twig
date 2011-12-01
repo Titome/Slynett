@@ -6,6 +6,19 @@
 {% block content %}
     <h2 role="contentinfo">{{ 'search.title_count' | trans({'%count%': items | length, '%query%': searchQuery}) }}</h2>
     
+    <nav>
+        <ul class="categories">
+            <li class="{% if searchCategories | length == allCategories | length %}active{% endif %}">
+                <a href="{{ path('search', {'query': searchQuery, 'categories': '!'}) }}">{{ 'search.category.all' | trans }}</a>
+            </li>
+            {% for c in allCategories %}
+                <li class="{% if c in searchCategories and searchCategories | length < allCategories | length %}active{% endif %}">
+                    <a href="{{ path('search', {'query': searchQuery, 'categories': c}) }}">{{ 'search.category.%type%' | replace({'%type%': c}) | trans }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    
     {% include 'SlyCoreBundle:Block/Com/Content:728x90.html.twig' %}
 
     {% for item in items %}

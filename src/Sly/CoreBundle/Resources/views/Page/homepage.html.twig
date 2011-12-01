@@ -6,15 +6,8 @@
 {% block content %}
     <h2 role="contentinfo">{{ 'homepage.title' | trans({}, 'page') }}</h2>
     
-    <div class="homepage">
+    <div class="homepage">        
         <section class="page">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            
             <h3>{{ 'homepage.lastposts.title' | trans({}, 'page') }}</h3>
             
             <div class="content">
@@ -35,6 +28,8 @@
                 } %}
             </div>
             
+            {% include 'SlyCoreBundle:Block/Com/Content:468x60.html.twig' %}
+            
             <h3>{{ 'homepage.tech.title' | trans({}, 'page') }}</h3>
             
             <div class="content">
@@ -51,6 +46,16 @@
                     </a>
                 </p>
             </div>
+        </section>
+        
+        <section class="networks">            
+            <ul class="networks">
+                <li class="sws rss"><a href="{{ networks.rss }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
+                <li class="sws twitter"><a href="{{ networks.twitter.url }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
+                <li class="sws facebook"><a href="{{ networks.facebook.url }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
+                <li class="sws googleplus"><a href="{{ networks.googleplus }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
+                <li class="sws linkedin"><a href="{{ networks.linkedin }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
+            </ul>
         </section>
         
         <section class="activity">            

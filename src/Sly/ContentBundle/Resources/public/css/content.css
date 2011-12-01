@@ -451,7 +451,7 @@ article.search {
     height: 150px;
 }
 
-article.search:nth-child(3n+2) {
+article.search:nth-child(3n+3) {
     margin-right: 0;
 }
 
