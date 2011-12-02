@@ -1,0 +1,15 @@
+{% spaceless %}
+    <a href="{{ path('author') }}" title="{{ project.author.name }}"><img src="http://0.gravatar.com/avatar/{{ project.author.email | md5 }}?s=64" alt="" /></a>
+
+    <p>
+        <strong>
+            {{ 'list.item.author' | trans({'%authorName%': project.author.name}, type) }}
+            <a href="{{ path('author') }}" title="{{ project.author.name }}">{{ project.author.name }}</a>
+        </strong>
+    </p>
+    
+    <p>
+        {{ 'items.author.description' | trans }}
+        <a href="{{ path('author') }}" title="{{ project.author.name }}">{{ 'items.author.more' | trans }}</a>
+    </p>
+{% endspaceless %}

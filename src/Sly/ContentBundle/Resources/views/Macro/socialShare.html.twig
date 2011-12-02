@@ -1,5 +1,5 @@
 {% macro facebookButton(link, title) %}
-    <iframe src="http://www.facebook.com/plugins/like.php?href={{ link }}&amp;layout=button_count&amp;show_faces=false&amp;width=200&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;"></iframe>
+    <iframe src="http://www.facebook.com/plugins/like.php?href={{ link }}&amp;layout=button_count&amp;show_faces=false&amp;width=200&amp;action=recommend&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;"></iframe>
 {% endmacro %}
 
 {% macro twitterButton(link, title) %}
@@ -11,9 +11,18 @@
     <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
 {% endmacro %}
 
-{% macro googlePlusButton(link, title) %}
-    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang: '{{ app.request.locale }}'}</script>
-    <g:plusone href="{{ link }}"></g:plusone>
+{% macro googlePlusButton(link, title) %}    
+    <div class="g-plusone" data-size="medium" data-annotation="inline" data-href="{{ link }}"></div>
+
+    <script type="text/javascript">
+      window.___gcfg = {lang: '{{ app.request.locale }}'};
+
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
 {% endmacro %}
 
 {% macro linkedInButton(link, title) %}

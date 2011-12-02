@@ -36,9 +36,12 @@ class DefaultController extends Controller
     {
         $request = $this->get('request');
         
+        $q = $request->query->get('q', '!');
+        $c = implode('-', $request->query->get('c', array('!')));
+        
         return $this->redirect($this->generateUrl('search', array(
-            'query' => $request->query->get('q', '!'),
-            'categories' => implode('-', $request->query->get('c', array('!'))),
+            'query' => $q?$q:'!',
+            'categories' => $c?$c:'!',
         )));
     }
     
@@ -46,9 +49,14 @@ class DefaultController extends Controller
     {
         $request = $this->get('request');
         
-        $em = $this->getDoctrine()->getEntityManager();
-        
         $allCategories = array('blog', 'tutorial', 'watch', 'snippet');
+        
+        if ($query == '!' && $categories == '!')
+            return $this->render('SlyContentBundle:Default:search.html.twig', array(
+                'allCategories' => $allCategories,
+            ));
+        
+        $em = $this->getDoctrine()->getEntityManager();
         
         $query = urldecode(($query == '!')?'':$query);
         $categories = ($categories == '!')?$allCategories:explode('-', urldecode($categories));
@@ -59,7 +67,7 @@ class DefaultController extends Controller
                 $this->container->getParameter('sly.content.feed.numberofitems')
         );
         
-        return $this->render('SlyContentBundle:Default:search.html.twig', array(
+        return $this->render('SlyContentBundle:Default:searchResults.html.twig', array(
             'items' => $contentResults,
             'searchQuery' => $query,
             'searchCategories' => $categories,

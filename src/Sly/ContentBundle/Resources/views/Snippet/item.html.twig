@@ -13,30 +13,11 @@
                 <a href="{{ path('snippet_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item }}</a>
             </h2>
         </section>
-        
-        <ul>
-            <li>
-                <time datetime="{{ item.publishedAt | date('core.date.time.big' | trans) }}">
-                    {{ item.publishedAt | date('core.date.normal' | trans) }}
-                </time>
-            </li>
-            <li>
-                <img src="http://0.gravatar.com/avatar/{{ project.author.email | md5 }}?s=32" alt="" />
-                {{ 'list.item.author' | trans({'%authorName%': project.author.name}, 'snippet') }}
-                <a href="{{ path('author') }}" title="{{ project.author.name }}">{{ project.author.name }}</a>
-            </li>
-            <li>
-                <a href="#" class="btn go-share">{{ 'list.item.share' | trans({}, 'snippet') }}</a>
-            </li>
-            <li>
-                <a href="{{ githubRawUrl | replace({'raw.': 'www.', 'master/': 'blob/master/'}) }}{{ item.getGithubFile }}" class="btn" onclick="var w=window.open(this.href); w.focus(); return false;">
-                    {{ 'list.item.ongithub' | trans({}, 'snippet') }}
-                </a>
-            </li>
-        </ul>
     </header>
         
     <section class="body">
+        <a href="#" class="btn go-share">{{ 'list.item.share' | trans({}, 'snippet') }}</a>
+        
         <div class="intro">
             {% if item.tags | length %}
                 <ul>
@@ -60,6 +41,16 @@
                 }}</pre>
             {% endif %}
         </div>
+        
+        <footer>
+            <aside class="left author">
+                {% include 'SlyContentBundle:Block:authorPresentation.html.twig' with {'type': 'snippet'} %}
+            </aside>
+            
+            <aside class="right">
+                {% include 'SlyContentBundle:Block/Content:socialNetworks.html.twig' with {'type': 'snippet'} %}
+            </aside>
+        </footer>
     </section>
     
     {% include 'SlyCoreBundle:Block/Com/Content:300x250m.html.twig' %}

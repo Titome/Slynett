@@ -6,6 +6,7 @@ article.blog {
 }
 
 article.blog header {
+    overflow: hidden;
     margin-bottom: 20px;
 }
 
@@ -15,6 +16,7 @@ article.blog header h3 a:visited {
     font-size: 22px;
     text-shadow: 1px 1px 1px #fff;
     text-decoration: none;
+    font-weight: normal;
 }
 
 article.blog header h3 a:hover {
@@ -52,6 +54,7 @@ article.blog section a.show {
 }
 
 article.blog footer {
+    overflow: hidden;
     margin-left: 460px;
 }
 
@@ -541,9 +544,19 @@ article.show header ul li time {
 }
 
 article.show section.body {
+    position: relative;
     margin-bottom: 40px;
     padding: 20px;
     background-color: #fff;
+}
+
+article.show section.body .go-share {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 12px;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid #fff;
 }
 
 article.show section.body div.intro ul {
@@ -552,8 +565,8 @@ article.show section.body div.intro ul {
 }
 
 article.show section.body div.intro ul li {
-    float: right;
-    margin-left: 5px;
+    float: left;
+    margin-right: 5px;
     font-size: 12px;
 }
 
@@ -605,6 +618,37 @@ article.show .content-show ul {
 
 article.show .content-show ul li {
     list-style: square;
+}
+
+article.show footer {
+    overflow: hidden;
+    padding: 40px 0;
+    border-top: 1px solid #ddd;
+}
+
+article.show footer aside.left {
+    float: left;
+    width: 290px;
+}
+
+article.show footer aside.left.author img {
+    float: left;
+    margin: 0 0 10px 0;
+}
+
+article.show footer aside.left.author p {
+    margin: 0 0 5px 80px;
+}
+
+article.show footer aside.left.author p:last-child {
+    margin-bottom: 0;
+    font-size: 11px;
+    line-height: 15px;
+    color: #aaa;
+}
+
+article.show footer aside.right {
+    margin-left: 340px;
 }
 
 aside.related {

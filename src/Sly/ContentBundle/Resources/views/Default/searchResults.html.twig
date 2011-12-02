@@ -1,0 +1,30 @@
+{% extends "SlyCoreBundle:Layout:layout.html.twig" %}
+
+{% block title %}{{ 'search.results.seo.title' | trans({'%query%': searchQuery}) }}{% endblock title %}
+{% block description %}{{ 'search.results.seo.description' | trans({'%query%': searchQuery}) }}{% endblock description %}
+
+{% block content %}
+    <h2 role="contentinfo">{{ 'search.results.title_count' | trans({'%count%': items | length, '%query%': searchQuery}) }}</h2>
+    
+    <nav>
+        <ul class="categories">
+            <li id="search" role="search" class="search">
+                {% include 'SlyCoreBundle:Block:searchForm.html.twig' %}
+            </li>
+            <li class="{% if searchCategories | length == allCategories | length %}active{% endif %}">
+                <a href="{{ path('search', {'query': searchQuery, 'categories': '!'}) }}">{{ 'search.results.category.all' | trans }}</a>
+            </li>
+            {% for c in allCategories %}
+                <li class="{% if c in searchCategories and searchCategories | length < allCategories | length %}active{% endif %}">
+                    <a href="{{ path('search', {'query': searchQuery, 'categories': c}) }}">{{ 'search.results.category.%type%' | replace({'%type%': c}) | trans }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    
+    {% include 'SlyCoreBundle:Block/Com/Content:728x90.html.twig' %}
+
+    {% for item in items %}
+        {% include 'SlyContentBundle:Default:searchItem.html.twig' %}
+    {% endfor %}
+{% endblock content %}

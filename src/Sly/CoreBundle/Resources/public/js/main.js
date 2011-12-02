@@ -8,7 +8,7 @@ jQuery(function($){
     
     /* --- Main Search ----------------- */
     
-    var searchInput = $('form.search input:text');
+    var searchInput = $('form.search input:text:not(.locked)');
     
     if (searchInput.val() == false)
     {

@@ -1,6 +1,6 @@
 <form method="get" action="{{ path('search_redirect') }}" class="search">
     <div>
         <span>L</span>
-        <input type="text" name="q" placeholder="{{ 'search.input' | trans }}" value="{% if searchQuery is defined %}{{ searchQuery }}{% endif %}" />
+        <input type="text" name="q" placeholder="{{ 'search.input' | trans }}" value="{% if searchQuery is defined %}{{ searchQuery }}{% endif %}" class="{% if locked is defined %}locked{% endif %}" />
     </div>
 </form>

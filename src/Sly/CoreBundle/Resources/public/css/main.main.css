@@ -33,6 +33,10 @@
     margin-bottom: 40px;
 }
 
+#main section[role=main] nav ul.categories li form {
+    margin: 0;
+}
+
 #main section[role=main] nav ul.categories li {
     float: left;
     margin-right: 10px;

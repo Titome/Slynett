@@ -41,12 +41,16 @@ twig:
             id: %project_google_analytics_id%
         author:
           name: %project_author_name%
+          realname: %project_author_name%
           email: %project_author_email%
       networks:
         rss: %networks_rss%
         twitter:
           url: %networks_twitter_url%
           username: %networks_twitter_username%
+        twitterp:
+          url: %networks_twitterp_url%
+          username: %networks_twitterp_username%
         facebook:
           url: %networks_facebook_url%
           username: %networks_facebook_username%

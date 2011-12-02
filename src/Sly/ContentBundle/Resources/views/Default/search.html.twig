@@ -1,27 +1,18 @@
 {% extends "SlyCoreBundle:Layout:layout.html.twig" %}
 
-{% block title %}{{ 'search.seo.title' | trans({'%query%': searchQuery}) }}{% endblock title %}
-{% block description %}{{ 'search.seo.description' | trans({'%query%': searchQuery}) }}{% endblock description %}
+{% block title %}{{ 'search.seo.title' | trans }}{% endblock title %}
+{% block description %}{{ 'search.seo.description' | trans({'%siteName%': project.name}) }}{% endblock description %}
 
 {% block content %}
-    <h2 role="contentinfo">{{ 'search.title_count' | trans({'%count%': items | length, '%query%': searchQuery}) }}</h2>
+    <h2 role="contentinfo">{{ 'search.title' | trans({'%siteName%': project.name}) }}</h2>
     
     <nav>
         <ul class="categories">
-            <li class="{% if searchCategories | length == allCategories | length %}active{% endif %}">
-                <a href="{{ path('search', {'query': searchQuery, 'categories': '!'}) }}">{{ 'search.category.all' | trans }}</a>
+            <li id="search" role="search" class="search">
+                {% include 'SlyCoreBundle:Block:searchForm.html.twig' with {'locked': true} %}
             </li>
-            {% for c in allCategories %}
-                <li class="{% if c in searchCategories and searchCategories | length < allCategories | length %}active{% endif %}">
-                    <a href="{{ path('search', {'query': searchQuery, 'categories': c}) }}">{{ 'search.category.%type%' | replace({'%type%': c}) | trans }}</a>
-                </li>
-            {% endfor %}
         </ul>
     </nav>
     
     {% include 'SlyCoreBundle:Block/Com/Content:728x90.html.twig' %}
-
-    {% for item in items %}
-        {% include 'SlyContentBundle:Default:searchItem.html.twig' %}
-    {% endfor %}
 {% endblock content %}

@@ -15,25 +15,11 @@
                 <a href="{{ path('tutorial_show', {'slug': item.slug }) }}" title="{{ item }}">{{ item }}</a>
             </h2>
         </section>
-        
-        <ul>
-            <li>
-                <time datetime="{{ item.publishedAt | date('core.date.time.big' | trans) }}">
-                    {{ item.publishedAt | date('core.date.normal' | trans) }}
-                </time>
-            </li>
-            <li>
-                <img src="http://0.gravatar.com/avatar/{{ project.author.email | md5 }}?s=32" alt="" />
-                {{ 'list.item.author' | trans({'%authorName%': project.author.name}, 'tutorial') }}
-                <a href="{{ path('author') }}" title="{{ project.author.name }}">{{ project.author.name }}</a>
-            </li>
-            <li>
-                <a href="#" class="btn go-share">{{ 'list.item.share' | trans({}, 'tutorial') }}</a>
-            </li>
-        </ul>
     </header>
         
     <section class="body">
+        <a href="#" class="btn go-share">{{ 'list.item.share' | trans({}, 'tutorial') }}</a>
+        
         <iframe frameborder="0" width="{{ dmplayer.width }}" height="{{ dmplayer.height }}" src="{{ item.dailyMotionEmbedUrl }}?width={{ dmplayer.width }}"></iframe>
 
         <!-- {% if item.tags | length %}
@@ -52,6 +38,16 @@
             <div class="content-show">
                 {{ item.content | contentFilters | raw }}
             </div>
+            
+            <footer>
+                <aside class="left author">
+                    {% include 'SlyContentBundle:Block:authorPresentation.html.twig' with {'type': 'tutorial'} %}
+                </aside>
+
+                <aside class="right">
+                    {% include 'SlyContentBundle:Block/Content:socialNetworks.html.twig' with {'type': 'tutorial'} %}
+                </aside>
+            </footer>
         </section>
     {% endif %}
 </article>

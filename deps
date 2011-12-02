@@ -97,3 +97,7 @@
     git=git://github.com/stof/StofDoctrineExtensionsBundle.git
     target=/bundles/Stof/DoctrineExtensionsBundle
     version=origin/1.0.x
+
+[WhiteOctoberPagerfantaBundle]
+    git=http://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git
+    target=/bundles/Symfony/Bundle/WhiteOctoberPagerfantaBundle

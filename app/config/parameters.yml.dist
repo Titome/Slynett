@@ -33,6 +33,8 @@ parameters:
   networks_rss: http://f.sly.mx
   networks_twitter_url: http://t.sly.mx
   networks_twitter_username: Ph3nol
+  networks_twitterp_url: http://t.sly.mx
+  networks_twitterp_username: Ph3nol
   networks_facebook_url: http://fb.sly.mx
   networks_facebook_username: slynett
   networks_linkedin: http://in.sly.mx

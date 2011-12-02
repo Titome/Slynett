@@ -1,5 +1,8 @@
 items:
   empty: Aucun élément à afficher.
+  author:
+    description: Développeur Web passionné, j'ai spécialisé mes compétences dans l'utilisation de technologies Open Source telles que PHP5, LAMP et le framework Symfony (1.4 et 2) [...]
+    more: En savoir plus
 
 comments:
   title: Commentaires
@@ -28,16 +31,21 @@ feed:
       
 search:
   seo:
+    title: Recherche
+    description: Recherche générale sur %siteName%.
+  title: Récherche générale sur %siteName%
+  results:
+    seo:
+      title: Résultats pour "%query%"
+      description: Résultats pour "%query%"
     title: Résultats pour "%query%"
-    description: Résultats pour "%query%"
-  title: Résultats pour "%query%"
-  title_count: Voici %count% résultats correspondant à votre recherche "%query%"
+    title_count: Voici %count% résultats correspondant à votre recherche "%query%"
+    category:
+      all: Toutes les catégories
+      blog: Articles de blogs
+      watch: Liens de veille
+      snippet: Snippets
+      tutorial: Tutoriels vidéo
   input: Rechercher...
-  category:
-    all: Toutes les catégories
-    blog: Articles de blogs
-    watch: Liens de veille
-    snippet: Snippets
-    tutorial: Tutoriels vidéo
   message: Sélectionner les sections dans lesquelles vous souhaitez porter votre recherche.
   submit: Rechercher

@@ -92,12 +92,14 @@ nav[role=navigation] ul.menu li.active .icon {
 }
 
 nav[role=navigation] ul.menu li:hover .main {
+    margin-top: 10px;
     -webkit-animation: moveFromLeftRotate 300ms ease;
     -moz-animation: moveFromLeftRotate 300ms ease;
     -ms-animation: moveFromLeftRotate 300ms ease;
 }
 
 nav[role=navigation] ul.menu li.active .main {
+    margin-top: 10px;
     color: #2ea2c8;
 }
 
