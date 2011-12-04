@@ -24,6 +24,7 @@ parameters:
   project_google_analytics_id: XXXXXXXXXXXXXXX
   project_author_name: Ph3
   project_author_email: ph3@slynett.com
+  project_author_resumeurl: http://cv.sly.mx
 
   admin_pass: XXXXXXXXXXXXXXX
 

@@ -41,6 +41,17 @@ section.page div.content ul:last-child {
     margin-bottom: 0;
 }
 
+section.page div.content strong,
+section.page div.content a,
+section.page div.content a:visited {
+    color: #2ea2c8;
+}
+
+section.page div.content a.btn,
+section.page div.content a.btn:visited {
+    color: #fff;
+}
+
 /* --- Author ------------------ */
 
 div.author section.page div.content img.author {

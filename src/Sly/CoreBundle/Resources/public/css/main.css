@@ -9,7 +9,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         url('../fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
     font-weight: normal;
     font-style: normal;
-    font-smooth:always;
+    font-smooth: always;
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke: 1px transparent;
 }
@@ -402,6 +402,11 @@ ul.activity li a.title:visited {
     float: right;
     display: block;
     width: 300px;
+    text-decoration: none;
+}
+
+ul.activity li a.title:hover {
+    text-decoration: underline;
 }
 
 ul.activity li.twitter a,
