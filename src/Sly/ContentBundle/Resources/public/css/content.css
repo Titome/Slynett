@@ -112,7 +112,7 @@ article.tutorial {
    background-color: #fff;
 }
 
-article.tutorial:nth-child(3n+2) {
+article.tutorial:nth-of-type(3) {
     margin-right: 0;
 }
 

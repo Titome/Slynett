@@ -67,7 +67,7 @@
             </div>
         </section>
         
-        <section class="networks">            
+        <section class="networks">
             <ul class="networks">
                 <li class="sws rss"><a href="{{ networks.rss }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
                 <li class="sws twitter"><a href="{{ networks.twitter.url }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
@@ -75,6 +75,37 @@
                 <li class="sws googleplus"><a href="{{ networks.googleplus }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
                 <li class="sws linkedin"><a href="{{ networks.linkedin }}" onclick="var w=window.open(this.href); w.focus(); return false;"><span></span></a></li>
             </ul>
+        </section>
+        
+        <section class="twitter">
+            <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+            <script>
+            new TWTR.Widget({
+              version: 2,
+              type: 'profile',
+              rpp: 10,
+              interval: 30000,
+              width: 'auto',
+              height: 300,
+              theme: {
+                shell: {
+                  background: '#ffffff',
+                  color: '#333333'
+                },
+                tweets: {
+                  background: '#ffffff',
+                  color: '#333333',
+                  links: '#2ea2c8'
+                }
+              },
+              features: {
+                scrollbar: true,
+                loop: false,
+                live: true,
+                behavior: 'all'
+              }
+            }).render().setUser('{{ networks.twitter.username }}').start();
+            </script>
         </section>
         
         <section class="activity">            

@@ -233,13 +233,15 @@ div.homepage section.page h3:first-child {
 }
 
 div.homepage section.networks,
+div.homepage section.twitter,
 div.homepage section.activity {
     margin-left: 580px;
     padding: 20px;
     background-color: #fff;
 }
 
-div.homepage section.networks {
+div.homepage section.networks,
+div.homepage section.twitter {
     overflow: hidden;
     margin-bottom: 40px;
 }
