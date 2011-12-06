@@ -112,7 +112,7 @@ article.tutorial {
    background-color: #fff;
 }
 
-article.tutorial:nth-child(3n+3) {
+article.tutorial:nth-child(3n+2) {
     margin-right: 0;
 }
 
@@ -140,9 +140,9 @@ article.tutorial h3 {
 article.tutorial h3 a,
 article.tutorial h3 a:visited {
     display: block;
-   font-size: 17px;
-   padding: 10px;
-   background: #333;
+    font-size: 17px;
+    padding: 10px;
+    background: #333;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
     font-weight: normal;
     text-decoration: none;
@@ -559,6 +559,10 @@ article.show section.body .go-share {
     border-bottom: 5px solid #fff;
 }
 
+article.show section.body div.intro {
+    margin-bottom: 20px;
+}
+
 article.show section.body div.intro ul {
     overflow: hidden;
     margin-top: 5px;
@@ -623,6 +627,7 @@ article.show .content-show ul li {
 }
 
 article.show footer {
+    clear: both;
     overflow: hidden;
     padding: 40px 0;
     border-top: 1px solid #ddd;

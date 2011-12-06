@@ -3,6 +3,8 @@ homepage:
     title: %name% — Expertise PHP5 , symfony1.4 et Symfony2 — Blog, Tutoriels, Veille, Ressources et autres
     description: Blog, tutoriels vidéos, ressources, snippets, veille et autres.
   title: Espace quotidien d'un développeur Web passionné — Expérimentations, études, analyses, partage et plus encore.
+  edito:
+    title: Edito
   lastposts:
     title: Derniers articles
   lasttutorials:

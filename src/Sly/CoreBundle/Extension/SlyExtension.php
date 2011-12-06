@@ -68,9 +68,18 @@ class SlyExtension extends \Twig_Extension
 
     public function contentFilters($content)
     {
-        /**
-         * Just in prevision with adding some filters (BBCode, etc.)
-         */
+//        $pattern[0] = "/\[php\](.*?)\[\/php\]/is";
+//        $replace[0] = "<pre class=\"brush: php; fontsize: 100; first-line: 1;\">$1</pre>";
+//        
+//        $pattern[1] = "/\[html](.*?)\[\/html]/is";
+//        $replace[1] = "<pre class=\"brush: html; fontsize: 100; first-line: 1;\">$1</pre>";
+//        
+//        $content = preg_replace($pattern, $replace, strip_tags($content));
+        
+        $pattern[0] = "/\[content type=(.*?) slug=(.*?)](.*?)\[\/content]/is";
+        $replace[0] = "<a href=\"/$1/$2.html\">$3</a>";
+        
+        $content = preg_replace($pattern, $replace, $content);
         
         return $content;
     }

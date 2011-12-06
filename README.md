@@ -1,14 +1,14 @@
 Slynett - Slynett website, with Symfony2 PHP5 framework
 =====================================
 
-[Slynett](http://www.slynett.com), my personal website, was the opportunity for me to make my first real [Symfony2](http://www.symfony.com) project.
+[Slynett Labs](http://www.slynett.com), my personal website, was the opportunity for me to make my first real [Symfony2](http://www.symfony.com) project.
 
 Main parts are developed around ContentBundle, which manage blog, technical watch, tutorials, snippets and others.
 Ameliorations and website improvements are in constant progress, in function of my needs and my Symfony2 knowledge.
 
 Browse the code on [GitHub](https://github.com/Ph3nol/Slynett).
 
-Contact and follow me on [Twitter](http://twitter.com/Ph3nol) or [LinkedIn](http://fr.linkedin.com/in/cedricdugat).
+Contact and follow me on [Twitter](http://t.sly.mx) or [LinkedIn](http://in.sly.mx).
 
 Requirements
 ------------
