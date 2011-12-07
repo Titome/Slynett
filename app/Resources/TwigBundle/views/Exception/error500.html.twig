@@ -1,0 +1,14 @@
+{% extends "SlyCoreBundle:Layout:layout.html.twig" %}
+
+{% block title %}{{ 'core.error.500.seo.title' | trans }}{% endblock title %}
+{% block description %}{{ 'core.error.500.seo.description' | trans }}{% endblock description %}
+
+<h2 role="contentinfo">{{ 'core.error.500.seo.description' | trans }}</h2>
+
+<p>
+    <a href="{{ path('homepage') }}" class="btn reply">
+        <span></span>
+        
+        {{ 'core.error.500.backtohome' | trans }}
+    </a>
+</p>

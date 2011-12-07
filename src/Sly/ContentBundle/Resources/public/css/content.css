@@ -113,12 +113,12 @@ article.tutorial {
    position: relative;
    cursor: default;
    background-color: #fff;
-    -moz-box-shadow: 0 0 20px #ccc;
-    -webkit-box-shadow: 0 0 20px #ccc;
-    box-shadow: 0 0 20px #ccc;
+   -moz-box-shadow: 0 0 20px #ccc;
+   -webkit-box-shadow: 0 0 20px #ccc;
+   box-shadow: 0 0 20px #ccc;
 }
 
-article.tutorial:nth-of-type(3) {
+article.tutorial:nth-of-type(3n+3) {
     margin-right: 0;
 }
 

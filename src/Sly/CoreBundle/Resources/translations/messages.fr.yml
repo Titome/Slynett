@@ -30,6 +30,31 @@ core:
     credits: Crédits
     terms: Mentions légales
     totop: Retour en haut
+    
+  error:
+    seo:
+      title: Erreur
+      description: Erreur
+    title: Erreur - Une erreur interne s'est produite
+    backtohome: Retour à l'accueil
+    404:
+      seo:
+        title: Erreur 404
+        description: Erreur 404
+      title: Erreur 404 - Page/Rubrique non disponible
+      backtohome: Retour à l'accueil
+    500:
+      seo:
+        title: Erreur 500
+        description: Erreur 500
+      title: Erreur 500 - Accès interdit
+      backtohome: Retour à l'accueil
+    503:
+      seo:
+        title: Erreur
+        description: Erreur
+      title: Erreur - Une erreur interne s'est produite
+      backtohome: Retour à l'accueil
    
   networks:
     rss: Flux RSS

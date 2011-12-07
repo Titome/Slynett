@@ -295,6 +295,16 @@ nav.sec ul.menu li.active a:hover {
     text-align: right;
 }
 
+#footer aside.right img {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    opacity: 0.3;
+    -moz-opacity: 0.3;
+    -ms-filter: "alpha(opacity=30)";
+    filter: alpha(opacity=30);
+}
+
 .pager {
     clear: both;
     overflow: hidden;
