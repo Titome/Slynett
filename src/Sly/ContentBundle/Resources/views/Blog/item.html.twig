@@ -23,13 +23,18 @@
                 <img src="{{ '/uploads/contents/%itemId%/%itemPicture%' | replace({'%itemId%': item.id, '%itemPicture%': item.picture}) | apply_filter('show') }}" alt="{{ item }}" class="item-picture" />
             </a>
             
-            {% if item.tags | length %}
-                <ul>
+            <ul>
+                <li>
+                    <time datetime="{{ item.publishedAt | date('core.date.time.big' | trans) }}">
+                        {{ item.publishedAt | date('core.date.normal' | trans) }}
+                    </time>                    
+                </li>
+                {% if item.tags | length %}
                     {% for tag in item.tagsCollection %}
                         <li><a href="#{{ tag }}">{{ tag }}</a></li>
                     {% endfor %}
-                </ul>
-            {% endif %}
+                {% endif %}
+            </ul>
         </div>
 
         <div class="content-show">
