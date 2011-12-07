@@ -248,7 +248,6 @@ div.homepage section.activity {
 
 div.homepage section.networks,
 div.homepage section.twitter {
-    overflow: hidden;
     margin-bottom: 40px;
 }
 
