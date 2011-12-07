@@ -9,4 +9,6 @@ web/css
 web/js
 web/uploads
 web/media
+web/*_dev.php
+web/*.css
 nbproject/*
