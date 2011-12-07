@@ -164,6 +164,9 @@ hr.sep3 {
 #header {
     height: 100px;
     background-color: #fff;
+    -moz-box-shadow: 0 0 20px #ccc;
+    -webkit-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
 }
 
 #header #logo {
@@ -188,6 +191,9 @@ nav[role=navigation] {
     height: 120px;
     background-color: #fff;
     font-family: 'Terminal Dosis', Tahoma, Helvetica, Arial, sans-serif;
+    -moz-box-shadow: 0 0 20px #ccc;
+    -webkit-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
 }
 
 nav.sec {
@@ -236,6 +242,9 @@ nav.sec ul.menu li.active a:hover {
     line-height: 22px;
     text-align: right;
     background-color: #fff;
+    -moz-box-shadow: 0 0 20px #ccc;
+    -webkit-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
 }
 
 #footer,

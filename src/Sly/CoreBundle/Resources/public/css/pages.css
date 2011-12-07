@@ -24,6 +24,9 @@ section.page div.content {
     margin-bottom: 20px;
     padding: 20px;
     background-color: #fff;
+    -moz-box-shadow: 0 0 20px #ccc;
+    -webkit-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
 }
 
 section.page div.content:last-child {
@@ -238,6 +241,9 @@ div.homepage section.activity {
     margin-left: 580px;
     padding: 20px;
     background-color: #fff;
+    -moz-box-shadow: 0 0 20px #ccc;
+    -webkit-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
 }
 
 div.homepage section.networks,
