@@ -3,6 +3,11 @@ items:
   author:
     description: Développeur Web passionné, j'ai spécialisé mes compétences dans l'utilisation de technologies Open Source telles que PHP5, LAMP et le framework Symfony (1.4 et 2) [...]
     more: En savoir plus
+    
+share:
+  buttons:
+    twitter: Tweeter
+    facebook: Recommander
 
 comments:
   title: Commentaires
